@@ -1,0 +1,18 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+{% if videoUrl %}
+	{% autoescape false %}
+		<div class="field field-video entity-reference">
+			<article>
+				<div class="field field-media-video-embed-field video-embed-field">
+					<div class="video-embed-field-provider-{% if 'youtube' in videoUrl %}youtube{% else %}vimeo{% endif %} video-embed-field-responsive-video">
+						{% set embedUrl = videoUrl|replace({'https://www.youtube.com/watch?v=':'https://www.youtube.com/embed/'}) %}
+						<iframe width="560" height="315" src="{{ embedUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+				</div>
+			</article>	
+		</div>
+	{% endautoescape %}
+{% endif %}

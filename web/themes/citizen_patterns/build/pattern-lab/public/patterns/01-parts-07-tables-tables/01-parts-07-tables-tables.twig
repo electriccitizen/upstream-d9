@@ -1,0 +1,55 @@
+{#
+	STYLEGUIDE ONLY
+#}
+{% set rowData = [
+	' ',
+	' ',
+	' ',
+	'Lorem ipsum',
+	'dolor sit amet',
+	'Veggies sunt bona vobis',
+	'bean burdock',
+	'brussels sprout',
+	'A fava bean collard',
+	'jerky rump shoulder',
+	'ham hock ribeye',
+	'biltong',
+	'Tuesday night',
+	'Friday',
+	'TGI Filet mignon',
+	'Blog meme masthead',
+	'document cloud',
+	'Project Thunderdome',
+	'monetization',
+	'optimization',
+	'Hong Kong Phooey chop',
+	'number one super g',
+] %}
+<div class="text-with-summary text-long">
+	<table>
+		{% if tableCaption %}
+			<caption>{{ tableCaption }}</caption>
+		{% endif %}
+		<thead>
+			<tr>
+				{% for column in range(1, columns) %}
+					<th>Column {{ loop.index }}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in range(1, rows)%}
+				<tr>
+					{% if rowHeaders %}
+						<th>Row {{ loop.index }}</th>
+					{% else %}
+						<td>Row {{ loop.index }}</td>
+					{% endif %}
+					{% for column in range(1, (columns - 1)) %}
+						<td>{{ random(rowData) }}</td>
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,13 @@
+{#
+ STYLEGUIDE ONLY
+#}
+
+{% extends '@composites/01-blocks/_00-block.twig' %}
+
+{% block blockContent %}
+	<ul>
+		{% for link in links %}
+			<li><a href="{{ link.url }}">{{ link.text }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}

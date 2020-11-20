@@ -1,0 +1,35 @@
+/* ========================
+  GLOBAL
+========================== */
+body{
+	background-color: $siteBack;
+	& > div{
+		box-sizing: border-box;
+	}
+	.layout-container{
+		margin: 0;
+		box-sizing: border-box;
+		.region-header,.page-content{
+			padding-left: $siteMarginMobile;
+			padding-right: $siteMarginMobile;
+			@include desk{
+				padding-left: $siteMarginDesk;
+				padding-right: $siteMarginDesk;
+			}
+		}
+	}
+	.dialog-off-canvas-main-canvas{
+		width: 100%;
+		box-sizing: border-box;
+		overflow-x: hidden;
+		& > .layout-container{
+			background: $siteBack;
+		}
+	}
+	.visually-hidden{
+		max-width: 1px;
+	}
+	.ui-dialog{
+		z-index: 500 !important;
+	}
+}//end body

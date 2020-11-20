@@ -1,0 +1,38 @@
+{#
+	 DRUPAL-ISH: This template is inherited into the _page.twig template which is inherited into Drupal.
+#}
+<header role="banner" class="site-header">
+	<a href="#main-navigation" class="visually-hidden focusable">
+		{%- trans %}Skip to main navigation{% endtrans -%}
+	</a>
+	<a href="#main-content" class="visually-hidden focusable">
+		{%- trans %}Skip to main content{% endtrans -%}
+	</a>
+
+	{% block headerContent %}
+		<div>
+			{% include "@composites/01-blocks/01-branding/pl-branding.twig" 
+				with{
+					logo: branding.logo,
+					path: branding.path,
+					projectName: branding.projectName,
+					classes: branding.classes
+				}
+			%}
+			{% if search %}
+				{% include "@composites/01-blocks/02-search/pl-search-block.twig" 
+					with{
+						classes: search.classes
+					}
+				%}
+			{% endif %}
+			{% if mainNav %}
+				{% include "@chunks/01-navigation/02-superfish/superfish.twig" 
+					with{
+						menuLinks: mainNav.menuLinks
+					}
+				%}
+			{% endif %}
+		</div>
+	{% endblock %}
+</header>

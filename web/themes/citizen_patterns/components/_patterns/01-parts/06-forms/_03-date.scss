@@ -1,0 +1,93 @@
+/* ===========
+   DATE
+================ */
+
+field--type-datetime{
+	margin-bottom: $formElementSpace;
+	.label{
+		@include formLabel;
+	}
+	.description{
+		margin-top: -$spaceSm;
+	}
+}
+
+.field--type-daterange{
+	legend{
+		@include formLabel;
+	}
+	.description{
+		margin-top: -$spaceSm;
+	}
+	.fieldset-wrapper{
+		.label{
+			font-size: 1.6rem;
+			font-weight: $heavy;
+			margin-bottom: 3px;
+		}
+	}
+}
+
+.js-form-type-date,.form-item-html-5-date{
+	input{
+		@include textInput;
+		max-width: 350px;
+	}
+}
+.js-form-type-webform-time{
+	input{
+		@include textInput;
+		max-width: 120px;
+	}
+}
+
+//date picker
+.js-form-type-datetime,.js-form-type-date{
+	.form-item{
+		margin-bottom: 0 !important;
+	}
+	.container-inline{
+		@include safeFlex(row,wrap,start,start);
+		& > *{
+			display: block;
+		}
+		.form-item-date-time-daypicker-date{
+			width: 70%;
+			max-width: 350px;
+			input{
+				background-image: url('../images/form-elements/calendar.svg');
+				background-repeat: no-repeat;
+				background-size: 30px;
+				background-position: 8px center;
+				padding-left: 46px;
+			}
+		}
+		.form-item-date-time-daypicker-time{
+			width: 27.5%;
+			margin-left: 2.5%;
+		}
+		.ui-datepicker-trigger{
+			display: none;
+		}
+	}//end container inline
+}//end date picker
+
+//date list
+.js-form-type-datelist{
+	.container-inline{
+		@include safeFlex(row,wrap,start,start);
+		margin-bottom: -$spaceSm;
+		& > *{
+			display: block;
+		}
+	}
+	.form-item{
+		margin-bottom: $spaceSm !important;
+		width: 100%;
+		max-width: 170px;
+		margin-right: 1rem;
+	}
+} //end date list
+
+
+

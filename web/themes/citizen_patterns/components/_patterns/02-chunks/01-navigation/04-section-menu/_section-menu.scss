@@ -1,0 +1,88 @@
+/* =================
+	 SECTION MENU
+===================== */
+
+//top level
+#section-menu-wrapper{
+	display: none;
+	background: $menuBack;
+	padding-top: $spaceSm;
+	padding-bottom: $spaceMd;
+	@include onlyMobile{
+		padding-left: $siteMarginMobile;
+		padding-right: $siteMarginMobile;
+		@include edgeToEdge;
+	}
+	@include desk{
+		display: block !important;
+	}
+	& > ul:not(.contextual-links){
+		@include listReset;
+		//max-width: 300px;
+		@include auto;
+
+		//child menus
+		ul:not(.contextual-links){
+			margin: .5rem 0;
+			display: none;
+			padding-left: 12px;
+			&.expanded{
+				display: block;
+			}
+		}
+		//global menu items
+		li{
+			padding: 4px 3rem;
+			list-style: none;
+			position: relative;
+			//active link
+			a{
+				text-decoration: none;
+				display: block;
+				color: $menuTop;
+				&:hover,&:focus{
+					color: $menuTopHover;
+				}
+				&.is-active{
+					color: $menuTopActive;
+					pointer-events: none;
+				}
+			}//end a
+			//parents
+			&.parent{
+				& > .expander{
+					position: absolute;
+					top: 4px;
+					left: 0;
+					font-size: 24px;
+					line-height: 1;
+					width: 3rem;
+					text-align: center;
+					&:before{
+						content: "+";
+					}
+				}
+				&.expanded{
+					& > .expander{
+						&:before{
+							content: "–";
+						}
+					}
+				}//end when expanded
+			}//end parent
+			li{
+				padding: 4px 0;
+				a{
+					color: $menuChild;
+					&:hover,&:focus{
+						color: $menuChildHover;
+					}
+					&.is-active{
+						color: $menuChildActive;
+					}
+				}//end a
+			}//end child items
+		}//end global li
+	}//end first level ul
+}//end section menu wrapper
+

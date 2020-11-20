@@ -1,0 +1,32 @@
+{#
+	DRUPAL: This template is embedded into the Drupal links & files paragraph template. 
+#}
+
+{{ link_instructions }}
+
+{% block plwidgetopen %}
+	<div class="paragraph paragraph--type--links-files">
+{% endblock %}
+
+	{% if widget_title %}
+		<div class="widget-title">{{widget_title}}</div>
+	{% endif %}
+
+	{% block links %}
+		<div class="field field-link-multi">
+			{% for link in links %}
+				<div class="lf-item">
+					<a href="{{link.link_url}}">{{link.link_text}}</a>
+				</div>
+			{% endfor %}
+			{% for file in files %}
+				<div class="lf-item">
+					<a href="{{file.file_url}}">{{file.file_text}}</a>
+				</div>
+			{% endfor %}
+		</div>
+	{% endblock %}
+				
+{% block plwidgetclose %}				
+	</div>
+{% endblock %}

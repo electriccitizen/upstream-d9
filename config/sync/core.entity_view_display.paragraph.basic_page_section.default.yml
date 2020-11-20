@@ -1,0 +1,49 @@
+uuid: 8649d849-b59c-4709-bb83-c28afe54eda5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.basic_page_section.field_section_intro
+    - field.field.paragraph.basic_page_section.field_section_title
+    - field.field.paragraph.basic_page_section.field_section_widgets
+    - paragraphs.paragraphs_type.basic_page_section
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    sections: {  }
+    enabled: false
+    allow_custom: false
+id: paragraph.basic_page_section.default
+targetEntityType: paragraph
+bundle: basic_page_section
+mode: default
+content:
+  field_section_intro:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_section_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_section_widgets:
+    weight: 2
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,0 +1,19 @@
+uuid: 7fe3cb81-9589-4356-af9d-8334a0254263
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - text
+id: block_content.field_modal_intro
+field_name: field_modal_intro
+entity_type: block_content
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

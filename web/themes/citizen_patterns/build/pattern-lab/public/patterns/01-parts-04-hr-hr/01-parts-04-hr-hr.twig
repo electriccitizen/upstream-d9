@@ -1,0 +1,16 @@
+{#
+  STYLEGUIDE ONLY
+#}
+
+<div class="constrain-text">
+	<p>Horizontal rules are used to separate large chunks of content into sections that are easier for a user to read and process.</p>
+
+	{% for listItem in listItems.one %}
+		<p>{{ listItem.description }}</p>
+	{% endfor %}
+	<hr>
+	{% for listItem in listItems.two %}
+		<p>{{ listItem.excerpt.long }}</p>
+	{% endfor %}
+
+</div>

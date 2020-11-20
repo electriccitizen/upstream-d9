@@ -1,0 +1,328 @@
+/* ============
+   TYPOGRAPHY
+============== */
+
+/* HEADING MIXINS
+------------------ */
+//h1 sizes
+$h1Sm: 32px;
+$h1Mid: 46px;
+$h1Lg: 60px;
+
+//h2 sizes
+$h2Sm: 26px;
+$h2Md: 29px;
+$h2Lg: 32px;
+
+//h3 sizes
+$h3Sm: 23px;
+$h3Mid: 26px;
+
+//h4 sizes
+$h4Sm: 22px;
+
+//h5 sizes
+$h5Sm: 20px;
+
+//h6 sizes
+$h6Sm: 18px;
+
+@mixin headerGlobals{
+	line-height: 1.15;
+	font-weight: $heavy;
+	font-family: $header;
+	margin: 0;
+	font-feature-settings: "liga", "dlig";
+}
+
+
+@mixin heading1{
+	@include headerGlobals;
+	font-family: $displayHeader;
+	font-size: $h1Sm;
+	@include tab{
+		font-size: $h1Mid;
+	}
+	@include contentStop{
+		font-size: $h1Lg;
+	}
+}
+
+@mixin heading2 {
+	@include headerGlobals;
+	font-size: $h2Sm;
+	@include tab{
+		font-size: $h2Md;
+	}
+	@include contentStop{
+		font-size: $h2Lg;
+	}
+}
+
+@mixin heading3{
+	@include headerGlobals;
+	font-size: $h3Sm;
+	@include tab{
+		font-size: $h3Mid;
+	}
+}
+
+@mixin heading4{
+	@include headerGlobals;
+	font-size: $h4Sm;
+}
+
+@mixin heading5{
+	@include headerGlobals;
+	font-size: $h5Sm;
+}
+
+@mixin heading6{
+	@include headerGlobals;
+	font-size: $h6Sm;
+}
+
+@mixin blockTitle{
+	@include headerGlobals;
+	font-size: 2rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-align: center;
+	max-width: $textMax;
+	margin-bottom: $spaceMd;
+	@include auto;
+}
+
+@mixin inlineBlockTitle{
+	@include blockTitle;
+	margin-bottom: 0;
+	display: inline-block;
+	& + *{
+		display: inline;
+	}
+}
+
+//H1 on banners
+@mixin bannerTitle{
+	position: relative;
+	opacity: 0;
+	@include animation('fadeIn 1.2s 1 forwards');
+	.block-field-banner{
+		position: relative;
+		@include overlay;
+		@include edgeToEdge;
+	}
+	.block-title{
+		@include tab{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 2;
+			@include translate(-50%,-50%);
+			h1{
+				color: $white;
+			}
+		}
+	}
+}//end banner title
+
+
+/* HEADING STYLING
+------------------- */
+h1 {
+	@include heading1;
+}
+
+h2{
+	@include heading2;
+	.text-long &,.text-with-summary &{
+		margin-bottom: $spaceLg;
+	}
+}
+
+h3{
+	@include heading3;
+	.text-long &,.text-with-summary &{
+		margin-bottom: $spaceMd;
+	}
+}
+
+h4{
+	@include heading4;
+	.text-long &,.text-with-summary &{
+		margin-bottom: $spaceSm;
+	}
+}
+
+h5{
+	@include heading5;
+	.text-long &,.text-with-summary &{
+		margin-bottom: $spaceXs;
+	}
+}
+
+h6{
+	@include heading6;
+}
+
+h2+ul, h3+ul, h4+ul, h5+ul, h6+ul {
+	margin-top: 0;
+}
+
+
+
+/* BLOCK, SECTION AND WIDGET HEADINGS
+-------------------------- */
+.block-title{
+	max-width: 800px;
+	text-align: center;
+	@include auto;
+}
+h2.block-title{
+	@include blockTitle;
+}
+h2.section-title{
+	@include blockTitle;
+	font-size: 2.4rem;
+	max-width: $textMax + 40px;
+}
+.widget-title{
+	@include blockTitle;
+	letter-spacing: 0;
+	text-transform: none;
+}
+
+/* TEXT MIXINS
+---------------- */
+
+@mixin metaText{
+	font-size: 1.6rem;
+	font-style: italic;
+	font-family: $serif;
+}
+
+@mixin quote{
+	margin: 0 0 $spaceXs;
+	max-width: 740px;
+	position: relative;
+	font-family: $serif;
+	font-style: italic;
+	font-size: 2.8rem;
+	padding-bottom: 10px;
+	@include tab{
+		font-size: 4.2rem;
+		padding-bottom: 0;
+	}
+	p{
+		display: inline;
+	}
+	&:before{
+		color: $transBlack;
+		content: "“";
+		font-size: 14rem;
+		line-height: .1rem;
+		margin-right: 2rem;
+		vertical-align: -6.4rem;
+	}
+	&:after{
+		color: $transBlack;
+		content: "”";
+		font-size: 8rem;
+		line-height: .1rem;
+		vertical-align: -3.2rem;
+		display: inline-block;
+	}
+}
+
+/* TEXT STYLES
+--------------- */
+html,code{
+	font-family: $bodyFont;
+	font-size: $em-base;
+	line-height: 1.4;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-kerning: normal;
+	font-synthesis: none;
+}
+
+body {
+	color: $baseText;
+	margin: 0;
+	font-size: $baseSize;
+}
+
+p{
+	margin-top: 0;
+	&:not(:last-child){
+		margin-bottom: $spaceMd;
+	}
+	& + article:not(:last-child){
+		margin-bottom: $spaceMd;
+	}
+}
+
+a {
+	color: $link;
+	text-decoration: none;
+	&:hover,&:focus {
+		color: $hoverLink;
+		text-decoration: underline;
+		.text-with-summary &,.text-long &{
+			@include transAll(.3s);
+		}
+	}
+}
+
+em{
+	font-style: italic;
+}
+strong{
+	font-weight: $heavy;
+}
+
+.field-caption {
+	text-align: center;
+	font-size: 1.5rem;
+	font-style: italic;
+}
+
+small{
+	font-size: 80%;
+}
+
+.warning{
+	background: none;
+	padding: 1rem 2rem;
+	margin-bottom: $spaceMd;
+	color: $validation;
+	border: 1px solid $validation;
+	text-align: center;
+}
+
+.hr,hr {
+	border-style: solid;
+	border-width: 1px 0 0;
+	color: currentColor;
+	& + *{
+		margin-top: $spaceMd;
+	}
+}
+
+blockquote{
+	@include quote;
+}
+
+//clear floats in common long text fields, remove bottom margin from last child
+.text-with-summary,.text-long{
+	@include clearFix;
+	& > *:last-child{
+		margin-bottom: 0;
+	}
+	& + *{
+		clear: both;
+	}
+}//end text-with-summary,text-long
+
+
+

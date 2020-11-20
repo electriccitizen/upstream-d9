@@ -1,0 +1,45 @@
+
+#these should match the layouts available to layout builder
+layouts:
+  1:
+    name:
+      One Column
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+  2:
+    name:
+      'Two Column Sidebar Left'
+    machineName: 
+      twocol-sideleft
+    regions:
+      1:
+        machineName:
+          first
+      2:
+        machineName:
+          content
+  3:
+    name:
+      'Two Column Sidebar Right'
+    machineName: 
+      twocol-sideright
+    regions:
+      1:
+        machineName:
+          content
+      2:
+        machineName:
+          second
+  4:
+    name:
+      'Tabs'
+    machineName: 
+      tabs
+    regions:
+      1:
+        machineName:
+          tabs

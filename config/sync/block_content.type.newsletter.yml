@@ -1,0 +1,8 @@
+uuid: b59c4006-23e1-4b6c-92b5-7dcc66c5f376
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter
+label: Newsletter
+revision: 0
+description: 'Used for embedded newsletter signup blocks.'

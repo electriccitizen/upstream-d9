@@ -1,0 +1,16 @@
+{#
+ DRUPAL: This file is used in the block--system-branding-block.html.twig file.
+#}
+
+<a href="{{ path }}" title="{{ 'Home'|t }}" rel="home">
+	{% if logo %}
+  		<img class="logo" src="{{ logo }}" alt="{{ 'Home'|t }}" />
+	{% endif %}
+
+	{% if projectName %}
+		<span class="site-name">{{ projectName }}</span>
+	{% endif %}
+</a>
+{% if tagline %}
+	<span class="tagline">{{ tagline }}</span>
+{% endif %}

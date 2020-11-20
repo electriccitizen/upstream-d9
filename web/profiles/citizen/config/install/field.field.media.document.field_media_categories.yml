@@ -1,0 +1,29 @@
+uuid: b5b3af51-ec82-4f77-a171-0599706f3b6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_media_categories
+    - media.type.document
+    - taxonomy.vocabulary.media_categories
+id: media.document.field_media_categories
+field_name: field_media_categories
+entity_type: media
+bundle: document
+label: 'Media Categories'
+description: "Select media categories from the list. If the media category you wish to add does not exist, you can create it <a href=\"/admin/structure/taxonomy/manage/media_categories/add\" target=\"_blank\">here</a>. <strong>NOTE:</strong> You will need to save this page and refresh for your newly created media category to appear in the list.\r\n\r\n"
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      media_categories: media_categories
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

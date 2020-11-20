@@ -1,0 +1,25 @@
+uuid: 4e8092a4-d69e-4ac8-9aea-005060fb599d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:27de869c-2ba8-4187-b40e-31c99519f508'
+  module:
+    - block_content
+  theme:
+    - citizen_patterns
+id: citizen_patterns_copyright
+theme: citizen_patterns
+region: footer
+weight: -5
+provider: null
+plugin: 'block_content:27de869c-2ba8-4187-b40e-31c99519f508'
+settings:
+  id: 'block_content:27de869c-2ba8-4187-b40e-31c99519f508'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

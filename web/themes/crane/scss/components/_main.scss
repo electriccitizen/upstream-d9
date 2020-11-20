@@ -1,0 +1,23 @@
+/* ========================
+  MAIN
+========================== */
+
+/* LAYOUTS
+---------------- */
+@media screen and (min-width: 38em){
+	.layout-column--half{
+		padding-right: 20px;
+		& + .layout-column--half{
+			padding-right: 0;
+			padding-left: 20px;
+		}
+	}
+}
+
+/* SYNCH PAGE MAIN CONTENT
+--------------- */
+.crane{
+	.progress{
+		margin-top: $spaceMd;		
+	}
+}

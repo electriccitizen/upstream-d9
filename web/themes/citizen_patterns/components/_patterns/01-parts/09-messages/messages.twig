@@ -1,0 +1,11 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+{% for message in messages %}
+	<div class="drupal-message {{ message.type }}-message">
+		{% autoescape false %}
+			{{ random(message.randomText) }}
+		{% endautoescape %}
+	</div>
+{% endfor %}

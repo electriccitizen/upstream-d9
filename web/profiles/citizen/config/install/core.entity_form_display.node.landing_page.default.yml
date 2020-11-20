@@ -1,0 +1,106 @@
+uuid: 7dbb89e6-71b0-4330-868c-fd8814b1139c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.background_image
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_banner
+    - field.field.node.landing_page.field_metatags
+    - field.field.node.landing_page.field_paragraphs
+    - field.field.node.landing_page.layout_builder__layout
+    - node.type.landing_page
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - metatag
+    - paragraphs
+    - path
+    - text
+_core:
+  default_config_hash: klOg3BbD8-CQOD9JM7a2gjmw2kpPJRBF02Yw5AwJTIY
+id: node.landing_page.default
+targetEntityType: node
+bundle: landing_page
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_banner:
+    weight: 1
+    settings:
+      form_mode: background_image
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: image_browser
+    type: inline_entity_form_complex
+    region: content
+  field_metatags:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_firehose
+    region: content
+  field_paragraphs:
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: _none
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+        add_above: '0'
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  path:
+    type: path
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 5
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  layout_builder__layout: true
+  promote: true
+  sticky: true
+  uid: true
+  url_redirects: true

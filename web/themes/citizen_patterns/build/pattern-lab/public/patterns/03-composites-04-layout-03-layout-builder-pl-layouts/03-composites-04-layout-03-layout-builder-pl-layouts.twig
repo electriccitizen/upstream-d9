@@ -1,0 +1,40 @@
+{#
+	 STYLEGUIDE ONLY
+#}
+
+{% for layout in layouts %}
+	<div class="pl-layout-wrapper">
+		<div class="element-title">{{ layout.name }}</div>
+		{% embed '@composites/04-layout/03-layout-builder/_layout-section.twig' 
+			with{
+				machineName: layout.machineName,
+				regions: layout.regions
+			}
+		%}
+    	{% block regionContent %}
+        <div class="region-content">
+        	{% if region.machineName != 'tabs' %}
+	        	<div class="visually-hidden">
+	        		Drupal content would go here
+	        	</div>
+	        {% endif %}
+        	{% if region.machineName == 'tabs' %}
+	        	<div class="block-1 tab-block">
+	        		<h2 class="block-title">Block 1</h2>
+	        		<div class="field body text-with-summary">
+	        			<p>tab content 1 - first block<p>
+	        			<p>Each block in a tabs section will generate a new tab. Block titles must be used in each block (they become the tab text). A least two blocks should be used in each tab region and it is not recommended to use more than 4 or 5.</p>
+	        		</div>
+	        	</div>
+	        	<div class="block-2 tab-block">
+	        		<h2 class="block-title">Block 2</h2>
+	        		<div class="field body text-with-summary">
+	        			<p>tab content 2 - second block<p>
+	        		</div>
+	        	</div>
+	        {% endif %}
+	        </div>
+      {% endblock %}
+		{% endembed %}
+	</div>
+{% endfor %}

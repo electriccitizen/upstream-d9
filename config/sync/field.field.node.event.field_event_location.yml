@@ -1,0 +1,23 @@
+uuid: eef76653-eddd-41ea-bbe3-ec8723f38135
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_event_location
+    - node.type.event
+  module:
+    - geolocation
+_core:
+  default_config_hash: wS_oirIK-_NW455vb-G4t0nucKsFuX8DprOw_Lgp7uw
+id: node.event.field_event_location
+field_name: field_event_location
+entity_type: node
+bundle: event
+label: Location
+description: 'Use the search box to enter a location. You may enter street addresses, or search for well-known places (such as Mt. Rushmore).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: geolocation

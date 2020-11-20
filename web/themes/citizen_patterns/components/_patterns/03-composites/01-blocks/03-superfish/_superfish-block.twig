@@ -1,0 +1,25 @@
+{#
+ Drupal: This template is inherited into the block--superfish--main.html.twig template.
+#}
+
+		 
+{% block sfMainBlock %}
+	<div id="block-citizen-patterns-mainnavigation" class="block block-superfishmain">
+		<a id="main-navigation"></a>
+		{% block sfContent %}
+			{# need to add this for superfish in pl because the bars icon does not work as pseudo css element and because its added via the superfish JS in Drupal, we can't jsut extend it over to the Drupal block #}
+			{% block plMobileToggle %}
+				<div class="sf-accordion-toggle sf-style-none">
+					<a id="superfish-main-toggle" href="#" aria-label="expand">
+						<i class="fas fa-bars"></i>
+					</a>
+				</div>	
+			{% endblock %}
+			{% block sfMenuContent %}
+				{# menu content goes here#}	
+			{% endblock %}
+		{% endblock %}
+	</div>
+{% endblock %}
+			
+

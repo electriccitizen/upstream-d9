@@ -1,0 +1,12 @@
+uuid: 268a76f5-c4fe-4373-9308-948dc05f2dc3
+langcode: en
+status: 1
+dependencies: {  }
+id: iphone_xs
+label: 'iPhone XS'
+weight: 0
+orientation: portrait
+dimensions:
+  width: 1125
+  height: 2436
+  dppx: !!float 3

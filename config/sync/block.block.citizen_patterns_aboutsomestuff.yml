@@ -1,0 +1,25 @@
+uuid: a51c3988-171b-49d7-a6e5-e2ac6e9e9594
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:776b5982-01ea-4b37-acde-8e3f751d0c95'
+  module:
+    - block_content
+  theme:
+    - citizen_patterns
+id: citizen_patterns_aboutsomestuff
+theme: citizen_patterns
+region: prefooter
+weight: -5
+provider: null
+plugin: 'block_content:776b5982-01ea-4b37-acde-8e3f751d0c95'
+settings:
+  id: 'block_content:776b5982-01ea-4b37-acde-8e3f751d0c95'
+  label: 'About Some Stuff'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

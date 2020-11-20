@@ -1,0 +1,24 @@
+{#
+	STYLEGUIDE ONLY
+#}
+{% import '@base/macros.twig' as styles %}
+<form>
+	{% for element in formElements %}
+
+		{# pattern label element labels #}
+		{% if element.elementTitle %}
+			<div class="element-title">{{ element.elementTitle }}</div>
+		{% endif %}
+
+		{% include '@parts/06-forms/_form-element.twig'
+			with{
+				type: element.type,
+				label: element.label,
+				classes: element.classes,
+				options: element.options,
+				placeholder: element.placeholder,
+				description: element.description,
+			}
+		%}
+	{% endfor %}
+</form>

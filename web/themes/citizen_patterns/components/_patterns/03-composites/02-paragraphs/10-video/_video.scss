@@ -1,0 +1,11 @@
+/* ===============
+   VIDEO WIDGET
+================= */
+
+.paragraph--type--video{
+	@include textConstrain;
+	article{
+		@include animation('fadeIn 1.5s 1');
+	}
+}//end video widget
+

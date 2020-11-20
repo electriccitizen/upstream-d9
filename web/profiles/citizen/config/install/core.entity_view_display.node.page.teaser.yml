@@ -1,0 +1,50 @@
+uuid: 0b9aa23a-140e-4485-9b54-a027c96d9efe
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.page.body
+    - field.field.node.page.field_banner
+    - field.field.node.page.field_metatags
+    - field.field.node.page.field_paragraphs
+    - node.type.page
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    sections: {  }
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: ZKlgRvwjFgPvtXy7-CmXEtsqWwsOKOO3BwX3q5H3tFQ
+id: node.page.teaser
+targetEntityType: node
+bundle: page
+mode: teaser
+content:
+  addtoany:
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 100
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 101
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_banner: true
+  field_metatags: true
+  field_oc_widgets: true
+  field_paragraphs: true

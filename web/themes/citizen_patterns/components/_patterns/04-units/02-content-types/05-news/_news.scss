@@ -1,0 +1,42 @@
+/* =============
+   NEWS NODE
+================ */
+.node-news.node-content{
+
+	#section-1,#section-2{
+		max-width: $contentStop;
+		@include auto;
+		@include clearFix;
+	}
+	
+	.block-field-banner{
+		max-width: 350px;
+		@include auto;
+		@include tab{
+			float: left;
+			@include edgeReset;
+		}
+	}
+
+	.block-field.block-title{
+		.has-main-image &{
+			@include tab{
+				margin-left: 370px;
+				text-align: left;
+			}
+		}
+	}
+
+	.block-created{
+		@extend .block-field.block-title;
+		@include metaText;
+	}
+
+	.block-field.block-body{
+		@extend .block-field.block-title;
+		@include tab{
+			margin-right: 0;
+		}
+	}
+	
+}//end news

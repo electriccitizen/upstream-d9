@@ -1,0 +1,14 @@
+classes:
+  'block-social-media-links'
+# if changed, these values should also be updated in the site-footer.yml file
+label:
+  'Connect with Us'
+platforms:
+  1: 
+    "https://www.facebook.com"
+  2: 
+    "https://www.twitter.com"
+  3: 
+    "https://www.linkedin.com"
+  4: 
+    "https://www.youtube.com"

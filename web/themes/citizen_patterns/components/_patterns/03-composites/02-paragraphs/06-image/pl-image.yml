@@ -1,0 +1,17 @@
+
+type:
+  image
+widgetTitle:
+  'Display images in various sizes'
+# sizes are: default (Original, whatever is defined in src), full, large, medium, small
+size:
+  default
+src:
+  'http://placeimg.com/1100/600/people'
+caption:
+  'This is the caption'
+url:
+  'https://www.google.com'
+aria:
+  'Link Title'
+  

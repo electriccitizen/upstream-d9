@@ -1,0 +1,18 @@
+{#
+  STYLEGUIDE ONLY: This template is not brought into to Drupal.
+#}
+
+<ul class="fonts pl-spacer constrain-text">
+  {% for item in items %}
+    <li>
+      <div class="font-info" style="font-family: {{item.value}};">
+        <span style="font-size: 32px;">{{item.name}}</span> <br/>
+        {# fetches random data from /components/_data/listItems.json the .one tells to fetch one instance of data, can go up to 6 #}
+        {% for listItem in listItems.one %}
+				  <p>{{ listItem.excerpt.medium }}</p>
+				{% endfor %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+ 

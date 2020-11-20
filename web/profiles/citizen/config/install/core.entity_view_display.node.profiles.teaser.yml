@@ -1,0 +1,138 @@
+uuid: 2ebcca0d-459f-4800-98e1-02f526bbd50a
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.profiles.body
+    - field.field.node.profiles.field_email
+    - field.field.node.profiles.field_first_name
+    - field.field.node.profiles.field_last_name
+    - field.field.node.profiles.field_phone
+    - field.field.node.profiles.field_position
+    - field.field.node.profiles.field_profile_image
+    - node.type.profiles
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
+        components:
+          19621974-1fb1-47af-a569-df132e6d4a4b:
+            uuid: 19621974-1fb1-47af-a569-df132e6d4a4b
+            region: content
+            configuration:
+              id: 'field_block:node:profiles:field_profile_image'
+              label_display: ''
+              formatter:
+                type: entity_reference_entity_view
+                label: hidden
+                settings:
+                  view_mode: square
+                  link: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          8fa2c813-8959-4bfc-8961-c0aa8231600c:
+            uuid: 8fa2c813-8959-4bfc-8961-c0aa8231600c
+            region: content
+            configuration:
+              id: 'field_block:node:profiles:field_first_name'
+              label_display: ''
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 1
+          570fed95-46d7-4e12-b894-e0dd71e24447:
+            uuid: 570fed95-46d7-4e12-b894-e0dd71e24447
+            region: content
+            configuration:
+              id: 'field_block:node:profiles:field_last_name'
+              label_display: ''
+              formatter:
+                type: string
+                label: hidden
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 2
+          c94477cd-a0b9-4d02-8a62-f5abdb9fe159:
+            uuid: c94477cd-a0b9-4d02-8a62-f5abdb9fe159
+            region: content
+            configuration:
+              id: 'field_block:node:profiles:body'
+              label_display: ''
+              formatter:
+                label: hidden
+                type: text_summary_or_trimmed
+                settings:
+                  trim_length: 200
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 3
+    enabled: true
+_core:
+  default_config_hash: PHhLLLj6YmRcABcCpA7IPF0V6heixIIh1aH27EYUudc
+id: node.profiles.teaser
+targetEntityType: node
+bundle: profiles
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 3
+    settings:
+      trim_length: 200
+    third_party_settings: {  }
+    region: content
+  field_first_name:
+    type: string
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_last_name:
+    type: string
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_profile_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: square
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_email: true
+  field_phone: true
+  field_position: true
+  links: true

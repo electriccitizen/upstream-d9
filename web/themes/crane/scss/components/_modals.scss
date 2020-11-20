@@ -1,0 +1,147 @@
+/* ========================
+  MODALS
+========================== */
+
+/* MEDIA ENTITY BROWSER
+----------------- */
+.entity-browser-iframe-container{
+	width: 100% !important;
+}
+.ui-dialog.entity-browser-modal{
+  max-width: 1200px;
+}//end entity browser modal
+
+/* ENTITY BROWSER FORM
+------------------------- */
+.entity-browser-form{
+	font-size: $baseSize;
+	margin-top: -$spaceMd;
+	padding-bottom: 100px;
+	overflow-y: scroll;
+	& > .form-actions{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		z-index: 30;
+		width: 100%;
+		background: $white;
+		border-top: 1px solid $borderRule;
+		padding-top: 1em;
+		margin: 0;
+		input[type="submit"]{
+			margin-bottom: 0;
+		}
+	}
+	.eb-tabs{
+		ul{
+			border-bottom: 1px solid $borderRule;
+			li{
+				border-bottom: 0;
+				border-left: 1px solid $tabsBorder;
+				border-top: 1px solid $tabsBorder;
+				border-right: 1px solid $tabsBorder;
+				&:not(:first-child){
+					margin-left: -1px;
+				}
+				a{
+					color: $tabsText;
+					&:hover,&:focus{
+						background: $buttonBackHover;
+						color: $buttonTextHover;
+						text-decoration: none;
+					}
+					&:active{
+						background: $buttonBackActive;
+						color: $buttonTextActive;	
+					}
+					&.is-active{
+						background: $tabsActiveBack;
+						color: $tabsActiveText;
+						border-color: $tabsActiveBorder;
+						&:hover,&:focus{
+							background: $buttonBackHover;
+							color: $buttonTextHover;
+						}
+						&:active{
+							background: $buttonBackActive;
+							color: $buttonTextActive;
+						}
+					}
+				}//end a
+			}//end li
+		}//end ul
+	}//end entity browser tabs
+	.select2-container--default{
+		width: 100% !important;
+		max-width: 300px;
+
+		.select2-selection--single,.select2-selection--multiple{
+			min-height: 38px;
+			.select2-search__field{
+				width: 100% !important;
+			}
+			.select2-selection__choice{
+				padding: 3px 5px;
+			}
+		}
+	}
+	#edit-inline-entity-form-field-media-categories--description{
+		margin-top: $spaceXs;
+		line-height: 1.4;
+	}
+	&.entity-browser-embedded-browser-form{
+		.focal-point-preview-link{
+			display: none;
+		}
+	}
+}//end eb modal form
+
+/* ENTITY EMBED DIALOG
+------------------------ */
+.entity-embed-dialog-step--embed{
+	.js-form-item-attributes-data-entity-embed-display-settings-alt{
+		display: none;
+	}
+}//end entity embed dialog step
+
+//document embed dialog
+.entity-embed-dialog-step--embed[action="/entity-embed/dialog/basic_html/document"]{
+	.js-form-item-entity{
+		a{
+			position: relative;
+			padding-left: 20px;
+			&:before{
+				content:'';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 16px;
+				height: 16px;
+				background-image: url('../images/icons/file/generic.svg');
+				background-repeat: no-repeat;
+				background-position: 0 0;
+				background-size: 16px 16px;
+			}
+		}
+	}
+	fieldset[data-drupal-selector="edit-attributes-data-align"]{
+		display: none;
+	}
+	.form-actions{
+		input.form-submit,input.button-primary{
+			margin-bottom: 0;
+		}
+	}
+}//end document entity embed dialog
+
+/* UI FORMS
+------------------ */
+.ui-dialog-buttonpane{
+	.ui-dialog-buttonset{
+		button:not(:last-child){
+			margin-right: 1rem;
+		}
+	}
+}
+

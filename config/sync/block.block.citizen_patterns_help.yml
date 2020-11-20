@@ -1,0 +1,22 @@
+uuid: 886aae3b-9c43-46e7-b61f-dea0e1a60552
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - citizen_patterns
+_core:
+  default_config_hash: 8PUPaExj33TzDw8YtjstWZ--M6tVgzsLctnXL91zo6E
+id: citizen_patterns_help
+theme: citizen_patterns
+region: content
+weight: -5
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

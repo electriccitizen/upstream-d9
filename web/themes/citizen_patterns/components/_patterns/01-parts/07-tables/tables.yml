@@ -1,0 +1,7 @@
+
+columns: 5
+rows: 4
+rowHeaders: false
+tableCaption:
+  'This is the table caption.'
+

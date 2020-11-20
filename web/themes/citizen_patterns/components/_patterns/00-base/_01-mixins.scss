@@ -1,0 +1,559 @@
+/* ===========
+		MIXINS
+=================== */
+
+//   For help see the mixins refernce chart in Pattern Lab:
+//   /pattern-lab/public/?p=base-mixins  or
+//   /public/?p=base-mixins
+
+
+/* HELPER MIXINS (used as a basis for other mixins or for browser prefixing)
+----------------- */
+
+// initiate transforms
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+// move an element horizontally or vertically relative to its initial position
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+@mixin translateX ($x) {
+	@include transform(translateX($x));
+}
+@mixin translateY ($y) {
+	@include transform(translateY($y));
+}
+@mixin translate3d ($x, $y, $z) {
+	@include transform(translate3d($x, $y, $z));
+}
+
+
+//skew and element horizontally and vertically
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//change the scale of an element relative to its original state
+@mixin scale($scalex, $scaley) {
+	@include transform(scale($scalex, $scaley));
+}
+@mixin scale3d($scalex, $scaley, $scalez) {
+	@include transform(scale($scalex, $scaley, $scalez));
+}
+
+//rotate an element on its center axis
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+@mixin rotate3d ($rotx, $roty, $rotz, $deg) {
+	@include transform(rotate3d($rotx, $roty, $rotz, #{$deg}deg));
+}
+
+// use backface visiblity to smooth transitions
+@mixin backfaceVisibility($backface){
+	-webkit-backface-visiblity: $backface;
+	-moz-backface-visiblity: $backface;
+	backface-visiblity: $backface;
+}
+
+// sets the background size of an element
+@mixin backgroundSize($back-width, $back-height){
+	background-size: #{$back-width} #{$back-height};
+}
+
+// performs a transition
+@mixin transition($transition-property, $transition-time, $method) {
+	-webkit-transition: $transition-property $transition-time $method;
+	-moz-transition: $transition-property $transition-time $method;
+	-ms-transition: $transition-property $transition-time $method;
+	-o-transition: $transition-property $transition-time $method;
+	transition: $transition-property $transition-time $method;
+	backface-visibility: hidden;
+}
+
+// CSS columns short hand with number or columns and gutter
+@mixin cssColumns($columns, $gap, $break){
+	-webkit-column-count: #{$columns};
+	-moz-column-count: #{$columns};
+	column-count: #{$columns};
+	-webkit-column-gap: #{$gap};
+	-moz-column-gap: #{$gap};
+	column-gap: #{$gap};
+	@if $break == 'nobreak'{
+		& > *{
+			display: block;
+			-webkit-column-break-inside: avoid;
+			page-break-inside: avoid;
+			break-inside: avoid;
+			overflow: hidden;
+		}
+	}
+}
+
+
+// Calc shorthand that works cross browser
+@mixin calc($property, $expression) {
+	#{$property}: -webkit-calc(#{$expression});
+	#{$property}: -moz-calc(#{$expression});
+	#{$property}: -o-calc(#{$expression});
+	#{$property}: calc(#{$expression});
+}
+
+// Calc short hand that works cross browser with !important
+@mixin calcForce($property, $expression) {
+	#{$property}: -webkit-calc(#{$expression}) !important;
+	#{$property}: -moz-calc(#{$expression}) !important;
+	#{$property}: -o-calc(#{$expression}) !important;
+	#{$property}: calc(#{$expression}) !important;
+}
+
+
+/*  STYLE MIXINS
+------------------- */
+
+// erase preset browser styling
+@mixin browserWipe{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+// erase browser button theming
+@mixin buttonWipe{
+	@include browserWipe;
+	background: none;
+	border: none;
+	color: inherit;
+}
+
+// visually hide something but allow screen reader access
+@mixin visuallyHidden{
+	position: absolute;
+	left: -900vw;
+	top: 0;
+	font-size: 1px;
+	opacity: .1;
+}
+
+// overlay a dark transparent tint
+@mixin overlay{
+	&:before{
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: $transTint;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 2;
+	}
+}
+
+// fade an image link and set a border on hover or focus
+@mixin imageHover{
+	border: 1px solid $lightGrey;
+	&:hover,&:focus{
+		border-color: $borderRule;
+		opacity: .7;
+		@include transAll(.3s);
+	}
+}
+
+// remove default ul padding margin, list style
+@mixin listReset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+@mixin faSolid($iconCode,$iconSize){
+	font-family: 'Font Awesome 5 Free';
+	font-size: $iconSize;
+	content: "#{$iconCode}";
+}
+
+@mixin faBrand($iconCode,$iconSize){
+	font-family: 'Font Awesome 5 Brands';
+	font-size: $iconSize;
+	content: '\#{$iconCode}';
+}
+
+// create a full screen background the height of the parent element (set on :after)
+@mixin fullBack($fullback){
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -50vw;
+	z-index: -1;
+	width: 200vw;
+	height: 100%;
+	background: $fullback;
+}
+
+// create a full height background that extends to left or right side of screen from parent (use on :after)
+@mixin halfBack($backColor,$backSide){
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+	width: 100vw;
+	height: 100%;
+	background: $backColor;
+	@if $backSide == 'right'{
+		left: 0;
+	}@else{
+		right: 0;
+	}
+}
+
+// create a vertical rule to the left or right and choose height and color (use in psuedo)
+@mixin vertRule($rulePosition,$ruleHeight,$ruleColor) {
+	content: '';
+	display: block;
+	position: absolute;
+	#{$rulePosition}: 0;
+	top: (100% - $ruleHeight) / 2;
+	width: 1px;
+	height: $ruleHeight;
+	background: $ruleColor;
+}
+
+// define a background gradient with direct, start color and stop color
+@mixin gradient($grad-direction,$grad-start,$grad-stop) {
+	background: -moz-linear-gradient($grad-direction, $grad-start 0%,$grad-stop 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient($grad-direction, $grad-start 0%,$grad-stop 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient($grad-direction, $grad-start 0%,$grad-stop 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient($grad-direction, $grad-start 0%,$grad-stop 100%); /* IE10+ */
+	@if $grad-direction == 'top'{
+		background: linear-gradient(to bottom, $grad-start 0%,$grad-stop 100%); /* W3C */
+	}@else if $grad-direction == 'bottom'{
+		background: linear-gradient(to top, $grad-start 0%,$grad-stop 100%); /* W3C */
+	}@else if $grad-direction == 'left'{
+		background: linear-gradient(to right, $grad-start 0%,$grad-stop 100%); /* W3C */
+	}@else if $grad-direction == 'right'{
+		background: linear-gradient(to left, $grad-start 0%,$grad-stop 100%); /* W3C */
+	}
+
+}
+
+// create a triangle out of borders-can choose direction, size, color
+@mixin triangle($triDirection,$triHeight,$triWidth,$triColor){
+	width: 0;
+	height: 0;
+	-webkit-transform: rotate(0.05deg);
+	-moz-transform: scale(1.1);
+	transform: rotate(0.05deg);
+	$actualWidth: $triWidth / 2;
+	$actualHeight: $triHeight / 2;
+	@if $triDirection == 'up'{
+		border-right: $actualWidth double rgba(0,0,0,0);
+		border-left: $actualWidth double rgba(0,0,0,0);
+		border-bottom: $triHeight solid $triColor;
+	}@else if $triDirection == 'down'{
+		border-right: $actualWidth double rgba(0,0,0,0);
+		border-left: $actualWidth double rgba(0,0,0,0);
+		border-top: $triHeight solid $triColor;
+	}@else if $triDirection == 'left'{
+		border-top: $actualHeight double rgba(0,0,0,0);
+		border-bottom: $actualHeight double rgba(0,0,0,0);
+		border-right: $triWidth solid $triColor;
+	}@else if $triDirection == 'right'{
+		border-top: $actualHeight double rgba(0,0,0,0);
+		border-bottom: $actualHeight double rgba(0,0,0,0);
+		border-left: $triWidth solid $triColor;
+	}
+}
+
+
+// move arrows outside of slick and change color
+@mixin outsideSliderArrows{
+	padding-left: $siteMarginMobile;
+	padding-right: $siteMarginMobile;
+
+	//override arrow padding then there are not enough slick items to have slider / have buttons
+	.slick-list:only-child{
+		@include edgeToEdge;
+	}
+	.slick-arrow{
+		&.slick-prev{
+			left: 0;
+			&:before{
+				border-right-color: $lightGrey;
+			}
+			&:hover:before{
+				border-right-color: $link;
+			}
+		}
+		&.slick-next{
+			right: 0;
+			&:before{
+				border-left-color: $lightGrey;
+			}
+			&:hover:before{
+				border-left-color: $link;
+			}
+		}
+	}
+}//end outside slider arrows
+
+// color interior elements when on a light background
+@mixin lightBack {
+	h2,h3,h4,h5,h6,p,div {
+		color: $black;
+		&.pane-title{
+			border-color: $borderRule;
+		}
+	}
+	:before,:after{
+		color: $black;
+	}
+	a{
+		color: $transBlack;
+		&:hover,&:focus{
+			color: $black;
+			@include transAll(.3s);
+		}
+	}
+	.widget-title > a{
+		color: $black;
+		&:hover,&:focus{
+			color: $transBlack;
+			@include transAll(.3s);
+		}
+	}
+	.field-caption {
+		color: $black;
+	}
+}//end lightBack
+
+// color interior elements when on a dark background
+@mixin darkBack {
+	h2,h3,h4,h5,h6,p,div {
+		color: $white;
+		&.pane-title{
+			border-color: $white;
+		}
+	}
+	:before,:after{
+		color: $white !important;
+	}
+	a{
+		color: $transWhite;
+		&:hover,&:focus{
+			color: $white;
+			@include transAll(.3s);
+		}
+	}
+	.widget-title > a{
+		color: $white;
+		&:hover,&:focus{
+			color: $transWhite;
+			@include transAll(.3s);
+		}
+	}
+	.field-caption {
+		color: $white;
+	}
+}//end darkBack
+
+/* LAYOUT MIXINS
+-------------------- */
+
+// center something with auto left and right margins
+@mixin auto{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// set left and right margins to ignore side padding of main container
+@mixin edgeToEdge {
+	margin-left: $siteMarginMobile * -1;
+	margin-right: $siteMarginMobile * -1;
+}
+
+// reset left and right margins to 0
+@mixin edgeReset {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+@mixin textConstrain{
+	.layout:not(.layout--twocol-sideleft):not(.layout--twocol-sideright) &{
+		max-width: $textMax;
+		@include auto;
+	}
+}
+
+// clear floats (used on parent container)
+@mixin clearFix {
+	&::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+}
+
+// set ie friendly flex layout with direction, wrap, inline, and perpendicular alignment
+@mixin safeFlex($direction, $wrap, $justify, $align){
+	display: flex;
+	display: -ms-flexbox;
+	flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	@if $wrap == 'wrap'{
+		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+	}@else{
+		flex-wrap: nowrap;
+		-ms-flex-wrap: none;
+	}
+	@if $justify == 'start'{
+		justify-content: flex-start;
+		-ms-flex-pack: start;
+	}@else if $justify == 'end'{
+		justify-content: flex-end;
+		-ms-flex-pack: end;
+	}@else if $justify == 'center'{
+		justify-content: center;
+		-ms-flex-pack: center;
+	}@else if  $justify == 'justify'{
+		justify-content: space-between;
+		-ms-flex-pack: justify;
+	}
+	@if $align == 'start'{
+		align-items: flex-start;
+		-ms-flex-align: start;
+	}@else if $align == 'end'{
+		align-items: flex-end;
+		-ms-flex-align: end;
+	}@else if $align == 'center'{
+		align-items: center;
+		-ms-flex-align: center;
+	}@else if $align == 'stretch'{
+		align-items: stretch;
+		-ms-flex-align: stretch;
+	}@else if $align == 'baseline'{
+		align-items: baseline;
+		-ms-flex-align: baseline;
+	}
+}//end safe-flex
+
+
+// IE friendly mixin for flex size shorthand
+@mixin safeFlexSize($grow, $shrink, $size){
+	flex: $grow $shrink $size;
+	-ms-flex: $grow $shrink $size;
+}
+
+
+// IE friendly mixin for flex order
+@mixin safeFlexOrder($order){
+	order: $order;
+	-ms-flex-order: $order;
+}
+
+// set negative edges on a parent to allow children to have equal space between without overflowing edges
+@mixin bleed($bleedType,$bleedWidth){
+	margin-left: $bleedWidth * -0.5;
+	margin-right: $bleedWidth * -0.5;
+	@include calc(width, "100% + "$bleedWidth);
+	& > *{
+		@if $bleedType == 'margin'{
+			margin-left: $bleedWidth * 0.5;
+			margin-right: $bleedWidth * 0.5;
+		}@else if $bleedType == 'padding'{
+			padding-left: $bleedWidth * 0.5;
+			padding-right: $bleedWidth * 0.5;
+		}
+	}
+}
+
+
+/* ================= 
+  ANIMATION MIXINS
+===================== */
+
+///mixin - animation
+@mixin animation($animate...) {
+	$max: length($animate);
+	$animations: '';
+
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
+
+		@if $i < $max {
+			$animations: #{$animations + ", "};
+		}
+	}
+	-webkit-animation: $animations;
+	-moz-animation:    $animations;
+	-o-animation:      $animations;
+	animation:         $animations;
+}
+
+///mixin - keyframes
+@mixin keyframes($animationName) {
+	@-webkit-keyframes #{$animationName} {
+		@content;
+	}
+	@-moz-keyframes #{$animationName} {
+		@content;
+	}
+	@-o-keyframes #{$animationName} {
+		@content;
+	}
+	@keyframes #{$animationName} {
+		@content;
+	}
+}
+
+
+/*  Keyframes setup
+------------ */
+//delayed fade in
+@include keyframes(fadeIn){
+	from{
+		opacity: 0;
+	}
+	50%{
+		opacity: .5;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+.fadeIn {
+	@include animation('fadeIn 1.5s 1');
+}
+
+
+/* Simple Animations
+----------------- */
+
+///mixin - transAll
+@mixin transAll($time){
+	transition: all $time ease;
+	-moz-transition: all $time ease;
+	-webkit-transition: all $time ease;
+	-webkit-transform: translateZ(0);
+}
+@mixin transClear{
+	transition: none;
+	-moz-transition: none;
+	-webkit-transition: none;
+}
+@mixin transFormAnimate{
+	-webkit-transition: -webkit-transform 0.15s ease-in 0s;
+	transition: -webkit-transform 0.15s ease-in 0s;
+	transition: transform 0.15s ease-in 0s;
+	transition: transform 0.15s ease-in 0s, -webkit-transform 0.15s ease-in 0s;
+}

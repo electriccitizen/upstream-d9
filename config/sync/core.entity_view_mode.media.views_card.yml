@@ -1,0 +1,10 @@
+uuid: 528705ea-95b7-4005-a55e-4e7b2ecc50cb
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.views_card
+label: 'Views Card'
+targetEntityType: media
+cache: true

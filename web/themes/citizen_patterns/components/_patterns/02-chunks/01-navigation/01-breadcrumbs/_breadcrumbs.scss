@@ -1,0 +1,32 @@
+/* =============
+	 BREADCRUMBS
+------------------- */
+
+.breadcrumb{
+	max-width: $contentStop;
+	@include auto;
+	padding: $spaceMd 0 0;
+	ol {
+		@include listReset;
+	}
+
+	li{
+		display: inline-block;
+		color: $breadCurrent;
+		font-size: 1.4rem;
+		a{
+			padding-right: .25rem;
+			@include transAll(.3s);
+			color: $breadLink;
+			&:hover,&:focus{
+				color: $breadLinkHover;
+			}
+		}
+		&:not(:last-of-type){
+			&:after{
+				content: "\00BB";
+			}
+		}
+	}
+
+}//end breadcrumb 

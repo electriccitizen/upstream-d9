@@ -1,0 +1,84 @@
+uuid: 2ed47776-aa6e-4e43-afe8-dea9fe768b0e
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.support_book.body
+    - field.field.node.support_book.field_paragraphs
+    - node.type.support_book
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          f05c4bc2-9f63-4a0c-9fad-287fb9756cb2:
+            uuid: f05c4bc2-9f63-4a0c-9fad-287fb9756cb2
+            region: content
+            configuration:
+              id: 'field_block:node:support_book:body'
+              label_display: ''
+              formatter:
+                label: hidden
+                type: text_summary_or_trimmed
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          faa42bcf-1c0c-48f5-8b94-5bf77467109d:
+            uuid: faa42bcf-1c0c-48f5-8b94-5bf77467109d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:support_book:links'
+            additional: {  }
+            weight: 1
+          31f6daec-34f0-4ede-8b0d-b195550fb87e:
+            uuid: 31f6daec-34f0-4ede-8b0d-b195550fb87e
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:support_book:links'
+            additional: {  }
+            weight: 2
+        third_party_settings: {  }
+    enabled: true
+_core:
+  default_config_hash: c4MWQBRp1yoqAA-79Kr3OTnLCmkemJnbPzcPCx3mfcY
+id: node.support_book.teaser
+targetEntityType: node
+bundle: support_book
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_paragraphs: true
+  search_api_excerpt: true

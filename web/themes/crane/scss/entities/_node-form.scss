@@ -1,0 +1,132 @@
+/* ========================
+  NODE FORMS
+========================== */
+.node-form,.node-confirm-form{
+
+	/* node specific form elements
+	---------------------------- */
+	.js-form-type-textfield{
+		input{
+			max-width: 400px;
+		}
+	}
+
+	.js-form-type-entity-autocomplete{
+		@extend .js-form-type-textfield;
+		max-width: $textMax;
+	}
+
+	//increase width of any top level select fields (not nested in paragraphs)
+	.layout-region-node-main{
+		& > .field--widget-options-select{
+			.select2-container--default{
+				width: 100% !important;
+				max-width: 240px;
+			}
+		}
+	}//end layout region node main
+
+	//non-media image field
+	.field--widget-image-image{
+		max-width: $textMax;
+		.js-form-type-textfield:last-of-type{
+			margin-bottom: 0;
+		}
+		.form-submit{
+			top: 1.5rem;
+			margin-left: 2.5rem !important;
+		}
+	}
+
+	//menu link instructions
+	.menu-instruction{
+		background: $lightGrey;
+		padding: $spaceMd $spaceSm $spaceSm;
+		h2{
+			font-size: 20px;
+		}
+	}//end menu instruction
+
+	// footer checkboxes and buttons
+	.layout-region-node-footer{
+		position: relative;
+		.layout-region-node-footer__content{
+			border-top: 0;
+			padding-top: $spaceLg;
+			margin-top: $spaceMd;
+			border-top: 3px solid $midBlue;
+			@include safeFlex(row,wrap,start,center);
+			.entity-content-form-footer{
+				@include safeFlex(row,wrap,start,center);
+			}
+		}
+		//published checkbox
+		#edit-status-wrapper,#edit-field-restricted-wrapper{
+			.form-item{
+				margin: .5rem 3rem 1rem 0;
+			}
+			.js-form-type-checkbox{
+				label{
+					font-weight: $heavy;
+					font-size: 2rem;
+				}
+				input{
+					width: 22px;
+					height: 22px;
+					position: relative;
+					top: 3px;
+					margin-right: 5px;
+					border-width: 2px;
+				}
+			}
+		}//end published
+		#edit-actions{
+			& > *{
+				margin-right: 1rem;
+				margin-bottom: 1rem;
+			}
+			#edit-citizen-preview{
+				@include submitButton;
+				background: $green;
+				margin-bottom: 1rem;
+				margin-right: 1rem;
+				padding-bottom: 1.15rem;
+				&:hover,&:focus{
+					background: $buttonBackHover;
+					color: $buttonTextHover;
+				}
+				&:active{
+					background: $buttonBackActive;
+					color: $buttonTextActive;
+				}
+			}
+			#edit-submit,#edit-delete{
+				max-width: 120px;
+				padding-bottom: 1.15rem;
+				margin-top: 0;
+			}
+		}
+	}//end footer
+
+	/* SUPPORT BOOK FORM */
+	&.node-support-book-edit-form,&.node-support-book-form{
+		.layout-region-node-secondary{
+			padding-right: 2em;
+			.entity-meta{
+				display: block;
+				.entity-meta__header{
+					display: none;
+				}
+				.menu-link-form{
+					border-top: 1px solid #bfbfbf;
+					background-image: none;
+					background: $offWhite;
+					summary{
+						font-size: 1.6rem;
+					}
+				}
+			}
+		}
+	}
+}//end node form
+

@@ -1,0 +1,194 @@
+/* ===============
+	SELECT INPUT
+==================== */
+
+@mixin inputSelect{
+	width: 100%;
+	font-size: 1.6rem;
+	border: $elementBorder;
+	border-radius: 0;
+	height: auto;
+	background: $siteBack;
+	&.select2--container--focus{
+		box-shadow: 0 2px 2px rgba(35,35,35,0.3);
+	}
+}
+
+/* SELECT 2
+----------------- */
+//hide optgroup safari bug fix
+optgroup:empty{
+	display: none;
+}
+
+//hide custom optgroup labels (ios10 bug fix)
+.select2-results__group{
+	display: none !important;
+}
+
+//override script set width
+.select2-container--default{
+	width: 100% !important;
+	max-width: 250px;
+}
+
+/* IN BODY AND OFF CANVAS */
+body,#drupal-off-canvas{
+	select{
+		background: none;
+		&:hover,&:focus{
+			background: none;
+		}
+	}
+	.select2-container{
+		margin-bottom: 0;
+	}
+	.select2-container--default{
+
+		/* SELECT 2 SINGLE */
+		.select2-selection--single{
+			@include inputSelect;
+			&:hover{
+				box-shadow: inset 0 0 0 1px $formElementBorderHover;
+			}
+			&:focus{
+				outline: none;
+				box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+			}
+			&[aria-expanded="true"]{
+				box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+				border-color: $formElementBorderFocus;
+			}
+			.select2-selection__choice__remove{
+				position: relative;
+				z-index: 999;
+			}
+			//rendered selection
+			.select2-selection__rendered{
+				padding: 6px 32px 6px 10px;
+				color: $placeColor;
+				text-align: left;
+				background: $siteBack;
+			}
+			.select2-selection__arrow{
+				background-image: url('../images/form-elements/caret-down-dkgrey.svg');
+				background-repeat: no-repeat;
+				background-size: 16px;
+				background-position: center;
+				top: 9px;
+				right: 10px;
+				@include transFormAnimate;
+				//hide default select2 arrow
+				b{
+					display: none;
+				}
+			}
+		}//end single
+
+		/* SELECT 2 MULTI */
+		.select2-selection--multiple{
+			@include inputSelect;
+			padding: 3px 0 3px 0;
+			&:hover{
+				box-shadow: inset 0 0 0 1px $formElementBorderHover;
+			}
+			&:focus{
+				outline: none;
+				box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+			}
+			&[aria-expanded="true"]{
+				box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+				border-color: $formElementBorderFocus;
+			}
+			.select2-selection__choice__remove{
+				position: relative;
+				z-index: 999;
+			}
+			//selection input
+			.select2-search--inline{ 
+				position: relative;
+				float: none;
+				padding: 2px 3px;
+				&:after{
+					content: '';
+					display: block;
+					height: 20px;
+					width: 20px;
+					position: absolute;
+					background-image: url('../images/form-elements/caret-down-dkgrey.svg');
+					background-repeat: no-repeat;
+					background-size: 16px;
+					background-position: center;
+					top: 9px;
+					right: 5px;
+					@include transFormAnimate;
+				}
+				input.select2-search__field{
+					color: $darkGrey;
+					@include placeholder;
+					&:focus{
+						@include placeholderFocus;
+					}
+				}
+			}//end search inline
+
+			//selected item
+			.select2-selection__choice{
+				border-radius: 0;
+				background-color: $offWhite;
+			}
+		}//end multi
+
+
+		/* ACTIVE SELECT 2 */
+		&.select2-container--open,&.select2-container--focus{
+			//single
+			.select2-selection--single{
+				.select2-selection__arrow{
+					@include rotate(180);
+				}
+			}//end single
+
+			//multiple
+			.select2-selection--multiple{		
+				border-width: 2px;	
+				.select2-search--inline{ 
+					&:after{
+						@include rotate(180);
+					}
+					input.select2-search__field{
+						@include placeholder;
+						&:focus{
+							@include placeholderFocus;
+						}
+					}
+				}
+			}//end multiple
+		}//end active
+
+	}// end select2 default
+}//end body / off canvas
+
+
+
+/* SELECT 2 DROPDOWNS
+---------------- */
+.select2-container{
+	.select2-dropdown{
+		border: $formElementBorderWidth solid $formElementBorderFocus;
+		border-radius: 0;
+		border-top: 0;
+		padding: 0;
+		.select2-search__field{
+			outline: none;
+			border-color: $formElementBorderFocus;
+		}
+	}
+}
+.select2-container--default .select2-results__option[aria-selected="true"]{
+	background-color: $offWhite;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+	background-color: $selectHighlight !important; 
+}
+

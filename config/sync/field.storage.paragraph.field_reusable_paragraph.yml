@@ -1,0 +1,22 @@
+uuid: e668d58c-397d-420e-b8ea-93148ca3938e
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - paragraphs_library
+_core:
+  default_config_hash: aTe9MqUtfCXSC7zp5SoWgKgXe925AlxMsk7Y890c1G0
+id: paragraph.field_reusable_paragraph
+field_name: field_reusable_paragraph
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: paragraphs_library_item
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,146 @@
+blocks:
+  -
+    info: 'Test sync block'
+    langcode: en
+    uuid: f8b4a8e0-34e5-4fcc-98d9-9d6f3ac939d0
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        value: "<p>Did this make it to dev?</p>\r\n"
+        summary: ''
+        format: basic_html
+menus:
+  -
+    menu_name: main
+    title: Home
+    parent: null
+    uri: 'internal:/home'
+    link_title: null
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-4'
+    langcode: en
+    uuid: 7afc232a-2dab-4acc-851a-43cea2265a91
+  -
+    menu_name: footer
+    title: Privacy
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '0'
+    langcode: en
+    uuid: 1b9cabae-37cd-4836-a216-e5d2cd60f638
+  -
+    menu_name: support-book
+    title: Introduction
+    parent: null
+    uri: 'entity:node/10'
+    link_title: null
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '0'
+    langcode: en
+    uuid: ede12c01-b502-42d6-9aa3-5a60f145c1cd
+  -
+    menu_name: support-book
+    title: 'Guide page 2'
+    parent: null
+    uri: 'entity:node/11'
+    link_title: null
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '0'
+    langcode: en
+    uuid: e972e828-8972-4b33-8b4e-bad819d0187a
+  -
+    menu_name: main
+    title: 'Link 1'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '0'
+    langcode: en
+    uuid: 74d97e3e-053a-43f5-90f1-e3b06a98581b
+  -
+    menu_name: main
+    title: 'Link 2'
+    parent: 'menu_link_content:74d97e3e-053a-43f5-90f1-e3b06a98581b'
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-50'
+    langcode: en
+    uuid: cc1094f2-a3cb-4374-a962-d061e798020d
+  -
+    menu_name: main
+    title: 'Link 3'
+    parent: null
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '0'
+    langcode: en
+    uuid: 70e78b66-43a6-4d77-b803-dc962ee9b0e9
+  -
+    menu_name: main
+    title: 'Link 4'
+    parent: 'menu_link_content:74d97e3e-053a-43f5-90f1-e3b06a98581b'
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-49'
+    langcode: en
+    uuid: ed1914aa-46b1-45fd-8c9b-2688d50e4784
+  -
+    menu_name: main
+    title: 'Link 5'
+    parent: 'menu_link_content:ed1914aa-46b1-45fd-8c9b-2688d50e4784'
+    uri: 'internal:#'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-50'
+    langcode: en
+    uuid: d338b841-f73c-45be-9e29-4a24d58613af
+  -
+    menu_name: admin
+    title: 'Custom Block Library'
+    parent: system.admin_content
+    uri: 'internal:/admin/structure/block/block-content'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-85'
+    langcode: en
+    uuid: 8cbb8a57-edc4-4117-a0b6-4f33dc84fb40
+  -
+    menu_name: admin
+    title: 'Widget Library'
+    parent: system.admin_content
+    uri: 'internal:/admin/content/paragraphs'
+    link_title: ''
+    description: null
+    enabled: '1'
+    expanded: '0'
+    weight: '-99'
+    langcode: en
+    uuid: 963c1388-d4ff-44de-8088-17c37176cfaf

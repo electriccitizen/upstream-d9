@@ -1,0 +1,414 @@
+/* ========================
+  BUTTONS
+========================== */
+$buttonPadding: 1.15rem 1.5rem 1rem;
+
+///mixin - button
+@mixin button{
+	background-image: none;
+	background-color: $buttonBack;
+	border: none;
+	border-radius: 0;
+	color: $buttonText;
+	line-height: 1.15;
+	padding: $buttonPadding;
+	display: inline-block;
+	vertical-align: middle;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: .02em;
+	font-weight: $heavy;
+	font-size: $button;
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: $spaceMd;
+	@include transColor(.3s);
+	text-shadow: none;
+	&:hover,&:focus {
+		color: $buttonTextHover;
+		background-color: $buttonBackHover;
+		background-image: none;
+		outline: none;
+		border: none;
+		box-shadow: none;
+		text-decoration: none;
+	}
+	&:active{
+		color: $buttonTextActive;
+		background-color: $buttonBackActive;
+		border: none;
+		box-shadow: none;
+	}
+}//end button mixin
+
+///mixin - outlineButton
+@mixin outlineButton($outlineColor){
+	@include button;
+	background: transparent;
+	border: 1px solid $outlineColor;
+	color: $outlineColor;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		color: $buttonTextHover;
+		border: 1px solid $buttonBackHover;
+	}
+	&:active{
+		background: $buttonBackActive;
+		color: $buttonTextActive;
+		border: 1px solid $buttonBackActive;
+	}
+}
+
+@mixin submitButton{
+	@include button;
+	background: $submitBack;
+	color: $submitText;
+	min-width: 120px;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		color: $buttonTextHover;
+		border-color: $buttonBackHover;
+	}
+	&:active{
+		background: $buttonBackActive;
+		color: $buttonTextActive;
+		border-color: $buttonBackActive;
+	}
+}
+
+@mixin altButton{
+	@include submitButton;
+	background: $altBack;
+	color: $altText;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		color: $buttonTextHover;
+		border-color: $buttonBackHover;
+	}
+	&:active{
+		background: $buttonBackActive;
+		color: $buttonTextActive;
+		border-color: $buttonBackActive;
+	}
+}
+
+@mixin resetButton{
+	@include submitButton;
+	background: $resetBack;
+	color: $resetText;
+	border-color: $resetBack;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		color: $buttonTextHover;
+		border-color: $buttonBackHover;
+		padding: $buttonPadding;
+	}
+	&:active{
+		background: $buttonBackActive;
+		color: $buttonTextActive;
+		border-color: $buttonBackActive;
+		padding: $buttonPadding;
+	}
+}
+
+@mixin cautionButton{
+	@include submitButton;
+	background: $cautionBack;
+	color: $cautionText;
+	border-color: $cautionBack;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		color: $buttonTextHover;
+		border-color: $buttonBackHover;
+	}
+	&:active{
+		background: $buttonBackActive;
+		color: $buttonTextActive;
+		border-color: $buttonBackActive;
+	}
+}
+
+%dropbutton{
+	input,.button,a,button{
+		border-radius: 0 !important;
+		box-shadow: none;
+		background: $siteBack;
+		text-shadow: none;
+		border-color: $borderRule;
+		font-size: 1.4rem;
+		font-weight: $regular;
+		&.form-submit{
+			text-transform: none;
+		}
+		&:hover,&:focus{
+			background-color: $buttonBackHover !important;
+			background-image: none !important;
+			border-radius: 0 !important;
+			box-shadow: none;
+		}
+		&:active{
+			background: $buttonBackActive;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+}
+
+.button.js-hide{
+	display: none !important;
+}
+.button{
+	@include button;
+	&:focus{
+		z-index: inherit;
+	}
+}
+button{
+	&:focus{
+		outline: none;
+	}
+}
+.form-submit{
+	@include submitButton;
+}
+.button--danger,#edit-reset,a.button--danger,.button[value="Remove"],.button[value="Delete"],.button[value="Reset to alphabetical"],.button[value="Reset"]{
+	@include resetButton;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	@include smallTab{
+		width: auto;
+	}
+}//end reset danger buttons
+.button[data-drupal-selector="edit-cancel"],.button[data-drupal-selector="edit-actions-cancel"]{
+	@include cautionButton;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+	@include smallTab{
+		width: auto;
+	}
+}//end reset danger buttons
+
+.button--small,.no-touchevents .button--small{
+	@include outlineButton($borderRule);
+	background: $siteBack;
+	color: $link;
+	font-weight: $regular;
+	font-size: 1.2rem;
+	margin-bottom: 0;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+	border-radius: 0;
+	&.button--small-override{
+		font-size: 1.8rem;
+		border-width: 2px;
+		font-weight: $heavy;
+		margin-bottom: $spaceSm;
+		&:hover,&:focus{
+			background: $buttonBackHover;
+			color: $buttonTextHover;
+			border: 1px solid $buttonBackHover;
+			@include transAll(.3s);
+		}
+		&:active{
+			background: $buttonBackActive;
+			color: $buttonTextActive;
+			border: 1px solid $buttonBackActive;
+		}
+	}
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		border-color: $buttonBackHover;
+		color: $buttonTextHover;
+		@include transAll(.3s);
+	}
+	&:active{
+		background: $buttonBackActive;
+		border-color: $buttonBackActive;
+		color: $buttonTextActive;
+	}
+}//end button--small
+
+.button--primary {
+	@include button;
+	&.button--small{
+		@extend .button--small;
+	}
+}//end button primary
+
+.button-outline{
+	@include outlineButton($link);
+}
+
+.button{
+	font-size: $baseSize;
+	padding: $buttonPadding;
+}
+
+.button-action{
+	&:before{
+		font-size: $baseSize;
+	}
+}
+
+.draggable{
+	.form-submit:not(.image-button){
+		@extend .button--small;
+		padding: .95rem 1rem;
+		min-width: 80px;
+		margin-bottom: 0;
+	}
+	//reset to regular buttons for in-paragraph forms
+	.ief-entity-operations,.fieldset-wrapper .container-inline{
+		.form-submit:not(.image-button){
+			border-color: $buttonBack;
+			background: $buttonBack;
+			color: $buttonText;
+			font-weight: $heavy;
+			margin-bottom: $spaceXxs;
+			&:hover,&:focus{
+				border-color: $buttonBackHover;
+				background: $buttonBackHover;
+				color: $buttonTextHover;
+			}
+			&:active{
+				border-color: $buttonBackActive;
+				background: $buttonBackActive;
+				color: $buttonTextActive;
+			}
+			&[value="Remove"]{
+				background: $resetBack;
+				color: $resetText;
+				border-color: $resetBack;
+				&:hover,&:focus{
+					border-color: $buttonBackHover;
+					background: $buttonBackHover;
+					color: $buttonTextHover;
+				}
+				&:active{
+					border-color: $buttonBackActive;
+					background: $buttonBackActive;
+					color: $buttonTextActive;
+				}
+			}
+		}//end form submit
+	}//end ief draggable
+}//end draggable 
+
+#edit-clear-cache{
+	.button{
+		@include altButton;
+	}
+}
+
+
+//dropbuttons
+.js{
+	.dropbutton-multiple,.dropbutton-wrapper,.dropbutton-single{
+		.dropbutton-widget{
+			border-radius: 0;
+			text-shadow: none;
+			background: $siteBack;
+			border-color: $borderRule;
+			&:empty{
+				border: none;
+			}
+			.dropbutton-action,.dropbutton-toggle{
+				@extend %dropbutton;
+			}
+		}//end dropbutton widget
+		.dropbutton-action{
+			@extend %dropbutton;
+		}
+		.dropbutton-arrow{
+			border-width: 5px 6px 0;
+			border-top-color: $darkGrey;
+			border-bottom-color: transparent;
+			border-left-color: transparent;
+			border-right-color: transparent;
+		}
+		&.open{
+			.dropbutton-arrow{
+				border-width: 0 6px 5px;
+				border-top-color: transparent;
+				border-bottom-color: $darkGrey;
+			}
+		}
+	}//end dropbutton
+	.views-edit-view{
+		.dropbutton-multiple,.dropbutton-wrapper,.dropbutton-single{
+			.dropbutton-widget{
+				border-radius: 0;
+				text-shadow: none;
+				background: $siteBack;
+				border-color: $borderRule;
+				&:empty{
+					border: none;
+				}
+				.dropbutton-action,.dropbutton-toggle{
+					@extend %dropbutton;
+				}
+			}//end dropbutton widget
+			.dropbutton-action{
+				@extend %dropbutton;
+			}
+		}//end dropbutton
+	}
+}//end js
+
+
+//draggable buttons
+.draggable:not([class*="paragraph"]) td{
+	.form-submit{
+		@extend .button--small;
+		padding: .75rem 1rem;
+		min-width: 80px;
+		margin-bottom: 0;
+		&[value="Cancel"]{
+			background: $resetBack;
+			color: $resetText;
+			border-color: $resetBack;
+			&:hover,&:focus{
+				background: $buttonBackHover;
+				color: $buttonTextHover;
+				border-color: $buttonBackHover;
+			}
+			&:active{
+				background: $buttonBackActive;
+				color: $buttonTextActive;
+				border-color: $buttonBackActive;
+			}
+		}
+	}//end form submit
+}//end draggable td
+.image-button,.draggable:not([class*="paragraph"]) td .form-submit.image-button{
+	min-width: 20px;
+	border: 0;
+	&:hover,&:focus,&:active{
+		background: transparent;
+		border: 0;
+		opacity: .6;
+	}
+} 
+
+
+/* CKE EMBED BUTTONS
+------------------------- */
+.cke_button__media{
+	.cke_button_icon{
+		&.cke_button__media_icon{
+			background-image: url('../images/icons/admin-icons/media-embed.svg') !important;
+		}
+	}
+}
+.cke_button__document{
+	.cke_button_icon{
+		&.cke_button__document_icon{
+			background-image: url('../images/icons/file/generic.svg') !important;
+		}
+	}
+}
+
+

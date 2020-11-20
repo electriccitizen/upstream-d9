@@ -1,0 +1,601 @@
+/* ==============
+	 GLOBAL STYLES
+================= */
+body {
+	background: $siteBack;
+	width: 100%;
+	div{
+		box-sizing: border-box;
+
+		*{
+			box-sizing: inherit;
+		}
+	}
+	&.unpublished{
+		background: $unpub;
+	}
+	.dialog-off-canvas-main-canvas > .layout-container{
+		padding-top: 0;
+	}
+}//end body
+
+.overflow-guard{
+	overflow-x: hidden;
+}
+
+.container-inline div{
+	display: inline;
+}
+
+#block-citizen-patterns-help{
+	padding: $elementSpace 0;
+	max-width: $contentStop;
+	@include auto;
+	h2{
+		margin-bottom: $spaceSm;
+		font-size: 2.4rem;
+	}
+	p{
+		font-size: 1.6rem;
+		margin-bottom: $spaceXs;
+		small{
+			font-size: 1.4rem;
+			font-style: italic;
+		}
+	}
+}
+
+/* ADMIN TOOLBAR
+------------------ */
+#toolbar-bar{
+	button{
+		margin-bottom: 0;
+	}
+	.toolbar-vertical &{
+		max-height: 39px;
+	}
+}
+.toolbar-tray-horizontal{
+	.menu-item--expanded{
+		background: none;
+	}
+	.menu-item{
+		&:hover{
+			background-color: $iceBlue;
+			a{
+				background-color: transparent;
+			}
+		}
+		a:focus{
+			background-color: $iceBlue;
+		}
+		a:active{
+			background-color: $darkIce;
+		}
+	}
+	ul{
+		li.menu-item--expanded{
+			ul{
+				li.menu-item--expanded{
+					background-image: url('../images/form-elements/caret-right-blue.svg');
+					background-size: 16px 16px;
+					&:hover{
+						background-image: url('../images/form-elements/caret-right-blue-dark.svg');
+					}
+				}
+			}
+		}
+	}
+}//end toolbar horizontal
+
+/* MAP PINS
+-------------- */
+//google api map pins
+.gm-style .gm-style-iw{
+	font-size: 2rem;
+	strong{
+		font-weight: $heavy;
+	}
+	em{
+		font-style: italic;
+	}
+	h2{
+		font-size: 1.6rem;
+	}
+	h3{
+		font-size: 1.4rem;
+	}
+	p:last-child{
+		margin-bottom: 0;
+	}
+}
+.geolocation-formatter-map-wrapper{
+	button{
+		min-width: 0;
+	}
+}
+
+
+/* SKIP NAV
+------------- */
+.overflow-guard > a.focusable{
+	&:focus{
+		position: fixed !important;
+		top: 0;
+		left: 0;
+		z-index: 9999;
+		display: block;
+		width: 100%;
+		background: $siteBack;
+		padding: .5rem 2rem;
+	}
+}
+
+
+/* KINTING
+-------------- */
+.kint{
+	z-index: 9999;
+	top: 200px;
+	right: 5%;
+	width: 90%;
+	max-width: 800px;
+	@include calc(max-height, "90% - 200px");
+	overflow: scroll;
+}
+
+/* ADMIN NODE EDIT TABS
+----------------- */
+#block-citizen-patterns-local-tasks{
+	max-width: $contentStop;
+	padding: 30px 0 0;
+	position: relative;
+	@include auto;
+	body:not(.logged-in) &{
+		display: none;
+	}
+	.tabs {
+		@include listReset;
+		@include safeFlex(row,wrap,null,null);
+		border-bottom: 1px solid $borderRule;
+		li {
+			@include onlySmall{
+				width: 100%;
+			}
+			@include tab{
+				&:not(:first-child){
+					margin-left: -1px;
+				}
+			}
+		}
+		a {
+			text-transform: none;
+			padding: 4px 12px;
+			display: block;
+			margin-bottom: $spaceXs;
+			border: 1px solid $borderRule;
+			font-weight: $heavy;
+			color: $black;
+			&:hover,&:focus{
+				background: $buttonBackHover;
+				color: $buttonTextHover;
+				text-decoration: none;
+			}
+			&:active{
+				background: $buttonBackActive;
+				color: $buttonTextActive;
+			}
+			&.is-active {
+				background-color: $adminGold;
+				&:hover,&:focus{
+					background: $buttonBackHover;
+					color: $buttonTextHover;
+				}
+				&:active{
+					background: $buttonBackActive;
+					color: $buttonTextActive;
+				}
+			}
+			@include tab{
+				margin-bottom: -1px;
+			}
+		}//end a
+	}// end tabs
+}//end local tasks
+
+
+/* FEATHERLIGHT
+------------------- */
+.featherlight{
+	background: $modalBack;
+	.featherlight-content {
+		background: $siteBack;
+		padding: 0px !important;
+		border-bottom: 0px !important;
+		margin-left: 5%;
+		margin-right: 5%;
+		//controls
+		.featherlight-close-icon {
+			background: none;
+			font-size: 24px;
+			color: $modalGalButton;
+			text-shadow: 2px 2px 3px $modalGalButtonShadow;
+			height: 32px;
+			width: 32px;
+			font-family: $bodyFont;
+			&:hover,&:focus{
+				color: $modalGalButtonHover;
+				background: $modalGalButtonBackHover;
+				text-shadow: 2px 2px 3px $modalGalButtonShadowHover;
+			}
+		}
+		.featherlight-previous {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: auto;
+			width: 15%;
+			min-width: 60px;
+			span {
+				display: block;
+				width: 12px;
+				height: 24px;
+				left: 10px;
+				font-size: 0;
+				@include triangle(left,24px,12px,$white);
+				@include tab{
+					width: 20px;
+					height: 40px;
+					@include triangle(left,40px,20px,$white);
+				}
+			}
+			&:hover,&:focus {
+				background: $modalGalButtonBackHover;
+				span {
+					border-right-color: $link;
+					@include transition(border-right-color, 0.3s, ease);
+				}
+			}
+		}
+		//end previous
+		.featherlight-next {
+			position: absolute;
+			right: 0;
+			top: 0;
+			left: auto;
+			width: 15%;
+			min-width: 60px;
+			span {
+				display: block;
+				width: 12px;
+				height: 24px;
+				right: 10px;
+				font-size: 0;
+				@include triangle(right,24px,12px,$white);
+				@include tab{
+					width: 20px;
+					height: 40px;
+					@include triangle(right,40px,20px,$white);
+				}
+			}
+			&:hover,&:focus {
+				background: $modalGalButtonBackHover;
+				span {
+					border-left-color: $link;
+					@include transition(border-left-color, 0.3s, ease);
+				}
+			}
+		}
+		//end next
+		img {
+			display: block;
+		}
+		.field-caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			z-index: 30;
+			background: rgba(35,35,35,0.6);
+			color: $white;
+			padding: 1rem 2rem;
+		}
+		.gallery-text {
+			max-width: $textMax;
+			padding: 4rem 6rem;
+		}
+	}//end featherlight content
+}//end featherlight
+
+/* SLIDER STYLING
+-------------- */
+.slick-slider {
+	.slick-list {
+		@include listReset;
+	}
+	.slick-arrow {
+		z-index: 1;
+		height: 100%;
+		top: 0;
+		@include translate(0,0);
+		width: 15%;
+		min-width: 60px;
+		&:before {
+			content: '' !important;
+			display: block;
+			position: absolute;
+			@include calc(top, "50% - 10px");
+		}
+		&.slick-prev {
+			left: 0;
+			&:before{
+				@include triangle(left,24px,12px,$white);
+				left: 20px;
+				@include tab {
+					@include triangle(left,40px,20px,$white);
+				}
+			}
+			&:hover,&:focus{
+				&:before{
+					border-right-color: $link;
+					@include transition(border-right-color, 0.3s, ease);
+				}
+			}
+		}
+		&.slick-next {
+			right: 0;
+			&:before{
+				@include triangle(right,24px,12px,$white);
+				right: 20px;
+				@include tab {
+					@include triangle(right,40px,20px,$white);
+				}
+			}
+			&:hover,&:focus{
+				&:before{
+					border-left-color: $link;
+					@include transition(border-left-color, 0.3s, ease);
+				}
+			}
+		}
+	}
+}//end slick-slider
+
+/* RESPONSIVE PREVIEW
+------------------------- */
+#responsive-preview-toolbar-tab .responsive-preview-trigger.active{
+	background: $adminGreen;
+}
+#responsive-preview-toolbar-tab .responsive-preview-trigger.active:hover{
+	background: $midGrey;
+}
+
+#responsive-preview-modal-background{
+	background: $adminTransGrey;
+}
+#responsive-preview-frame-container{
+	border-radius: 5px;
+}
+.responsive-preview-device-label-text{
+	position: relative;
+	top: -2px;
+	color: $offWhite;
+}
+.responsive-preview-device-label-text:after{
+	content: none !important;
+}
+.responsive-preview-device-label-text span{
+	display: none;
+}
+.responsive-preview-control.responsive-preview-close{
+	right: -5px;
+}
+#responsive-preview-orientation:before{
+	height: 20px;
+	width: 20px;
+	background: url('../images/preview/orientation-white.svg') no-repeat;
+	background-size: 13px 13px;
+	background-position: center;
+	top: 6px;
+}
+#responsive-preview-close:before{
+	height: 20px;
+	width: 20px;
+	background: url('../images/preview/close-white.svg') no-repeat;
+	background-size: 13px 13px;
+	background-position: center;
+	top: 6px;
+}
+
+.responsive-preview-frame{
+	#block-citizen-patterns-local-tasks{
+		display: none !important;
+	}
+}
+
+/* NON-LAYOUT-BUILDER SIDEBAR PANELs, OFF CANVAS, UI- ELEMENTS
+-------------------------------------------- */
+
+/* MODERATION SIDEBAR */
+.moderation-sidebar-actions{
+	a,input.button{
+		&:hover,&:focus{
+			text-decoration: underline !important;
+		}
+	}
+}
+
+/* DIALOGS */
+.ui-dialog .ui-dialog-title{
+	white-space: normal;
+}
+.ui-dialog-off-canvas + .select2-container--open .select2-dropdown{
+	font-size: 1.4rem;
+}
+
+/* OFF CANVAS */
+.ui-dialog-off-canvas #drupal-off-canvas{
+	.js-form-type-checkbox{
+		@include customOptions;
+	}
+	.ui-autocomplete li a{
+		background: $siteBack;
+		font-size: 1.4rem;
+		&.ui-state-active{
+			background: $link;
+			border-color: $link;
+			color: $white !important;
+			text-decoration: none;
+			margin: 0;
+		}
+	}
+
+	.form-item{
+		margin-bottom: $spaceSm;
+	}
+
+	.form-text{
+		color: $darkGrey;
+		border: 2px solid $link;
+		background: $white;
+		margin-top: $spaceXxs;
+		&:focus{
+			@include placeholderFocus;
+			outline: none;
+			border-color: $link;
+			box-shadow: inset 0 0 0 1px $link;
+			background: $offWhite;
+		}
+	}//end form-text
+
+	.js-form-type-checkbox{
+		label{
+			display: inline-block;
+		}
+	}
+
+	.select2-container--default{
+		margin-top: $spaceXxs;
+		max-width: 100%;
+		.select2-selection--single,.select2-selection--multiple{
+			border-color: $link;
+			font-size: 1.4rem;
+			.select2-selection__arrow,.select2-search--inline:after{
+				background-color: transparent;
+			}
+		}//end select 2 selection single
+	}//end select2 container default
+
+	input[type="submit"].button--primary{
+		@include submitButton;
+		border-radius: 0;
+	}
+	a.button.dialog-cancel{
+		margin-top: -$spaceXs;
+		@include cautionButton;
+	}
+}//end off canvas
+
+/* TOOLTIPS
+------------------ */
+.ui-tooltip{
+	font-size: 1.5rem;
+	border: 1px solid $borderRule;
+	padding: 1rem 2rem;
+	background: $offWhite;
+	box-shadow: 2px 2px 3px rgba(35,35,35,0.2);
+}
+
+/* DATEPICKER
+------------------- */
+.ui-datepicker{
+	padding: 0;
+	&.ui-widget-content{
+		border: $elementBorder;
+		border-radius: 0;
+	}
+	.ui-datepicker-header{
+		background: $datepickerHeader;
+		color: $datepickerHeaderElement;
+		border: 0;
+		border-radius: 0;
+		select{
+			@include browserWipe;
+			color: $white;
+			border: 0;
+			background-image: url('../images/form-elements/arrow-down-white.svg');
+			background-repeat: no-repeat;
+			background-size: 12px;
+			background-position: 50px center;
+		}
+		a{
+			&.ui-state-hover{
+				border-color: transparent;
+				background: rgba(255,255,255,0.2);
+			}
+			&.ui-datepicker-next{
+				.ui-icon{
+					background: url('../images/form-elements/caret-right-white.svg');
+					background-repeat: no-repeat;
+					background-size: 8px;
+					background-position: center;
+				}
+			}
+			&.ui-datepicker-prev{
+				.ui-icon{
+					background: url('../images/form-elements/caret-right-white.svg');
+					background-repeat: no-repeat;
+					background-size: 8px;
+					background-position: center;
+					@include rotate(180);
+				}
+			}
+		}//end a
+	}//end ui-datepicker-header
+	.ui-datepicker-calendar{
+		thead{
+			background: $datepickerDaysBack;
+			color: $datepickerDays;
+		}
+		td{
+			.ui-state-default{
+				border-color: $datepickerDateBorder;
+				background: $datepickerDateBack;
+				color: $datepickerDate;
+				&:hover,&:focus{
+					background: $buttonBackHover;
+					color: $buttonTextHover;
+				}
+				&:active{
+					background: $buttonBackActive;
+					color: $buttonTextActive;
+				}
+				&.ui-state-highlight{
+					background: $datepickerCurrentBack;
+					color: $datepickerCurrent;
+					&:hover,&:focus{
+						background: $buttonBackHover;
+						color: $buttonTextHover;
+					}
+					&:active{
+						background: $buttonBackActive;
+						color: $buttonTextActive;
+					}
+				}//end highlight
+				&.ui-state-active{
+					background: $datepickerSelectedBack;
+					color: $datepickerSelected;
+					&:hover,&:focus{
+						background: $buttonBackHover;
+						color: $buttonTextHover;
+					}
+					&:active{
+						background: $buttonBackActive;
+						color: $buttonTextActive;
+					}
+				}
+			}//end ui-state-default
+		}//end td
+	}//end calendar
+}//end ui-datepicker
+

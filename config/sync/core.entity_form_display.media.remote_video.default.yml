@@ -1,0 +1,35 @@
+uuid: 31e1f943-96cd-4ad6-8a90-7d2d3f476bfe
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.remote_video.field_media_categories
+    - field.field.media.remote_video.field_media_oembed_video
+    - media.type.remote_video
+  module:
+    - media
+id: media.remote_video.default
+targetEntityType: media
+bundle: remote_video
+mode: default
+content:
+  field_media_categories:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_media_oembed_video:
+    type: oembed_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  name: true
+  path: true
+  status: true
+  uid: true

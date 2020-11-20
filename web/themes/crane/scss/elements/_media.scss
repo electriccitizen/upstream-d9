@@ -1,0 +1,170 @@
+/* ==============
+	 MEDIA
+================== */
+.media-library-item__attributes{
+	min-height: 22px;
+}
+
+/* CAPTION FIELD
+------------------- */
+.field--name-field-caption{
+	.js-form-type-textarea{
+		textarea{
+			max-width: 600px;
+			max-height: 76px;
+		}
+	}
+}
+
+/* FOCAL POINT THUMBNAIL
+-------------------------- */
+.focal-point-preview-link{
+	margin-top: .75rem;
+}
+
+/* CUSTOM DOCUMENT ICONS
+----------------------- */
+%customIconWrap{
+	display: block;
+	height: auto;
+  width: 100%;
+  background-color: #f6f6f6;
+  background-image: url('../images/icons/file/generic.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120px 72px;
+  margin-bottom: .5rem;
+  padding-bottom: 60%;
+}
+%pdf{
+	background-image: url('../images/icons/file/pdf.svg');
+}
+%word{
+	background-image: url('../images/icons/file/word.svg');
+}
+%excel{
+	background-image: url('../images/icons/file/excel.svg');
+}
+%powerpoint{
+	background-image: url('../images/icons/file/powerpoint.svg');
+}
+
+/* FILE ICONS
+--------------- */
+%docIcons{
+	position: relative;
+	padding-left: 20px;
+	&:hover:before,&:focus:before{
+		opacity: .7;
+	}
+	&:before{
+		content:'';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		background-size: 16px 16px;
+	}
+}
+.text-with-summary,.text-long,span.file{
+	a[href$='.pdf']{
+		@extend %docIcons;
+		&:before{			
+			@extend %pdf;
+		}	
+	}
+
+	//word
+	a[href$='.doc'],a[href$=".docx"]{
+		@extend %docIcons;
+		&:before{
+			@extend %word;
+		}
+	}
+	//excel
+	a[href$='.xls'],a[href$=".xlsx"]{
+		@extend %docIcons;
+		&:before{
+			@extend %excel;
+		}
+	}
+	//powerpoint
+	a[href$='.ppt'],a[href$=".pptx"]{
+		@extend %docIcons;
+		&:before{
+			@extend %powerpoint;
+		}
+	}
+}//end wysiwyg fields
+
+/* GENERIC FILES */
+span.file{
+	background-image: none;
+	padding-left: 0;
+	a{
+		@extend %docIcons;
+		&:before{
+			background-image: url('../images/icons/file/generic.svg');
+		}
+	}
+}
+
+
+/* MEDIA LIBRARY
+--------------------- */
+.media-library-content{
+	.js-form-type-url{
+		input{
+			@include textInput;
+			margin-right: 2rem;
+		}
+	}
+	.button--primary{
+		margin-bottom: 0;
+	}
+	.media-library-item__click-to-select-checkbox{
+		top: 4px;
+		left: auto;
+		right: 2px;
+	}
+	.view-filters{
+		@include tab{
+			@include calc(width, "100% - 200px");
+		}
+		.views-exposed-form{
+			#views-filter-wrapper{
+				background: none;
+				margin-bottom: 0;
+				padding: 0;
+				.form--inline > .form-item{
+					label{
+						color: $black;
+					}
+				}
+				.form-submit{
+					margin-bottom: .75rem;
+				}
+			}
+		}//end views exposed form
+	}//end views filters
+	.drawer-toggle{
+		#drupal-modal &{
+			display: block;
+			margin-top: 1em;
+		}
+	}
+}//end media library content
+
+/* HIDE EXTRAS VIEWS INFINITE BUTTONS */
+.media-library-widget-modal{
+	.ui-dialog-buttonset.form-actions{
+		button.media-library-select.ui-widget:not(:first-child){
+			display: none !important;
+		}
+	}
+}
+

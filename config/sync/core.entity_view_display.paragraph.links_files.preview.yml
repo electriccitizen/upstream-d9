@@ -1,0 +1,48 @@
+uuid: 51fa44a9-7262-497a-b503-c932a3b9a16d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.links_files.field_file_multi
+    - field.field.paragraph.links_files.field_link_multi
+    - field.field.paragraph.links_files.field_widget_title
+    - paragraphs.paragraphs_type.links_files
+  module:
+    - layout_builder
+    - link
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: SnsIhBw44FP5iu1GzHlAyz6Q14QlkAnUtbju-VKKx7s
+id: paragraph.links_files.preview
+targetEntityType: paragraph
+bundle: links_files
+mode: preview
+content:
+  field_file_multi:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: inline
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+  field_link_multi:
+    type: link
+    weight: 0
+    region: content
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+hidden:
+  field_widget_title: true
+  search_api_excerpt: true

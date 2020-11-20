@@ -1,0 +1,24 @@
+uuid: 9eb0c3ff-5584-4437-9585-86992178b9fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: thumbnail_cropped_2x
+label: 'Thumbnail Cropped 2x'
+effects:
+  7db01754-0b6b-4da9-bea4-0250e9df1193:
+    uuid: 7db01754-0b6b-4da9-bea4-0250e9df1193
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 200
+      height: 200
+      crop_type: focal_point
+  16f8b6e0-1ea0-4562-98c7-b7b8a453f219:
+    uuid: 16f8b6e0-1ea0-4562-98c7-b7b8a453f219
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 40

@@ -1,0 +1,87 @@
+uuid: 99f94f10-52c6-49b0-b772-c72438b8ec69
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_widgets
+    - paragraphs.paragraphs_type.accordion_group
+    - paragraphs.paragraphs_type.basic_page_section
+    - paragraphs.paragraphs_type.form
+    - paragraphs.paragraphs_type.horizontal_rule
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.links_files
+    - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+  module:
+    - entity_reference_revisions
+id: paragraph.basic_page_section.field_section_widgets
+field_name: field_section_widgets
+entity_type: paragraph
+bundle: basic_page_section
+label: 'Widgets in this Section'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion_group: accordion_group
+      form: form
+      horizontal_rule: horizontal_rule
+      image: image
+      links_files: links_files
+      pullquote: pullquote
+      text: text
+      video: video
+    target_bundles_drag_drop:
+      accordion_group:
+        enabled: true
+        weight: -31
+      accordion_item:
+        weight: -30
+        enabled: false
+      basic_page_section:
+        weight: -29
+        enabled: false
+      block_placer:
+        weight: -28
+        enabled: false
+      form:
+        enabled: true
+        weight: -27
+      from_library:
+        weight: -18
+        enabled: false
+      gallery:
+        weight: -19
+        enabled: false
+      horizontal_rule:
+        enabled: true
+        weight: -26
+      image:
+        enabled: true
+        weight: -25
+      landing_page_section:
+        weight: -24
+        enabled: false
+      links_files:
+        enabled: true
+        weight: -23
+      pullquote:
+        enabled: true
+        weight: -22
+      text:
+        enabled: true
+        weight: -21
+      video:
+        enabled: true
+        weight: -20
+      view_placer:
+        weight: -17
+        enabled: false
+field_type: entity_reference_revisions

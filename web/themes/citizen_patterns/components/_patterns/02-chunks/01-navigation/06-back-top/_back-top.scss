@@ -1,0 +1,30 @@
+/* ===================
+   BACK TO TOP
+==================== */
+
+.back-anchor{
+	display: none;
+	position: fixed;
+	bottom: 3%;
+	right: 3%;
+	box-shadow: 3px 3px 5px rgba(35,35,35, 0.25);
+	z-index: 500;
+	border-radius: 50%;
+	a{
+		display: block;
+		width: 55px;
+		height: 55px;
+		background-color: rgba(0,0,0,0.45);
+		border-radius: 50%;
+		position: relative;
+		text-align: center;
+		background-image: url('../images/form-elements/caret-down-white.svg');
+		background-size: 24px;
+		background-repeat: no-repeat;
+		background-position: center 50%;
+		@include rotate(180);
+		&:hover,&:focus{
+			background-color: $link;
+		}
+	}
+}//end back anchor

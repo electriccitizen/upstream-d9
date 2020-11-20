@@ -1,0 +1,33 @@
+uuid: 15f878bd-ca83-4e9d-b4f1-aa8799fbb610
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: qFFa7Wm9Y61xmTrkHL4mA1Pgy7X6fGV_s7meR_81LGQ
+id: front
+label: 'Front page'
+tags:
+  shortlink: '[site:url]'
+  title: '[site:name]'
+  content_language: en
+  canonical_url: '[site:url]'
+  description: '[site:slogan]'
+  geo_region: US-MN
+  generator: 'Drupal 8 (http://drupal.org)'
+  abstract: '[site:slogan]'
+  article_modified_time: '[node:changed:custom:c]'
+  article_published_time: '[node:created:custom:c]'
+  og_type: Website
+  og_image: '[node:field_banner:entity:field_media_image]'
+  og_updated_time: '[node:changed:custom:c]'
+  og_url: '[site:url]'
+  og_description: '[site:slogan]'
+  og_country_name: US
+  og_site_name: '[site:name]'
+  og_title: '[site:name]'
+  twitter_cards_image: '[node:field_banner:entity:field_media_image]'
+  twitter_cards_page_url: '[site:url]'
+  twitter_cards_description: '[site:slogan]'
+  twitter_cards_image_alt: '[node:field_banner:entity:field_media_image]:alt'
+  twitter_cards_type: summary
+  twitter_cards_title: '[site:name]'

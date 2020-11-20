@@ -1,0 +1,35 @@
+# Only top level links that are not parents are should have isActive. Like in Drupal, the top level links in this section should be the children of one of the main nav links in superfish.yml. 
+
+blockTitle:
+  'In This Section'
+showTitle:
+  true
+menuLinks:
+  1:
+    title:
+      'Journals'
+  2:
+    title:
+      'Books'
+    levelTwo:
+      1:
+        title:
+          'Coloring'
+      2:
+        title:
+          'Diaries'
+      3:
+        title:
+          'Pop-Up'
+      4:
+        title:
+          'Coffee Table'
+  3:
+    title:
+      'Videos'
+    isActive:
+      true
+  4:
+    title:
+      'Phone a Friend'
+

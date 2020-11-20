@@ -1,0 +1,9 @@
+# allowed types (views row classes): horizontal, vertical
+type:
+  horizontal
+image:
+  true
+date:
+  true
+body:
+  true

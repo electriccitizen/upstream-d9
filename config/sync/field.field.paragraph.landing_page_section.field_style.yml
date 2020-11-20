@@ -1,0 +1,29 @@
+uuid: 38679c68-cbb9-48d0-9790-61a9cb60f0e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_style
+    - paragraphs.paragraphs_type.landing_page_section
+    - taxonomy.vocabulary.section_styles
+id: paragraph.landing_page_section.field_style
+field_name: field_style
+entity_type: paragraph
+bundle: landing_page_section
+label: Style
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      section_styles: section_styles
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,57 @@
+/* ========================
+  LISTS
+========================== */
+
+.item-list ul{
+	list-style: none;
+	padding: 0;
+	margin: .5rem 0 .5rem 2rem;
+	li{
+		position: relative;
+		padding-left: 15px;
+		list-style-type: none;
+		margin: 0 0 .5rem;
+		&:before{
+			content: '•';
+			position: absolute;
+			left: 0;
+			top: 1px;
+			font-size: 12px;
+		}
+		&.ui-tabs-tab{
+			&:before{
+				content: none;
+			}
+		}
+	}
+}//end ul
+
+.admin-list{
+	li{
+		&:first-child{
+			border-top: 0;
+		}
+		a{
+			padding: 14px 15px 15px 25px;
+			background-image: url('../images/icons/admin-icons/caret-right-blue.svg');
+			background-repeat: no-repeat;
+			background-size: 16px 16px;
+			background-position: 0 16px;
+			&:hover,&:focus{
+				background-image: url('../images/icons/admin-icons/caret-right-grey.svg');
+				background-color: $iceBlue;
+				@include transAll(.3s);
+			}
+		}
+		//hide one-off block types from non-admins
+		body:not(.role-administrator) &{
+			&.social-media-links{
+				display: none;
+				a{
+					pointer-events: none;
+				}
+			}
+		}
+	}//end li
+}//end admin list
+

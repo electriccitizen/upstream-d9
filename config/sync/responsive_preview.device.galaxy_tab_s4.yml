@@ -1,0 +1,12 @@
+uuid: fc268e69-48e0-4c6f-bcd5-3a560a175b67
+langcode: en
+status: 1
+dependencies: {  }
+id: galaxy_tab_s4
+label: 'Galaxy Tab S4'
+weight: 0
+orientation: landscape
+dimensions:
+  width: 1600
+  height: 2560
+  dppx: !!float 2

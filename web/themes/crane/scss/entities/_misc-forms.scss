@@ -1,0 +1,53 @@
+/* ========================
+  MISC FORMS
+========================== */
+
+/* CUSTOM WARNINGS
+------------------ */
+.custom-warning{
+  color: $black;
+  font-size: 14px;
+  border: 2px solid $red;
+  background: rgba(221,36,27,0.2);
+  padding: .25em 1em;
+  display: inline-block;
+}
+
+/* BLOCK LAYOUT
+------------------ */
+.crane .block-admin-display-form{
+	table{
+		tbody{
+			tr.region-title{
+				background: $iceBlue;
+				padding: .5rem .6em;
+				td{
+					.button--small{
+						border-color: $black;
+						color: $black;
+						background: transparent;
+						line-height: 1 !important;
+						&:hover,&:focus{
+							color: $white;
+							background: $midGrey;
+						}
+						&:active{
+							color: $white;
+							background: $black;
+						}
+					}
+				}
+			}//end region-title
+		}//end tbody
+	}//end table
+}//end block layout admin form
+
+
+/* BLOCK CONTENT FORM
+--------------------- */
+.block-content-form{
+	max-width: $textMax;
+	.form-type-vertical-tabs{
+		display: none;
+	}
+}//end block content form

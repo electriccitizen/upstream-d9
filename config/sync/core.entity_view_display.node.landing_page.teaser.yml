@@ -1,0 +1,81 @@
+uuid: d89c6196-9c3d-4857-b404-bc2e0c4f3fb0
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.landing_page.body
+    - field.field.node.landing_page.field_banner
+    - field.field.node.landing_page.field_metatags
+    - field.field.node.landing_page.field_paragraphs
+    - field.field.node.landing_page.layout_builder__layout
+    - node.type.landing_page
+  module:
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0a3880a5-3160-496b-b084-6b9bc48796ed:
+            uuid: 0a3880a5-3160-496b-b084-6b9bc48796ed
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:landing_page:links'
+            additional: {  }
+            weight: 0
+          41d040e2-709b-4b3c-aadd-e190b020f938:
+            uuid: 41d040e2-709b-4b3c-aadd-e190b020f938
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:landing_page:body'
+              formatter:
+                label: hidden
+                type: text_summary_or_trimmed
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+    enabled: true
+    allow_custom: false
+_core:
+  default_config_hash: H5NYP2wiQsA3PZwlgbAXrF5Wc2q9rO9dCqXx-6bJ06g
+id: node.landing_page.teaser
+targetEntityType: node
+bundle: landing_page
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 1
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  addtoany: true
+  field_banner: true
+  field_metatags: true
+  field_paragraphs: true
+  layout_builder__layout: true
+  search_api_excerpt: true

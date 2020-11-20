@@ -1,0 +1,15 @@
+uuid: 33ce16e7-dcd7-49bd-9e61-33be47a263e0
+langcode: en
+status: true
+dependencies: {  }
+name: small_non_crop
+label: 'Small non-crop'
+effects:
+  1100e9c4-4056-4c6b-879a-092617c9c1ba:
+    uuid: 1100e9c4-4056-4c6b-879a-092617c9c1ba
+    id: image_scale
+    weight: 1
+    data:
+      width: 300
+      height: null
+      upscale: false

@@ -31,7 +31,6 @@
 # Sites that do not have any Composer-managed custom modules may
 # delete all of the `modules/custom` lines below.
 # ------------------------------------------------------------------
-/web/modules/custom/*
 #!/web/modules/custom/module_in_repo
 
 
@@ -174,3 +173,17 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# ignore lando
+.ht.router.php
+
+# Ignore Docksal
+.docksal
+
+# Ignore superfish
+web/libraries/superfish/composer.json
+
+# Ignore node_modules & and generated theme images and map files
+web/themes/*/node_modules/
+web/themes/*/images/core/
+web/themes/*/dist/*.css.map

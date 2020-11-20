@@ -1,0 +1,23 @@
+uuid: 690fbbea-7e7b-4a38-87b8-2cb4d46718f1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link_multi
+    - paragraphs.paragraphs_type.links_files
+  module:
+    - link
+id: paragraph.links_files.field_link_multi
+field_name: field_link_multi
+entity_type: paragraph
+bundle: links_files
+label: Links
+description: 'Add links to existing nodes or files as well as external urls.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

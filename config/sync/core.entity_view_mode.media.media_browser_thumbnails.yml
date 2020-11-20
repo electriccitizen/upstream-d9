@@ -1,0 +1,10 @@
+uuid: c024b414-55ca-4c7c-bb7a-df97f7c8eefd
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.media_browser_thumbnails
+label: 'Media Browser Thumbnails'
+targetEntityType: media
+cache: true

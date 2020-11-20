@@ -1,0 +1,19 @@
+uuid: 5f1e12fa-f932-4cb3-89ce-9947dd5993dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchor_link
+    - paragraphs.paragraphs_type.landing_page_section
+id: paragraph.landing_page_section.field_anchor_link
+field_name: field_anchor_link
+entity_type: paragraph
+bundle: landing_page_section
+label: 'Anchor Link'
+description: 'Add an anchor link to this section. Anchor links will automatically build a table of contents above the first section.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,21 @@
+{#
+	DRUPAL: This template is inherited into the field--node--field-paragraphs.html.twig
+#}
+{% block plOpen %}
+	<div class="layout layout--onecol paragraphs-layout">
+		<div class="block-field block-field-paragraphs">
+			<div class="field-paragraphs">
+{% endblock %}
+
+<div class="section{% if background %} background {{ background }}{% else %} backless{% endif %}{% if layout %} {{ layout }}{% endif %}">
+	{%- if anchor -%}<a name="anchor-{{ anchor }}" id="anchor-{{ anchor }}"></a>{%- endif -%}
+	{% block paragraphItem %}
+		{{- item.content -}}
+	{% endblock %}
+</div>
+
+{% block plClose %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

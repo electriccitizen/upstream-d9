@@ -1,0 +1,52 @@
+/* ========================
+  HEADER
+========================== */
+header{
+	.shortcut-action__icon{
+		background: transparent url('../images/icons/admin-icons/shortcut-star.svg') no-repeat left top;
+	}
+	.shortcut-action--add{
+		&:hover,&:focus{
+			.shortcut-action__icon{
+				background: transparent url('../images/icons/admin-icons/shortcut-star.svg') no-repeat left top;
+				opacity: .6;
+			}
+		}
+	}
+	.shortcut-action--remove{
+		.shortcut-action__icon{
+			background: transparent url('../images/icons/admin-icons/shortcut-star-remove.svg') no-repeat left top;
+		}
+		&:hover,&:focus{
+			.shortcut-action__icon{
+				background-position: 0 0;
+				opacity: .6;
+			}
+		}
+	}
+	&.content-header{
+		position: relative;
+		padding: $spaceMd 0 0;
+		background-color: $offWhite;
+		.region-header{
+			border-bottom: 1px solid $tabsBorder;
+			@include desk{
+				@include safeFlex(row,wrap,justify,start);
+			}
+		}
+		.block-page-title-block{
+			.page-title{
+				color: $black;
+				margin-bottom: $spaceSm;
+			}
+		}
+	}//end content ehader
+	&.system-admin_content,&.node-add{
+		.region-header{
+			border-bottom: 0;
+		}
+		#block-crane-content{
+			padding-top: 0;
+		}
+	}
+}//end content-header

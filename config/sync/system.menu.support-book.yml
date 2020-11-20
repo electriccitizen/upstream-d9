@@ -1,0 +1,8 @@
+uuid: 6a114d43-db7d-4f8b-bf36-a89c5c8685f3
+langcode: en
+status: true
+dependencies: {  }
+id: support-book
+label: 'Support Book'
+description: 'Support book sidebar menu'
+locked: false

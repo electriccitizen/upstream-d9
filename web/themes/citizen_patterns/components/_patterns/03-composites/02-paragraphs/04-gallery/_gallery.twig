@@ -1,0 +1,37 @@
+{#
+	DRUPAL: This template is embedded into the Drupal gallery paragraph template.
+#}
+  
+<div class="gallery-type {{ galleryType }}" >
+  <div class="gallery-wrapper">
+    {% if 'lightbox' in galleryType %}
+      {% block lightboxContent %}
+        {% for image in images %}
+          <div class="gal-image featherlight-gal image-gal" href="#item{{ image.id }}">
+            <img src="{{ image.lightSrc }}" />
+            <div class="featherlight-hidden" id="item{{ image.id }}">
+                <img src="{{ image.lightSrc }}" />
+                {% if image.caption %}
+                  <div class="field-caption">{{ image.caption }}</div>
+                {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      {% endblock %}
+    {% else %}
+      {% block sliderContent %}
+        <div class="field-image-multi">
+          {% for image in images %}
+            <div class="gal-image slider-image">
+              <img src="{{ image.sliderSrc }}">
+              {% if image.caption %}
+                <div class="field-caption">{{ image.caption }}</div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endblock %}
+    {% endif %}
+  </div>
+</div>
+

@@ -1,0 +1,23 @@
+{#
+	STYLEGUIDE ONLY: This template is not brought into to Drupal.
+#}
+
+{% import '@base/macros.twig' as styles %}
+
+<fieldset class="fieldgroup form-composite js-form-item form-item js-form-wrapper checkboxes--wrapper">
+	{% if label %}
+		<legend>
+			<span class="fieldset-legend">{{ label }}</span>
+		</legend>
+	{% endif %}
+	<div class="fieldset-wrapper">
+		<div class="form-checkboxes js-webform-checkboxes">
+			{% for option in options %}
+				<div class="js-form-item form-item js-form-type-checkbox {{ styles.formElements }}">
+					<input type="checkbox" name="checkbox" value="{{ option.value }}" class="form-checkbox"/>
+					<label class="option">{{ option.name }}</label>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</fieldset>

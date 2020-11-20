@@ -1,0 +1,11 @@
+{#
+ STYLEGUIDE ONLY: This is the PL example of the branding block. Need a separate PL- block so classes don't conflict with Drupal.
+#}
+
+{% embed '@composites/01-blocks/_00-block.twig' %}
+
+	{% block blockContent %}
+		{% include '@composites/01-blocks/01-branding/_branding.twig' %}
+	{% endblock %}
+
+{% endembed %}

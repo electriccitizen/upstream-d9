@@ -1,0 +1,40 @@
+/* FILE
+=========== */
+
+///mixin - file-upload
+@mixin fileUpload{
+	.js-form-managed-file,.form-managed-file{
+		input.js-form-submit,input.form-submit{
+			@include submitButton;
+			font-size: 13px;
+			padding: 1rem 4rem;
+		}
+		//allowed upload file types description
+		.description{
+			font-size: 1.4rem;
+			line-height: 1.25;
+			opacity: .7;
+			margin-bottom: $spaceXs;
+		}
+	}
+
+} //end file upload mixin
+
+.js-form-type-managed-file,.form-item-file-upload-field,.js-form-item-file-upload-field{
+	@include fileUpload;
+}
+.js-form-type-webform-document-file,.form-item-document-upload,.js-form-item-document-upload{
+	@include fileUpload;
+	label.button{
+		display: inline-block;
+		color: $buttonText;
+		padding: $buttonPadding;
+		font-size: $button;
+		&:hover,&:focus{
+			color: $buttonTextHover;
+		}
+		&:active{
+			color: $buttonTextActive;
+		}
+	}
+}

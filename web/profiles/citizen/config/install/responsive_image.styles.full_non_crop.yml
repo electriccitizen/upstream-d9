@@ -1,0 +1,60 @@
+uuid: 8074a2ca-6b18-4c59-893b-0a31eb4df91f
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.full_non_crop
+    - image.style.large_non_crop
+    - image.style.medium_non_crop
+    - image.style.medium_non_crop_1_5x
+    - image.style.medium_non_crop_2x
+    - image.style.small_non_crop
+    - image.style.small_non_crop_1_5x
+    - image.style.small_non_crop_2x
+  theme:
+    - citizen_patterns
+id: full_non_crop
+label: 'Full non-crop'
+image_style_mappings:
+  -
+    breakpoint_id: citizen_patterns.middesk
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: full_non_crop
+  -
+    breakpoint_id: citizen_patterns.desk
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: large_non_crop
+  -
+    breakpoint_id: citizen_patterns.tablet
+    multiplier: 1.5x
+    image_mapping_type: image_style
+    image_mapping: medium_non_crop_1_5x
+  -
+    breakpoint_id: citizen_patterns.tablet
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: medium_non_crop
+  -
+    breakpoint_id: citizen_patterns.tablet
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: medium_non_crop_2x
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 1.5x
+    image_mapping_type: image_style
+    image_mapping: small_non_crop_1_5x
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small_non_crop
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: small_non_crop_2x
+breakpoint_group: citizen_patterns
+fallback_image_style: full_non_crop

@@ -1,0 +1,56 @@
+/* ===============
+   GALLERY WIDGET
+==================== */
+.paragraph--type--gallery{
+	.lightbox{
+		.gallery-wrapper{
+			@include safeFlex(row,wrap,center,start);
+			@include bleed(padding,20px);
+			margin-bottom: -20px;
+			//hide the content before lightbox
+			.featherlight-hidden {
+				display: none;
+			}
+			//Image lighbox
+			.image-gal {
+				margin-bottom: 20px;
+				overflow: hidden;
+				cursor: pointer;
+				width: 100%;
+				min-width: 250px;
+				@include smallTab{
+					width: 50%;
+				}
+				@include tab{
+					width: 33.33%;
+				}
+				@include desk{
+					width: 25%;
+				}
+				img {
+					width: 100%;
+					@include imageHover;
+				}
+
+			}//end image lightbox
+		}//end gallery-wrapper
+	}//end lightbox
+	.slider {
+		//slider container overrides layout padding on mobile
+		.field-image-multi {
+			@include edgeToEdge;
+			@include calc(width, "100% + 40px");
+			@include contentStop {
+				@include edgeReset;
+				width: 100%;
+			}
+			img {
+				width: 100%;
+			}
+		}
+	}//end slider
+}//end gallery paragraph
+
+
+
+

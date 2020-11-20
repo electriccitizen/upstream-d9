@@ -1,0 +1,36 @@
+/* ================
+	 MESSAGES
+============== */
+
+.drupal-message {
+	padding: $spaceMd 20px $spaceMd 45px;
+	margin: $spaceMd 0;
+	background-repeat: no-repeat;
+	background-position: 12px center;
+	background-size: 20px 20px;
+	font-size: 1.8rem;
+	background-color: $messageBack;
+	color: $messageText;
+	border-left: 10px solid;
+	box-shadow: none;
+	max-width: $contentStop;
+	@include auto;
+	a{
+		color: $adminGold;
+		&:hover,&:focus{
+			opacity: .6;
+		}
+	}
+	&.error-message{
+		border-color: $messageErrorBorder;
+		background-image: url($messageErrorIcon);
+	}
+	&.warning-message{
+		border-color: $messageWarningBorder;
+		background-image: url($messageWarningIcon);
+	}
+	&.status-message{
+		border-color: $messageGoodBorder;
+		background-image: url($messageGoodIcon);
+	}
+}

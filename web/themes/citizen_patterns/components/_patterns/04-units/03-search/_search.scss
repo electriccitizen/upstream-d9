@@ -1,0 +1,92 @@
+/* ===============
+   SEARCH 	
+================= */
+
+
+/* SEARCH PAGE
+------------------ */
+.path-site-search{
+	#superfish-main-toggle{
+		right: 20px;
+	}
+	.views-element-container{
+		position: static;
+	}
+	.page-main{
+		position: relative;
+	}
+}//end path site search
+		
+.site-search{
+	h1{
+		margin-bottom: $elementSpace;
+	}
+	.search-page-block{
+		margin-bottom: $elementSpace;
+		.views-exposed-form{
+			@include safeFlex(row,wrap,center,start);
+			position: relative;
+			z-index: 2;
+			padding: $spaceLg 0;
+			&:after{
+				@include fullBack($lightGrey);
+			}
+		}
+		.js-form-type-textfield{
+			@include smallTab{
+				max-width: 100%;
+				width: 100%;
+			}
+			@include tab{
+				max-width: 400px;
+			}
+			label{
+				@include visuallyHidden;
+			}
+			@include tab{
+				margin-bottom: 0;
+			}
+		}
+		.form-actions{
+			margin: 0 0 0 -10px;
+		}
+	}
+	.results-header{
+		h2{
+			width: 100%;
+			max-width: $textMax;
+			@include auto;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid $borderRule;
+			margin-bottom: $elementSpace;
+		}
+	}
+	.view-content,.view-empty{
+		width: 100%;
+		max-width: $textMax;
+		@include auto;
+		margin-bottom: $elementSpace;
+	}
+
+	.views-row{
+		&:not(:last-child){
+			margin-bottom: $elementSpace;
+		}
+		.views-field-title{
+			margin-bottom: $spaceXxs;
+		}
+		.views-field-body-1{
+			.search-highlight{
+				font-weight: $heavy;
+				background: none;
+			}
+		}
+	}//end views row
+
+	.pager{
+		max-width: $textMax;
+		@include auto;
+	}
+}//site-search
+
+

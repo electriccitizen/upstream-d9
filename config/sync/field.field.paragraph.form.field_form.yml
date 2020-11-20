@@ -1,0 +1,25 @@
+uuid: a494062a-f69e-409b-9e60-8de5dadb856a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_form
+    - paragraphs.paragraphs_type.form
+  module:
+    - webform
+id: paragraph.form.field_form
+field_name: field_form
+entity_type: paragraph
+bundle: form
+label: Form
+description: 'Forms can be created or edited <a href="/admin/structure/webform">here</a> Save your changes to this page first.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:webform'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: webform

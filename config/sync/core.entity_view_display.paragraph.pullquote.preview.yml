@@ -1,0 +1,34 @@
+uuid: 6c76aa14-5fc1-4772-8f49-b887ece0b00d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.pullquote.field_quote
+    - field.field.paragraph.pullquote.field_source
+    - field.field.paragraph.pullquote.field_widget_title
+    - paragraphs.paragraphs_type.pullquote
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: Fre6cQ-HzRIHFfCmxDRPPKqalDFzVNOLau9H82BzukA
+id: paragraph.pullquote.preview
+targetEntityType: paragraph
+bundle: pullquote
+mode: preview
+content:
+  field_quote:
+    type: basic_string
+    weight: 0
+    region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_source: true
+  field_widget_title: true
+  search_api_excerpt: true

@@ -1,0 +1,22 @@
+uuid: 0ddc5109-6cf9-40b8-9ad5-90d592f7a10b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - citizen_patterns
+_core:
+  default_config_hash: WXKa88JhqD3yh-0H8tvRwIBg2UBhSC0zWmcrVfxxpd0
+id: citizen_patterns_local_tasks
+theme: citizen_patterns
+region: content
+weight: -6
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

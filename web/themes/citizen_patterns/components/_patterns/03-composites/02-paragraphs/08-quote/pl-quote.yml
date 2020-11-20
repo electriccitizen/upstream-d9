@@ -1,0 +1,10 @@
+type:
+  pullquote
+widgetTitle:
+  'Quotes with optional source'
+
+quote: |
+  <p>Quis Aristidem non mortuum diligit? Nummus in Croesi divitiis obscuratur, pars est tamen.</p>
+source:
+  "Sum One"
+

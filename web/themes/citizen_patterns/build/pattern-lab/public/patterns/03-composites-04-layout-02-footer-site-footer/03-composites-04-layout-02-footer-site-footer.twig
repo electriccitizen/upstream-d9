@@ -1,0 +1,88 @@
+{#
+STYLEGUIDE ONLY: This template is not embedded into Drupal.
+NOTE: The blocks below are meant to simulate common drupal footer blocks.
+If there are different blocks in the Drupal footer, or they are named differently,
+that markup will need be changed in their pl twig files.
+Available macro variables: fixed, non-fixed.
+#}
+
+
+{% block footerStart %}
+{{ footer_instructions }}
+{% endblock %}
+
+{% block preFooterContent %}
+<section role="prefooter" class="prefooter">
+	<div class="prefooter-inner">	
+		<div>
+			{% if about %}
+				<div class="block-2">
+					{% autoescape false %}
+						{{ about }}
+					{% endautoescape %}
+				</div>
+			{% endif %}
+			{% if menu %}
+				{% include "@composites/01-blocks/04-footer/_footer-menu.twig" %}
+			{% endif %}
+
+			{% if newsletter %}
+				<div class="block-newsletter">
+					{% include "@composites/01-blocks/05-newsletter/_newsletter.twig" 
+						with{
+							plLabel: newsletter.plLabel,
+							intro: newsletter.intro,
+							embedForm: newsletter.embedForm,
+							modal: newsletter.modal,
+							modalHeader: newsletter.modalHeader,
+							modalTrigger: newsletter.modalTrigger,
+							modalIntro: newsletter.modalIntro
+						}
+					%}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</sectionr>
+{% endblock %}
+
+{% block footerContent %}
+<footer role="contentinfo" class="pl-spacer">
+	<div class="footer-inner">	
+		<div>
+			{% if socialMedia %}
+				<div class="block-social-media-links">
+					{% if socialMedia.plLabel %}
+						<h2 class="block-title">{{ socialMedia.plLabel }}</h2>
+					{% endif %}
+					{% if socialMedia.intro %}
+						<div class="field body">
+							{% autoescape false %}
+								{{ socialMedia.intro }}
+							{% endautoescape %}
+						</div>
+					{% endif %}
+					{% if socialMedia.platforms %}
+						<div class="field field-platforms link">
+							<ul class="platform-links">
+								{% for platform in socialMedia.platforms %}
+									{% include "@parts/08-fields/01-social-platforms/_field-platforms.twig" 
+										with{
+											url: platform,
+										}
+									%}
+								{% endfor %}
+							</ul>
+						</div>
+					{% endif %}
+				</div>
+			{% endif %}
+			{% if copyright %}
+				<div class="block-1">
+					{% include "@composites/01-blocks/04-footer/_footer-copyright.twig" %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</footer>
+{% endblock %}

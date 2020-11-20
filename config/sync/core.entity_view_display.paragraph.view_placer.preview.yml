@@ -1,0 +1,33 @@
+uuid: f4b9ead5-d832-4224-84f1-eb7d393c82bf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.view_placer.field_display_machine_name
+    - field.field.paragraph.view_placer.field_view_machine_name
+    - field.field.paragraph.view_placer.field_widget_title
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - layout_builder
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: paragraph.view_placer.preview
+targetEntityType: paragraph
+bundle: view_placer
+mode: preview
+content:
+  field_view_machine_name:
+    weight: 0
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_display_machine_name: true
+  field_widget_title: true
+  search_api_excerpt: true

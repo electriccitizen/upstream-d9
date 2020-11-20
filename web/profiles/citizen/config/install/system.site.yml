@@ -1,0 +1,15 @@
+name: Upstream
+mail: info@electriccitizen.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/3
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: oFGejEEA5thoklyMT_5vOvqJFtP4YzOvl3HxRH4jmC8
+uuid: 260df1fe-34c8-4fd3-b2b8-693118615435
+mail_notification: ''

@@ -1,0 +1,10 @@
+uuid: 48bdb47c-1720-4be9-9747-476a115515ba
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.large_embed
+label: 'Large Embed'
+targetEntityType: media
+cache: true

@@ -1,0 +1,37 @@
+two_column_sidebar_left:
+  label: Two Column Sidebar Left
+  category: Citizen Patterns Layouts
+  path: templates/layout
+  template: layout--twocol-sideleft
+  default_region: content
+  icon_map:
+    - [first, content, content, content]
+  regions:
+    first:
+      label: First
+    content:
+      label: Content
+two_column_sidebar_right:
+  label: Two Column Sidebar Right
+  category: Citizen Patterns Layouts
+  path: templates/layout
+  template: layout--twocol-sideright
+  default_region: content
+  icon_map:
+    - [content, content, content, second]
+  regions:
+    content:
+      label: Content
+    second:
+      label: Second
+tabs:
+  label: Tabs
+  category: Crane Layouts
+  path: templates/layout
+  template: layout--tabs
+  default_region: tabs
+  icon_map:
+    - [tabs]
+  regions:
+    tabs:
+      label: Tabs

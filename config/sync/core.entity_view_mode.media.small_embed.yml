@@ -1,0 +1,10 @@
+uuid: 30e4485f-dbd8-411d-b416-675052cb1837
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.small_embed
+label: 'Small Embed'
+targetEntityType: media
+cache: true

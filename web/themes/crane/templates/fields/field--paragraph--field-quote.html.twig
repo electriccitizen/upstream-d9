@@ -1,0 +1,9 @@
+{% extends "field.html.twig" %}
+
+{% block fieldLabel %}
+	{% if item.content['#context'].value|length > 60 %}
+		{{ item.content['#context'].value|slice(0, 60) ~ '...' }}
+	{% else %}
+		{{ item.content['#context'].value }}
+	{% endif %}
+{% endblock %}

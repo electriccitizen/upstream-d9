@@ -1,0 +1,23 @@
+uuid: 540c1b98-55d2-427d-928e-870afb0034d0
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: small_non_crop_2x
+label: 'Small non-crop 2x'
+effects:
+  9201b05b-4450-46bb-9bf2-0bd95ee06fe4:
+    uuid: 9201b05b-4450-46bb-9bf2-0bd95ee06fe4
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: null
+      upscale: true
+  a3589c17-579c-47c4-8fe1-7b83592873bf:
+    uuid: a3589c17-579c-47c4-8fe1-7b83592873bf
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 40

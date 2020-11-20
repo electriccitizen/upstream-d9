@@ -1,0 +1,49 @@
+/* ===============
+   NODES GLOBAL
+=================== */
+
+/* REVISIONS
+-------------------- */
+.revisions-actions{
+	max-width: $contentStop;
+	@include auto;
+	margin-top: $spaceMd;
+	border-bottom: 1px solid $borderRule;
+	.action-wrapper{
+		@include safeFlex(row,wrap,start,start);
+		@include bleed(margin,10px);
+	}
+}//end revisions actions
+
+.node-revision{
+	.breadcrumb{
+		li{
+			&:nth-last-child(2){
+				&:after{
+					content: none;
+				}
+			}
+			&:last-child{
+				display: none;
+			}
+		}
+	}
+}//end node-revisions
+
+/* GLOBAL SECTIONS
+-------------------- */
+.node-section{
+	position: relative;
+}
+
+@mixin sectionLimit{
+	max-width: $contentStop;
+	@include auto;
+}//end section limit
+
+@mixin textContent{
+	max-width: $textMax;
+	@include auto;
+}
+
+

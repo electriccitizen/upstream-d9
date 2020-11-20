@@ -1,0 +1,275 @@
+/* ==============
+	 NAVIGATION
+================== */
+
+/* BREADCRUMBS
+---------------- */
+.block-system-breadcrumb-block{
+	width: 100%;
+	font-size: 1.4rem;
+	margin-top: -$spaceSm;
+}
+
+/* ADMIN TOOLBAR
+------------------ */
+.toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded
+#toolbar-bar{
+	position: fixed !important;
+	width: 100%;
+	.toolbar-tab{
+		&.env{
+			span.toolbar-item{
+				padding: 1em 1.333em;
+			  font-weight: $heavy;
+			  display: block;
+			  background: $transWhite;
+			  color: $black !important;
+			  cursor: default;
+			  &:hover,&:focus{
+			  	text-decoration: none;
+			  }
+			}
+		}
+	}//end toolbar tab
+	&.local{
+		background-color: $black;
+		.toolbar-tab{
+			.toolbar-item{
+				color: $grey !important;
+			}
+		}
+	}//end local
+	&.dev{
+		background: $green;
+		.toolbar-tab{
+			.toolbar-item{
+				color: $white !important;
+			}
+		}
+	}//end dev
+	&.test{
+		background: $gold;
+		.toolbar-tab{
+			.toolbar-item{
+				color: $black !important;
+			}
+		}
+	}//end test
+	&.live{
+		background: darken($red, 8%);
+		&.toolbar-tab{
+			.toolbar-item{
+				color: $white !important;
+			}
+		}
+	}
+}//end #toolbar
+.toolbar-tray-horizontal{
+	.menu-item--expanded{
+		background: none;
+	}
+	.menu-item{
+		&:hover{
+			background-color: $iceBlue;
+			a{
+				background-color: transparent;
+			}
+		}
+		a:focus{
+			background-color: $iceBlue;
+		}
+		a:active{
+			background-color: $darkIce;
+		}
+	}
+	ul{
+		li.menu-item--expanded{
+			ul{
+				li.menu-item--expanded{
+					background-image: url('../images/icons/admin-icons/caret-right-blue.svg');
+					background-size: 16px 16px;
+					&:hover{
+						background-image: url('../images/icons/admin-icons/caret-right-blue-dark.svg');
+					}
+				}
+			}
+		}
+	}
+}//end horizontal toolbar tray
+
+/* LOCAL ACTIONS
+------------------ */
+#block-crane-local-actions{
+	ul.action-links{
+		margin: 0;
+		a.button--primary.button--small{
+			border-radius: 0;
+			&:hover,&:focus{
+				background: $buttonBackHover;
+				color: $buttonTextHover;
+				border: 1px solid $buttonBackHover;
+				@include transAll(.3s);
+			}
+			&:active{
+				background: $buttonBackActive;
+				color: $buttonTextActive;
+				border: 1px solid $buttonBackActive;
+			}
+		}
+	}//end action links
+}//end local actions
+
+
+/* PRIMARY TASKS
+------------------- */
+#block-tabs-2{
+	width: 100%;
+	*{
+		box-sizing: border-box;
+	}
+	nav.is-horizontal.is-collapsible.position-container.is-horizontal-enabled{
+		background: transparent;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		position: relative;
+		z-index: 99;
+		.tabs{
+			&:before{
+				content: none;
+			}
+			.tabs__tab{
+				border-radius: 0;
+			}
+		}
+	}
+	nav.is-collapse-enabled{
+		.tabs__tab{
+			padding-right: 0;
+			&.is-active{
+				border-bottom: 0;
+				top: -4px;
+			}
+			a{
+				display: block;
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.tabs.primary .tabs__tab{
+		border-color: $tabsBorder;
+		&.is-active{
+			box-shadow: none !important;
+			background-color: transparent;
+			margin: 0;
+			&:not(:first-child){
+				margin: 0 0 0 -1px;
+			}
+		 	a{
+				background: $tabsActiveBack;
+				color: $tabsActiveText;
+				border-color: $tabsActiveBorder;
+				&:hover,&:focus{
+					background: $buttonBackHover;
+					color: $buttonTextHover;
+				}
+				&:active{
+					background: $buttonBackActive;
+					color: $buttonTextActive;
+				}
+			}
+		}
+		a{
+			margin-bottom: -1px;
+			background: $tabsBack;
+			border-radius: 0;
+			font-weight: $heavy;
+			color: $tabsText;
+			&:hover,&:focus{
+				background: $buttonBackHover;
+				color: $buttonTextHover;
+				text-decoration: none !important;
+			}
+			&:active{
+				background: $buttonBackActive;
+				color: $buttonTextActive;
+			}
+		}//end a
+	}//end tabs__tab
+}//end primary tabs
+
+/* SECONDARY TASKS
+-------------------- */
+#block-tabs{
+	padding-left: $siteMarginMobile;
+	padding-right: $siteMarginMobile;
+	@include desk{
+		padding-left: $siteMarginDesk;
+		padding-right: $siteMarginDesk;
+	}
+	nav.tabs{
+		.is-horizontal{
+			margin-left: -1em;
+			.tabs{
+				&:before{
+					content: none;
+				}
+				li{
+					&.is-active a{
+						border-bottom-color: $darkGrey;
+						&:hover,&:focus{
+							border-bottom-color: $buttonBackHover;
+						}
+					}
+					a{
+						border-left: 0;
+						border-bottom: 2px solid transparent;
+						&:hover,&:focus{
+							border-bottom-color: $buttonBackHover;
+						}
+					}
+				}
+			}
+		}//end is horizontal
+		li{
+			border: 0 !important;
+			padding-left: 0;
+			padding-right: 0;
+			background: none;
+			&.is-active a{
+				border-left-color: $darkGrey;
+				&:hover,&:focus{
+					color: $hoverLink;
+					border-left-color: $buttonBackHover;
+				}
+			}
+			a{
+				border-bottom: 1px solid $borderRule;
+				border-left: 3px solid transparent;
+				font-size: 1.5rem;
+				&:hover,&:focus{
+					border-left-color: $buttonBackHover;
+					color: $hoverLink;
+					text-decoration: none;
+				}
+			}//end a
+		}//end li
+
+		//hide block secondary tasks from non-admins
+		&.blocks.block-types{
+			body:not(.role-administrator) &{
+				display: none;
+			}
+		}
+	}//end nav tabs
+}//end secondary tabs
+
+/* BREADCRUMBS 
+----------------- */
+#block-seven-breadcrumbs{
+	.breadcrumb{
+		padding: 0 0 $spaceSm;
+	}
+}

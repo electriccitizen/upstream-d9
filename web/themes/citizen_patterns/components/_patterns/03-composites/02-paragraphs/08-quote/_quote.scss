@@ -1,0 +1,27 @@
+/* ================
+	QUOTE WIDGET
+======================= */
+.paragraph--type--pullquote{
+	@include textConstrain;
+	.widget-title{
+		margin-bottom: $spaceMd;
+	}
+	//quote text
+	.field-quote{
+		@include quote;
+	}//end long text
+	//source
+	.field-source{
+		text-align: right;
+		position: relative;
+		font-weight: bold;
+		text-transform: uppercase;
+		&:before{
+			content: '–';
+			left: -2.5rem;
+		}
+		@include tab{
+			font-size: 1.8rem;
+		}
+	}
+}//end pullquote widget

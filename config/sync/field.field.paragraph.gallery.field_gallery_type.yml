@@ -1,0 +1,23 @@
+uuid: 28da0f4e-d7e5-42da-9c33-96e668a9644d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_gallery_type
+    - paragraphs.paragraphs_type.gallery
+id: paragraph.gallery.field_gallery_type
+field_name: field_gallery_type
+entity_type: paragraph
+bundle: gallery
+label: 'Gallery Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Lightbox
+  off_label: Slider
+field_type: boolean

@@ -1,0 +1,25 @@
+uuid: 31a0de83-0cdb-4aa8-819e-54273eb106c7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:newsletter:84a09ce2-e145-4874-90b6-067da5857172'
+  module:
+    - block_content
+  theme:
+    - citizen_patterns
+id: stayintouch
+theme: citizen_patterns
+region: prefooter
+weight: -3
+provider: null
+plugin: 'block_content:84a09ce2-e145-4874-90b6-067da5857172'
+settings:
+  id: 'block_content:84a09ce2-e145-4874-90b6-067da5857172'
+  label: 'Stay in Touch'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

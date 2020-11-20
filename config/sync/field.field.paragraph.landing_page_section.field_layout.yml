@@ -1,0 +1,23 @@
+uuid: 551756f8-4723-402a-a1c0-7bb92633844b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.landing_page_section
+  module:
+    - options
+id: paragraph.landing_page_section.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: landing_page_section
+label: Layout
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: full
+default_value_callback: ''
+settings: {  }
+field_type: list_string

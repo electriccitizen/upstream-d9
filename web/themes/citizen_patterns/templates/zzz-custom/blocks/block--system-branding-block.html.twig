@@ -1,0 +1,28 @@
+
+{#
+/**
+ * @file
+ * Theme override for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ */
+#}
+
+{% extends 'block.html.twig' %}
+
+{% block blockContent %}
+	{% include '@composites/01-blocks/01-branding/_branding.twig' 
+		with{
+			logo: site_logo,
+			path: path('<front>'),
+			projectName: site_name,
+			tagline: site_slogan
+		}
+	%}
+{% endblock %}

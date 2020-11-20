@@ -1,0 +1,34 @@
+uuid: fbd483f6-8df2-4e28-805a-35b112e43972
+langcode: en
+status: true
+dependencies: {  }
+id: node__news
+label: 'Content: News'
+tags:
+  shortlink: '[current-page:url:unaliased]'
+  title: '[current-page:title] | [site:name]'
+  content_language: en
+  canonical_url: '[current-page:url:absolute]'
+  news_keywords: '[node:field_category]'
+  description: '[node:summary]'
+  geo_region: US-MN
+  image_src: '[node:field_banner:entity:field_media_image:entity:url]'
+  generator: 'Drupal 8 (http://drupal.org)'
+  article_modified_time: '[node:changed:custom:c]'
+  article_published_time: '[node:created:custom:c]'
+  og_type: Article
+  og_image: '[node:field_banner:entity:field_media_image:entity:url]'
+  og_updated_time: '[node:changed:custom:c]'
+  og_url: '[current-page:url:absolute]'
+  og_description: '[node:summary]'
+  og_country_name: US
+  article_tag: '[node:field_category]'
+  og_site_name: '[site:name]'
+  article_section: News
+  og_title: '[current-page:title]'
+  twitter_cards_image: '[node:field_banner:entity:field_media_image:entity:url]'
+  twitter_cards_page_url: '[current-page:url:absolute]'
+  twitter_cards_description: '[node:summary]'
+  twitter_cards_image_alt: '[node:field_banner:entity:field_media_image:entity:alt]'
+  twitter_cards_type: summary
+  twitter_cards_title: '[current-page:title]'

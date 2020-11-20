@@ -1,0 +1,40 @@
+/* ================
+	 FIELD
+============== */
+.field{
+	span.inline-label{
+		font-weight: $heavy;
+		margin-right: 1rem;
+		& + div{
+			display: inline;
+			//if multifield
+			&.field-multi-item{
+				& > div{
+					display: inline;
+				}
+			}
+		}
+	}//end inline label
+	&.long-text,&.text-with-summary{
+		@include clearFix;
+	}
+}//end field
+
+/* SOCIAL MEDIA LINKS FIELD
+-------------------- */
+.field-platforms{
+	margin-bottom: -$spaceXxs;
+	.platform-links{
+		@include listReset;
+		@include safeFlex(row,wrap,start,start);
+		@include bleed(padding,10px);
+		li{
+			margin-bottom: $spaceXxs;
+		}
+		a{
+			font-size: $socialIcons;
+		}
+	}//end platform links
+}//end field platforms
+
+

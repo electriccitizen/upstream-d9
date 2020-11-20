@@ -1,0 +1,76 @@
+
+machineName: 
+  event 
+hasMainImage:
+  true
+sections:
+  1:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              breadcrumbs
+            breadcrumb:
+              1:
+                url: "#"
+                text: "Home"
+              2:
+                url: "#"
+                text: "Events"
+              2:
+                url: "#"
+                #this should match the page title of the example
+                text: "Event Example"
+  2:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              field-banner
+            content:
+              src:
+                'http://placeimg.com/350/350/tech'
+              alt:
+                a tech image
+          2:
+            machineName:
+              title
+            content:
+              'Event Example'
+          3:
+            machineName:
+              field-date
+            #can be auto (use for both date and time) or any formatted date and/or time (e.g. 4/4/20, e.g. 4:20pm) //should match Drupal format used for event date
+            date:
+              auto
+            time:
+              auto
+          4:
+            machineName:
+              body
+            content:
+              true
+  3:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              field-event-location
+            map:
+              true
+  

@@ -1,0 +1,21 @@
+uuid: 5f208e24-17b3-48aa-be86-de973238b401
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.newsletter
+    - field.storage.block_content.field_modal_intro
+  module:
+    - text
+id: block_content.newsletter.field_modal_intro
+field_name: field_modal_intro
+entity_type: block_content
+bundle: newsletter
+label: 'Modal Intro'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
