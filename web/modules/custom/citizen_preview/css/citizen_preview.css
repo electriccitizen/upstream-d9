@@ -1,0 +1,59 @@
+#responsive-preview-toolbar-tab .responsive-preview-trigger.active{
+	background: #018901;
+}
+#responsive-preview-toolbar-tab .responsive-preview-trigger.active:hover{
+	background: #676767;
+}
+
+#responsive-preview-modal-background{
+	background: rgba(92,96,98,.92);
+}
+#responsive-preview-frame-container{
+	border-radius: 5px;
+}
+.responsive-preview-device-label-text{
+	position: relative;
+	top: -2px;
+	color: #f6f6f6;
+}
+.responsive-preview-device-label-text:after{
+	content: none !important;
+}
+.responsive-preview-device-label-text span{
+	display: none;
+}
+.responsive-preview-control.responsive-preview-close{
+	right: -5px;
+}
+#responsive-preview-orientation:before{
+	height: 20px;
+	width: 20px;
+	background: url('../icons/orientation-white.svg') no-repeat;
+	background-size: 13px 13px;
+	background-position: center;
+	top: 6px;
+}
+#responsive-preview-close:before{
+	height: 20px;
+	width: 20px;
+	background: url('../icons/close-white.svg') no-repeat;
+	background-size: 13px 13px;
+	background-position: center;
+	top: 6px;
+}
+
+/* REMOVE DEFAULT DRUPAL PREVIEW BUTTON */
+#edit-preview{
+  display: none !important;
+}
+
+/* CUSTOM PREVIEW BUTTON ON NODE */
+#edit-citizen-preview {
+  background: #018901;
+  color: #ffffff;
+  min-width: 120px;
+}
+#edit-citizen-preview:hover,#edit-citizen-preview:focus{
+	background: #ccc;
+	color: #121212;
+}

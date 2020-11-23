@@ -1,0 +1,9 @@
+preview:
+  version: 1.0
+  css:
+    theme:
+      css/citizen_preview.css: {}
+  js:
+    js/citizen_preview.js: {}
+  dependencies:
+    - core/jquery

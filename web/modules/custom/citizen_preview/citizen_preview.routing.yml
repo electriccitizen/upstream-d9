@@ -1,0 +1,4 @@
+citizen_preview.form:
+  path: '/citizen_preview_form'
+  requirements:
+    _permission: 'administer site configuration'
