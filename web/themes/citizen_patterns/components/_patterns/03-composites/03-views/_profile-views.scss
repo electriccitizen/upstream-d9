@@ -1,0 +1,28 @@
+/* ==================
+    PROFILES VIEWS
+==================== */
+
+/* ALL STAFF
+------------- */
+.profiles.all-staff{
+	.view{
+		padding-bottom: $elementSpace;
+	}
+	.view-content{
+		margin-bottom: -$spaceLg;
+		@include bleed(padding,40px);
+	}
+	.views-row{
+		text-align: center;
+		@include smallTab{
+			width: 50%;
+		}
+		@include tab{
+			width: 33.33%;
+		}
+		@include desk{
+			width: 25%;
+		}
+	}
+}//end profiles
+

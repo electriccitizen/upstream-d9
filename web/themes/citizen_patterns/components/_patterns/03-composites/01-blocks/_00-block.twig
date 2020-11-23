@@ -1,0 +1,22 @@
+{#
+ DRUPAL: This template is inherited into the block.html.twig template and the Drupal block attributes and classes are set there.
+#}
+
+{% block blockAttributes %}
+  <div class="block {{ classes }}">
+{% endblock %}
+  {% block blockSetup %}
+    {{ title_prefix }}
+    {% block blockLabel %}
+      {% if label %}
+        <h2 class="block-title">{% block labelText %}{{ label }}{% endblock %}</h2>
+      {% endif %}
+    {% endblock %}
+    {{ title_suffix }}
+    {% block blockContent %}
+      <p>Content goes here</p>
+    {% endblock %}
+  {% endblock %}
+{% block blockEndAttributes %}
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+uuid: db966991-0d25-49cf-aed9-124f63173609
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: user.field_user_quick_links
+field_name: field_user_quick_links
+entity_type: user
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

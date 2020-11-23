@@ -1,0 +1,38 @@
+
+filters:
+  1:
+    label:
+      'Keywords'
+    type:
+      text
+    placeholder:
+      'Search this page'
+  2:
+    label:
+      'Categories'
+    type:
+      select
+    options:
+      - name: '- Any -'
+        value: All
+      - name: 'Dairy'
+        value: dairy
+      - name: 'Fruits'
+        value: fruits
+      - name: 'Grains'
+        value: grains
+      - name: 'Protein'
+        value: protein
+      - name: 'Vegetables'
+        value: vegetables
+buttons:
+  1:
+    label:
+      'Apply'
+    type:
+      submit
+  2:
+    label:
+      'Reset'
+    type:
+      reset

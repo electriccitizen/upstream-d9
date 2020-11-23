@@ -1,0 +1,25 @@
+{#
+ Drupal: This file is inherited in the search-block Drupal block.
+#}
+
+<div class="t-search-wrapper"><a href="#" class="t-search" role="button" aria-label="toggle-search" aria-controls="search-form-wrapper"><i class="fas fa-search"></i></a></div>
+<div class="t-search-close"><a href="#" class="close-search" role="button" aria-label="toggle-search-close" aria-controls="search-form-wrapper"><i class="fas fa-times"></i></a></div>
+<div id="search-form-wrapper" aria-hidden="true">
+	{% block searchForm %}
+		<form action="/site-search" method="get" id="site-search-form" accept-charset="UTF-8" data-drupal-form-fields="edit-search-api-fulltext">
+			{% include '@parts/06-forms/_form-element.twig' 
+				with{
+					type: 'search',
+					nameClass: 'site-search-api-fulltext',
+					label: 'Search this site',
+					placeholder: 'Enter Keyword(s)',
+					description: ''
+				}
+			%}
+			<div data-drupal-selector="edit-actions" id="edit-site-search-actions" class="form-actions js-form-wrapper form-wrapper">
+				<input id="edit-submit-site-search" class="button js-form-submit form-submit" data-drupal-selector="edit-submit-site-search" value="search" type="submit">
+				<i class="fas fa-search"></i>
+			</div>
+		</form>
+	{% endblock %}
+</div>

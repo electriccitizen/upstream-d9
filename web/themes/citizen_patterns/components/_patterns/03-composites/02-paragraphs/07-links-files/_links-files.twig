@@ -1,0 +1,34 @@
+{#
+	 DRUPAL: This template is embedded into the Drupal paragraphs--links-files.html.twig template.
+#}
+
+{%- if links or files -%}
+	{% set count = 0 %}
+	{%- for key, link in links if key|first != "#" -%}
+		{% set count = count + 1 %}
+	{% endfor %}
+	{%- for key, file in files if key|first != "#" -%}
+		{% set count = count + 1 %}
+	{% endfor %}
+	<div class="field links-files{% if count > 4 %} multi-col{% endif %}">
+		{% set listCount = 0 %}
+		{%- for key, link in links if key|first != "#" -%}
+			{% set listCount = listCount + 1 %}
+			<div class="lf-item link" data-item="{{ listCount }}">
+				{% block link %}
+					<a href="{{ link.url }}">
+						{{- link.text -}}
+					</a>
+				{% endblock %}
+			</div>
+		{%- endfor -%}
+		{%- for key, file in files if key|first != "#" -%}
+			{% set listCount = listCount + 1 %}
+			<div class="lf-item file" data-item="{{ listCount }}">
+				{% block file %}
+					<span class="file"><a href="{{ file.url }}">{{- file.text -}}</a></span>
+				{% endblock %}
+			</div>
+		{%- endfor -%}
+	</div>
+{%- endif -%}

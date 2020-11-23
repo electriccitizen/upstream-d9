@@ -1,0 +1,11 @@
+/* =============
+   BLOCK PLACER WIDGET
+================ */
+.paragraph--type--block-placer{
+	.field-block{
+		.field.body{
+			@include textConstrain;
+		}
+	}
+}//end paragraph-block-placer
+

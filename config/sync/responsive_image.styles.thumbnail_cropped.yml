@@ -1,0 +1,30 @@
+uuid: 140c2be5-e3f2-49dd-ad00-a3a5689e3cc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.thumbnail_cropped
+    - image.style.thumbnail_cropped_1_5x
+    - image.style.thumbnail_cropped_2x
+  theme:
+    - citizen_patterns
+id: thumbnail_cropped
+label: 'Thumbnail Cropped'
+image_style_mappings:
+  -
+    breakpoint_id: citizen_patterns.tablet
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: thumbnail_cropped_2x
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 1.5x
+    image_mapping_type: image_style
+    image_mapping: thumbnail_cropped_1_5x
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: thumbnail_cropped
+breakpoint_group: citizen_patterns
+fallback_image_style: thumbnail_cropped

@@ -1,0 +1,46 @@
+uuid: 6907dfc5-0046-4529-933c-0fad1fae4e6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.links_files.field_file_multi
+    - field.field.paragraph.links_files.field_link_multi
+    - field.field.paragraph.links_files.field_widget_title
+    - paragraphs.paragraphs_type.links_files
+  module:
+    - link
+    - media_library
+_core:
+  default_config_hash: srCP4vq8KutNp4MnwRCTTllJnHVyDZKeMVyrfSk6nHQ
+id: paragraph.links_files.default
+targetEntityType: paragraph
+bundle: links_files
+mode: default
+content:
+  field_file_multi:
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  field_link_multi:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_widget_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,58 @@
+
+filters:
+  1:
+    label:
+      'Keywords'
+    type:
+      text
+    placeholder:
+      'Enter Keyword(s)'
+    testValue:
+      test
+buttons:
+  1:
+    label:
+      'Apply'
+    type:
+      submit
+
+results:
+  true
+
+#uncomment to test empty search results // NOTE: should use false for results when testing empty
+#empty:
+ # 'Enter your keywords to perform a site search. More keywords will provide a narrower search.'
+
+pager:
+  items:
+    first:
+      true
+    previous:
+      true
+    # do not alter the pages numbers
+    pages:
+      1:
+      2:
+      3:
+      4:
+      5:
+      6:
+      7:
+      8:
+    next:
+      true
+    last:
+      true
+  # do not alter current    
+  current:
+    3
+
+  ellipses:
+    previous:
+      true
+    next:
+      true
+  # used as a pattern lab marker to set PL only data attributes
+  plKey:
+    true
+

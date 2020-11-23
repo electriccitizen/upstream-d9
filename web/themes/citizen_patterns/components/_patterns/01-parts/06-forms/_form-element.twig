@@ -1,0 +1,49 @@
+{#
+	STYLEGUIDE ONLY
+#}
+{% import '@base/macros.twig' as styles %}
+
+<div class="js-form-item form-item js-form-type-{% if type == 'text' %}textfield{% else %}{{ type }}{% endif %}{% if nameClass %} js-form-item-{{ nameClass }}{% endif %} {{ styles.formElements }}">
+	
+	{# for radios and checkboxes labels are set as legends in the included template #}
+	{% if not (type == 'radio' or type == 'checkbox') %}
+		{% if label %}
+			<label{% if required %} class="js-form-required required"{% endif %}>
+				{{- label -}}
+			</label>
+		{% endif %}
+	{% endif %}
+
+	{% if type == 'radio' %}
+		{% include '@parts/06-forms/_radios.twig' 
+			with{
+				label: label,
+				options: options
+			}
+		%}
+	{% elseif type == 'checkbox' %}
+		{% include '@parts/06-forms/_checkboxes.twig' 
+			with{
+				label: label,
+				options: options
+			}
+		%}
+	{% elseif type == 'select' %}
+		{% include '@parts/06-forms/_select.twig' 
+			with{
+				label: label,
+				options: options
+			}
+		%}
+	{% elseif type == 'textarea' %}
+		<div>
+			<textarea name="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %} rows="5" cols="60" class="max-text"></textarea>
+		</div>
+	{% else %}
+		<input class="{{ classes }}" type="{{ type }}" name="{{ type }}" {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}{% if testValue %} value="{{ testValue }}"{% endif %} />
+	{% endif %}
+
+	{% if description %}
+		<div class="description">{{ description }}</div>
+	{% endif %}
+</div>

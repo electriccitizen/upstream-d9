@@ -1,0 +1,23 @@
+uuid: 83bcd5a5-2ab6-4178-9b6d-8de42890acd0
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: medium_non_crop_1_5x
+label: 'Medium non-crop 1.5x'
+effects:
+  26d7dcbb-a44e-4903-94c2-cae5244ef472:
+    uuid: 26d7dcbb-a44e-4903-94c2-cae5244ef472
+    id: image_scale
+    weight: 1
+    data:
+      width: 900
+      height: null
+      upscale: true
+  442bcd94-77c1-42ae-bd5f-a5d090c5fac4:
+    uuid: 442bcd94-77c1-42ae-bd5f-a5d090c5fac4
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 35

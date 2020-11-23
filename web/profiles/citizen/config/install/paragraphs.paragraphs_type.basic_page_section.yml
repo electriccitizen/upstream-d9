@@ -1,0 +1,11 @@
+uuid: c02d6e54-418e-44b6-949b-b4730b9c8136
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:b3b02ae3-b79d-45ab-8902-21eed860425c'
+id: basic_page_section
+label: 'Basic Page Section'
+icon_uuid: b3b02ae3-b79d-45ab-8902-21eed860425c
+description: 'Section widgets holder for basic pages'
+behavior_plugins: {  }

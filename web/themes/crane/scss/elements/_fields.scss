@@ -1,0 +1,47 @@
+/* ========================
+  FIELD
+========================== */
+/* GENERAL */
+.fieldset-wrapper .fieldset-description{
+  margin-bottom: 1em;
+}
+
+/* style media image fields inside admin widgets */
+.field--widget-entity-reference-paragraphs{
+	img{
+  	max-width: 100%;
+  	height: auto;
+	}
+	.item-container{
+		&.rendered-entity{
+			width: 100%;
+		}
+		& > input{
+			display: inline-block;
+		}
+	}
+	.view-mode-media-thumbnail{
+		width: 100%;
+	}
+}//end widget reference paragraphs
+
+
+/* HIDE REVISIONS FROM INLINE ENTITIES
+--------------------------*/
+#edit-inline-entity-form #edit-inline-entity-form-revision-log-message-wrapper,.media-form .vertical-tabs{
+	display: none;
+}
+
+/* REMOVE REVISION FROM MEDIA REFERENCE FIELD
+--------------------------------------------- */
+.field--type-entity-reference .field--name-revision-log-message{
+	display: none;
+}
+
+/* HIDE WEFORM EXTRAS FROM WEBFORM REFERENCES
+--------------------------------------- */
+.field--type-webform{
+	.seven-details{
+		display: none;
+	}
+}

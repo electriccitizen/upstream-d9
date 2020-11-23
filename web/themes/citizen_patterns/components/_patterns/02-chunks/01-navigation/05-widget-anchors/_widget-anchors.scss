@@ -1,0 +1,85 @@
+/* ===================
+   WIDGET ANCHORS
+==================== */
+
+.widget-anchors{
+	max-width: $contentStop;
+	padding-left: $siteMarginMobile;
+	padding-right: $siteMarginMobile;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	@include auto;
+	@include onlySmall{
+		padding-top: 2rem;
+		padding-bottom: 2rem;	
+	}
+	&:after{
+		@include fullBack($anchorsBack);
+	}
+	h2#toc-title{			
+		margin-bottom: 0;
+		@include tab{
+			@include visuallyHidden;
+		}
+		a{
+			color: $anchors;
+			&:hover,&:focus{
+				color: $anchorsHover;
+			}
+			i{
+				margin-right: 2rem;
+			}
+		}
+	}
+	.anchors{
+		display: none;
+		padding-top: 2rem;
+		@include tab{
+			display: block !important;
+			@include bleed(padding,20px);
+			padding-bottom: 2rem;
+		}
+		a{
+			padding: 15px 10px;
+			position: relative;
+			display: block;
+			font-family: $header;
+			color: $anchors;
+			&:hover,&:focus{
+				color: $anchorsHover;
+			}
+			&:not(:last-child):after{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 100%;
+				right: 50%;
+				width: 100px;
+				margin-right: -50px;
+				background: $anchorsRules;
+				height: 1px;
+			}
+			@include tab{
+				display: inline-block;
+				font-size: 2.2rem;
+				&:not(:last-child):after{
+					height: 50%;
+					width: 1px;
+					top: 28%;
+					right: -.5px;
+					margin-right: 0;
+				}
+			}
+			@include contentStop{
+				font-size: 2.4rem;
+			}
+		}//end a 
+	}//end anchors
+
+	//snug up first section if it has a background
+	& + .field-paragraphs > .section:first-child:not(.background){
+		margin-top: $spaceLg;
+	}
+
+}//end widget anchors

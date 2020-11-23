@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a paragraph.
+ *
+ * Available variables:
+ * - paragraph: Full paragraph entity.
+ *   - id: The paragraph ID.
+ *   - bundle: The type of the paragraph, for example, "image" or "text".
+ *   - authorid: The user ID of the paragraph author.
+ *   - createdtime: Formatted creation date. Preprocess functions can
+ *     reformat it by calling format_date() with the desired parameters on
+ *     $variables['paragraph']->getCreatedTime().
+ * - content: All paragraph items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - paragraphs: The current template type (also known as a "theming hook").
+ *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+ *     "Image" it would result in "paragraphs--type--image". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+ *     preview would result in: "paragraphs--view-mode--preview", and
+ *     default: "paragraphs--view-mode--default".
+ * - view_mode: View mode; for example, "preview" or "full".
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_paragraph()
+ *
+ * @ingroup themeable
+ */
+#}
+
+
+{% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+	with{
+		type: paragraph.bundle|clean_class,
+		viewMode: view_mode|clean_class,
+		id: paragraph.id.value,
+		sectionTitle: '',
+		sectionIntro: '',
+		widgetTitle: content.field_widget_title.0['#context'].value,
+	}
+%}
+
+	{% block widgetContent %}
+		{% set size = content.field_image_size[0]['#markup'] %}
+
+		{%- if (size == 'small') -%}
+			{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'small') %}
+		{%- elseif (size == 'medium') -%}
+			{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'medium') %}
+		{%- elseif (size == 'large') -%}
+			{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'large') %}
+		{%- elseif (size == 'full') -%}
+			{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'full') %}
+		{%- elseif (size == 'default') -%}
+			{% set image =  drupal_entity('media', paragraph.field_image.0.target_id, 'default') %}
+		{%- endif -%}
+
+		{% embed "@composites/02-paragraphs/06-image/_image.twig" 
+			with{
+				url: content.field_link.0['#url'],
+				aria: content.field_link.0['#title'],
+			}
+		%}
+			{% block image %}
+				{{ image }}
+			{% endblock %}
+
+		{% endembed %}
+	{% endblock %}
+{% endembed %}

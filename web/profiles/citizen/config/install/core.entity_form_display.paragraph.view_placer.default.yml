@@ -1,0 +1,42 @@
+uuid: e7187b03-d1a6-4b26-bb6d-745d001087e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.view_placer.field_display_machine_name
+    - field.field.paragraph.view_placer.field_view_machine_name
+    - field.field.paragraph.view_placer.field_widget_title
+    - paragraphs.paragraphs_type.view_placer
+id: paragraph.view_placer.default
+targetEntityType: paragraph
+bundle: view_placer
+mode: default
+content:
+  field_display_machine_name:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_view_machine_name:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_widget_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

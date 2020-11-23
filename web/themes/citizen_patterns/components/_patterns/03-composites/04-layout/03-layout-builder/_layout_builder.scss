@@ -1,0 +1,162 @@
+/* ========================
+   LAYOUT BUILDER UI
+========================== */
+
+//hide the builder label and only show it later when in layout builder
+.builder-label{
+	display: none;
+}
+
+.layout-builder-form{
+	max-width: $contentStop;
+	@include auto;
+	margin-bottom: $spaceLg;
+	.form-actions{
+		@include safeFlex(row,wrap,start,center);
+		input.button{
+			margin-right: 1rem;
+			min-width: 200px;
+			&:last-of-type{
+				margin-right: 3.5rem;
+			}
+			&#edit-discard-changes{
+				@include cautionButton;
+			}
+			&#edit-revert{
+				@include warningButton;
+			}
+		}
+		.js-form-type-checkbox{
+			@include customOptions;
+		}
+	}//end form actions
+	details#edit-xmlsitemap{
+		display: none;
+	}
+	#layout-builder{
+		overflow-x: hidden;
+	}
+	.remove-section{
+		margin-left: 10px;
+		top: -6px;
+	}
+	.builder-label{
+		display: table;
+		color: $white;
+		background: $red;
+		padding: 4px 8px;
+		margin-bottom: .5rem;
+	}
+	& ~ .js-form-type-vertical-tabs{
+		display: none;
+	}
+
+	/* PRETTIFY LAYOUT BUILDER PREVIEW CONTENT */
+	.layout-builder-block{
+		.field,a{
+			word-break: break-all;
+		}
+		//trim long text fields down to a max height
+		.text-long,.text-with-summary{
+			max-height: 200px;
+			overflow: hidden;
+			position: relative;
+			min-height: 60px;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 60px;
+				@include gradient(bottom,$siteBack,rgba(255,255,255,0));
+			}
+		}//end long text fields
+		.widget-anchors{
+			display: none;
+		}
+		.field-paragraphs .section{
+			//constrian to max height
+			max-height: 200px;
+			overflow: hidden;
+			position: relative;
+			min-height: 60px;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 60px;
+				@include gradient(bottom,$siteBack,rgba(255,255,255,0));
+			}
+			//remove section backgrounds and reset to dark text.
+			&.background{
+				background: none;
+				@include lightBack;
+			}
+			//only show first section
+			&:not(:first-child){
+				display: none;
+			}
+		}//end .section paragraph
+	}//end layout builder block
+}//end layout builder form
+
+
+.layout-builder-discard-changes{
+	max-width: $contentStop;
+	@include auto;
+	.form-actions{
+		padding-top: $spaceSm;
+		@include safeFlex(row,wrap,start,center);
+		.button{
+			margin-right: 1rem;
+			min-width: 140px;
+			&#edit-cancel{
+				@include cautionButton;
+				max-width: 140px;
+			}
+		}
+	}
+}
+
+.is-layout-builder-highlighted{
+	border: none !important;
+	background: $adminWhiteGold;
+}
+
+.layout-builder-revert-overrides{
+	@extend .layout-builder-discard-changes;
+}
+
+/* LAYOUT BLOCK FORMS */
+form.layout-builder-configure-block,form.layout-builder-block-move,form.layout-builder-remove-block,form.layout-builder-remove-section{
+	padding-top: $spaceSm !important;
+	.js-layout-builder-category{
+		.links{
+			margin-top: $spaceXxs;
+		}
+	}
+	body:not(.role-adminstrator) &{
+		.webform-default-data{
+			display: none;
+		}
+		.form-item-settings-redirect{
+			display: none;
+		}
+		.token-dialog{
+			display: none;
+		}
+	}
+	.layout-builder-components-table{
+		margin-bottom: $spaceLg;
+		.layout-builder-components-table__block-label--current{
+			border-left-color: $adminGold;
+		}
+	}
+}//end layout builder configure/move/remove block
+
+

@@ -1,0 +1,10 @@
+uuid: 7f986a2e-43f4-4c33-921c-f7f8895f492a
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.full_embed
+label: 'Full Embed'
+targetEntityType: media
+cache: true

@@ -1,0 +1,23 @@
+uuid: 40f5a690-1f03-4e23-a6ec-a386a2a18a68
+langcode: en
+status: true
+dependencies:
+  module:
+    - image_style_quality
+name: small_non_crop_1_5x
+label: 'Small non-crop 1.5x'
+effects:
+  fa90b7fa-2d0f-456c-9948-345ba42a27fc:
+    uuid: fa90b7fa-2d0f-456c-9948-345ba42a27fc
+    id: image_scale
+    weight: 1
+    data:
+      width: 600
+      height: null
+      upscale: false
+  38163900-89a1-4858-a542-3bc44e6088c8:
+    uuid: 38163900-89a1-4858-a542-3bc44e6088c8
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 45

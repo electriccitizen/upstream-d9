@@ -1,0 +1,9 @@
+/* ========================
+  TAXONOMY
+========================== */
+
+/* REMOVE RELATIONS FIELD FROM TAXONOMY TERMS
+----------------------------------------------- */
+.taxonomy-term-form #edit-relations{
+	display: none;
+}

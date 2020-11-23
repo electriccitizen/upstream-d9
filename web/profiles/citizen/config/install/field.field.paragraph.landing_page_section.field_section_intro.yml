@@ -1,0 +1,21 @@
+uuid: 555a9297-0a7d-4557-9845-40858d409225
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_intro
+    - paragraphs.paragraphs_type.landing_page_section
+  module:
+    - text
+id: paragraph.landing_page_section.field_section_intro
+field_name: field_section_intro
+entity_type: paragraph
+bundle: landing_page_section
+label: 'Section Intro'
+description: 'Add some introductory text for this section.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,93 @@
+uuid: 2a04a7be-bad5-484e-95dd-b5871f1320d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_section_widgets
+    - paragraphs.paragraphs_type.accordion_group
+    - paragraphs.paragraphs_type.block_placer
+    - paragraphs.paragraphs_type.form
+    - paragraphs.paragraphs_type.gallery
+    - paragraphs.paragraphs_type.horizontal_rule
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.landing_page_section
+    - paragraphs.paragraphs_type.links_files
+    - paragraphs.paragraphs_type.pullquote
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - entity_reference_revisions
+id: paragraph.landing_page_section.field_section_widgets
+field_name: field_section_widgets
+entity_type: paragraph
+bundle: landing_page_section
+label: 'Widgets in this Section'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion_group: accordion_group
+      block_placer: block_placer
+      form: form
+      gallery: gallery
+      horizontal_rule: horizontal_rule
+      image: image
+      links_files: links_files
+      pullquote: pullquote
+      text: text
+      video: video
+      view_placer: view_placer
+    target_bundles_drag_drop:
+      accordion_group:
+        enabled: true
+        weight: -31
+      accordion_item:
+        weight: -30
+        enabled: false
+      basic_page_section:
+        weight: -29
+        enabled: false
+      block_placer:
+        enabled: true
+        weight: -28
+      form:
+        enabled: true
+        weight: -27
+      from_library:
+        weight: 21
+        enabled: false
+      gallery:
+        enabled: true
+        weight: -26
+      horizontal_rule:
+        enabled: true
+        weight: -25
+      image:
+        enabled: true
+        weight: -24
+      landing_page_section:
+        weight: -23
+        enabled: false
+      links_files:
+        enabled: true
+        weight: -22
+      pullquote:
+        enabled: true
+        weight: -21
+      text:
+        enabled: true
+        weight: -20
+      video:
+        enabled: true
+        weight: -19
+      view_placer:
+        enabled: true
+        weight: -18
+field_type: entity_reference_revisions

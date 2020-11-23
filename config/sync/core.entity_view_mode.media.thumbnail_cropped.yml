@@ -1,0 +1,10 @@
+uuid: 290f6e05-ccf2-4d32-b837-0f8b151487e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.thumbnail_cropped
+label: 'Thumbnail Cropped'
+targetEntityType: media
+cache: true

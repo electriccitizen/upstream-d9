@@ -1,0 +1,7 @@
+# Only top level links that are not parents are should have isActive. Like in Drupal, the top level links in this section should be the children of one of the main nav links in superfish.yml. 
+
+anchors:
+  - "Men's Fashion"
+  - 'Housewares'
+  - 'Sporting Goods'
+  - "Furniture"

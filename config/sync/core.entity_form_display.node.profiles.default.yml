@@ -1,0 +1,113 @@
+uuid: 28d9bfda-6e07-45d2-9c14-ef551cf14e6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.profiles.body
+    - field.field.node.profiles.field_email
+    - field.field.node.profiles.field_first_name
+    - field.field.node.profiles.field_last_name
+    - field.field.node.profiles.field_phone
+    - field.field.node.profiles.field_position
+    - field.field.node.profiles.field_profile_image
+    - node.type.profiles
+  module:
+    - field_group
+    - media_library
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_contact_information:
+      children:
+        - field_email
+        - field_phone
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: 'Contact Information'
+      region: content
+_core:
+  default_config_hash: o_cnK3RrkmvguzzbN5aLQon8xiIF4q3HwJDCr0qe77E
+id: node.profiles.default
+targetEntityType: node
+bundle: profiles
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 4
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_email:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: 'Ex: email@website.com'
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_first_name:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_phone:
+    weight: 6
+    settings:
+      placeholder: 'Ex: 555-555-5555'
+    third_party_settings: {  }
+    type: telephone_default
+    region: content
+  field_position:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_profile_image:
+    weight: 3
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 6
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  path: true
+  promote: true
+  sticky: true
+  title: true
+  uid: true
+  url_redirects: true

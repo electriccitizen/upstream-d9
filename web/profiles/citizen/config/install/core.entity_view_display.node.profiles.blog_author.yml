@@ -1,0 +1,54 @@
+uuid: f1d052a2-ed6f-4f40-baa9-8d6604ef037e
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blog_author
+    - field.field.node.profiles.body
+    - field.field.node.profiles.field_email
+    - field.field.node.profiles.field_first_name
+    - field.field.node.profiles.field_last_name
+    - field.field.node.profiles.field_phone
+    - field.field.node.profiles.field_position
+    - field.field.node.profiles.field_profile_image
+    - node.type.profiles
+  module:
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    sections: {  }
+    enabled: false
+    allow_custom: false
+_core:
+  default_config_hash: yEzqEb7C6A6TP_PNv0eyXt60eASAOz-yAJvXXASv1GY
+id: node.profiles.blog_author
+targetEntityType: node
+bundle: profiles
+mode: blog_author
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_profile_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: square
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  addtoany: true
+  field_email: true
+  field_first_name: true
+  field_last_name: true
+  field_phone: true
+  field_position: true
+  links: true

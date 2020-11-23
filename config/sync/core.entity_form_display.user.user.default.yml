@@ -1,0 +1,77 @@
+uuid: a7a567b8-5ad9-4d63-bcb9-ec9e2adc8729
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_user_image
+  module:
+    - field_group
+    - media_library
+    - user
+third_party_settings:
+  field_group:
+    group_user_personalization:
+      children:
+        - field_first_name
+        - field_last_name
+        - field_user_image
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: true
+        required_fields: true
+      label: 'User Personalization'
+      region: content
+_core:
+  default_config_hash: cAoTuTfmGrGB_89qPV_cTRlA7NXOWtLCLePKVX4SO3A
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 5
+    region: content
+  field_first_name:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_last_name:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_user_image:
+    weight: 5
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  google_analytics:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  language: true
+  path: true
+  timezone: true

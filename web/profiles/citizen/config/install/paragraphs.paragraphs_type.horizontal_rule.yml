@@ -1,0 +1,11 @@
+uuid: 5b7c184f-4d90-4dc6-8e08-f77144a68955
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:cfcbd28f-a7d7-4134-8001-74257294a8aa'
+id: horizontal_rule
+label: 'Horizontal Rule'
+icon_uuid: cfcbd28f-a7d7-4134-8001-74257294a8aa
+description: 'Add a horizontal rule design element to break up blocks of content.'
+behavior_plugins: {  }

@@ -1,0 +1,15 @@
+uuid: b6f89438-a323-4df5-8fcb-91713aafbe5c
+langcode: en
+status: true
+dependencies: {  }
+name: paragraph_preview
+label: 'Paragraph Preview'
+effects:
+  6266b94f-2afc-4a2d-bc3f-849e849ac6e5:
+    uuid: 6266b94f-2afc-4a2d-bc3f-849e849ac6e5
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 50
+      height: 30
+      anchor: center-center

@@ -1,0 +1,294 @@
+/* ==============
+	 SUPERFISH 
+================ */
+
+/* PLACEHOLDERS
+------------ */
+%menuDropdown{
+	background: $sfDropdown;
+}
+
+
+/* GLOBAL COLORS
+	----------------- */
+.sf-main li{
+	a{
+		color: $sfChildLink;
+		text-align: left;
+		&:hover,&:focus{
+			color: $sfChildLinkHover;
+		}
+	}
+	&.active-trail > a{
+		color: $sfChildActive;
+		&:hover,&:focus{
+			color: $sfChildActiveHover;
+		}
+	}
+}//end sf-main li
+
+
+
+/* DESK FISH
+---------------- */
+ul.sf-menu.sf-horizontal{
+	@include safeFlex(row,wrap,end,null);
+	//override defult floats
+	li{
+		float: none;
+	}
+	//top level links
+	& > li{
+		&:not(.sfHover){
+			& > ul{
+				display: none !important;
+			}
+		}
+		&:hover{
+			& > a{
+				background: $sfTopBackHover;
+				color: $sfTopLinkHover;
+			}
+		}
+		& > a{
+			color: $sfTopLink;
+			padding: 20px 15px !important;
+			font-size: 2rem;
+			display: block;
+			position: relative;
+			&:hover,&:focus{
+				background: $sfTopBackHover;
+				color: $sfTopLinkHover;
+			}
+		}
+		&.active-trail{
+			&:hover > a{
+				color: $sfTopActiveHover;
+			}
+			& > a{
+				color: $sfTopActive;
+				&:hover,&:focus{
+					color: $sfTopActiveHover;
+				}
+			}
+		}
+	}
+
+	//top level dropdowns
+	& > li.sf-depth-1{
+
+		//dropdown wrapper
+		& > ul{
+			padding: 20px 0 0;
+			top: 100%;
+			min-width: 280px;
+			@extend %menuDropdown;
+			& > li{ 
+				padding: 0;
+				&:last-of-type{
+					padding: 0 0 20px;
+				}
+			}
+		}
+
+	}//end main dropdown
+
+	//level 2 links
+	a.sf-depth-2{
+		line-height: 1;
+		padding: 12px 20px;
+	}
+
+	// sub menu toggles
+	.sf-depth-2 {
+		//global toggles
+		a.menuparent{
+			&:after{
+				content: '';
+				display: inline-block;
+				padding: 0;
+				position: relative;
+				right: -10px;
+				top: 4px;
+				opacity: 1;
+				height: 18px;
+				width: 18px;
+				background-image: url('../images/form-elements/caret-right-red.svg');
+				background-repeat: no-repeat;
+				background-size: 8px;
+				background-position: center;
+				@include transFormAnimate;
+			}
+			&:hover,&:focus{
+				&:after{
+					background-image: url('../images/form-elements/caret-right-dkgrey.svg');
+				}
+			}
+		}
+	}//end menu toggles
+
+	//level 2 dropdowns
+	.sf-depth-2{
+		ul{
+			@extend %menuDropdown;
+			left: 100%;
+			top: 0px;
+			min-width: 240px;
+		}
+	}
+
+	//level 3 links
+	li.sf-depth-3{
+		font-size: 1.7rem;
+		line-height: 1;
+		& > a{
+			padding-left: 40px;
+			padding: 8px 20px 8px 40px;
+			&.menuparent{
+				padding: 8px 40px;
+			}
+		}
+	}//end level 2
+
+
+}//sf-horizontal
+
+
+
+
+/* MOBILE FISH
+----------------- */
+		
+/* ====  sf main dropdown ====*/
+ul.sf-menu.sf-accordion{
+	&.sf-expanded{
+		position: absolute;
+		left: 0 !important;
+		top: 100% !important;
+		text-align: left;
+		overflow: hidden;
+		background: $sfMobileDrop;
+		border-bottom: 8px solid $sfMobileDropBorder;
+	}
+
+	// global mobile links
+	a{
+		padding: 20px 30px;
+		line-height: 1.15;
+	}
+
+	//parents, expanders & dropdowns
+	&.sf-accordion-with-buttons li{
+		position: relative;
+		& > .sf-accordion-button{
+			width: 60px;
+			height: 60px;
+			padding: 0;
+			text-indent: 9000px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+			background-color: transparent !important;
+			background-image: url('../images/form-elements/caret-down-red.svg');
+			background-repeat: no-repeat;
+			background-size: 20px;
+			background-position: center;
+			@include transFormAnimate;
+			//expander toggle
+			&:after{
+				content: none;
+			}
+		}//end accordion button
+
+		&.menuparent{;
+			a{
+				display: block;
+				&:not(.sf-accordion-button){
+					width: 100%;
+				}
+			}
+		}//end menupareny
+		&.sf-expanded > .sf-accordion-button{
+			background-image: url('../images/form-elements/caret-down-dkgrey.svg');
+			background-repeat: no-repeat;
+			background-size: 20px;
+			background-position: center;
+			@include rotate(180);
+		}
+	}//end li
+
+	li.sf-expanded > ul{
+		padding: 0 0 10px;
+	}
+
+	// top level
+	li.sf-depth-1{
+		& > a{
+			color: $sfMobileTop;
+			background: $sfMobileTopBack;
+		}
+		&:not(:last-child){
+			border-bottom: 1px solid $sfMobileItemBorder
+		}
+		&.sf-expanded{
+			& > a{
+				color: $sfMobileTopExpanded;
+				background: $sfMobileTopBackExpanded;
+				&:not(.sf-accordion-button){
+					border-bottom: 3px solid $transBlack;
+				}
+			}
+			& > ul{
+				padding: 10px 0;
+			}
+		}
+	}//end level 1
+
+	//level 2
+	li.sf-depth-2{
+		&:first-of-type.sf-expanded{
+			border-top: 0;
+		}
+		&:last-of-type.sf-expanded{
+			border-bottom: 0;
+		}
+		&.active-trail > a{
+			color: $sfMobileChildActive;
+		}
+		//inset level2 and those below
+		& > a{
+			color: $sfMobileChild;
+			&.sf-accordion-button{
+				height: 40px;
+			}
+			&:not(.sf-accordion-button){
+				padding: 10px 30px 10px 40px;
+			}
+		}
+	}//end level 2
+
+
+	//level 3
+	li.sf-depth-3{
+		//font size for level 3 and those below
+		&.active-trail > a{
+			color: $sfMobileChildActive;
+		}
+		a{
+			color: $sfMobileChild;
+			font-size: 15px;
+			padding: 10px 30px;
+			&.sf-accordion-button{
+				&:after{
+					font-size: 22px;
+				}
+			}
+			&:not(.sf-accordion-button){
+				padding: 10px 30px 10px 50px;
+			}
+		}
+	}//end level 3
+
+}//end sf-menu.sf-accordion
+

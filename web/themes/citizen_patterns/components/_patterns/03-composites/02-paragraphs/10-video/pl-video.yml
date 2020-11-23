@@ -1,0 +1,10 @@
+type:
+  video
+widgetTitle:
+  'Embed YouTube or Vimeo videos'
+
+#youtube urls only
+videoUrl:
+  'https://www.youtube.com/watch?v=Wimkqo8gDZ0'
+
+

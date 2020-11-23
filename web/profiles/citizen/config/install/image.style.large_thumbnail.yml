@@ -1,0 +1,17 @@
+uuid: 7896def5-809e-4e0a-8923-f666ccb765e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: large_thumbnail
+label: 'Large Thumbnail'
+effects:
+  a76081ce-afad-41b6-902e-e74b10fc55ed:
+    uuid: a76081ce-afad-41b6-902e-e74b10fc55ed
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 200
+      crop_type: focal_point

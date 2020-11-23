@@ -1,0 +1,184 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Crane theme.
+ */
+
+use Drupal\user\Entity\User;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_preprocess_HTML_variables() for HTML document templates.
+ */
+function crane_preprocess_html(&$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $pathName = preg_replace('/\W+/', '-', strtolower($route_name));
+  $bodyClasses = 'crane ' . $pathName;
+  // Add classes to the body.
+  if ($variables['attributes'] instanceof Attribute) {
+    $variables['attributes']->addClass($bodyClasses);
+  }
+  else {
+    $variables['attributes']['class'][] = $bodyClasses;
+  }
+  $preconnect = [
+    '#tag' => 'meta',
+    '#attributes' => [
+      'href' => 'https://fonts.googleapis.com',
+      'rel' => 'preconnect',
+    ],
+  ];
+
+  $preload = [
+    '#tag' => 'meta',
+    '#attributes' => [
+      'rel' => 'preload',
+      'href' => 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap',
+      'as' => 'style',
+    ],
+  ];
+
+  $variables['page']['#attached']['html_head'][] = [$preconnect, 'preconnect'];
+  $variables['page']['#attached']['html_head'][] = [$preload, 'preload'];
+}
+
+/**
+ * Implements hook_preprocess_PAGE_variables().
+ */
+function crane_preprocess_page(&$variables) {
+  $route_name = \Drupal::routeMatch()->getRouteName();
+  $variables['pathName'] = preg_replace('/\W+/', '-', strtolower($route_name));
+
+  // Get the site name and pass to page template.
+  $config = \Drupal::config('system.site');
+  $variables['site_name'] = $config->get('name');
+
+  // Find the logged in user's first name and pass to page template.
+  $user = User::load(\Drupal::currentUser()->id());
+  $variables['fname'] = $user->field_first_name;
+}
+
+/**
+ * Implements hook_preprocess_MENU_LOCAL_ACTIONS_variables().
+ */
+function crane_preprocess_menu_local_action(array &$variables) {
+  $variables['link']['#options']['attributes']['class'][] = 'button--small-override';
+}
+
+/**
+ * Implements hook_preprocess_BLOCK_variables().
+ */
+function crane_preprocess_block(&$variables) {
+  if ($variables['elements']['#id'] == 'crane_secondary_local_tasks') {
+    $secondaryTasks = $variables['content']['#secondary'];
+    $taskClass = [];
+    foreach ($secondaryTasks as $task) {
+      $taskClass[] = preg_replace('/\W+/', '-', strtolower($task['#link']['title']));
+    }
+    $variables['secondaryClasses'] = implode(' ', $taskClass);
+  }
+}
+
+/**
+ * Implements hook_preprocess_PARAGRAPH_variables().
+ */
+function crane_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $parent = $paragraph->getParentEntity();
+  if ($parent->getEntityTypeId() == 'node') {
+    $nodeId = $parent->id();
+  }
+  elseif ($parent->getParentEntity()->getEntityTypeId() == 'node') {
+    $nodeId = $parent->getParentEntity()->id();
+  }
+  else {
+    $nodeId = '';
+  }
+  $variables['nodeId'] = $nodeId;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function crane_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+  if ($form_state->has('entity_browser')) {
+    $form['#attached']['library'][] = 'citizen_custom/browser';
+  }
+
+  $form['theme_settings']['#open'] = FALSE;
+  unset($form['theme_settings']['toggle_node_user_picture']);
+  unset($form['theme_settings']['toggle_comment_user_picture']);
+  unset($form['theme_settings']['toggle_comment_user_verification']);
+
+  $form['logo']['#open'] = FALSE;
+  $form['favicon']['#open'] = FALSE;
+}
+
+/*
+ * general form alter
+ */
+function crane_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $formId = $form['#id'];
+  $user = \Drupal::currentUser();
+  $userRole = $user->getRoles();
+  
+  // fix webform filter insanely long placeholder
+  if ($formId == 'webform-filter-form') {
+    $form['filter']['search']['#placeholder'] = t('Search keywords');
+  }
+  
+  //clean up menu link form for non-admins
+  if($formId == 'menu-link-content-menu-link-content-form'){
+    $parentMenu = substr($form['menu_parent']['#default_value'], 0, -1);
+    $humanParent = ucwords(str_replace('_',' ',$parentMenu));
+    $form['title']['#prefix'] = '<div class="form-item-prefix">Go back to the <a href="/admin/structure/menu/manage/'.$parentMenu.'/">'.$humanParent.' menu</a>.</div>';
+    if((in_array('editor', $userRole)) || (in_array('site_manager', $userRole))){
+      unset($form['description'],$form['weight'],$form['expanded'],$form['link']['widget'][0]['options']);
+    }
+  } //End menu content link form alter
+
+  //alter taxononmy term forms
+  if($formId == 'taxonomy-overview-terms'){
+    $form['#prefix'] = '<div class="vocab-nav">Add, edit, delete, or rearrange the terms in this vocabulary—or return to the <a href="/admin/structure/taxonomy">vocabularies list</a>.</div><br>';
+  }
+
+  //alter taxononmy term forms
+  if(isset($form['vid']['#value'])){
+    $vocab = $form['vid']['#value'];
+    $human = ucwords(str_replace('_',' ',$vocab));
+    if(isset($form['tid']['#value'])){
+      $form['name']['#prefix'] = '<div class="form-item-prefix">Edit this <span>'.$human.'</span> term or return to the <a href="/admin/structure/taxonomy/manage/'.$vocab.'/overview">terms list</a>.</div>';
+    }else{
+      $form['name']['#prefix'] = '<div class="form-item-prefix">Add a new <span>'.$human.'</span> term or return to the <a href="/admin/structure/taxonomy/manage/'.$vocab.'/overview">terms list</a>.</div>';
+    }
+  }
+  
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function crane_theme_suggestions_form_alter(array &$suggestions, array $variables) {
+  if (isset($variables['element']['#form_id'])) {
+    $id = $variables['element']['#form_id'];
+    array_push($suggestions, 'form__' . $id);
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for page templates.
+ */
+function crane_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.edit_form') {
+    $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
+    $term = Term::load($tid);
+    $suggestions[] = 'page__taxonomy__' . $term->getVocabularyId();
+  }
+}

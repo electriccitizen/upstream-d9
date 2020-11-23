@@ -1,0 +1,984 @@
+/* ==================
+	 STYLEGUIDE
+==================== */
+/* For performance reasons, this stylesheet is not imported into the the main style.scss so it is added to the css styles used by Drupal. Its is for the style guide only. For that reason, we need to manually import any variables and mixins directly into this file before its compiled into the guide.css */
+@import 
+	'breakpoint-sass/stylesheets/breakpoint',
+	'../../00-base/colors/color-vars',
+	'../../00-base/colors/component-color-vars',
+	'../../00-base/fonts/font-vars',
+	'../../00-base/01-mixins',
+	'../../00-base/02-backgrounds',
+	'../../00-base/03-units',
+	'../../01-parts/02-typography/typography';
+
+
+/* PATTERN LAB VARIABLES
+---------------------- */
+//these should come from the admin theme
+$offWhite     : #f6f6f6;
+$iceBlue      : #f2f9fb;
+$darkIce      : #e4f5fc;
+$blue         : #026cc5;
+$midBlue      : #1d5a9f;
+$darkBlue     : #073b75;
+$darkGrey     : #37363b;
+$red          : #bf0e0e;
+$lightRed     : #d94040;
+
+$navLinks     : $white;
+$navBack      : $blue;
+$navBackHover : $midBlue;
+$adminText    : 'PT Sans', sans-serif;
+
+$subGroupHeader      : $adminGold;
+$subGroupHeaderBack  : $darkGrey;
+
+
+.project-styleguide{
+	position: relative;
+	&:before{
+		content: '';
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		//set grid paper background
+		background-color: $offWhite;
+		background-size:400px 400px, 400px 400px, 100px 100px, 100px 100px;
+		background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px;
+		background-image: -webkit-linear-gradient(darken($lightGrey,2%) 2px, transparent 2px),
+			-webkit-linear-gradient(0, darken($lightGrey,2%) 2px, transparent 2px),
+			-webkit-linear-gradient($lightGrey 1px, transparent 1px),
+			-webkit-linear-gradient(0, $lightGrey 1px, transparent 1px);
+		background-image: -moz-linear-gradient(darken($lightGrey,2%) 2px, transparent 2px),
+			-moz-linear-gradient(0, darken($lightGrey,2%) 2px, transparent 2px),
+			-moz-linear-gradient($lightGrey 1px, transparent 1px),
+			-moz-linear-gradient(0, $lightGrey 1px, transparent 1px);
+		background-image: linear-gradient(darken($lightGrey,2%) 2px, transparent 2px),
+			linear-gradient(90deg, darken($lightGrey,2%) 2px, transparent 2px),
+			linear-gradient($lightGrey 1px, transparent 1px),
+			linear-gradient(90deg, $lightGrey 1px, transparent 1px);
+	}
+}//end sg patterns
+
+/* SYTYLEGUIDE NAV
+--------------------- */
+#styleguide-nav{
+	position: fixed;
+	top: 154px;
+	background: $navBack;
+	font-family: $adminText;
+	z-index: 497;
+	left: -205px;
+	min-width: 200px;
+	box-shadow: 3px 3px 4px rgba(35,35,35,0.3);
+	.style-nav-toggle{
+		width: 60px;
+		height: 60px;
+		position: fixed;
+		z-index: 496;
+		top: 94px;
+		left: 0;
+		box-shadow: 3px 1px 4px rgba(35,35,35,0.3);
+		a{
+			text-align: center;
+			width: 100%;
+			height: 100%;
+			display: block;
+			font-size: 32px;
+			background: $navBack;
+			padding-top: 12px;
+			color: $navLinks;
+			&:hover,&:focus{
+				background: $buttonBackHover;
+				color: $buttonTextHover;
+			}
+			&:active{
+				background: $buttonBackActive;
+				color: $buttonTextActive;
+			}
+		}
+	}
+	ul{
+		@include listReset;
+		&#pattern-groups{
+			padding: $spaceLg 0 0;
+		}
+		a{
+			color: $navLinks;
+			background: $navBack;
+		}
+		ul{	
+			position: absolute;
+			padding: $spaceSm 0;
+			top: -$spaceXxs;
+			left: 0;
+			z-index: 496;
+			background: $navBack;
+			width: 180px;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 8px;
+				@include gradient(left,rgba(35,35,35,0.2),$navBack);
+			}
+			li{
+				padding-left: 6px;
+			}
+			a{
+				display: block;
+				padding: 5px 20px 5px 40px;
+				&:hover,&:focus{
+					background: $navBackHover;
+				}
+			}
+		}
+	}
+	//top level
+	.group-nav-item{
+		position: relative;
+		background: $red;
+		&:last-child > a{
+			padding-bottom: 100px;
+		}
+		& > a{
+			display: block;
+			position: relative;
+			z-index: 499;
+			font-size: 2.2rem;
+			padding: $spaceXxs 20px $spaceXxs 50px;
+			&:before{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 15px;
+				left: 20px;
+				width: 18px;
+				height: 18px;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+			&:after{
+				content: '';
+				display: block;
+				width: 100%;
+				height: 50px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+			}
+			&:focus{
+				&:after{
+					background: $navBackHover;
+				}
+			}
+			&[data-group-target="materials"]:before{
+				background-image: url('../pattern-lab/public/images/custom/style-nav-icons/materials.svg');
+			}
+			&[data-group-target="parts"]:before{
+				background-image: url('../pattern-lab/public/images/custom/style-nav-icons/parts.svg');
+			}
+			&[data-group-target="chunks"]:before{
+				background-image: url('../pattern-lab/public/images/custom/style-nav-icons/chunks.svg');
+			}
+			&[data-group-target="composites"]:before{
+				background-image: url('../pattern-lab/public/images/custom/style-nav-icons/composites.svg');
+			}
+			&[data-group-target="units"]:before{
+				background-image: url('../pattern-lab/public/images/custom/style-nav-icons/units.svg');
+			}
+			&.devices:before{
+				background-image: url('../pattern-lab/public/images/custom/style-nav-icons/device.svg');
+			}
+		}//end first level a
+		&:hover{
+			& > a:after{
+				background: $navBackHover;
+			}
+		}
+	}//end group-nav-item
+}//end styleguide nav
+
+/* MAIN PL CONTAINER & PATTERN/GROUP TITLES
+----------------------- */
+.sg-main{
+	overflow-x: hidden !important;
+	padding: 0 0 $spaceXl;
+	position: relative;
+	z-index: 1;
+	#sg-patterns{
+		padding: 0 $spaceXl;
+		//main patterns sections
+		& > .sg-subtype{
+			//constrain pattern group titles to max width & hide color bar overflow
+			&:not(:first-child){
+				max-width: $largeScreen;
+				@include auto;
+				overflow-x: hidden;
+			}
+			//hide default pl group link headers
+			& > h2{
+				display: none;
+			}
+			//group titles from MD files
+			& > .sg-pattern-body{
+				max-width: $textMax;
+				text-align: center;
+				@include auto;
+				h1{
+					font-size: 30px;
+					padding: $spaceMd 0;
+					position: relative;
+					color: $white;
+					font-family: $adminText;
+					&:after{
+						@include fullBack($darkBlue);
+					}
+				}
+				h2.group-title{
+					font-size: 42px;
+					padding: $spaceXl + 4 0 $spaceLg;
+					font-family: $adminText;
+					@include tab{
+						font-size: 50px;
+					}
+					@include contentStop{
+						font-size: 60px;
+					}
+				}
+				h3.sub-group-title{
+					position: relative;
+					color: $subGroupHeader;
+					padding: $spaceSm 0;
+					&:after{
+						@include fullBack($subGroupHeaderBack);
+					}	
+				}
+			}//end sg-pattern-body
+		}//end top level types (all main _patterns folders)
+		.sg-pattern{
+			padding-bottom: $spaceXl;
+			margin-bottom: 0;
+		}
+	}//end sg-patterns
+}//end sg-main
+
+/* PATTERNS
+--------------------- */
+.sg-pattern{
+	max-width: $largeScreen;
+	padding: 0 $siteMarginMobile $spaceMd;
+	background: $siteBack;
+	@include auto;
+	@include desk{
+		padding-left: $siteMarginDesk;
+		padding-right: $siteMarginDesk;
+	}
+	.sg-pattern-head{
+		.sg-pattern-title{
+			background: $siteBack;
+			max-width: $largeScreen;
+			@include auto;
+			padding: $spaceLg $siteMarginMobile $spaceSm;
+			display: block;
+			font-family: $adminText;	
+			@include desk{
+				padding-left: $siteMarginDesk;
+				padding-right: $siteMarginDesk;
+			}
+			a{
+				pointer-events: none;
+				display: block;
+				text-transform: capitalize;
+				font-size: 42px;
+				color: $midBlue !important;
+				padding-bottom: $spaceXs;
+				border-bottom: 2px solid $midBlue;
+				margin-bottom: $spaceMd;
+			}
+		}//end sg title
+		.sg-pattern-extra-toggle{
+			display: none;
+		}
+	}//end pattern head
+	.sg-pattern-extra{
+		border-top: 0;
+	}
+	.element-title{
+		color: $midBlue;
+		font-weight: $heavy;
+		font-family: $adminText;
+		font-size: 2.4rem;
+		margin-bottom: $spaceXxs;
+	}
+}//end sg-patterns
+
+.pl-options{
+	width: 100%;
+	margin: $spaceSm 0;
+	.options-inner{
+		min-width: 180px;
+		@include safeFlex(row,wrap,start,start);
+	}
+}
+
+.pl-snug{
+	margin-bottom: $spaceSm;
+}
+
+.pl-space{
+	margin-bottom: $spaceMd;
+}
+
+.visually-hidden{
+	@include visuallyHidden;
+}
+
+/* SIZING
+------------- */
+.constrain-text{
+	max-width: $textMax;
+	&.center{
+		@include auto;
+	}
+}
+
+.max-small{
+	max-width: 350px;
+}
+
+.max-text{
+	max-width: $textMax;
+}
+
+/* PL GRIDS 
+-------------- */
+.grid-center-spaced{
+	@include safeFlex(row,wrap,center,start);
+	@include bleed(padding,70px);
+}
+
+.grid-left-spaced{
+	@include safeFlex(row,wrap,start,start);
+	@include bleed(padding,70px);
+}
+
+.grid-left{
+	@include safeFlex(row,wrap,start,start);
+	@include bleed(padding,20px);
+}
+
+.grid-two-column{
+	@include safeFlex(row,wrap,start,start);
+	& > *{
+		@include tab{
+			width: 50%;
+		}
+	}
+}
+
+
+/* HIDDEN PL ELEMENTS
+-------------------------- */
+//these are elements that could not easily be hidden from pattern lab through _file-name
+
+
+/* PATTERN SPECIFIC
+------------------------- */
+// unicorn theming for specific patterns
+
+/* COLOR SWATCHES */
+.sg-colors{
+	@include bleed(padding,8px);
+	@include safeFlex(row,wrap,center,start);
+	li{
+		max-width: none;
+		flex: 0 0 198px;
+		border: 0;
+		border-radius: 0;
+		padding: 0 4px 8px;
+		margin: 0;
+		.sg-swatch{
+			border-radius: 0;
+			height: 100px;
+			margin-bottom: 0;
+		}
+	}//end li
+}//end sg-colors
+
+/* ICONS LIST */
+.icons-demo{
+	margin-bottom: -$spaceSm;
+	.sprite-icon{
+		display: inline-block;
+		width: $plIcon;
+		height: $plIcon;
+		@include plIconSize;
+		margin-bottom: $spaceSm;
+	}
+}
+
+/* TYPOGRAPHY */
+.typography-element{
+	margin-bottom: $spaceMd;
+}//end typography element
+
+.banner-title{
+	@include bannerTitle;
+	.block-field-banner{
+		@include tab{
+			height: 400px;
+			overflow: hidden;
+			img{
+				position: absolute;
+				top: 50%;
+				left: 0;
+				@include translateY(-50%);
+			}
+		}
+	}
+}//end banner title
+
+/* BUTTONS */
+.content-buttons{
+	button{
+		min-width: 200px;
+	}
+}	
+
+/* TABLES */
+.pl table{
+	// need to adjust the width of the table row value on mobile to prevent a border gap because the breakpoint and screen width are off by 120px;
+	.st-val{
+		@include smallTab{
+			max-width: 100%;
+		}
+	}
+}
+
+/* BREADCRUMBS */
+.breadcrumb{
+	max-width: 100%;
+	padding: 0;
+}
+
+/* SUPERFISH MAIN NAV */
+.block-superfishmain{
+	#chunks-superfish &{
+		position: relative;
+		padding-left: 0;
+		min-height: 40px;
+	}
+	.sf-accordion-toggle{
+		#superfish-main-toggle{
+			&:before{
+				content: none;
+			}
+		}
+		@include desk{
+			display: none;
+		}
+	}
+	ul{
+		@include listReset;
+		&.sf-main{
+			.sf-hidden{
+				display: none;
+			}
+			a{
+				display: block;
+			}
+			&.sf-horizontal{
+				display: flex !important;
+				#chunks-superfish &{
+					min-height: 200px;
+					@include safeFlex(row,wrap,start,start);
+				}
+				//hide mobile accordion links
+				.sf-accordion-button{
+					display: none;
+				}
+				//show top level links on hover
+				& > li{
+					#chunks-superfish &{
+						&:not(.sfHover){
+							&:hover{
+								& > ul.sf-hidden{
+									display: block !important;
+								}
+							}
+							& > a:focus{
+								& ~ ul.sf-hidden{
+									display: block !important;
+								}
+							}
+						}
+					}
+				}
+				li{
+					position: relative;
+					.sf-hidden{
+						position: absolute;
+						top: 100%;
+						left: 0;
+						width: 280px;
+					}
+				}
+			}//end sf-horizontal
+			&.sf-accordion{
+				display: none;
+				width: 100%;
+				z-index: 499;
+				box-shadow: 0 3px 2px 0 rgba(35,35,35,0.2);
+			}
+		}//end sf-main
+	}//end ul
+	#superfish-main-toggle{
+		color: $black;
+		i{
+			font-size: 28px;
+		}
+		#chunks-superfish &{
+			right: auto;
+			left: 0;
+			top: 0;
+		}
+	}//end main toggle
+}//end superfish main
+
+/* SECTION MENU */
+#block-section-menu{
+	@include desk{
+		max-width: $sideBar;
+	}
+}
+
+/* ANCHOR NAVIGATION */
+#chunks-widget-anchors{
+	overflow-x: hidden;
+}
+
+/* BACK TO TOP */
+#chunks-back-top{
+	.back-anchor{
+		display: inline-block;
+		position: static;
+	}
+}
+
+/* FILTERS */
+.views-exposed-form{
+	.form-item{
+		@include smallTab{
+			width: 100%;
+			max-width: 100%;
+		}
+		@include breakpoint(620px){
+			width: 50%;
+			max-width: 300px;
+		}
+	}
+}//end views exposed form
+
+/* PAGER */
+.smart-pager-intro{
+	width: 100%;
+	@include safeFlex(row,wrap,start,start);
+	.pager-instructions{
+		@include breakpoint(620px){
+			@include calc(width,"100% - 190px");
+			padding-left: 60px;
+			max-width: $textMax;
+			@include safeFlexOrder(2);
+		}
+	}
+	.form-item{
+		max-width: 190px;
+	}
+}
+.per-page{
+	display: none;
+}
+.pager__number{
+	&[data-hide="true"]{
+		display: none !important;
+	}
+}
+
+/* BLOCKS */
+//search
+#composites-pl-search-block{
+	.block-site-search{
+		position: relative;
+		overflow-x: hidden;
+		width: 100%;
+		text-align: left;
+		.t-search{
+			position: static;
+		}
+		.t-search-close{
+			border: 1px solid $searchDropBack;
+		}
+		#search-form-wrapper{
+			position: relative;
+			top: -30px;
+			@include contentStop{
+				width: 100%;
+				left: 0;
+			}
+		}
+	}//end search
+}//end composite search block
+
+// newsletter
+#composites-pl-newsletter{
+	.block-newsletter{
+		h2.block-title{
+			text-align: left;
+			max-width: 100%;
+		}
+		.field.body{
+			a{
+				color: $link;
+				&:hover,&:focus{
+					color: $hoverLink;
+				}
+			}
+		}
+		.form-embed{
+			max-width: 300px;
+		}
+	}//end newsletter
+}//end composites newsletter
+
+//social-media
+#composites-social-media-links{
+	.block-social-media-links{
+		h2.block-title{
+			text-align: left;
+			max-width: 100%;
+		}
+	}
+}//end composites-social-media-links
+
+/* PARAGRAPHS */
+//global
+.paragraphs-layout{
+	padding: 0 20px;
+	max-width: $contentStop + 40px;
+	@include auto;
+}
+#composites-pl-sections{
+	.paragraphs-layout{
+		max-width: 100%;
+	}
+}
+
+//links & files
+.smart-lf-intro{
+	width: 100%;
+	@include safeFlex(row,wrap,start,start);
+	.lf-instructions{
+		@include breakpoint(620px){
+			@include calc(width,"100% - 190px");
+			padding-left: 60px;
+			max-width: $textMax;
+			@include safeFlexOrder(2);
+		}
+	}
+	.form-item{
+		max-width: 210px;
+	}
+}
+
+//gallery
+.paragraph--type--gallery{
+	max-width: $contentStop;
+	@include auto;
+	&.slider{
+		position: static;
+		-webkit-transition: opacity 0.3s ease-in 0s;
+		.gallery-wrapper{
+			transition: opacity 0.3s ease-in 0s;
+			transition: opacity 0.3s ease-in 0s;
+			transition: opacity 0.3s ease-in 0s, opacity 0.3s ease-in 0s;
+		}
+		&.in-active{
+			position: relative;
+			.gallery-wrapper{
+				position: absolute;
+				top: 0;
+				left: -9000vw;
+				opacity: 0;
+			}
+		}
+	}
+	&:not(:first-child){
+		display: none;
+	}
+}//end gallery
+
+//video
+.paragraph--type--video{
+	.video-embed-field-responsive-video{
+		position: relative;
+		&:after{
+			content: '';
+			display: block;
+			padding-bottom: 56.25%;
+		}
+		iframe{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+	}
+}//end video
+
+//section
+.section-options{
+	.options-inner{
+		@include safeFlex(row,wrap,start,start);
+		@include bleed(padding,20px);
+		.form-item{
+			max-width: 250px;
+		}
+	}
+}//end section options
+
+/* CARDS */
+.views-element-container{
+	max-width: $contentStop;
+	@include auto;
+}
+.view-content{
+	&.grid{
+		margin-bottom: -$spaceLg;
+		@include bleed(padding,40px);
+	}
+	.views-row{
+		&.horizontal{
+			&:nth-child(n+4){
+				display: none;
+			}
+			@include breakpoint(500px){
+				display: block;
+				.views-field-field-banner{
+					width: 100%;
+					padding-right: 0;
+					margin-bottom: $spaceSm;
+				}
+				.views-field-nothing{
+					width: 100%;
+				}
+			}
+			@include breakpoint(620px){
+				@include safeFlex(row,wrap,start,start);
+				.views-field-field-banner{
+					width: 340px;
+					padding-right: 40px;
+					margin-bottom: 0;
+				}
+				.views-field-nothing{
+					@include calc(width,"100% - 340px");
+				}
+			}
+		}
+		&.vertical{
+			@include smallTab{
+				width: 100%;
+			}
+			@include tab{
+				width: 50%;
+			}
+			@include desk{
+				width: 33.33%;
+			}
+		}
+	}//end views row
+}//end view content
+
+/* LAYOUTS */
+#composites-pl-layouts{
+	.layout__region:not(.layout__region--tabs){
+		.region-content{
+			background: $lightGrey;
+			min-height: 100px;
+		}
+	}
+	.layout__region--tabs{
+		max-width: $contentStop;
+		@include auto;
+		.tab-block{
+			.block-title{
+				display: none;
+			}
+			.field.body{
+				margin-top: 20px;
+				max-width: $textMax + 40px;
+				@include auto;
+				padding: $spaceLg 20px;
+				background: $lightGrey;
+			}
+		}
+	}
+}
+
+/* CONTENT TYPES
+------------------ */
+.path-node{
+	margin-bottom: -12rem;
+	.layout-content{
+		max-width: 100% !important;
+	}
+}
+%bannerRatiosFake{
+	position: relative;
+	padding-bottom: 74.62%;
+	width: 100%;
+	overflow: hidden;
+	@include breakpoint(620px){
+		padding-bottom: 56.25%;
+	}
+	@include breakpoint(880px){
+		padding-bottom: 40%;
+	}
+	@include breakpoint(1120px){
+		padding-bottom: 37.5%;
+	}
+	& > *{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		@include translateY(-50%);
+	}
+}
+
+/* LANDING PAGE */
+.node-landing-page{
+	.field-banner{
+		@extend %bannerRatiosFake;
+	}
+}
+
+/* BASIC PAGE */
+.node-page{
+	.field-banner{
+		@extend %bannerRatiosFake;
+	}
+}
+
+/* BLOG POST */
+.node-blog{
+	.field-banner{
+		@extend %bannerRatiosFake;
+	}
+}
+.addtoany_list{
+	display: inline;
+	a{
+		font-size: 32px;
+		cursor: pointer;
+		display: inline-block;
+		padding: 0 2px;
+		&:hover,&:focus{
+			span{
+				opacity: .7;
+			}
+		}
+		& > span{
+			height: 32px;
+			line-height: 32px;
+			opacity: 1;
+			width: 32px;
+			background-repeat: repeat;
+			display: inline-block;
+			float: none;
+			vertical-align: middle;
+			overflow: hidden;
+			padding: 0;
+			svg{
+				background-repeat: no-repeat;
+				background-position: 50% 50%;
+				border: none;
+				display: block;
+				left: 0;
+				margin: 0 auto;
+				overflow: hidden;
+				padding: 0;
+				position: relative;
+				top: 0;
+				width: auto;
+				height: auto;
+			}
+		}
+	}
+}//end add to any list
+
+/* EVENT */
+.map-fake{
+	overflow: hidden;
+	position: relative;
+	.map-open{
+		height: 350px;
+		display: block;
+	}
+	.image-wrapper{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		@include translateY(-50%);
+	}
+	.map-overlay{
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		background: rgba(35,35,35,0.8);
+		.map-close{
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 4;
+			width: 50px;
+			height: 50px;
+			background-image: url('../images/preview/close-white.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 20px;
+			&:hover,&:focus{
+				opacity: .6;
+			}
+		}
+		p{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 2;
+			width: 80%;
+			color: $white;
+			max-width: $textMax;
+			text-align: center;
+			@include translate(-50%,-50%);
+		}	
+	}
+}//end map-fake

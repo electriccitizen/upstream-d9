@@ -1,0 +1,435 @@
+/* ========================
+  PARAGRAPHS
+========================== */
+
+/* ICON IMAGES
+----------------- */
+%section{
+	background-image: url('../images/icons/paragraphs/section.svg');
+}
+%accordion{
+	background-image: url('../images/icons/paragraphs/accordion.svg');
+}
+%block{
+	background-image: url('../images/icons/paragraphs/block.svg');
+}
+%form{
+	background-image: url('../images/icons/paragraphs/form.svg');
+}
+%gallery{
+	background-image: url('../images/icons/paragraphs/galleries.svg');
+}
+%rule{
+	background-image: url('../images/icons/paragraphs/hr.svg');
+}
+%image{
+	background-image: url('../images/icons/paragraphs/image.svg');
+}
+%link{
+	background-image: url('../images/icons/paragraphs/link.svg');
+}
+%quote{
+	background-image: url('../images/icons/paragraphs/quote.svg');
+}
+%text{
+	background-image: url('../images/icons/paragraphs/text.svg');
+}
+%video{
+	background-image: url('../images/icons/paragraphs/video.svg');
+}
+%view{
+	background-image: url('../images/icons/paragraphs/view-placer.svg');
+}
+
+/* PARAGRAPHS BUTTONS
+--------------------------- */
+
+.field--widget-paragraphs{
+	&:after{
+	  content: '';
+	  display: block;
+	  clear: both;
+	}
+	.description strong span{
+		 color: #dd241b;
+	}
+
+	//summary icons
+	.paragraph-top{
+		.js &{
+			grid-template-columns: 300px auto 1fr auto;
+		}
+		.paragraph-type.form-wrapper{
+			&.landing-page-section,&.basic-page-section{
+				.paragraph-type-label{
+					@extend %section;
+				}
+			}
+			&.accordion-group,.accordion-item{
+				.paragraph-type-label{
+					@extend %accordion;
+				}
+			}
+			&.block-placer{
+				.paragraph-type-label{
+					@extend %block;
+				}
+			}
+			&.form{
+				.paragraph-type-label{
+					@extend %form;
+				}
+			}
+			&.gallery{
+				.paragraph-type-label{
+					@extend %gallery;
+				}
+			}
+			&.horizontal-rule{
+				.paragraph-type-label{
+					@extend %rule;
+				}
+			}
+			&.image{
+				.paragraph-type-label{
+					@extend %image;
+				}
+			}
+			&.links-files{
+				.paragraph-type-label{
+					@extend %link;
+				}
+			}
+			&.pullquote{
+				.paragraph-type-label{
+					@extend %quote;
+				}
+			}
+			&.text{
+				.paragraph-type-label{
+					@extend %text;
+				}
+			}
+			&.video{
+				.paragraph-type-label{
+					@extend %video;
+				}
+			}
+			&.view-placer{
+				.paragraph-type-label{
+					@extend %view;
+				}
+			}
+			.paragraph-type-label{
+				@include heading4;
+				padding-left: 30px;
+				background-size: 22px 22px;
+				background-position: 1px 1px;
+				background-repeat: no-repeat;
+				color: $darkBlue;
+			}
+		}//end paragraph-type-form-wrapper
+		.paragraph-info{
+			.paragraphs-badge{
+				font-size: 1.5rem;
+				font-weight: 700;
+				border-radius: 0;
+				background: $darkBlue;
+				margin: 0;
+				padding: 3px 6px;
+				position: relative;
+				top: -2px;
+			}
+		}//end paragraph info
+	}//end paragraph-top
+
+	//button icons
+	.paragraphs-tabs-wrapper{
+		input.button.field-add-more-submit{
+			&:not([value="Add another item"]){
+				padding: 7px 12px 7px 38px;
+			  border: 2px solid $link;
+			  color: $darkGrey;
+			  border-radius: 0;
+			  float: left;
+			  background-position: 7px 4px;
+			  background-size: 22px 22px;
+			  background-repeat: no-repeat;
+			  background-color: $siteBack;
+			  margin-right: 15px;
+			  font-size: 1.6rem;
+			  font-weight: $heavy;
+			}
+			&:hover,&:focus{
+				border-color: $buttonBackHover;
+  			background-color: $buttonBackHover !important;
+			}
+			&:active{
+				border-color: $buttonBackActive;
+  			background-color: $buttonBackActive !important;
+			}
+		}
+		.clearfix{
+			margin-bottom: 2em;
+		}
+		input.form-submit:not(.image-button){
+			&[value="Add Landing Page Section"],&[value="Add Basic Page Section"]{
+				@extend %section;
+			}
+			&[value="Add Accordions"],&[value="Add Accordion Item"]{
+				@extend %accordion;
+			}
+			&[value="Add Block Placer"]{
+				@extend %block;
+			}
+			&[value="Add Form"]{
+				@extend %form;
+			}
+			&[value="Add Gallery"]{
+				@extend %gallery;
+			}
+			&[value="Add Horizontal Rule"]{
+			  @extend %rule;
+			}
+			&[value="Add Image"]{
+			  @extend %image;
+			}
+			&[value="Add Links & Files"]{
+			  @extend %image;
+			}
+			&[value="Add Quote"]{
+			  @extend %quote;
+			  background-position: 7px 6px;
+			  background-size: 20px 20px;
+			}
+			&[value="Add Text"]{
+			  @extend %text;
+			  background-position: 7px 6px;
+			  background-size: 20px 20px;
+			}
+			&[value="Add Video"]{
+			  @extend %video;
+			  background-position: 7px 6px;
+			  background-size: 20px 20px;
+			}
+			&[value="Add View Placer"]{
+			  @extend %view;
+			}
+		}//end paragraph add button input
+	}//end paragraphs tab wrapper
+}//end field--widget-paragraphs
+
+
+/* WIDGET CONTENT SPACING
+-------------------------- */
+.paragraphs-content{
+  margin-bottom: 1em;
+}
+
+.field--name-field-reusable-paragraph .entities-list .item-container{
+  display: block;
+  input{
+  	display: inline-block;
+  	margin: .5em 0 .5em 1em;
+  }
+}
+
+/* PREVIEWS
+---------------- */
+.field--widget-paragraphs .paragraph--view-mode--preview{
+	padding-top: $spaceXs;
+	&.paragraph--type--landing-page-section,&.paragraph--type--basic-page-section{
+		& > *:not(:last-child){
+			margin-bottom: $spaceXxs;
+		}
+	}
+	//add swatch if style
+	.field--name-field-style{
+		.swatch{
+			&:after{
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				width: 30px;
+				height: 18px;
+				margin-left: 10px;
+				border: 1px solid $black;
+				position: relative;
+				top: -2px;
+			}
+			&.grey:after{
+				background: $sectionGrey;
+			}
+		}
+	}//end style
+	// add layout for preview
+	&.section-two-column{
+		.field--name-field-section-widgets > .field__items > .field__item{
+			@include tab{
+				width: 50%;
+			}
+		}
+	}
+	&.section-three-column{
+		.field--name-field-section-widgets > .field__items > .field__item{
+			@include tab{
+				width: 33.33%;
+			}
+		}
+	}
+	.field--name-field-section-widgets{
+		padding: $spaceXs 0;
+		& > .field__label{
+			display: inline-block;
+			margin-bottom: $spaceXxs;
+			padding-right: 6rem;
+			border-bottom: 1px solid $borderRule;
+		}
+		& > .field__items{
+			padding-left: 1rem;
+			@include safeFlex(row,wrap,start,start);
+			& > .field__item{
+				clear: left;
+				width: 100%;
+			}
+			& > .field__item{
+				font-size: 1.4rem;
+				&:not(:last-child){
+					margin-bottom: $spaceXxs;
+				}
+				.field__label{
+					color: $darkGrey;
+				}
+			}
+		}//end field items
+	}//end section widgets
+
+	a:not(.leave-live){
+		color: $baseText;
+		pointer-events: none;
+	}
+	img{
+		max-width: 50px;
+	}
+	p,.field--type-text-long{
+		margin: 0;
+	}
+	.more{
+		margin-left: .25em;
+	}
+}//end paragraph-preview
+
+/* PREVIEW SUBFORM */
+.paragraphs-subform{
+	.field--widget-paragraphs{
+		.paragraph-top .paragraph-type.form-wrapper{
+			.paragraph-type-label{
+				@include heading5;
+				color: $darkBlue;
+				background-size: 20px 20px;
+				padding-left: 28px;
+			}
+		}
+		.paragraph--view-mode--preview{
+			& > .field--label-inline{
+				& > .field__label{
+					display: none;
+				}
+				& > .field__item{
+					font-size: 1.4rem;
+				}
+			}
+		}
+	}
+}//end preview subform
+
+/* ACCORDION GROUP
+---------------------- */
+.paragraph--type--accordion-group{
+	.field--name-field-accordion-item{
+		@include safeFlex(row,wrap,start,start);
+		& > .field__item{
+			padding-right: 0;
+			&:nth-child(n+3){
+				padding-left: .25em;
+			}
+		}
+	}
+}//end accordion group
+
+/* FORM
+------------------ */
+.paragraph--type--form{
+	.field--name-field-oc-form{
+		.js-form-type-select{
+				& + .js-form-wrapper{
+					display: none;
+			}
+		}
+	}
+}//end form 
+
+/* GALLERY
+---------------------- */
+.paragraph--type--gallery{
+	@include safeFlex(row,wrap,start,center);
+	.field--name-field-gallery-type{
+		@include safeFlexSize(0,0,165px);
+		.paragraphs-subform &{
+			@include safeFlexSize(0,0,75px);
+		}
+	}
+	.field--name-field-image-multi{
+		@include safeFlex(row,wrap,start,start);
+		.field__item{
+			margin-right: 3px;
+		}
+	}
+}//end gallery
+
+/* HORIZONTAL RULE
+------------------- */
+.paragraph--type--horizontal-rule{
+	margin-bottom: $spaceXxs;
+	@include clearFix;
+	.field__item{
+		max-width: 160px;
+		position: relative;
+		top: 10px;
+		hr{
+			background: $borderRule;
+			margin: -5px 0 5px;
+		}
+	}
+}//end horizontal rule
+
+/* IMAGE
+------------------- */
+.paragraph--type--image{
+	.field--name-field-image{
+		@include safeFlex(row,wrap,start,center);
+	}
+}//end image
+
+/* LINKS & FILES
+------------------- */
+.paragraph--type--links-files{
+	.links-files-list{
+		@include safeFlex(row,wrap,start,start);
+		.lf-item{
+			&:not(:first-child){
+				padding-left: .25em;
+			}
+		}
+	}
+}//end links & files
+
+/* VIDEO
+------------------- */
+.paragraph--type--video{
+	.field--name-field-video{
+		@include safeFlex(row,wrap,start,center);
+	}
+}//end video
+
+

@@ -1,0 +1,10 @@
+uuid: e6f13654-8d34-47a8-be25-ec8b946de755
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.medium_embed
+label: 'Medium Embed'
+targetEntityType: media
+cache: true

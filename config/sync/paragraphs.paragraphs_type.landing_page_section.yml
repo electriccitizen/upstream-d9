@@ -1,0 +1,10 @@
+uuid: 4526a62d-2fa4-4819-842f-a0e217e92bac
+langcode: en
+status: true
+dependencies: {  }
+id: landing_page_section
+label: 'Landing Page Section'
+icon_uuid: null
+icon_default: null
+description: 'Section widgets holder for landing pages'
+behavior_plugins: {  }

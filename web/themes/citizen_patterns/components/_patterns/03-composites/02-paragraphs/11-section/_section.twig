@@ -1,0 +1,98 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+{% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+  with{
+    widgetTitle: '',
+  }
+%}
+	{% block widgetContent %}
+		{% embed '@parts/08-fields/02-paragraphs/_section-items-field.twig' %}
+			
+			{% block sectionItems %}
+				{% for paragraph in paragraphs %}
+
+					{% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+			      with{
+			        sectionTitle: '',
+			        sectionIntro: '',
+			        layout: '',
+			        background: '',
+			        type: paragraph.type,
+			        widgetTitle: paragraph.widgetTitle
+			      }
+			    %}
+				    {% block widgetContent %}
+
+							{% if paragraph.type == 'accordion-group' %}
+								<div class="field field-accordion-item">
+									{% for accordion in paragraph.accordionGroup %}
+										<div>
+											{% 
+												include "@composites/02-paragraphs/01-accordion/_accordion.twig"
+												with{
+													accordionHeader: accordion.accordionHeader,
+													accordionContent: accordion.accordionContent
+												}
+											%}
+										</div>
+									{% endfor %}
+								</div>
+							{% elseif paragraph.type == 'gallery' %}
+								{% include "@composites/02-paragraphs/04-gallery/_gallery.twig"
+					        with{
+					          galleryType: paragraph.galleryType,
+					     			images: paragraph.images
+					        }
+					      %}
+							{% elseif paragraph.type == 'horizontal-rule' %}
+								{% include "@composites/02-paragraphs/05-horizontal-rule/_horizontal-rule.twig" %}
+							{% elseif paragraph.type == 'image' %}
+				    		{% include "@composites/02-paragraphs/06-image/_image.twig"
+				    			with{
+				    				size: paragraph.size,
+				    				src: paragraph.src,
+				    				caption: paragraph.caption,
+				    				url: paragraph.url,
+				    				aria: paragfraph.aria
+				    			}
+				    		%}
+							{% elseif paragraph.type == 'links-files' %}
+								{% include "@composites/02-paragraphs/07-links-files/_links-files.twig" 
+									with{
+										links: paragraph.links,
+										files: paragraph.files
+									}
+								%}
+							{% elseif paragraph.type == 'pullquote' %}
+								{% include '@composites/02-paragraphs/08-quote/_quote.twig' 
+									with{
+										quote: paragraph.quote,
+										source: paragraph.source
+									}
+								%}
+							{% elseif paragraph.type == 'text' %}
+								{% include '@composites/02-paragraphs/09-text/_text.twig'
+									with{
+										text: paragraph.text
+									}
+								%}
+							{% elseif paragraph.type == 'video' %}
+								{% include '@composites/02-paragraphs/10-video/_video.twig' 
+									with{
+										videoUrl: paragraph.videoUrl
+									}
+								%}
+							{% endif %}
+
+						{% endblock %}
+					{% endembed %}
+
+				{% endfor %}
+			{% endblock %}
+
+		{% endembed %}
+	{% endblock %}
+{% endembed %}
+

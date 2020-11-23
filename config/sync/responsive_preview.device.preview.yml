@@ -1,0 +1,12 @@
+uuid: 0d0b457c-874b-41ac-aa4d-046206e97fc2
+langcode: en
+status: 0
+dependencies: {  }
+id: preview
+label: Preview
+weight: 0
+orientation: portrait
+dimensions:
+  width: 512
+  height: 800
+  dppx: !!float 1

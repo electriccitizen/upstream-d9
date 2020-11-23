@@ -1,0 +1,19 @@
+uuid: e59de69e-a833-4621-81f3-23c8be995cee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_caption
+    - media.type.image
+id: media.image.field_caption
+field_name: field_caption
+entity_type: media
+bundle: image
+label: Caption
+description: '<strong>NOTE:</strong> Captions may not be displayed in all places this media is used.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

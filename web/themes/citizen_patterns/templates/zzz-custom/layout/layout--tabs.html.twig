@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('citizen_patterns/layout') }}
+{%
+  set classes = [
+    'layout',
+    'layout--tabs',
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {% if content.tabs %}
+      <div {{ region_attributes.tabs.addClass('layout__region', 'layout__region--tabs') }}>
+        <span class="tabs-instructions">Always add two or items if using the Tabs region. Each item must have a block title displayed. <strong>Only One tabs region should be used per node.</strong></span>
+        {{ content.tabs }}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

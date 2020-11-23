@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+
+
+{% extends 'block.html.twig' %}
+
+
+{% block blockContent %}
+  {{ attach_library('citizen_patterns/search-block') }}
+  {% embed '@composites/01-blocks/02-search/_search-block.twig' %}
+  	{% block searchForm %}
+		  {{ content }}
+		{% endblock %}
+	{% endembed %}
+{% endblock %}

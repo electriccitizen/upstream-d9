@@ -1,0 +1,259 @@
+/* ==============
+	 BUTTONS
+================== */
+
+/* BUTTON MIXINS
+------------------ */
+$buttonPadding: 1.6rem 3rem;
+$submitPadding: 0 1.5rem;
+
+%dropbutton{
+	input,.button,a,button{
+		border-radius: 0 !important;
+		box-shadow: none;
+		background: $siteBack;
+		text-shadow: none;
+		border-color: $borderRule;
+		font-size: 1.6rem;
+		color: $baseText;
+		text-decoration: none;
+		&:hover,&:focus{
+			background-color: $buttonTextHover !important;
+			background-image: none !important;
+			border-radius: 0 !important;
+			box-shadow: none;
+			outline: 0;
+		}
+		&:active{
+			background: $buttonBackActive;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+}
+
+///mixin - button
+@mixin button{
+	background-color: $buttonBack;
+	border: 1px solid $buttonBack;
+	color: $buttonText;
+	line-height: 1.15;
+	padding: $buttonPadding;
+	display: inline-block;
+	vertical-align: top;
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: $header;
+	font-weight: $heavy;
+	font-size: $button;
+	margin-bottom: $spaceMd;
+	&:hover,&:focus {
+		color: $buttonTextHover;
+		background-color: $buttonBackHover;
+		border-color: $buttonBackHover;
+		@include transAll(.3s);
+		text-decoration: none;
+		outline: 0;
+	}
+	&:active{
+		color: $buttonTextActive;
+		background-color: $buttonBackActive;
+		border-color: $buttonBackActive;
+	}
+	.text-with-summary &,.text-long &{
+		padding: 0;
+		background: none;
+		a{
+			background-color: $buttonBack;
+			padding: $buttonPadding;
+			display: block;
+			max-width: 260px;
+			text-decoration: none;
+			color: $buttonText;
+			&:hover,&:focus {
+				color: $buttonTextHover;
+				background-color: $buttonBackHover;
+				@include transAll(.3s);
+				outline: 0;
+			}
+			&:active{
+				color: $buttonTextActive;
+				background-color: $buttonBackActive;
+			}
+		}//end a
+		& + .button,& + .button-outline{
+			margin-left: 1.5rem;
+		}
+	}//end wysiwyg
+	&.js-hide{
+		display: none;
+	}
+}//end button mixin
+
+///mixin - outlineButton
+@mixin outlineButton($outlineColor){
+	@include button;
+	background: transparent;
+	border: 1px solid $outlineColor;
+	color: $outlineColor;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		color: $buttonTextHover;
+		border-color: $buttonBackHover;
+		@include transAll(.3s);
+	}
+	&:active{
+		background: $buttonBackActive;
+		color: $buttonTextActive;
+		border-color: $buttonBackActive;
+	}
+	.text-with-summary &,.text-long &{
+		padding: 0;
+		background: none;
+		border: none;
+		width: auto;
+		a{
+			background: transparent;
+			border: 1px solid $outlineColor;
+			display: block;
+			text-decoration: none;
+			color: $outlineColor;
+			&:hover,&:focus {
+				color: $buttonTextHover;
+				background-color: $buttonBackHover;
+				@include transAll(.3s);
+			}
+			&:active{
+				color: $buttonTextActive;
+				background-color: $buttonBackActive;
+			}
+		}//end a
+	}//end wysiwyg 
+}
+
+@mixin submitButton{
+	@include button;
+	background: $submitBack;
+	color: $submitText;
+	padding: $submitPadding;
+	height: 44px;
+	line-height: 1;
+	@include safeFlex(column,nowrap,center,center);
+	min-width: 120px;
+	cursor: pointer;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		border-color: $buttonBackHover;
+		color: $buttonTextHover;
+	}
+	&:active{
+		background: $buttonBackActive;
+		border-color: $buttonBackActive;
+		color: $buttonTextActive;
+	}
+}
+
+@mixin cautionButton{
+	@include submitButton;
+	background: $cautionBack;
+	color: $cautionText;
+	border-color: $cautionBack;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		border-color: $buttonBackHover;
+		color: $buttonTextHover;
+	}
+	&:active{
+		background: $buttonBackActive;
+		border-color: $buttonBackActive;
+		color: $buttonTextActive;
+	}
+}
+
+@mixin warningButton{
+	@include submitButton;
+	background: $resetBack;
+	color: $resetText;
+	border-color: $resetBack;
+	&:hover,&:focus{
+		background: $buttonBackHover;
+		border-color: $buttonBackHover;
+		color: $buttonTextHover;
+	}
+	&:active{
+		background: $buttonBackActive;
+		border-color: $buttonBackActive;
+		color: $buttonTextActive;
+	}
+}
+
+button{
+	@include button;
+	cursor: pointer;
+}
+
+//button classes
+.button {
+	@include button;
+}
+.button-submit{
+	@include submitButton;
+}
+.button-caution{
+	@include cautionButton;
+}
+.button-danger-robinson{
+	@include warningButton;
+}
+.button-outline{
+	@include outlineButton($link);
+}
+
+/* secondary task buttons
+------------------ */
+#block-citizen-patterns-local-tasks .tabs.secondary a{
+	background: $link !important;
+	border-color: $link;
+	color: $white;
+	padding: 5px 10px;
+	font-weight: bold;
+	&:hover, &:focus, &.is-active{
+		background: $white !important;
+		color: $link;
+		border-color: $link;
+		outline: 0;
+	}
+}
+
+/* DROPBUTTONS
+--------------- */
+.js{
+	.dropbutton-multiple,.dropbutton-wrapper,.dropbutton-single{
+		.dropbutton-widget{
+			border-radius: 0;
+			text-shadow: none;
+			background: $siteBack;
+			border: 1px solid $borderRule;
+			min-width: 120px;
+			&:empty{
+				border: 0;
+			}
+			.dropbutton-action,.dropbutton-toggle{
+				@extend %dropbutton;
+			}
+			.dropbutton-toggle{
+				button{
+					border-left: 1px solid $borderRule;
+				}
+			}
+		}//end dropbutton widget
+		.dropbutton-action{
+			@extend %dropbutton;
+			a{
+				padding: .25rem 2rem;
+			}
+		}
+	}//end dropbutton
+}//end js
+

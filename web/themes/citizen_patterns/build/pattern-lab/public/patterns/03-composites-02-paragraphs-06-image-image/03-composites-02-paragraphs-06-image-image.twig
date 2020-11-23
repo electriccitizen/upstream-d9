@@ -1,0 +1,37 @@
+{#
+	 DRUPAL: This template is embedded into the Drupal image paragraph template.
+#}
+
+{{ image_instructions }}
+{% block plwidgetopen %}
+	<div class="paragraph paragraph--type--image">
+{% endblock %}
+
+	{% if widget_title %}
+		<div class="widget-title">{{widget_title}}</div>
+	{% endif %}
+	
+	{% block imageWrapper %}
+		<div class="image-wrapper {{ image_size }}">
+			{% if image_link %}
+				<a href="{{ image_link }}" aria-label="Go to {{ image_aria }}">
+			{% endif %}
+				{% block image %}
+					<article class="media media-image view-mode-{{ image_size }} pl-image">
+						<div class="field-media-image">
+							<img src="{{ image_src }}" />
+							{% if image_caption %}
+								<figcaption>{{ image_caption }}</figcaption>
+							{% endif %}
+						</div>
+					</article>
+				{% endblock %}
+			{% if image_link %}
+				</a>
+			{% endif %}
+		</div>
+	{% endblock %}
+
+{% block plwidgetclose %}
+	</div>
+{% endblock %}

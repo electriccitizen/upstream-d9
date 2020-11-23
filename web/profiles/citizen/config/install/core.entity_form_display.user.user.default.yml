@@ -1,0 +1,50 @@
+uuid: a7a567b8-5ad9-4d63-bcb9-ec9e2adc8729
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.media.background_image
+    - field.field.user.user.field_user_image
+    - field.field.user.user.field_user_quick_links
+  module:
+    - entity_browser_entity_form
+    - inline_entity_form
+    - user
+_core:
+  default_config_hash: cAoTuTfmGrGB_89qPV_cTRlA7NXOWtLCLePKVX4SO3A
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 5
+    region: content
+  field_user_image:
+    weight: 1
+    settings:
+      form_mode: background_image
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+      collapsible: false
+      collapsed: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: image_browser
+    type: inline_entity_form_complex
+    region: content
+hidden:
+  field_user_quick_links: true
+  language: true
+  path: true
+  timezone: true

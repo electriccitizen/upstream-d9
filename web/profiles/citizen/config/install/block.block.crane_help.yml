@@ -1,0 +1,22 @@
+uuid: 925abd23-faae-4692-ab5c-37b3a0d08a49
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - crane
+_core:
+  default_config_hash: 8PUPaExj33TzDw8YtjstWZ--M6tVgzsLctnXL91zo6E
+id: crane_help
+theme: crane
+region: help
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

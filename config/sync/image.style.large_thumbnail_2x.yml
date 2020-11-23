@@ -1,0 +1,24 @@
+uuid: b006a1cf-9613-4773-a587-c6716c9a009e
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+    - image_style_quality
+name: large_thumbnail_2x
+label: 'Large Thumbnail 2x'
+effects:
+  71e93449-3caa-45ad-8ce0-76d6d2bcb267:
+    uuid: 71e93449-3caa-45ad-8ce0-76d6d2bcb267
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 400
+      crop_type: focal_point
+  05a5bfd3-7542-4895-ab1f-9e27aa008f04:
+    uuid: 05a5bfd3-7542-4895-ab1f-9e27aa008f04
+    id: image_style_quality
+    weight: 2
+    data:
+      quality: 35

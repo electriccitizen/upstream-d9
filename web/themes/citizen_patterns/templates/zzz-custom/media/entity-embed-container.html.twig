@@ -1,0 +1,27 @@
+{#
+/**
+ * @file
+ * Default theme implementation of a container used to wrap embedded entities.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - children: The rendered child elements of the container.
+ *
+ * @see template_preprocess_entity_embed_container()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set display = element['#context']['data-entity-embed-display']|clean_class %}
+
+{% set classes = attributes.class|join(' ') %}
+
+{% set bundle = element['#entity'].bundle() %}
+
+{%- if (bundle == 'document') -%}
+	{{- children -}}
+{%- else -%}
+<div class="{{ display }} {{ classes }}">
+	{{- children -}}
+</div>
+{%- endif -%}

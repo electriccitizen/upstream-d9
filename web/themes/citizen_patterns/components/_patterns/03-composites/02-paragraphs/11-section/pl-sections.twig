@@ -1,0 +1,30 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+<div class="pl-options section-options">
+  <div class="options-inner">
+    <div class="form-item style-options">
+      <label for="style">Style</label>
+      <select name="style" id="section-style">
+        <option value="none"{% if not background %} selected{% endif %}>None</option>
+        <option value="grey"{% if background == 'grey' %} selected{% endif %}>Grey</option>
+      </select> 
+    </div>
+    <div class="form-item layout-options">
+      <label for="layout">Layout</label>
+      <select name="layout" id="section-layout">
+        <option value="full"{% if not layout %} selected{% endif %}>Full</option>
+        <option value="two-column"{% if layout == 'two-column' %} selected{% endif %}>Two Column</option>
+        <option value="three-column"{% if layout == 'three-column' %} selected{% endif %}>Three Column</option>
+      </select> 
+    </div>
+  </div>
+</div>
+
+{% embed '@parts/08-fields/02-paragraphs/_paragraphs-field-item.twig' %}
+  {% block paragraphItem %}
+    {% include '@composites/02-paragraphs/11-section/_section.twig' %}
+	{% endblock %}
+{% endembed %}
+

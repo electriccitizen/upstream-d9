@@ -1,0 +1,110 @@
+
+machineName: 
+  blog
+sections:
+  1:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              breadcrumbs
+            breadcrumb:
+              1:
+                url: "#"
+                text: "Home"
+              2:
+                url: "#"
+                text: "Blog"
+              3:
+                url: "#"
+                #this should match the page title of the example
+                text: "Blog Post Example"
+  2:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              field-banner
+            content:
+              #banner images should always have at least a 75% ratio if using placeimg. If using 'custom' a landscape image from the pattern lab image folder will be used
+              src:
+                custom
+              alt:
+                a nature banner image
+          2:
+            machineName:
+              addtoany-block
+            social:
+              1:
+                facebook
+              2:
+                twitter
+              3: 
+                linkedin
+              4: 
+                email
+          3:
+            machineName:
+              title
+            content:
+              'Blog Post Example'
+            #can be today or any formatted date (e.g. 3/4/20) -- should match Drupal format used for post date
+            metaDate:
+              today
+            metaAuthor:
+              'Blanche DuBois'
+  3:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              field-tags
+            label:
+              type:
+                inline
+              lContent:
+                'Tags:'
+            tags:
+              1:
+                'Sloth'
+              2:
+                'Chunk'
+              3:
+                'Kittens'
+              4:
+                'World Peace'
+          2:
+            machineName:
+              body
+            content:
+              true
+  4:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              flippy-block
+            previous:
+              'Previous Article'
+            next:
+              'Next Article'

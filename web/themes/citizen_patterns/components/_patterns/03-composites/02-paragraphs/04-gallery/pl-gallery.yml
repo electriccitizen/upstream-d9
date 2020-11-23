@@ -1,0 +1,47 @@
+
+widgetTitle:
+  'Slideshow or lightbox galleries'
+
+# Two galleries and the need for a pl-galleries template is so a style guide user can toggle between gallery types. !!!!! NOTE: In order for slick to calculate the height of the first image correctly, the slider must always be the first gallery and only the first gallery should have a gallery title—if used. !!!!!!
+galleries:
+  1:
+    galleryType:
+      slider
+    
+  2:
+    galleryType:
+      lightbox
+
+#images thumb_src and large_src will be replaced with drupal images and need to have their sizes set manually
+images:
+  1:
+    id:
+      "one"
+    sliderSrc:
+       http://placeimg.com/800/400/people
+    lightSrc:
+      http://placeimg.com/800/640/people
+    caption:
+      'This is a caption in a gallery.'
+  2:
+    id:
+      "two"
+    sliderSrc:
+      http://placeimg.com/800/400/nature
+    lightSrc:
+      http://placeimg.com/800/640/nature
+  3:
+    id:
+      "three"
+    sliderSrc:
+       http://placeimg.com/800/400/architecture
+    lightSrc:
+      http://placeimg.com/800/640/architecture
+  4:
+    id:
+      "four"
+    sliderSrc:
+       http://placeimg.com/800/400/tech
+    lightSrc:
+      http://placeimg.com/800/640/tech
+

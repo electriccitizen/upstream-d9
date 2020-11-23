@@ -1,0 +1,35 @@
+/* ==============
+   SUPPORT BOOK NODE
+===================== */
+.node-support-book.node-content{
+
+	.block-field.block-body{
+		max-width: 100%;
+	}
+
+	//restricted access message
+	&:not(.logged-in){
+		.main-page-content{
+			position: relative;
+		}
+		.restricted{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			text-align: center;
+			& > div{
+				max-width: $textMax + 40px;
+				border: 1px solid $borderRule;
+				padding: 40px 30px;
+				@include auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include translate(-50%,-50%);
+			}
+		}
+	}//end restricted access
+
+}//end support book

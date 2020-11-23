@@ -1,0 +1,49 @@
+/* =================
+   NEWSLETTER-BLOCK
+=================== */
+
+.block-newsletter{
+	.field.body{
+		margin-bottom: $spaceMd;
+		& > *:last-child{
+			margin-bottom: 0;
+		}
+		&.has-modal{
+			margin-bottom: 0;
+			& > *:nth-last-child(2){
+				display: inline;
+			}
+		}
+		a{
+			text-decoration: underline;
+			&:hover,&:focus{
+				text-decoration: none;
+			}
+		}
+	}
+	#mc_embed_signup{
+		background: none;
+		font: inherit;
+		width: 100%;
+		label{
+			display: none;
+		}
+		#mc-embedded-subscribe-form{
+			padding: 0;
+		}
+		#mce-EMAIL{
+			@include textInput;
+			border-radius: 0;
+		}
+		#mc-embedded-subscribe{
+			@include submitButton;
+			width: auto;
+			border-radius: 0;
+		}
+	}
+	.ctct-form-custom{
+		.grecaptcha-badge{
+			display: none !important;
+		}
+	}
+}//end block-newsletter

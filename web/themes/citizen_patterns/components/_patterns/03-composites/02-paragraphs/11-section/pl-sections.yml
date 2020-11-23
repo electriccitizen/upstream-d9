@@ -1,0 +1,58 @@
+type:
+  landing-page-section
+sectionTitle:
+  'Section of widgets'
+sectionIntro: |
+  <p>Each section can hold multiple widgets. Depending on the content type, section styling options can also be used. This is an example of a landing page section.</p>
+#available layouts: full, two-column, three-column
+layout:
+  full
+#available backgrounds: grey (when more background colors are added, the js for the style option will have to be updated).
+background:
+
+#For the paragraphs you choose, you must have the paragraph type and all yml information for each field in the paragraph you want to display. You can model the information after teh yml file for each paragraph.  
+#Available types: accordion-group, gallery, horizontal rule, image, links & files, pullquote, text, video. (all are the machine names of the paragraph entity)
+paragraphs:
+  1:
+    type:
+      text
+    widgetTitle:
+      'Text widget'
+    text: |
+      <p>Quis hoc dicit? <strong>Atque etiam valítudinem</strong>, vires, vacuitatem doloris non propter utilitatem solum, sed etiam ipsas propter se expetemus. <em>Cum autem in quo sapienter dicimus</em>, id a primo rectissime dicitur.</p><p>Praeteritis, inquit, gaudeo. An hoc usque quaque, aliter in vita? Tubulo putas dicere? <a href="#">Itaque haec cum illis</a> est dissensio, cum Peripateticis nulla sane. Tu quidem reddes; Istam voluptatem, inquit, Epicurus ignorat? At modo dixeras nihil in istis rebus esse, quod interesset.</p>
+  2:
+    type:
+      image
+    size:
+      medium
+    src:
+      'http://placeimg.com/1100/600/people'
+    caption:
+      'This is a medium size image without a link'
+  3:
+    type:
+      accordion-group
+    accordionGroup:
+      1:
+        accordionHeader:
+          'Veggies sunt bona vobis, proinde vos'
+        accordionContent:
+          'Bush tomato gumbo potato garbanzo ricebean burdock daikon coriander kale quandong. Bok choy celery leek avocado shallot horseradish aubergine parsley. Bok choy bell pepper kale celery desert raisin kakadu plum bok choy bunya nuts.'
+      2:
+        accordionHeader:
+          'Bacon ipsum dolor sit'
+        accordionContent:
+          'Und round meatball, bacon pig leberkas corned beef tongue shoulder. Drumstick pork loin prosciutto ball tip shank pancetta spare ribs jowl pastrami. Frankfurter boudin filet mignon ribeye. Pig hamburger strip steak ham turducken prosciutto bresaola ground round pancetta frankfurter jowl. Frankfurter tongue brisket tenderloin, beef ribs pastrami biltong tail bresaola flank. Biltong pork chop beef boudin hamburger bacon. Capicola bresaola sausage.'
+      3:
+        accordionHeader:
+          'Multoque hoc melius nos veriusque'
+        accordionContent:
+          'Demosthenes et Aeschines inter se decertare soliti sunt? Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers?'
+  4:
+    type:
+      pullquote
+    quote: |
+      <p>Quis Aristidem non mortuum diligit? Nummus in Croesi divitiis obscuratur, pars est tamen.</p>
+    source:
+      "Sum One"
+  

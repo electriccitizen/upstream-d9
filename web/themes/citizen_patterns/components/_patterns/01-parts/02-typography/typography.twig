@@ -1,0 +1,140 @@
+{#
+  STYLEGUIDE ONLY
+#}
+
+
+{% if h1 %}
+	<div class="typography-element">
+		<div class="element-title">H1</div>
+		<div class="constrain-text">
+			<h1>
+				{% for listItem in listItems.one %}
+					{{ listItem.title }}
+				{% endfor %}
+			</h1>
+		</div>
+	</div>
+{% endif %}
+
+{% if h2 %}
+	<div class="typography-element">
+		<div class="element-title">H2</div>
+		<div class="constrain-text">
+			<h2>
+				{% for listItem in listItems.one %}
+					{{ listItem.title }}
+				{% endfor %}
+			</h2>
+		</div>
+	</div>
+{% endif %}
+
+{% if h3 %}
+	<div class="typography-element">
+		<div class="element-title">H3</div>
+		<div class="constrain-text">
+			<h3>
+				{% for listItem in listItems.one %}
+					{{ listItem.title }}
+				{% endfor %}
+			</h3>
+		</div>
+	</div>
+{% endif %}
+
+{% if h4 %}
+	<div class="typography-element">
+		<div class="element-title">H4</div>
+		<div class="constrain-text">
+			<h4>
+				{% for listItem in listItems.one %}
+					{{ listItem.title }}
+				{% endfor %}
+			</h4>
+		</div>
+	</div>
+{% endif %}
+
+{% if h5 %}
+	<div class="typography-element">
+		<div class="element-title">H5</div>
+		<div class="constrain-text">
+			<h5>
+				{% for listItem in listItems.one %}
+					{{ listItem.title }}
+				{% endfor %}
+			</h5>
+		</div>
+	</div>
+{% endif %}
+
+{% if h6 %}
+	<div class="typography-element">
+		<div class="element-title">H6</div>
+		<div class="constrain-text">
+			<h6>
+				{% for listItem in listItems.one %}
+					{{ listItem.title }}
+				{% endfor %}
+			</h6>
+		</div>
+	</div>
+{% endif %}
+
+{% if bannerTitle %}
+	<div class="typography-element">
+		<div class="element-title">H1 on Image Header</div>
+		<div class="layout__region--content banner-title">
+			<div class="block-field-banner">
+				<img src="{{ bannerTitle.img.src }}" alt="{{ bannerTitle.img.alt }}" />
+			</div>
+			<div class="block-title">
+				<h1>
+					{% for listItem in listItems.one %}
+						{{ listItem.shortTitle }}
+					{% endfor %}
+				</h1>
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+{% if paragraph %}
+	<div class="typography-element">
+		<div class="element-title">Paragraph</div>
+		<div class="constrain-text">
+			<p>
+				{% for listItem in listItems.one %}
+					{{ listItem.description }}
+				{% endfor %}
+			</p>
+		</div>
+	</div>
+{% endif %}
+
+{% if wysiwyg %}
+	<div class="typography-element">
+		<div class="element-title">WYSIWYG Text Styles</div>
+		<div class="constrain-text">
+			{% if wysiwyg.link %}
+				<p class="pl-snug">This is a <a href="#">text link.</a></p>
+			{% endif %}
+			{% if wysiwyg.bold %}
+				<p class="pl-snug">Bold text is used to show <strong>strong text</strong> without using a header.</p>
+			{% endif %}
+			{% if wysiwyg.italic %}
+				<p class="pl-snug">Italics are for <em>special emphasis</em> and <em>proper titles.</em></p>
+			{% endif %}
+			{% if wysiwyg.highlight %}
+				<p class="pl-snug">Highlight adds a <mark>mark element</mark> that draws a user's eye and alerts assistive technologys.</p>
+			{% endif %}
+			{% if wysiwyg.small %}
+				<p class="pl-snug">Small text used for items of <small>secondary importance</small> like side comments or notes.</p>
+			{% endif %}
+			{% if wysiwyg.small %}
+				<p class="pl-snug"><div class="warning">Warning text is an in-text alert that styles high-priority statements.</div></p>
+			{% endif %}
+		</div>
+	</div>
+{% endif %}
+

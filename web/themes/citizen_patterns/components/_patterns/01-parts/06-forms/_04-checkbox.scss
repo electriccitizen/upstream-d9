@@ -1,0 +1,43 @@
+/* ============
+	 CHECKBOX
+=============== */
+
+form:not(.layout-builder-add-block):not(.layout-builder-update-block){
+	.form-checkboxes,.js-webform-checkboxes{
+		margin-bottom: -$spaceXxs;
+		@include safeFlex(row,wrap,null,null);
+		fieldset &{
+			margin-left: -2rem;
+			margin-right: -2rem;
+		}
+	}
+
+	.checkboxes--wrapper{
+		padding: 0;
+		legend{
+			@include formLabel;
+		}
+		.fieldset-wrapper{
+			margin: 0;
+		}
+	}
+
+	.js-form-type-checkbox{
+		width: auto;
+		margin-right: 2rem;
+		margin-bottom: $spaceXxs;
+		label,input{
+			display: inline-block;
+		}
+		label{
+			font-weight: $regular;
+			margin-bottom: 0;
+		}
+		input[type="checkbox"]{
+			margin-right: .6rem;
+		}
+		&.custom-options{
+			@include customOptions;
+		}
+	}//end form type checkbox
+}//end form

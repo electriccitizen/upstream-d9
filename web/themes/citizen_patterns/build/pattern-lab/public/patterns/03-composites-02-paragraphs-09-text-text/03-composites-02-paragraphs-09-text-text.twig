@@ -1,0 +1,24 @@
+{#
+	DRUPAL: This template is embedded into the Drupal text paragraph template.
+#}
+
+{{ text_instructions }}
+
+{% block plwidgetopen %}
+	<div class="paragraph paragraph--type--text">
+{% endblock %}
+
+		{% if widget_title %}
+			<div class="widget-title">{{ widget_title }}</div>
+		{% endif %}
+
+		{% block text %}
+			<div class="field field-long-text">
+				<p>{{ text }}</p>
+				<p>{{ text_two }}</p>
+			</div>
+		{% endblock %}
+				
+{% block plwidgetclose %}
+	</div>
+{% endblock %}

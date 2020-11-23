@@ -1,0 +1,19 @@
+{#
+DRUPAL: This template is inherited into the field-field-platforms.html.twig template.
+#}
+
+{% if 'facebook' in url %}
+  {% set platformSafe, platform, platformIcon = 'facebook', 'Facebook', 'fab fa-facebook-square' %}
+{% elseif 'twitter' in url %}
+  {% set platformSafe, platform, platformIcon = 'twitter', 'Twitter', 'fab fa-twitter-square' %}
+{% elseif 'linkedin' in url %}
+  {% set platformSafe, platform, platformIcon = 'linkedin', 'LinkedIn', 'fab fa-linkedin' %}
+{% elseif 'youtube' in url %}
+  {% set platformSafe, platform, platformIcon = 'youtube', 'Youtube', 'fab fa-youtube-square' %}
+{% elseif 'pinterest' in url %}
+  {% set platformSafe, platform, platformIcon = 'pinterest', 'Pinterest', 'fab fa-pinterest-square' %}
+{% else %}
+  {% set platformSafe, platform, platformIcon = 'generic', 'Unsupported sharing link', 'fas fa-share-alt-square' %}
+{% endif %}
+
+<li><a href="{{ url }}" target="_blank" class="{{ platformSafe }}" aria-label="{{ platform }}" rel="noonopener noreferrer"><i class="{{ platformIcon }}"></i></a></li>

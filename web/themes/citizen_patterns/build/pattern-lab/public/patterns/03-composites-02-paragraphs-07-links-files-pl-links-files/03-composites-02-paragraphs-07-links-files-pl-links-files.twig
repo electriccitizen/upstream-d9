@@ -1,0 +1,46 @@
+{#
+	 DRUPAL: This template is embedded into the Drupal image paragraph template.
+#}
+
+{% set count = 0 %}
+{% for link in links %}
+  {% set count = count + 1 %}
+{% endfor %}
+{% for file in files %}
+  {% set count = count + 1 %}
+{% endfor %}
+
+<div class="smart-lf-intro">
+    <div class="lf-instructions">
+      <p>
+        {% if count > 4 %}
+          This is the columned links & files list. The columned list is automatically set when there are more than 4 links/files.
+        {% else %}
+          This is the simple links & files list. The simple list is automatically set when there are less than 5 links/files.
+        {% endif %}
+      </p>
+    </div>
+    <div class="form-item js-form-type-textfield">
+      <label for="lf-numbers">Number of items:</label>
+      <input id="lf-numbers" type="number" min="2" step="1" max="10" value="7" name="pager-numbers" />
+      <div class="description">2-10 items allowed.</div>
+    </div>
+  </div>
+
+{% embed '@parts/08-fields/02-paragraphs/_paragraphs-field-item.twig' %}
+  {% block paragraphItem %}
+    {% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+      with{
+        sectionTitle: '',
+        sectionIntro: '',
+      }
+    %}
+
+    	{% block widgetContent %}
+    		{% include "@composites/02-paragraphs/07-links-files/_links-files.twig" %}
+    	{% endblock %}
+
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+	

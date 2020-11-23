@@ -1,0 +1,16 @@
+uuid: f48b8b29-958e-41a3-a3da-805c9295c8eb
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: Dev
+description: ''
+folder: ''
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - system.performance
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

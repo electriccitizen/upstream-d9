@@ -1,0 +1,42 @@
+uuid: 7632b352-77c8-442b-8879-dfc45a436a6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.citizen_media
+  module:
+    - entity_browser_entity_form
+    - views
+name: image_browser
+label: 'Image Browser'
+display: modal
+display_configuration:
+  width: ''
+  height: '600'
+  link_text: 'Select Image'
+  auto_open: true
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  282e3a6e-2d42-46f8-80b7-fb6d9f42108c:
+    settings:
+      view: citizen_media
+      view_display: image_browser
+      submit_text: Use
+      auto_select: false
+    uuid: 282e3a6e-2d42-46f8-80b7-fb6d9f42108c
+    weight: 1
+    label: Library
+    id: view
+  7812caad-e677-48f5-a3f1-baabd9174ae8:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: default
+      submit_text: Use
+    uuid: 7812caad-e677-48f5-a3f1-baabd9174ae8
+    weight: 2
+    label: 'Add Image'
+    id: entity_form

@@ -1,0 +1,12 @@
+uuid: 8c2d0c7f-6024-4533-be12-0cc362c016e3
+langcode: en
+status: 1
+dependencies: {  }
+id: ipad_pro
+label: 'iPad Pro'
+weight: 0
+orientation: landscape
+dimensions:
+  width: 1668
+  height: 2388
+  dppx: !!float 2

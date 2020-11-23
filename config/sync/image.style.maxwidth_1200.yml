@@ -1,0 +1,15 @@
+uuid: fff46e49-2d4f-48c7-95f2-48f692b76107
+langcode: en
+status: true
+dependencies: {  }
+name: maxwidth_1200
+label: 'Max Width (1200)'
+effects:
+  ae5ff580-1b59-44dc-8edb-65b722fb37b1:
+    uuid: ae5ff580-1b59-44dc-8edb-65b722fb37b1
+    id: image_scale
+    weight: 1
+    data:
+      width: 1200
+      height: null
+      upscale: true

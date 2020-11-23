@@ -1,0 +1,15 @@
+uuid: 93734c37-6b02-4e05-a690-59275a7bd828
+langcode: en
+status: true
+dependencies: {  }
+name: large_non_crop
+label: 'Large non-crop'
+effects:
+  89ea2993-881c-4335-9c60-60a883062b1b:
+    uuid: 89ea2993-881c-4335-9c60-60a883062b1b
+    id: image_scale
+    weight: 1
+    data:
+      width: 900
+      height: null
+      upscale: true

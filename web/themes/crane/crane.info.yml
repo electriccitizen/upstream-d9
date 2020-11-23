@@ -1,0 +1,28 @@
+name: Crane
+type: theme
+description: 'Drupal administration theme for Electric Citizen sites.'
+# core: 8.x
+base theme: seven
+
+libraries:
+  - crane/global
+  - crane/fonts
+    
+regions:
+  header: 'Header'
+  pre_content: 'Pre-content'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
+regions_hidden:
+  - sidebar_first
+
+# Information added by Drupal.org packaging script on 2019-05-23
+version: '8.x-1.0'
+core: '8.x'
+core_version_requirement: ^8 || ^9
+project: 'crane'

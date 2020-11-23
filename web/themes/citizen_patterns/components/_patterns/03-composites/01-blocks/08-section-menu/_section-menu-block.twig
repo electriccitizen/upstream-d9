@@ -1,0 +1,19 @@
+{#
+ DRUPAL: This block is extended into the block--menu-block--section-menu.html.twig template. 
+#}
+ 
+<nav aria-label="section-menu" id="block-section-menu"{{ drupalAttributes }} class="block--system-menu section-menu">
+  {# Label. If not displayed, we still provide it for screen readers. #}
+  {{ title_prefix }}
+  <h2 id="section-menu-title" class="block-title{% if not showTitle %} visually-hidden{% endif %}"><a href="#" class="section-menu-toggle" aria-label="Mobile Section Menu Toggle"><i class="fas fa-bars" aria-hidden="true"></i>{{ blockTitle }}</a></h2>
+  {{ title_suffix }}
+
+  <div id="section-menu-wrapper">
+  	{% block sectionMenu %}
+    	{{ content }}
+  	{% endblock %}
+  </div>
+
+</nav>
+			
+

@@ -1,0 +1,30 @@
+uuid: 5649d246-b000-49e9-bc4a-f02b4b84a0f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_banner
+    - media.type.image
+    - node.type.event
+_core:
+  default_config_hash: WNu3eNycwdkGq0iZpfngsiSuULSwG_-_IVwmpWeHDZk
+id: node.event.field_banner
+field_name: field_banner
+entity_type: node
+bundle: event
+label: Banner
+description: '<strong>Optimal image size:</strong> 700x700px'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

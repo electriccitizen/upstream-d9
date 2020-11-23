@@ -1,0 +1,30 @@
+uuid: f5afce4b-89a8-4f8b-b3b9-4496351a83f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.large_thumbnail
+    - image.style.large_thumbnail_1_5x
+    - image.style.large_thumbnail_2x
+  theme:
+    - citizen_patterns
+id: large_thumbnail
+label: 'Large Thumbnail'
+image_style_mappings:
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 1.5x
+    image_mapping_type: image_style
+    image_mapping: large_thumbnail_1_5x
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: large_thumbnail
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: large_thumbnail_2x
+breakpoint_group: citizen_patterns
+fallback_image_style: large_thumbnail

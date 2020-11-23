@@ -1,0 +1,22 @@
+uuid: 20adaaa7-3fcb-4c69-8512-7e0862e12e2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - citizen_patterns
+_core:
+  default_config_hash: psgE0SDIZ6onpRJppjdVSm4mXmrQJHBMrw9LQCwMij0
+id: citizen_patterns_messages
+theme: citizen_patterns
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

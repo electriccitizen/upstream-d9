@@ -1,0 +1,19 @@
+/* ===============
+   LANDING PAGE NODE
+==================== */
+
+.node-landing-page.node-content{
+
+	.block-field-banner{
+		@include edgeToEdge;
+	}
+
+	.block-field.block-body{
+		max-width: $textMax;
+		@include auto;
+	}
+
+}//end landing-page
+
+
+

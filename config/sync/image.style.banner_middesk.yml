@@ -1,0 +1,17 @@
+uuid: 23ed48cd-ab01-48ea-beb5-32cc86b67974
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: banner_middesk
+label: 'Banner MidDesk'
+effects:
+  4ba8a57c-f644-4732-b0e5-ec57faf4d0f4:
+    uuid: 4ba8a57c-f644-4732-b0e5-ec57faf4d0f4
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 450
+      crop_type: focal_point

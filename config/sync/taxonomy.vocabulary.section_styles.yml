@@ -1,0 +1,8 @@
+uuid: 41b9ef1b-5caf-4cfa-885d-11306831e86f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Section Styles'
+vid: section_styles
+description: 'Sets styles for paragraph sections.'
+weight: 0

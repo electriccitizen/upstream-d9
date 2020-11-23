@@ -1,0 +1,107 @@
+/* ========================
+  WEBFORMS
+========================== */
+
+/* WEBFORMS HOTFIX FOR BROKEN CKE
+------------------------------ */
+.webform-form.webform-ui-element-form{
+	textarea.form-textarea{
+  	visibility: visible !important;
+  }
+}
+
+/* WEBFORM LIST FILTER
+------------------------ */
+.webform-filter-form{
+	.seven-details__wrapper{
+		input[type="submit"]{
+			margin-bottom: 0;
+		}
+	}
+}//end webform-filter-form
+
+
+/* WEBFORM ADD ELEMENT POPUP
+--------------------------- */
+.webform-ui-element-type-select-form{
+	//hide details blocks that will never be used
+	details{
+		&[data-webform-element-id="webform-ui-element-type-6"],&[data-webform-element-id="webform-ui-element-type-10"],&[data-webform-element-id="webform-ui-element-type-11"],&[data-webform-element-id="webform-ui-element-type-12"]{
+			display: none !important;
+		}
+	}
+	//hide obscure elements from type tables
+	.webform-ui-element-type-table{
+		tr{
+			&[data-drupal-selector="edit-elements-hidden"],&[data-drupal-selector="edit-elements-webform-autocomplete"],&[data-drupal-selector="edit-elements-captcha"],&[data-drupal-selector="edit-elements-webform-codemirror"],&[data-drupal-selector="edit-elements-color"],&[data-drupal-selector="edit-elements-webform-mapping"],&[data-drupal-selector="edit-elements-webform-same"],&[data-drupal-selector="edit-elements-search"],&[data-drupal-selector="edit-elements-webform-toggle"],&[data-drupal-selector="edit-elements-value"],&[data-drupal-selector="edit-elements-webform-custom-composite"],&[data-drupal-selector="edit-elements-webform-link"],&[data-drupal-selector="edit-elements-webform-location-places"],&[data-drupal-selector="edit-elements-processed-text"],&[data-drupal-selector="edit-elements-webform-likert"],&[data-drupal-selector="edit-elements-webform-toggles"]{
+				display: none !important;
+			}
+		}
+	}
+}//end webform select form
+
+/* FORM ELEMENT POPUP 
+------------------------- */
+.webform-ui-element-form{
+	.webform-tabs{
+		.ui-tabs-nav{
+			padding: 5px 0 0;
+			li{
+				padding: 0;
+			}
+		}
+		.ui-tabs-active.ui-state-active{
+			background: $gold;
+			border-color: $gold;
+			a{
+				color: $black;
+			}
+		}
+	}
+	.webform-details-toggle-state{
+		display: block;
+		width: 40px;
+		height: 30px;
+		margin-top: -8px;
+		text-indent: -900vw;
+		background-image: url('../images/icons/admin-icons/chevron-down-blue.svg');
+		background-repeat: no-repeat;
+		background-size: 16px;
+		background-position: center;
+		@include transFormAnimate;
+		&:hover,&:focus{
+			background-image: url('../images/icons/admin-icons/chevron-down-grey.svg');
+		}
+		&.expanded{
+			@include rotate(180);
+		}
+	}//end expand all/collapse all
+	label + a.button{
+		margin-left: 10px;
+	}
+
+	.webform-element-help{
+		border: 0;
+		background: $link;
+		position: relative;
+		top: -3px;
+		&:hover,&:focus{
+			outline: none;
+			background: $hoverLink;
+		}
+	}
+	//fix alignment of adding more options
+	.container-inline{
+		div{
+			vertical-align: bottom;
+		}
+		input[data-drupal-selector="edit-properties-options-custom-options-add-submit"]{
+			margin-bottom: 3.2rem;
+		}
+	}
+	//hide some styling options that could conflict with the theme
+	.form-item-properties-icheck,.form-item-properties-select2,.form-item-properties-choices,div[data-drupal-selector="edit-select-message"].webform-message{
+		display: none;
+	}
+}//end form element popup
+

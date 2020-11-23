@@ -1,0 +1,23 @@
+uuid: d4c51de4-ed5e-46f2-87fb-059b42dac02e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_image_size
+    - paragraphs.paragraphs_type.image
+  module:
+    - options
+id: paragraph.image.field_image_size
+field_name: field_image_size
+entity_type: paragraph
+bundle: image
+label: 'Image Size'
+description: "Choose the size for this image.  </br>\r\n<strong>Original:</strong> No size set </br>\r\n<strong>Small:</strong> 300px (chosen image should be 600px wide for retina purposes) </br>\r\n<strong>Medium:</strong> 500px (chosen image should be 1000px wide for retina purposes) </br>\r\n<strong>Large:</strong> 800px (chosen image should be 1000px wide for retina purposes) </br>\r\n<strong>Full:</strong> Full width of parent column (chosen image should be 1200px wide)"
+required: true
+translatable: false
+default_value:
+  -
+    value: default
+default_value_callback: ''
+settings: {  }
+field_type: list_string

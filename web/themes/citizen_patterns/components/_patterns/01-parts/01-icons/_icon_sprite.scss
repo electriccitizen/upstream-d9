@@ -1,0 +1,54 @@
+@mixin svg-common {
+  background: url("svg/sprite.css.svg") no-repeat;
+}
+
+@mixin sprite-excel {
+  @include svg-common;
+
+  background-position: 0 0;
+}
+
+.sprite-excel {
+  @include sprite-excel;
+}
+
+@mixin sprite-generic {
+  @include svg-common;
+
+  background-position: 50% 0;
+}
+
+.sprite-generic {
+  @include sprite-generic;
+}
+
+@mixin sprite-pdf {
+  @include svg-common;
+
+  background-position: 0 100%;
+}
+
+.sprite-pdf {
+  @include sprite-pdf;
+}
+
+@mixin sprite-powerpoint {
+  @include svg-common;
+
+  background-position: 50% 100%;
+}
+
+.sprite-powerpoint {
+  @include sprite-powerpoint;
+}
+
+@mixin sprite-word {
+  @include svg-common;
+
+  background-position: 100% 0;
+}
+
+.sprite-word {
+  @include sprite-word;
+}
+

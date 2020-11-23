@@ -1,0 +1,60 @@
+
+machineName: 
+  news
+hasMainImage:
+  true
+sections:
+  1:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              breadcrumbs
+            breadcrumb:
+              1:
+                url: "#"
+                text: "Home"
+              2:
+                url: "#"
+                text: "News"
+              2:
+                url: "#"
+                #this should match the page title of the example
+                text: "News Article Example"
+  2:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              field-banner
+            content:
+              src:
+                'http://placeimg.com/350/350/animal'
+              alt:
+                an animal image
+          2:
+            machineName:
+              title
+            content:
+              'News Article Example'
+          3:
+            machineName:
+              created
+            #can be auto (use for both date and time) or any formatted date and/or time (e.g. 4/4/20, e.g. 4:20pm) //should match Drupal format used for event date
+            date:
+              auto
+          4:
+            machineName:
+              body
+            content:
+              true

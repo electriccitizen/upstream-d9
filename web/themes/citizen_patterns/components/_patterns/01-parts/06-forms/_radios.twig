@@ -1,0 +1,23 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+{% import '@base/macros.twig' as styles %}
+
+<fieldset class="fieldgroup form-composite js-form-item form-item js-form-wrapper radios--wrapper">
+	{% if label %}
+		<legend>
+			<span class="fieldset-legend">{{ label }}</span>
+		</legend>
+	{% endif %}
+	<div class="fieldset-wrapper">
+		<div class="form-radios js-webform-radios">
+			{% for option in options %}
+				<div class="js-form-item form-item js-form-type-radio {{ styles.formElements }}">
+					<input type="radio" name="radio" value="{{ option.value }}" class="form-radio"/>
+					<label class="option">{{ option.name }}</label>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</fieldset>

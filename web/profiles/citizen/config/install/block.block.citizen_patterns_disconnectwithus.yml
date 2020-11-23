@@ -1,0 +1,25 @@
+uuid: 305cc2d3-e60a-40f1-9b75-1741d768ea37
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:412a8554-21fa-4bd9-877f-4b001647c54e'
+  module:
+    - block_content
+  theme:
+    - citizen_patterns
+id: citizen_patterns_disconnectwithus
+theme: citizen_patterns
+region: footer
+weight: -3
+provider: null
+plugin: 'block_content:412a8554-21fa-4bd9-877f-4b001647c54e'
+settings:
+  id: 'block_content:412a8554-21fa-4bd9-877f-4b001647c54e'
+  label: 'Disconnect With Us'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

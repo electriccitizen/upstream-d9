@@ -1,0 +1,17 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+{% if quote %}
+	{% autoescape false %}
+		<div class="field field-quote text-long">
+			{{ quote }}
+		</div>
+	{% endautoescape %}
+{% endif %}
+{% if source %}
+	<div class="field field-source string">
+		{{- source -}}
+	</div>
+{% endif %}
+		

@@ -1,0 +1,57 @@
+/* =====================
+BACKGROUND SIZE MIXINS
+====================== */
+@import '../01-parts/01-icons/_icon_sprite.scss';
+
+//This file holds all background size mixins so they can be easily changed if the sprite is changed.
+//background size is the icons row and column position in the sprite multipled by the intended size.
+$columns: 3;
+$rows: 2;
+
+
+/// used in ICONS.SCSS
+$plIcon: 70px;
+@mixin plIconSize{
+	@include backgroundSize($columns * $plIcon,$rows * $plIcon);
+}
+
+
+///used in MEDIA.SCSS
+$docIcon: 18px;
+@mixin docGeneric{
+	@include sprite-generic;
+	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+}
+@mixin docPDF{
+	@include sprite-pdf;
+	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+}
+@mixin docWord{
+	@include sprite-word;
+	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+}
+@mixin docExcel{
+	@include sprite-excel;
+	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+}
+@mixin docPowerpoint{
+	@include sprite-powerpoint;
+	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+}
+
+
+
+/* PATTERN LAB ONLY
+---------------- */
+/// used in BLOG-POST.SCSS
+$addtoany: 32px;
+@mixin a2aSize{
+	@include backgroundSize($columns * $addtoany,$rows * $addtoany);
+}
+
+/// used in assembly GLOBAL-STYLES.SCSS 
+$iconsize: 18px;
+@mixin iconSize{
+	@include backgroundSize($columns * $iconsize,$rows * $iconsize);
+}
+

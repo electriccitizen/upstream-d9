@@ -1,0 +1,13 @@
+/* ==================
+   ADDTOANY
+==================== */
+
+.block-addtoany_block{
+	.addtoany_list > a{
+		padding: 0 0 0 1px;
+		&:hover,&:focus{
+			opacity: .7; 
+			@include transAll(.3s);
+		}
+	}
+}

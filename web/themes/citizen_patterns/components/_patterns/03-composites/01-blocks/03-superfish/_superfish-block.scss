@@ -1,0 +1,25 @@
+/* ===================
+   SUPERFISH BLOCK 
+====================== */
+
+#superfish-main-toggle{
+	display: block;
+	span{
+		display: none;
+	}
+	&:before{
+		@include faSolid("\f0c9",28px);
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: $hamburger;
+		line-height: 28px;
+	}
+	&.sf-expanded{
+		&:before{
+			content: '\f057';
+			color: $hamburgerActive;
+		}
+	}
+}//end superfish-main-toggle

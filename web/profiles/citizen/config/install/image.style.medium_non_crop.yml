@@ -1,0 +1,15 @@
+uuid: 008aabb8-b03a-43aa-9487-def80ace170c
+langcode: en
+status: true
+dependencies: {  }
+name: medium_non_crop
+label: 'Medium non-crop'
+effects:
+  c79d9961-d0d8-4178-8960-3bd3a292c19a:
+    uuid: c79d9961-d0d8-4178-8960-3bd3a292c19a
+    id: image_scale
+    weight: 1
+    data:
+      width: 600
+      height: null
+      upscale: true

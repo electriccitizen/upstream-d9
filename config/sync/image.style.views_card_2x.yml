@@ -1,0 +1,17 @@
+uuid: 3752ca12-912b-4b01-990a-ae821b9cc1a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: views_card_2x
+label: 'Views Card 2x'
+effects:
+  e2eaa296-b467-4a31-87e7-245708b18056:
+    uuid: e2eaa296-b467-4a31-87e7-245708b18056
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 600
+      crop_type: focal_point

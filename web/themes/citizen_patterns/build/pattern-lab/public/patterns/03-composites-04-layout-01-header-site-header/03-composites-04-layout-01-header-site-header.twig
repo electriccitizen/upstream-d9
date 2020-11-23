@@ -1,0 +1,33 @@
+{#
+	 STYLEGUIDE ONLY: This template is not used in Drupal.
+#}
+
+{% block headerOpen %}
+{{ header_instructions }}
+<div class="layout-container pl-spacer">
+{% endblock %}
+
+<header role="banner">
+  <div>
+
+		{% include "@composites/01-blocks/01-branding/branding.twig" 
+			with{
+				logo: header_logo,
+				sitename: header_sitename
+			}
+		%}
+		 
+		{% if header_search %}
+			{% embed "@composites/01-blocks/02-search/search.twig" %}
+				{% block searchOpen %}{# remove help searcg toggle descriptor #}{% endblock %}
+			{% endembed %}
+		{% endif %}
+		 
+		{% include "@composites/01-blocks/03-superfish/_superfish-block.twig" %}
+		 
+	</div>
+</header>
+
+{% block headerClose %}
+</div>
+{% endblock %}

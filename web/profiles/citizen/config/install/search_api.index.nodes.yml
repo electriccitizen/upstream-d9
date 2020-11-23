@@ -1,0 +1,160 @@
+uuid: b3c2ab3f-4d52-4b2c-b35f-4dc6d9673b00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - field.storage.node.field_tags
+    - search_api.server.local
+  module:
+    - taxonomy
+    - node
+    - search_api
+_core:
+  default_config_hash: 4xFhn8nKQAWjrpZDlNwBbMHvO2ixm6zAt2HjtJDCaKw
+id: nodes
+name: Content
+description: 'Search settings for nodes, paragraphs, terms.'
+read_only: false
+field_settings:
+  body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.body
+  tags:
+    label: Tags
+    datasource_id: 'entity:node'
+    property_path: 'field_tags:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_tags
+      module:
+        - taxonomy
+        - taxonomy
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 21
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected:
+        - support_book
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  html_filter:
+    all_fields: false
+    fields:
+      - body
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      h4: 2
+      h5: 2
+      h6: 2
+      strong: 2
+    weights:
+      preprocess_index: -46
+      preprocess_query: -46
+  ignore_character:
+    all_fields: true
+    fields:
+      - body
+      - tags
+      - title
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pd
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
+  ignorecase:
+    all_fields: true
+    fields:
+      - body
+      - tags
+      - title
+    weights:
+      preprocess_index: -48
+      preprocess_query: -48
+  rendered_item: {  }
+  stemmer:
+    all_fields: true
+    fields:
+      - body
+      - tags
+      - title
+    exceptions:
+      mexican: mexic
+      texan: texa
+    weights:
+      preprocess_index: -43
+      preprocess_query: -43
+  tokenizer:
+    all_fields: true
+    fields:
+      - body
+      - tags
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -49
+      preprocess_query: -49
+  transliteration:
+    all_fields: true
+    fields:
+      - body
+      - tags
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  type_boost:
+    boosts:
+      'entity:node':
+        datasource_boost: !!float 1
+        bundle_boosts:
+          blog: !!float 2
+          event: !!float 0
+          landing_page: !!float 5
+          news: !!float 0
+          page: !!float 3
+          profiles: !!float 0
+    weights:
+      preprocess_index: -42
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: local
