@@ -1,0 +1,41 @@
+# !!!!! WARNING DO NOT CHANGE THE NAMES OF ANY OF THESE VARIABLES OR THE DRUPAL PAGER MAY NOT WORK !!!!!
+
+# if using a smart pager (set in 00-base/macros.twig), having more than 7 pages will display the extended version of the smart pager, having less than 7 will display the short version. When smart pagers are in play, you MUST include results-count and count-shim span in each views results footer in Drupal and the full pager type must be set.
+items:
+  # only works in default apger
+  first:
+    true
+
+  previous:
+    true
+  # do not alter the pages numbers
+  pages:
+    1:
+    2:
+    3:
+    4:
+    5:
+    6:
+    7:
+    8:
+  next:
+    true
+
+  #only works in default pager
+  last:
+    true
+
+# do not alter current    
+current:
+  3
+
+#only works in default pager
+ellipses:
+  previous:
+    true
+  next:
+    true
+
+# used as a pattern lab marker to set PL only data attributes
+plKey:
+  true

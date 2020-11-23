@@ -1,0 +1,83 @@
+/* =================
+	SITE HEADER
+=================== */
+
+.site-header {
+	background: $headerBack;
+	& > div{
+		padding: 20px $siteMarginMobile;
+		max-width: $contentStop + 40px;
+		@include auto;
+		position: relative;
+		@include safeFlex(row,wrap,null,center);
+	}
+}//end layout container
+
+
+/* BRANDING BLOCK PLACEMENT
+------------------- */
+.block-system-branding-block{
+	//leave room for search toogle and menu hamburger on mobile
+	@include calc(width, "100% - 70px");
+	position: relative;
+	z-index: 10;
+	@include desk{
+		width: 240px;
+	}
+
+	a{
+		img{
+			max-width: 160px;
+			margin-right: 5px;
+			@include desk{
+				max-width: 100%;
+			}
+		}
+	}
+}//end branding block
+
+
+/* SEARCH BLOCK PLACEMENT
+------------------- */
+.block-site-search{
+	position: static;
+	display: inline-block;
+	text-align: right;
+	@include desk{
+		@include calc(width, "100% - 240px");
+	}
+	//search toggler
+	.t-search{
+		position: absolute;
+		top: 18px;
+		right: 20px;
+	}
+}//end search block
+
+
+/* MAIN NAVIGATION BLOCK
+------------------------ */
+.block-superfishmain{
+	@include onlyMobile{
+		&.contextual-region{
+			position: static;
+		}
+		#superfish-main-toggle{
+			position: absolute;
+			height: 30px;
+			width: 30px;
+			top: 17px;
+			right: 50px;
+		}
+	}
+	//desktop position
+	@include desk{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		padding-left: 280px;
+	}//end desk
+	
+}//end main nav
+

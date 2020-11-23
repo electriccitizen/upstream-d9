@@ -1,0 +1,548 @@
+/* ========================
+  FORM ELEMENTS
+========================== */
+@mixin placeholder{
+	$placeTint: 1;
+	&::-webkit-placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+	&::-moz-placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+	&:-ms-input-placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+	&::-webkit-input-placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+	&::placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+}
+
+@mixin placeholderFocus{
+	$placeFocusTint: .2;
+	&::-webkit-placeholder{
+		opacity: $placeFocusTint;
+		color: $placeFocusColor;
+	}
+	&::-moz-placeholder{
+		opacity: $placeFocusTint;
+		color: $placeFocusColor;
+	}
+	&:-ms-input-placeholder{
+		opacity: $placeFocusTint;
+		color: $placeFocusColor;
+	}
+	&::-webkit-input-placeholder{
+		opacity: $placeFocusTint;
+		color: $placeFocusColor;
+	}
+}
+
+@mixin textInput{
+	border: 1px solid $formElementBorder;
+	border-radius: 2px;
+	font-size: 1.5rem;
+	font-family: $bodyFont;
+	padding: 6px;
+	width: 100%;
+	line-height: 1;
+	min-height: 38px;
+	max-width: 300px;
+	@include placeholder;
+	&:hover{
+		border-color: $formElementBorderHover;
+		box-shadow: inset 0 0 0 1px $formElementBorderHover;
+	}
+	&:focus{
+		@include placeholderFocus;
+		outline: none;
+		box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+		border-color: $formElementBorderFocus;
+	}
+}
+
+@mixin required{
+	position: relative;
+	padding-right: .5rem;
+	margin-right: 3rem;
+	&:after{
+		content: '*';
+		color: $validation;
+		position: absolute;
+		top: -4px;
+		right: -.5rem;
+		font-size: 1.6rem;
+		background: transparent;
+		margin: 0;
+	}
+}
+
+@mixin selectInput{
+	width: 100%;
+	font-size: 1.3rem;
+	border: 1px solid $formElementBorder;
+	border-radius: 0;
+	height: auto;
+	.select2-selection__choice__remove{
+		position: relative;
+		z-index: 999;
+	}
+}
+
+/* GLOBAL FORM ELEMENTS
+---------------------- */
+.js-form-item{
+	&:focus{
+		outline: none;
+	}
+	label{
+		margin-bottom: $spaceXxs;
+	}
+}
+.js-form-wrapper{
+	&:focus{
+		outline: none;
+	}
+}
+.form-item--error-message{
+	color: $messageText;
+	background: $messageBack;
+	border-top: 1px solid $messageErrorBorder;
+	border-bottom: 1px solid $messageErrorBorder;
+	border-right: 1px solid $messageErrorBorder;
+	border-left: 10px solid $messageErrorBorder;
+	padding: $spaceXs;
+	&:before{
+		background: url('../images/icons/message/message-error.svg') no-repeat;
+		background-size: 20px;
+		background-position: center;
+		width: 20px;
+		height: 20px;
+	}
+}
+
+/* TEXT FIELDS
+----------------- */
+.js-form-type-textfield{
+	input{
+		@include textInput;
+	}
+}
+.js-form-type-email{
+	@extend .js-form-type-textfield;
+}
+.js-form-type-password{
+	@extend .js-form-type-textfield;
+}
+.js-form-type-tel{
+	@extend .js-form-type-textfield;
+}
+.js-form-type-number{
+	@extend .js-form-type-textfield;
+	input{
+		max-width: 150px;
+	}
+}
+.js-form-type-search{
+	@extend .js-form-type-textfield;
+	input{
+		@include placeholder;
+		&:focus{
+			@include placeholderFocus;
+		}
+	}
+}
+.js-form-type-date{
+	input{
+		@include textInput;
+		width: auto;
+		max-width: none;
+	}
+}
+.js-form-type-textarea{
+	textarea{
+		@include textInput;
+		max-width: $textMax;
+		&#edit-filters-filter-html-settings-allowed-html{
+			max-width: none;
+		}
+		&.error + .cke{
+			border-color: $messageErrorBorder;
+		}
+	}
+}
+.text-format-wrapper{
+	.js-form-type-textarea{
+		tr.odd &,tr.even &{
+			margin-bottom: 0;
+		}
+	}
+	.form-item--error-message{
+		padding: $spaceXs;
+		border-top: 0;
+		border-bottom: 1px solid $messageErrorBorder;
+		border-right: 1px solid $messageErrorBorder;
+		border-left: 10px solid $messageErrorBorder;
+	}
+}
+.js-form-type-entity-autocomplete{
+	@extend .js-form-type-textfield;
+}
+
+/* HEADINGS
+--------------- */
+form > h3{
+	margin-bottom: $spaceXxs;
+}
+
+/* SELECTS
+------------- */
+.form-type-select{
+	select{
+		font-size: $baseSize;
+	}
+}//end form type select
+
+/* SELECT 2
+--------------- */
+select,select:hover,select:focus{
+	background: none;
+}
+
+//hide optgroup safari bug fix
+optgroup:empty{
+	display: none;
+}
+
+//hide custom optgroup labels (ios10 bug fix)
+.select2-results__group{
+	display: none !important;
+}
+
+
+.select2-container{
+	min-width: 150px;
+}
+.crane .select2-container--default,.entity-browser-form .select2-container--default{
+	&:focus{
+		outline: none;
+		*:focus{
+			outline: none;
+		}
+	}
+	.select2-selection--single{
+		@include selectInput;
+		&:hover{
+			box-shadow: inset 0 0 0 1px $formElementBorderHover;
+		}
+		&[aria-expanded="true"]{
+			box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+		}
+		.select2-selection__rendered{
+			padding: 3.5px 32px 4px 10px;
+			color: $placeColor;
+			text-align: left;
+		}
+		.select2-selection__arrow{
+			top: 17px;
+			right: 10px;
+			cursor: pointer;
+			@include triangle(down,5px,12px,$darkGrey);
+			b{
+				display: none;
+			}
+		}
+	}//end single
+	.select2-selection--multiple{
+		@include selectInput;
+		&:hover{
+			box-shadow: inset 0 0 0 1px $formElementBorderHover;
+		}
+		&[aria-expanded="true"]{
+			box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+		}
+		.select2-search--inline{
+			position: relative;
+			float: none;
+			padding: 3.5px 3px 4px;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				top: 17px;
+				right: 3px;
+				cursor: pointer;
+				@include triangle(down,5px,12px,$darkGrey);
+			}
+			input.select2-search__field{
+				color: $midGrey;
+				@include placeholder;
+				&:focus{
+					@include placeholderFocus;
+					outline: none;
+				}
+			}
+		}//end search inline
+		.select2-selection__choice{
+			border-radius: 0;
+			background: $whiteGold;
+			margin-top: 8px;
+		}
+	}//end multiple
+	&.select2-container--open,&.select2-container--focus{
+		box-shadow: 0 2px 2px rgba(35,35,35,0.3);
+		.select2-selection--single{
+			border-color: $borderRule;
+			.select2-selection__arrow{
+				border-top: 0;
+				border-bottom: 5px solid $darkGrey;
+			}
+		}
+		.select2-selection--multiple{
+			border-color: $borderRule;
+			.select2-search--inline:after{
+				border-top: 0;
+				border-bottom: 5px solid $darkGrey;
+			}
+		}
+	}//end open,focus
+}//end container--default
+
+.select2-container .select2-dropdown{
+	border: 1px solid $midGrey;
+	border-radius: 0;
+	border-top: 0;
+	padding: 0;
+	.select2-search__field{
+		outline: none;
+		border-color: $formElementBorderFocus;
+	}
+}
+.select2-container--default .select2-results__option{
+	font-size: 1.3rem;
+	line-height: 1.25;
+}
+.select2-container--default .select2-results__option[aria-selected="true"]{
+	background-color: $whiteGold;
+}
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+	background-color: $blue;
+}
+select{
+	border-radius: 0;
+	background: url('../images/icons/admin-icons/triangle-down.svg') no-repeat 99% 63%, #fff;
+}
+select:hover,select:focus{
+	background: url('../images/icons/admin-icons/triangle-down-down.svg') no-repeat 99% 63%, #ececec;
+}
+
+.crane .draggable:not([class*="paragraph"]) td .select2-container--default{
+	.select2-selection--single{
+		.select2-selection__rendered{
+			padding: 0px 32px 0px 10px;
+		}
+		.select2-selection__arrow{
+			top: 13px;
+		}
+	}
+}
+
+
+/* FILE UPLOAD
+---------------- */
+.form-type-managed-file{
+	& > label{
+		pointer-events: none;
+		cursor: default;
+	}
+	.file-upload-wrapper{
+		position: relative;
+		overflow: hidden;
+		display:  inline-block;
+		cursor: pointer;
+		margin-bottom: .5rem;
+		.fake-button{
+			@include button;
+			margin-bottom: 0;
+		}
+		input[type="file"]{
+			position: absolute;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			font-size: 100px;
+			z-index: 2;
+			&:hover,&:focus{
+				& + .fake-button{
+					background: $buttonBackHover;
+					color: $buttonTextHover;
+				}
+			}
+		}
+	}//end field upload wrapper
+	.description{
+		line-height: 1.25;
+	}
+}//end managed file
+
+/* CHECKBOXES & radios
+---------------- */
+.js-form-type-checkbox,.js-form-type-radio,.select-all{
+	input{
+		@include browserWipe;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		outline: none;
+		border: 2px solid $checkbox;
+		width: 18px;
+		height: 18px;
+		background-color: $siteBack;
+		position: relative;
+		top: 3px;
+		cursor: pointer;
+		margin-right: $spaceXxs;
+		&:hover{
+			border-color: $checkboxHover;
+			background-color: $checkboxBackHover;
+			box-shadow: 0 0 0 1px $checkboxHover;
+		}
+		&:focus{
+			border-color: $checkboxHover;
+			background-color: $checkboxBackHover;
+		}
+		&:checked{
+			border-color: $checkboxChecked;
+			background-color: $checkboxCheckedBack;
+			&:hover{
+				border-color: $checkboxCheckedHover;
+				background-color: $checkboxCheckedBackHover;
+				box-shadow: 0 0 0 1px $checkboxCheckedHover;
+			}
+			&:focus{
+				border-color: $checkboxCheckedHover;
+				background-color: $checkboxCheckedBackHover;
+			}
+		}
+		&[type="checkbox"]:checked{
+			background-image: url('../images/icons/admin-icons/checkmark.svg');
+		}
+		&[type="radio"]{
+			border-radius: 50%;
+			&:checked{
+				background-color: $siteBack;
+				background-image: url('../images/icons/admin-icons/radio-dot.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 10px 10px;
+				&:hover,&:focus{
+					background-image: url('../images/icons/admin-icons/radio-dot-hover.svg');
+				}
+			}
+		}
+	}
+}//end checkbox,radio
+
+/* AUTOCOMPLETE DROPDOWN
+-------------------------- */
+.ui-autocomplete .ui-menu-item-wrapper{
+	display: block;
+	&.ui-state-active{
+		background: $blue;
+		border-color: $blue;
+		color: $white;
+		text-decoration: none;
+		margin: 0;
+	}
+}
+
+/* UI DIALOG
+--------------------- */
+.ui-dialog.ui-dialog-off-canvas{
+	&:focus{
+		outline: none;
+	}
+	.ui-dialog-titlebar{
+		background: $darkGrey;
+	}
+	.ui-resizable-w{
+		border-color: $link;
+		background-color: $iceBlue;
+		&:hover{
+			background-color: $hoverLink;
+			border-color: $black;
+		} 
+	}//end ui-resize handle
+}//end ui-dialog
+
+
+/* DRAWERS
+------------------ */
+.drawer-toggle{
+	margin-bottom: $spaceXxs;
+	font-size: 1.6rem;
+	#drupal-modal &{
+		display: none;
+	}
+}
+.form-drawer{
+	display: none;
+}
+
+/* FIELDSETS & CKE Containers
+------------------- */
+.text-format-wrapper{
+	.filter-wrapper{
+		display: none;
+	}
+}
+
+fieldset:not(.form-composite){
+	border-color: $metaBorderHard;
+	background: $siteBack;
+	box-shadow: 0 2px 4px $metaBorderSoft;
+	border-radius: none;
+	&:hover{
+		box-shadow: inset 0 0 0 1px $formElementBorderHover;
+		border-color: $formElementBorderHover;
+		@include transAll(.3s);
+	}
+	&.ief-form{
+		box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+		border-color: $formElementBorderFocus;
+	}
+}//end fieldset
+
+.form-textarea-wrapper .cke_chrome{
+	border-color: $formElementBorder;
+	& > .cke_inner{
+		border: 1px solid transparent;
+	}
+	&:hover{
+		box-shadow: inset 0 0 0 1px $formElementBorderHover;
+		border-color: $formElementBorderHover;
+		@include transAll(.3s);
+		& > .cke_inner{
+			border-color: $formElementBorderHover;
+		}
+	}
+	&.cke_focus{
+		border-color: $formElementBorderFocus;
+		box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+		& > .cke_inner{
+			border-color: $formElementBorderFocus;
+		}
+	}
+}//end cke-chrome
+
+
+
+

@@ -1,0 +1,35 @@
+
+messages:
+  1:
+    type:
+      status
+    randomText:
+      1: |
+        Landing page <a href="#">My Great Page</a> has been updated!
+      2: 
+        'You are awesome at life!'
+      3: 
+        "Congratulations, you're the best!"
+
+  2:
+    type:
+      warning
+    randomText:
+      1: |
+        Don't put your hand on an active stove burner. <a href="#">Find out why!</a>
+      2:
+        'Beware of purse dog!'
+      3: 
+        'Any unsaved changes will be lost.'
+
+  3:
+    type:
+      error
+    randomText:
+      1: |
+        1 error has been found: <a href="#">Image</a>
+      2:
+        "We're sorry, but we're having trouble finding things you are not awesome at!"
+      3:
+        'Please contact someone and tell them about this error.'
+    

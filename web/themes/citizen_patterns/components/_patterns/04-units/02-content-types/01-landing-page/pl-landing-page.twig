@@ -1,0 +1,62 @@
+{#
+	 STYLEGUIDE ONLY
+#}
+{% set randomCustomImage = [
+	'../../images/custom/banners/mountain-mirror-lake.jpg',
+	'../../images/custom/banners/beach-boardwalk.jpg',
+	'../../images/custom/banners/bay.jpg',
+	'../../images/custom/banners/sunrise-field.jpg',
+	'../../images/custom/banners/park3.jpg',
+	'../../images/custom/banners/stony-brook.jpg'
+] %}
+
+<div class="path-node node node-type-{{ machineName }}">
+	<div class="overflow-guard">
+		{% embed '@assembly/_page.twig' %}
+			{% block pageHeader %}{% endblock %}
+			{% block pageContent %}
+				{% embed '@units/02-content-types/_node.twig' %}
+					{% block node %}
+						{% for section in sections %}
+							<section id="section-{{ loop.index }}" class="node-section">
+								{% embed '@composites/04-layout/03-layout-builder/_layout-section.twig' 
+									with{
+										machineName: section.machineName,
+										regions: section.regions
+									}
+								%}
+									{% block regionContent %}
+										{% for item in region.regionContent %}
+											{# widget anchors #}
+											{% set count = 0 %}
+											{% for pSection in item.paragraphSections %}
+												 {% if pSection.anchor %}
+											   	{% set count = count + 1 %}
+											   {% endif %}
+											{% endfor %}
+
+											{% if count > 0 %}
+												{% embed '@chunks/01-navigation/05-widget-anchors/widget-anchors.twig' %}
+													{% block anchors %}
+														{% for pSection in item.paragraphSections %}
+															{% if pSection.anchor %}
+												     	 	<a href="#anchor-{{ pSection.anchor|replace({' ':'-'})|lower }}">{{- pSection.anchor -}}</a>
+												      {% endif %}
+												    {%- endfor -%}
+													{% endblock %}
+												{% endembed %}
+											{% endif %}
+											{% include '@units/02-content-types/_pl-node-region.twig' %}
+										{% endfor %}
+									{% endblock %}
+								{% endembed %}
+							</section>
+						{% endfor %}
+					{% endblock %}
+				{% endembed %}
+			{% endblock %}
+			{% block pagePreFooter %}{% endblock %}
+			{% block pageFooter %}{% endblock %}
+		{% endembed %}
+	</div>
+</div>

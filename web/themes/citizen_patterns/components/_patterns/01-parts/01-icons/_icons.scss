@@ -1,0 +1,22 @@
+/* ===============
+   ICONS
+================== */
+//svg icon color
+svg{
+	use{
+		fill: currentColor;
+	}
+}
+
+//default icon links
+a.icon{
+	height: 50px;
+	width: 50px;
+	display: block;
+	svg{
+		width: inherit;
+		height: inherit;
+	}
+}
+
+

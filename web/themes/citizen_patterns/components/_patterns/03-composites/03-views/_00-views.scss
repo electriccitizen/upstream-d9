@@ -1,0 +1,72 @@
+/* ==================
+    global views settings
+==================== */
+
+.view-content{
+	@include safeFlex(row,wrap,start,start);
+	& > *{
+		width: 100%;
+	}
+}//end view content
+
+%banner{
+	margin-bottom: $spaceSm;
+}
+%title{
+	@include heading4;
+	margin-bottom: $spaceXxs;
+}
+%metatext{
+	@include metaText;
+	margin-bottom: $spaceXxs;
+}
+
+.views-row{
+	&.horizontal{
+		&:not(:last-child){
+			margin-bottom: $spaceLg;
+		}
+		.views-field-field-banner,.views-field-field-profile-image{
+			@extend %banner;
+		}
+		.title,.views-field-title{
+			@extend %title;
+		}
+		.metatext{
+			@extend %metatext;
+		}
+		@include breakpoint(500px){
+			@include safeFlex(row,wrap,start,start);
+			.views-field-field-banner{
+				width: 340px;
+				padding-right: 40px;
+				margin-bottom: 0;
+			}
+			.views-field-nothing{
+				@include calc(width,"100% - 340px");
+			}
+		}
+	}//end horizontal
+	&.vertical{
+		margin-bottom: $spaceLg;
+		.views-field-field-banner,.views-field-field-profile-image{
+			@extend %banner;
+		}
+		.title,.views-field-title{
+			@extend %title;
+		}
+		.metatext{
+			@extend %metatext;
+		}
+	}//end vertical
+}//end views row
+
+
+
+/* GLOBAL VIEWS SETTINGS */
+.view-empty{
+	margin-bottom: $spaceLg;
+	max-width: $textMax;
+	@include auto;
+}
+

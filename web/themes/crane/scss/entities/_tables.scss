@@ -1,0 +1,190 @@
+/* ========================
+  TABLES
+========================== */
+
+/// Default table styling
+@mixin table{
+	width: 100%;
+	border-spacing: unset;
+	caption{
+		font-weight: $heavy;
+		margin-bottom: $spaceXs;
+	}
+
+	td{
+		padding: 1.25rem 1.5rem 1rem;
+		font-size: 1.7rem;
+		.js &{
+			.dropbutton-wrapper{
+				min-height: 28px;
+			}
+		}
+		&:first-child{
+			padding-left: 3rem;
+		}
+		&:last-child{
+			padding-right: 3rem;
+		}
+	}
+	thead th{
+		background: $tableHeaderBack;
+		color: $tableHeaderText;
+		padding: 1.5rem 1.5rem;
+		text-align: left;
+		font-weight: $heavy;
+		font-size: 1.8rem;
+		border-top: 3px solid $tableHeaderBack;
+		border-bottom: 3px solid $tableHeaderBack;
+		& > tr{
+			border-bottom: none;
+		}
+		a{
+			color: $black;
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-size: 15px;
+			background-position: center left;
+			background-image: url('../images/icons/admin-icons/sort.svg');
+			padding-left: 25px;
+			&:after{
+				content: none;
+			}
+			&:hover,&:focus{
+				opacity: .6;
+				color: $black;
+			}
+			.tablesort{
+				background: none;
+				float: none;
+				position: absolute;
+				top: -1px;
+				left: -18px;
+				margin-left: 5px;
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+				width: 18px;
+				height: 18px;
+				&.tablesort--desc{	
+					background-image: url('../images/icons/admin-icons/arrow-down-blue.svg');
+				}
+				&.tablesort--asc{
+					background-image: url('../images/icons/admin-icons/arrow-up-blue.svg');
+				}
+			}
+		}
+		&.is-active{
+			background: lighten($tableHeaderBack, 3%);
+			border-top-color: lighten($tableHeaderBack, 3%);
+			border-bottom-color: $link;
+			& > a{
+				color: $link;
+				background-image: none;
+			}
+		}
+		&:first-child{
+			padding-left: 3rem;
+		}
+		&:last-child{
+			padding-right: 3rem;
+		}
+	}
+
+	tbody tr{
+		border-bottom: 0;
+		&.selected{
+			td{
+				background: $rowSelectedBack;
+			}
+			&:hover{
+				td{
+					background: $iceBlue;
+					@include transColor(.3s);
+				}
+			}
+		}
+		//set table row colors
+		td{
+			border-bottom: 1px solid $rowBorder;
+		}
+		&:nth-of-type(odd){
+			background: $oddRowBack;
+			td{
+				color: $oddRowText;
+			}
+		}
+		&:nth-of-type(even){
+			background: $evenRowBack;
+			td{
+				color: $evenRowText;
+			}
+		}
+		&:hover{
+			background: $iceBlue;
+			@include transColor(.3s);
+		}
+		th{
+			background: $tableHeaderBack;
+			color: $tableHeaderText;
+		}
+	}//end tr
+}//end table mixin
+
+.crane table{
+	@include table;
+}//end table
+
+
+/* ===================
+  SPECIFIC TABLES
+=====================*/
+
+/* VIEWS TABLE
+------------------- */
+.views-list-section{
+	margin-top: 2em;
+	.views-ui-view-name{
+		h3{
+			@include heading5;
+		}
+	}
+}//end views listing section
+
+/* TAXONOMY OVERVIEW 
+------------------------ */
+#taxonomy{
+	ul.dropbutton{
+		min-width: 114px;
+	}
+}//end taxonomy overview
+
+
+/* MODULES
+-------------- */
+.system-modules{
+	table{
+		tr.odd,tr.even{
+			border-bottom: 1px solid $rowBorder;
+		}
+		.module{
+			label{
+				font-size: 1.8rem;
+				color: $darkGrey;
+				margin: 0;
+				display: block;
+				padding-top: 3px;
+			}
+		}
+	}
+	.package-listing{
+		.seven-details__summary{
+			background: $blueGrey;
+			padding-left: 40px;
+		}
+	}
+}//end system-modules
+
+

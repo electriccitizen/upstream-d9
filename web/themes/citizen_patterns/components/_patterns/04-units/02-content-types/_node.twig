@@ -1,0 +1,18 @@
+{#
+	 DRUPAL: This template is extended into the node.html.twig template.
+#}
+{% block plhtml %}
+	{# use this block to simulate Drupal body classes in PL #}
+	<div class="{% if hasMainImage %}has-main-image{% endif %}">
+{% endblock %}
+
+<article{% block attributes%} class="node-content node-{{ machineName }}"{% endblock %}>
+	{% block nodeMeta %}{% endblock %}
+	<div class="main-node-content">
+		{% block node %}{% endblock %}
+	</div>
+</article>
+
+{% block plhtmlClose %}
+	</div>
+{% endblock %}

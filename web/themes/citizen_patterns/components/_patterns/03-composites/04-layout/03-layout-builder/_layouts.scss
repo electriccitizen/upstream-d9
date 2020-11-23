@@ -1,0 +1,131 @@
+/* ===============
+   Section Layouts
+=================== */
+.layout-content{
+	padding-left: $siteMarginMobile;
+	padding-right: $siteMarginMobile;
+}
+.layout__region{
+	& > *{
+		margin-bottom: $elementSpace;
+	}
+}
+
+.node-section:last-child{
+	.layout__region:last-child{
+		margin-bottom: $siteBottomSpace;
+		.section.background:last-child{
+			margin-bottom: -$siteBottomSpace;
+			padding-bottom: $siteBottomSpace;
+		}
+	}
+}
+
+/* TWO COLUMN SIDEBAR LEFT */
+.layout--twocol-sideleft{
+	width: 100%;
+	max-width: $contentStop;
+	@include auto;
+	@include safeFlex(row,wrap,start,start);
+	.layout__region--first{
+		width: 100%;
+		@include desk{
+			width: $sideBar;
+		}
+	}//end layout region second
+	.layout__region--content{
+		width: 100%;
+		@include desk{
+			&:not(:only-child){
+				@include calc(width, "100% - "$sideBar);
+				&:not(.ui-sortable){
+					padding-left: $sectionGutter;
+				}
+			}
+		}
+	}
+}//end layout-twocol-sideleft
+
+/* TWO COLUMN SIDEBAR RIGHT */
+.layout--twocol-sideright{
+	width: 100%;
+	max-width: $contentStop;
+	@include auto;
+	@include safeFlex(row,wrap,start,start);
+	.layout__region--content{
+		width: 100%;
+		@include desk{
+			&:not(:only-child){
+				@include calc(width, "100% - "$sideBar);
+				&:not(.ui-sortable){
+					padding-right: $sectionGutter;
+				}
+			}
+		}
+	}
+	.layout__region--second{
+		width: 100%;
+		@include desk{
+			width: $sideBar;
+		}
+	}//end layout region second
+}//end layout-twocol-sideleft
+
+/* TABS */
+.layout--tabs{
+	width: 100%;
+	.layout__region--tabs{
+		.tabs-wrapper > div:not(:first-of-type){
+			display: none;
+		}
+		ul.tabs-header{
+			@include listReset;
+			@include safeFlex(row,wrap,start,start);
+			@include tab{
+				margin-left: 1px;
+			}
+			li{
+				min-width: 224px;
+				@include onlySmall{
+					width: 100%;
+				}
+				@include tab{
+					margin-right: -1px;
+				}
+			}
+			.tab-control{
+				@include outlineButton($borderRule);
+				border-radius: 0;
+				border-width: 1px;
+				width: 100%;
+				margin-bottom: -1px;
+				color: $black;
+				&:hover,&:focus,&:active{
+					border-color: $borderRule;
+				}
+				&.active-tab{
+					background: $midGrey;
+					color: $white;
+					border-color: $borderRule;
+					&:hover,&:focus{
+						background: $buttonBackHover;
+						color: $buttonTextHover;
+						border-color: $borderRule;
+					}
+					&:active{
+						background: $buttonBackActive;
+						color: $buttonTextActive;
+						border-color: $borderRule;
+					}
+				}
+			}//end tab control
+		}//end tabs header
+		.tab-item{
+			border-top: 1px solid $borderRule;
+			padding-top: 20px;
+			h2.block-title{
+				display: none;
+			}
+		}
+	}//end region--tabs
+}//end layout-tabs

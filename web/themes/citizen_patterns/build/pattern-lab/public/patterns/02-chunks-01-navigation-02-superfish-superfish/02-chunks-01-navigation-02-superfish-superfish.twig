@@ -1,0 +1,27 @@
+{#
+	STYLEGUIDE ONLY"
+#}
+
+{% extends '@composites/01-blocks/03-superfish/_superfish-block.twig' %}
+
+{% block sfMenuContent %}
+	<ul id="superfish-main" class="menu sf-menu sf-main sf-horizontal">
+		{% for link in menuLinks %}
+			<li class="sf-depth-1 {% if link.levelTwo %}menuparent{% else %}sf-no-children{% endif %}{% if link.isActive %} active-trail{% endif %}">
+				{% if link.levelTwo %}
+					<a href="#" class="sf-accordion-button">Expand</a>
+				{% endif %}
+				<a href="#" class="sf-depth-1{% if link.levelTwo %} menuparent{% endif %}{% if link.isActive %} is-active{% endif %}">{{ link.title }}</a>
+				{% if link.levelTwo %}
+					<ul class="sf-hidden">
+						{% for subLink in link.levelTwo %}
+							<li class="sf-depth-2">
+								<a href="#" class="sf-depth-2">{{ subLink.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

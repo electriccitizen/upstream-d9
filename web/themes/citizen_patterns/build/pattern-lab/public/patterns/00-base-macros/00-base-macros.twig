@@ -1,0 +1,30 @@
+{#
+ #  This files used as the canonical style variables guide.
+ #  Variables set here will affect elements in both pattern lab and drupal unless otherwise noted.
+ #
+ #
+ #  FOR ALL STYLE MACROS-use just plain css friendly text between the macro tags with no extra spaces, please. When changing macros, please change the Current= value as well.
+ #
+#}
+
+Macros set here define theming variables in their corresponding twig files in both Pattern Lab and Drupal.
+
+{#######  FORM VARIABLES  #######}
+{# custom-options applies custom form element styling to checkboxes and radios #}
+VARIABLES= default, custom-options
+{% macro formElements() %}custom-options{% endmacro %}
+
+{#######  BACK TO TOP  #######}
+{# add back to top to the site or not #}
+VARIABLES= yes
+{% macro backTopSettings() %}yes{% endmacro %}
+
+{#######  PAGER SETTINGS  #######}
+{# smart will change the pager settings depending on the number of results -- see more instructions in the PL pager.yml file. NOTE: Currently smart pagers cannot be deployed on a pager-by-pager basis (except by restructuring individual drupal pager templates per view), but that may be something to explore in the future. #}
+VARIABLES= default, smart
+{% macro pagerSettings() %}smart{% endmacro %}
+
+
+
+
+

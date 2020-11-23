@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="{{ htmlClass }} details js">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../../../dist/style.css?{{ cacheBuster }}" media="all" />
+     <link rel="stylesheet" href="../../../../dist/guide.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../js/select2/select2.min.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../js/featherlight/featherlight.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../js/featherlight/featherlight.gallery.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../js/slick/slick.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="../../js/slick/slick-theme.css?{{ cacheBuster }}" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/813efb9b80.js" crossorigin="anonymous"></script>
+    <noscript>
+      <link rel="stylesheet" href="https://kit.fontawesome.com/813efb9b80.css?{{ cacheBuster }}" media="all" />
+    </noscript>
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    {{ patternLabHead | raw }}
+    <!-- End Pattern Lab -->
+
+  </head>
+  <body class="{{ bodyClass }} project-styleguide">
+    <!-- for js not found errors (only in styleguide)-->
+  	<div class="visually-hidden">
+  		<div id="tabs" class="tabs"></div>
+  	</div>
+    <div id="styleguide-nav">
+      <h2 class="style-nav-toggle"><a href="#" aria-controls="#pattern-groups"><i class="fa fa-bars" aria-hidden="true" aria-label="menu"></i></a></h2>
+      <ul id="pattern-groups">
+        <li class="group-nav-item">
+          <a href="#" class="nav-group-link" data-group-target="materials">Materials</a>
+        </li>
+        <li class="group-nav-item">
+          <a href="#" class="nav-group-link" data-group-target="parts">Parts</a>
+        </li>
+        <li class="group-nav-item parent-group">
+          <a href="#" class="nav-group-link" data-group-target="chunks">Chunks</a>
+          <ul class="sub-group-patterns">
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-group-target="navigation">Navigation</a>
+            </li>
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-group-target="in-page-nav">In Page Nav</a>
+            </li>
+          </ul>
+        </li>
+        <li class="group-nav-item parent-group">
+          <a href="#" class="nav-group-link" data-group-target="composites">Composites</a>
+          <ul class="sub-group-patterns">
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-group-target="blocks">Blocks</a>
+            </li>
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-group-target="paragraphs">Paragraphs</a>
+            </li>
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-group-target="cards">Cards</a>
+            </li>
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-group-target="layout">Layout</a>
+            </li>
+          </ul>
+        </li>
+        <li class="group-nav-item parent-group">
+          <a href="#" class="nav-group-link" data-group-target="units">Units</a>
+          <ul class="sub-group-patterns">
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-group-target="content-types">Content Types</a>
+            </li>
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-group-target="search">Site Search</a>
+            </li>
+          </ul>
+        </li>
+        <li class="group-nav-item parent-group">
+          <a href="#" class="nav-group-link devices">Device View</a>
+          <ul class="sub-group-patterns">
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-device="desktop">Desktop</a>
+            </li>
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-device="tablet">Tablet</a>
+            </li>
+            <li class="sub-group-nav-item">
+              <a href="#" class="sub-nav-group-link" data-device="mobile">Mobile</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>

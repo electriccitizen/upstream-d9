@@ -1,0 +1,80 @@
+
+machineName: 
+  profiles
+hasMainImage:
+  true
+sections:
+  1:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              breadcrumbs
+            breadcrumb:
+              1:
+                url: "#"
+                text: "Home"
+              2:
+                url: "#"
+                text: "Meet the Team"
+              2:
+                url: "#"
+                #this should match the page title of the example
+                text: "Someone McGee"
+  2:
+    machineName: 
+      onecol
+    regions:
+      1:
+        machineName:
+          content
+        regionContent:
+          1:
+            machineName:
+              field-profile-image
+            content:
+              src:
+                'http://placeimg.com/350/350/people'
+              alt:
+                a people image
+          2:
+            machineName:
+              title
+            content:
+              'Someone McGee'
+          3:
+            machineName:
+              field-position
+            content:
+              'Middle Lower Upper Management'
+          4:
+            machineName:
+              field-email
+            label:
+              type:
+                block
+              lContent:
+                'E:'
+            email:
+              'someone@mcgee.com'
+          6:
+            machineName:
+              field-phone
+            label:
+              type:
+                block
+              lContent:
+                'P:'
+            tel:
+              '555-768-5309'
+          5:
+            machineName:
+              body
+            content:
+              true
+               

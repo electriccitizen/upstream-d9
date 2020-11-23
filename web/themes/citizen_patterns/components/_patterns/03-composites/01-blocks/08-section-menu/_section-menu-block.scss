@@ -1,0 +1,36 @@
+/* ==================
+   SECTION MENU BLOCK
+==================== */
+
+.block--system-menu.section-menu{
+	@include onlyMobile{
+		margin-bottom: $spaceLg;
+	}
+	h2.block-title{
+		position: relative;
+		padding: 1rem $siteMarginMobile;
+		background: $menuBlockTitleBack;
+		color: $menuBlockTitle;
+		max-width: none;
+		margin-bottom: 0;
+		@include onlyMobile{
+			padding: 2rem;
+			@include edgeToEdge;
+		}	 
+		a.section-menu-toggle{
+			color: $menuBlockTitle;
+			i{
+				margin-right: 2rem;
+			}
+			&:hover,&:focus{
+				color: $menuBlockTitleHover;
+			}
+			@include desk{
+				pointer-events: none;
+				i{
+					display: none;
+				}
+			}
+		}
+	}
+}//end section menu block

@@ -1,0 +1,25 @@
+items:
+  - name: $offWhite
+    value: '#f6f6f6'
+  - name: $iceBlue
+    value: '#f2f9fb'
+  - name: $darkIce
+    value: '#e4f5fc'
+  - name: $lightGrey
+    value: '#ededed'
+  - name: $grey
+    value: '#ccc'
+  - name: $midGrey
+    value: '#615f6b'
+  - name: $darkGrey
+    value: '#37363b'
+  - name: $black
+    value: '#000'
+  - name: $brightRed
+    value: '#dd241b'
+  - name: $red
+    value: '#bf0e0e'
+meta:
+  description: >-
+    To add to these items, use Sass variables that start with <code>$</code> in
+    <code>.//components/_patterns/00-base/colors/_color-vars.scss</code>

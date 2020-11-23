@@ -1,0 +1,20 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+{% embed '@parts/08-fields/02-paragraphs/_paragraphs-field-item.twig' %}
+  {% block paragraphItem %}
+    {% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+      with{
+        sectionTitle: '',
+        sectionIntro: '',
+      }
+    %}
+
+    	{% block widgetContent %}
+    		{% include '@composites/02-paragraphs/08-quote/_quote.twig' %}
+    	{% endblock %}
+
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

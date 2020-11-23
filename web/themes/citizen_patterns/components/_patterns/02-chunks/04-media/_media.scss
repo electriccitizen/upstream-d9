@@ -1,0 +1,164 @@
+/* ================
+	 MEDIA
+============== */
+
+img{
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.field-media-image + .field-caption{
+	margin-top: $spaceXs;
+}
+
+
+/* EMBEDDED VIDEO
+------------------ */
+.field-media-oembed-video,.field-media-video-embed-field{
+	position: relative;
+	padding-bottom: 56.25%;
+	iframe{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+/* EMBEDDED MEDIA
+------------------- */
+.text-with-summary article,.text-long article{
+	// set float props and max-widths for floated items
+	&.align-left{
+		float: none;
+		@include smallTab{
+			&:not(.document){
+				max-width: 50% !important;
+				float: left;
+				margin: 0 $spaceMd $spaceMd 0;
+			}
+			&.document{
+				text-align: left;
+				width: 100%;
+			}
+		}
+		//floated video
+		.field-media-video-embed-field{
+			padding-bottom: 0;
+			.video-embed-field-responsive-video{
+				width: 1200px;
+				max-width: 100%;
+			}
+		}
+	}
+	&.align-right{
+		float: none;
+		@include smallTab{
+			&:not(.document){
+				max-width: 50%;
+				float: right;
+				margin: 0 0 $spaceMd $spaceMd;
+			}
+			&.document{
+				text-align: right;
+				width: 100%;
+			}
+		}
+		//floated video
+		.field-media-video-embed-field{
+			padding-bottom: 0;
+			.video-embed-field-responsive-video{
+				width: 1200px;
+				max-width: 100%;
+			}
+		}
+	}
+	&.align-center{
+		&.document{
+			text-align: center;
+		}
+		.field-media-video-embed-field{
+			padding-bottom: 0;
+		}
+	}
+	// control sizes for images and video
+	&.small-embed{
+		width: 300px;
+		max-width: 100%;
+	}
+	&.medium-embed{
+		width: 600px;
+		max-width: 100%;
+	}
+	&.large-embed{
+		width: 800px;
+		max-width: 100%;
+	}
+	&.default,&.full{
+		width: 100%;
+	}
+}//end article
+
+
+/* EMBEDDED DOC ICONS
+---------------------------------------- */
+%docIcons{
+	position: relative;
+	padding-left: 22px;
+	&:hover:before,&:focus:before{
+		opacity: .7;
+	}
+	&:before{
+		content:'';
+		display: block;
+		position: absolute;
+		top: 4px;
+		left: 0px;
+		width: 18px;
+		height: 18px;
+	}
+}
+span.file{
+	a{
+		@extend %docIcons;
+		&:before{
+			@include docGeneric;
+		}
+	}
+}
+.text-with-summary,.text-long,span.file{
+	a[href$='.pdf']{
+		@extend %docIcons;
+		&:before{			
+			@include docPDF;
+		}	
+	}
+
+	//word
+	a[href$='.doc'],a[href$=".docx"]{
+		@extend %docIcons;
+		&:before{
+			@include docWord;
+		}
+	}
+	//excel
+	a[href$='.xls'],a[href$=".xlsx"]{
+		@extend %docIcons;
+		&:before{
+			@include docExcel;
+		}
+	}
+	//powerpoint
+	a[href$='.ppt'],a[href$=".pptx"]{
+		@extend %docIcons;
+		&:before{
+			@include docPowerpoint;
+		}
+	}
+}//end wysiwyg fields
+
+

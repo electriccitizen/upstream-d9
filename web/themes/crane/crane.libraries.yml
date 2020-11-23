@@ -1,0 +1,41 @@
+global:
+  version: 1.0
+  css:
+    theme:
+      js/select2/select2.min.css: {}
+      css/crane.css: {}
+  js:
+    js/select2/select2.min.js: {}
+    js/crane.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+details:
+  version: 1.0
+  js:
+    js/details.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+confirmation:
+  version: 1.0
+  js:
+    js/confirmation.js: {}
+fonts:
+  version: 1.0
+  css:
+    base:
+       https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap: { type: external, preprocess: false }
+views-filters:
+  version: 1.0
+  js:
+    js/views-filters.js: {}
+webform-elements:
+  version: 1.0
+  js:
+    js/webform.js: {}
+    

@@ -1,0 +1,5 @@
+items:
+  - name: Open Sans
+    value: '"Open Sans", Helvetica, Arial, sans-serif'
+  - name: Georgia
+    value: 'Georgia, "Times New Roman", Times, serif'

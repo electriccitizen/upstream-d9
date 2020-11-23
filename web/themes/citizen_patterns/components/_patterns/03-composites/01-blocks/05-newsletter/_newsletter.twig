@@ -1,0 +1,60 @@
+{#
+ Drupal: This file is extended in newsletter Drupal block.
+#}
+
+{% if intro %}
+	<div class="field body{% if modal == 'On' %} has-modal{% endif %}">
+		{% autoescape false %}
+			{{ intro -}}
+			{% if modal == 'On' %}
+				<a href="#" class="modal-trigger" aria-controls="newsletter-modal">
+					{%- if modalTrigger -%}
+						{{- modalTrigger -}}
+					{%- else -%}
+						{%- trans -%}Signup!{%- endtrans -%}
+					{%- endif -%}
+				</a>
+			{% endif %}
+		{% endautoescape %}
+	</div>
+{% endif %}
+{% if modal == 'On' %}
+	{% block library %}{% endblock %}
+	<div id="newsletter-modal" class="modal-element" role="dialog">
+		<div class="modal-inner">
+			<div class="modal-header">
+				<h2>
+					{%- if modalHeader -%}
+						{{ modalHeader }}
+					{%- else -%}
+						{%- trans -%}Newsletter Signup{%- endtrans -%}
+					{%- endif -%}
+				</h2>
+				<a id="news-close" href="#" class="modal-close" aria-controls="newsletter-modal"><span class="visually-hidden">{%- trans -%}Close Newsletter Signup{%- endtrans -%}</span></a>
+			</div>
+			<div class="modal-content">
+				{% if modalIntro %}
+					<div class="modal-intro">
+						{{- modalIntro -}}
+					</div>
+				{% endif %}
+				{% if embedForm %}
+					<div class="form-embed">
+						{% autoescape false %}
+							{{- embedForm -}}
+						{% endautoescape %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% else %}
+	{% if embedForm %}
+		<div class="form-embed">
+			{% autoescape false %}
+				{{- embedForm -}}
+			{% endautoescape %}
+		</div>
+	{% endif %}
+{% endif %}
+

@@ -1,0 +1,50 @@
+/* =================
+   TEXTFIELD
+================= */
+
+.js-form-type-textfield {
+	input{
+		@include textInput;
+	}
+}
+.js-form-type-email{
+	input{
+		@include textInput;
+	}
+}
+.js-form-type-password,.form-item-password{
+	input{
+		@include textInput;
+	}
+}
+.js-form-type-number{
+	input{
+		@include textInput;
+		max-width: 150px;
+	}
+}
+.js-form-type-tel{
+	input{
+		@include textInput;
+		max-width: 250px;
+	}
+}
+.js-form-type-url{
+	input{
+		@include textInput;
+		max-width: 350px;
+	}
+}
+.js-form-type-textarea{
+	textarea{
+		@include textInput;
+		line-height: 1.4;
+	}
+}
+.form-item-date-time-daypicker-time{
+	input{
+		@include textInput;
+		max-width: 130px;
+	}
+}
+

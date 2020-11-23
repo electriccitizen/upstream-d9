@@ -1,0 +1,18 @@
+{#
+	 STYLEGUIDE ONLY
+#}
+
+
+<div class="layout layout--{{ machineName }}">
+  {% for region in regions %}
+    <div class="layout__region layout__region--{{ region.machineName }}">
+    	{% block regionContent %}
+        <div class="region-content">
+        	<div class="visually-hidden">
+        		Drupal content would go here
+        	</div>
+        </div>
+      {% endblock %}
+    </div>
+  {% endfor %}
+</div>

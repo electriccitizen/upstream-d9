@@ -1,0 +1,128 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Citizen Patterns theme.
+ */
+
+use Drupal\Core\Template\Attribute;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_preprocess_html.
+ */
+function citizen_patterns_preprocess_html(&$variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    if ((!$node instanceof NodeInterface) && ($node_revision = \Drupal::routeMatch()->getParameter('node_revision'))) {
+      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($node_revision);
+    }
+    //set published or unpublished
+    if($node->status[0]->value == '1'){
+      $variables['attributes']['class'][] = 'published';
+    } else {
+      $variables['attributes']['class'][] = 'unpublished';
+    }
+    //find out if there is a banner cut chosen and add as class
+    if ((!empty($node->field_banner[0])) || ($node->field_profile_image[0])){
+      $variables['attributes']['class'][] = 'has-main-image';
+    }
+  }
+}
+
+/**
+ * Implements hook_page_alter.
+ */
+function citizen_patterns_preprocess_page(&$variables) {
+  $node = Drupal::request()->attributes->get('node');
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $variables['fname'] = $user->get('field_first_name')->value;
+  if ($node) {
+    if ((!$node instanceof NodeInterface) && ($node_revision = \Drupal::routeMatch()->getParameter('node_revision'))) {
+      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($node_revision);
+    }
+    $variables['currentId'] = $node;
+  }
+}
+
+/**
+ * Implements hook_preprocess_field.
+ */
+function citizen_patterns_preprocess_field(&$variables, $hook) {
+  if ($variables['element']['#object']->bundle() == 'view_placer') {
+    $view_name = str_replace(' ','_',strtolower($variables['element']['#object']->get('field_view_machine_name')->value));
+    $display_name = str_replace(' ','_',strtolower($variables['element']['#object']->get('field_display_machine_name')->value));
+    $view = views_embed_view($view_name,$display_name);
+    $view_output = \Drupal::service('renderer')->render($view);
+    $variables["viewfield"] = $view_output;
+  }
+}
+
+/**
+ * Implements hook_preprocess_block to find node info.
+ */
+function citizen_patterns_preprocess_block(&$variables) {
+  //find the title of the node the block is on for custom breadcrumbs
+  if (isset($variables['content']['#block_content'])) {
+    if ($variables['content']['#block_content']->bundle() == 'custom_breadcrumbs') { 
+      $node = \Drupal::routeMatch()->getParameter('node');
+      if ((!$node instanceof NodeInterface) && ($node_revision = \Drupal::routeMatch()->getParameter('node_revision'))) {
+        $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($node_revision);
+      }
+      if ($node){
+        $variables['nodeTitle'] = $node->getTitle();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter.
+ */
+function citizen_patterns_theme_suggestions_page_alter(array &$suggestions, array $variables, $hook) {
+  // Try to get the node, so we can check if we're on the node page.
+  $node = Drupal::request()->attributes->get('node');
+  if ($node) {
+    if ((!$node instanceof NodeInterface) && ($node_revision = \Drupal::routeMatch()->getParameter('node_revision'))) {
+      $node = \Drupal::entityTypeManager()->getStorage('node')->loadRevision($node_revision);
+    }
+    $suggestions[] = 'page__' . $node->getTYpe();
+  }
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
+    $term = Term::load($tid);
+    $suggestions[] = 'page__taxonomy__' . $term->getVocabularyId();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_block_alter.
+ */
+function citizen_patterns_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    $block_name = str_replace(' ','_',strtolower($variables['elements']['content']['#block_content']->label()));
+    array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
+    array_splice($suggestions, 2, 0, 'block__' . $block_name);
+    array_splice($suggestions, 3, 0, 'block__' . $variables['elements']['content']['#block_content']->id());
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_paragraph_alter.
+ */
+function citizen_patterns_theme_suggestions_paragraph_alter(array &$suggestions, array $variables) {
+  $paragraph = $variables['elements']['#paragraph'];
+  $id = $paragraph->id();
+  // array_push($suggestions, 'paragraph__' . $paragraph->getType() . '__' . $id);
+  array_push($suggestions, 'paragraph__' . $paragraph->getType() . '__' . $id);
+}
+
+/**
+ * Implements hook_form_alter.
+ */
+function citizen_patterns_form_alter(&$form, FormStateInterface $form_state) {
+  if($form['#id'] == 'site-search-form'){
+    $form['actions']['submit']['#suffix'] = '<i class="fas fa-search"></i>';
+  }
+}

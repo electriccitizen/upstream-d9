@@ -1,0 +1,109 @@
+{#
+ DRUPAL: This template is inherited into the views-view--site-search--search-results.html.twig
+#}
+{% block plhtml %}
+	<div class="overflow-guard">
+{% endblock %}
+
+<div{% block attributes %} class="view site-search search-results"{% endblock %}>
+	<h1 class="page-title">Site Search</h1>
+	
+	<div class="search-page-block">
+		<div class="search-form-outer">
+			{% block filters %}
+				{% embed '@chunks/02-filters/filters.twig' %}
+					{% block filterItems %}
+						{% for filterItem in filters %}
+							{% include '@parts/06-forms/_form-element.twig'
+								with{
+									type: filterItem.type,
+									label: filterItem.label,
+									nameClass: 'site-search-api-fulltext',
+									placeholder: filterItem.placeholder,
+									description: '',
+									testValue:  filterItem.testValue
+								}
+							%}
+						{% endfor %}
+					{% endblock %}
+				{% endembed %}
+			{% endblock %}
+		</div>
+	</div>
+
+	{%- if header -%}
+		<div class="view-header">
+			{{- header -}}
+		</div>
+	{%- endif -%}
+
+	{{- attachment_before -}}
+
+	{%- if results -%}
+		<div class="results-header">
+			<h2>Search Results:</h2>
+		</div>
+		<div class="view-content">
+			{% block resultRows %}
+				{% for listItem in listItems.eight %}
+					<div class="views-row">
+						<div class="views-field views-field-title">
+							<h3><a href="#">{{ listItem.title }}</a></h3>
+						</div>
+						<div class="views-field views-field-body-1">
+							{{ listItem.excerpt.medium }}
+						</div>
+					</div>
+				{% endfor %}
+			{% endblock %}
+		</div>
+	{%- endif -%}
+
+	{%- if empty -%}
+		<div class="view-empty">
+			{{- empty -}}
+		</div>
+	{%- endif -%}
+
+	{%- if footer -%}
+		<div class="view-footer">
+			{{- footer -}}
+		</div>
+	{%- endif -%}
+
+	{{- attachment_after -}}
+
+	{{- more -}}
+
+	{% block pager %}
+		{% if pager %}
+			{% embed '@chunks/03-pagers/pager.twig' 
+				with{
+					items: pager.items,
+					current: pager.current,
+					ellipses: pager.ellipses,
+					plKey: pager.plKey,
+				}
+			%}
+				{% block pagerSettings %}
+					{% set itemsPerPage = 8 %}	
+					{% if style.pagerSettings == 'smart' %}
+						{% set start = ((pager.current - 1) * itemsPerPage) + 1 %}
+						{% set end = (start + itemsPerPage) - 1 %}
+						{% set totalItems = (itemsPerPage * count) - 3 %}
+						<span class="per-page">{{ itemsPerPage }}</span>
+						<span class="results-count">Results: {{ start }} - {% if end < totalItems %}{{ end }}{% else %}{{ totalItems }}{% endif %} of <span class="total-items">{{ totalItems }}</span></span>
+						<span class="count-shim">{{ count }}</span>
+					{% endif %}
+				{% endblock %}
+				{% block pagerHelp %}{% endblock %}
+			{% endembed %}
+		{% endif %}
+	{% endblock %}
+
+</div>
+
+{% block plhtmlClose %}
+	</div>
+{% endblock %}
+

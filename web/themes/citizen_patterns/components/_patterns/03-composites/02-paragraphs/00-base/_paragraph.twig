@@ -1,0 +1,40 @@
+{#
+	DRUPAL: This template is inherited into the paragraph.html.twig template.
+#}
+
+{%- if 'section' not in type -%}
+	<div class="section-item">
+{%- endif -%}
+	<div{{ attributes|without('class') }} class="paragraph paragraph--type--{{ type  }}{% if viewMode %} paragraph--view-mode--{{ viewMode }}{% endif %}{% if id %} paragraphs-item-{{ id }}{% endif %}">
+		{% block widget %}
+			{% if sectionTitle %}
+				<h2 class="section-title">{{- sectionTitle -}}</h2>
+			{% endif %}
+			{% if sectionIntro %}
+				<div class="field field-section-intro text-long">
+					{% autoescape false %}
+						{{- sectionIntro -}}
+					{% endautoescape %}
+				</div>
+			{% endif %}
+			{% if widgetTitle %}
+				<div class="widget-title">{{- widgetTitle -}}</div>
+			{% endif %}
+
+			{% block widgetInner %}
+  			{%- if 'section' not in type -%}
+  				<div class="widget-wrapper">
+  			{%- endif -%}
+  				{% block widgetContent %}
+  					{{- content -}}
+					{% endblock %}
+  			{%- if 'section' not in type -%}
+  				</div>
+  			{%- endif -%}
+  		{% endblock %}
+
+		{% endblock %}
+	</div>
+{%- if 'section' not in type -%}
+	</div>
+{%- endif -%}

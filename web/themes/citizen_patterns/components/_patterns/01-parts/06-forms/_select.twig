@@ -1,0 +1,9 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+<select name="select">
+	{% for option in options %}
+		<option value="{{ option.value }}">{{ option.name }}</option>
+	{% endfor %}
+</select>

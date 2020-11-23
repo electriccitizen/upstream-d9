@@ -1,0 +1,236 @@
+/*WYSIWYG for editors*/
+html {
+	font-size: 16px;
+	line-height: 24px;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.cke_widget_drupalmedia img{
+	display: block;
+	max-width: 100%;
+}
+.media-library-item__edit{
+	background: #026cc5;
+	border: 0;
+	color: #fff;
+	padding: 5px 10px;
+	margin-right: .5em;
+}
+.media-library-item__edit:hover{
+	background: #cccccc;
+	color: #121212;
+}
+.align-right{
+	float: right;
+	margin:0 0 20px 20px;
+	clear: both;
+	max-width: 50% !important;
+}
+.align-right.document{
+	float: none;
+	max-width: 100% !important;
+	width: 100% !important;
+	text-align: right;
+}
+.align-left{
+	float: left;
+	margin:0 20px 20px 0;
+	clear: both;
+	max-width: 50% !important;
+}
+.align-left.document{
+	float: none;
+	max-width: 100% !important;
+	width: 100% !important;
+	text-align: left;
+}
+.small-embed{
+	width: 300px;
+	max-width: 100%;
+}
+.medium-embed{
+	max-width: 100%;
+	width: 400px;
+}
+.large-embed{
+	max-width: 100%;
+	width: 600px;
+}
+.full,.default{
+	width: 1200px;
+	max-width: 100%;
+}
+
+.field-media-video-embed-field .video-embed-field-responsive-video{
+	position: relative;
+	padding-bottom: 56.25%;	
+}
+.field-media-video-embed-field .video-embed-field-responsive-video iframe{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+div.warning {
+	border: 2px solid #dd241b;
+	color: #dd241b;
+	padding: 10px 40px;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+.cke_panel_listItem a div.warning{
+	margin-bottom: 0;
+	padding: 4px 10px;
+	font-size: 14px;
+}
+
+div.button{
+	text-align: center;
+	margin: 2rem 0;
+	display: inline-block;
+	vertical-align: top;
+	max-width: 260px;
+	text-align: center;
+	box-sizing: border-box;
+}
+div.button + div.button{
+	margin-left: 2rem;
+}
+div.button a{
+	display: block;
+	max-width: 260px;
+	color: #fff;
+	background: #bf0e0e;
+	padding: 15px 40px;
+	text-decoration: none;
+}
+div.button a:hover{
+	background: #ccc;
+	color: #000;
+}
+.cke_panel_listItem a div.button{
+	margin: 0;
+	background: #bf0e0e;
+	color: #ffffff;
+	padding: 4px 15px;
+	font-size: 14px;
+	display: block;
+}
+
+.cke_panel_listItem a mark{
+	font-size: 15px;
+}
+
+small{
+	font-size: 80%;
+}
+
+a{
+	color: #bf0e0e;
+}
+table th, table td{
+	min-width: 40px;
+	padding: 2px 6px;
+}
+
+.field-caption{
+	font-style: italic;
+	font-size: 13px;
+	text-align: center;
+	color: #666;
+}
+
+h2{
+	font-size: 32px;
+}
+
+h3{
+	font-size: 26px;
+}
+
+h4{
+	font-size: 22px;
+}
+
+h5{
+	font-size: 20px;
+}
+
+h6{
+	font-size: 18px;
+}
+
+blockquote{
+	margin: 2rem auto 0 !important;
+	max-width: 740px;
+	position: relative;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	font-size: 28px;
+	line-height: 30px;
+	padding-bottom:10px;
+}
+
+blockquote:before{
+	color: $transBlack;
+	content: "“";
+	font-size: 3em;
+	line-height: .1em;
+	margin-right: .25em;
+	vertical-align: -.4em;
+}
+
+blockquote:after{
+	color: $transBlack;
+	content: "”";
+	font-size: 3em;
+	line-height: .1em;
+	margin-right: .25em;
+	vertical-align: -.44em;
+}
+
+blockquote p{
+	display: inline;
+}
+
+/* DOCUMENT ICONS
+------------------ */
+a[href$='.pdf'],a[href$='.doc'],a[href$=".docx"],a[href$='.xls'],a[href$=".xlsx"],a[href$='.ppt'],a[href$=".pptx"]{
+	position: relative;
+	padding-left: 22px;
+	display: inline-block;
+}
+a[href$='.pdf']:before,a[href$='.doc']:before,a[href$=".docx"]:before,a[href$='.xls']:before,a[href$=".xlsx"]:before,a[href$='.ppt']:before,a[href$=".pptx"]:before{
+	content: '';
+	display: block;
+	position: absolute;
+	top: 4px;
+	left: 0;
+	width: 18px;
+	height: 18px;
+}
+a[href$='.pdf']:before{
+	background: url(../../images/icons/src/pdf.svg) no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+a[href$='.doc']:before,a[href$=".docx"]:before{
+	background: url(../../images/icons/src/word.svg) no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+a[href$='.xls']:before,a[href$=".xlsx"]:before{
+	background: url(../../images/icons/src/word.svg) no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+a[href$='.ppt']:before,a[href$=".pptx"]:before{
+	background: url(../../images/icons/src/word.svg) no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+

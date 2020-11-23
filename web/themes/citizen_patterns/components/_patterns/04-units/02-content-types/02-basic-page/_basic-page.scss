@@ -1,0 +1,14 @@
+/* ============
+   BASIC PAGE
+================ */
+.node-page.node-content{
+	
+	.block-field-banner{
+		@include edgeToEdge;
+	}
+
+	.block-field.block-body{
+		max-width: 100%;
+	}
+
+}//end basic page

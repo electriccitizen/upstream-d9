@@ -1,0 +1,520 @@
+/* ===============
+   FORMS
+================= */
+$formElementBorderWidth: 2px;
+$elementBorder: $formElementBorderWidth solid $formElementBorder;
+@mixin placeholder{
+	$placeTint: 1;
+	&::-webkit-placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+	&::-moz-placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+	&:-ms-input-placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+	&::-webkit-input-placeholder{
+		opacity: $placeTint;
+		color: $placeColor;
+	}
+}
+
+@mixin placeholderFocus{
+	$placeFocusTint: .2;
+	&::-webkit-placeholder{
+		opacity: $placeFocusTint;
+		color: $placeFocusColor;
+	}
+	&::-moz-placeholder{
+		opacity: $placeFocusTint;
+		color: $placeFocusColor;
+	}
+	&:-ms-input-placeholder{
+		opacity: $placeFocusTint;
+		color: $placeFocusColor;
+	}
+	&::-webkit-input-placeholder{
+		opacity: $placeFocusTint;
+		color: $placeFocusColor;
+	}
+}
+
+@mixin textInput{
+	border: $elementBorder;
+	font-size: 1.6rem;
+	font-family: $bodyFont;
+	padding: 8px 6px 9px;
+	width: 100%;
+	line-height: 1.4;
+	min-height: 44px;
+	@include placeholder;
+	&:hover{
+		border-color: $formElementBorderHover;
+		box-shadow: inset 0 0 0 1px $formElementBorderHover;
+	}
+	&:focus{
+		@include placeholderFocus;
+		outline: none;
+		box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+		border-color: $formElementBorderFocus;
+	}
+}
+
+@mixin formLabel{
+	font-family: $header;
+	font-size: $formLabelSize;
+	font-weight: $formLabelWeight;
+	color: $black;
+	display: block;
+	margin-bottom: $spaceXs;
+	padding-bottom: 0;
+}
+
+@mixin required{
+	&:after{
+		content: '*';
+		color: $validation;
+		position: relative;
+		top: -1px;
+		right: -.5rem;
+		font-size: 1.4rem;
+	}
+}
+
+@mixin customOptions{
+	input{
+		@include browserWipe;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		outline: none;
+		border: $formElementBorderWidth solid $checkbox;
+		width: 18px;
+		height: 18px;
+		background-color: $siteBack;
+		position: relative;
+		top: 3px;
+		cursor: pointer;
+		&:hover{
+			border-color: $checkboxHover;
+			background-color: $checkboxBackHover;
+			box-shadow: 0 0 0 1px $checkboxHover;
+		}
+		&:focus{
+			border-color: $checkboxHover;
+			background-color: $checkboxBackHover;
+		}
+		&:checked{
+			border-color: $checkboxChecked;
+			background-color: $checkboxCheckedBack;
+			&:hover{
+				border-color: $checkboxCheckedHover;
+				background-color: $checkboxCheckedBackHover;
+				box-shadow: 0 0 0 1px $checkboxCheckedHover;
+			}
+			&:focus{
+				border-color: $checkboxCheckedHover;
+				background-color: $checkboxCheckedBackHover;
+			}
+		}
+		&[type="checkbox"]:checked{
+			background-image: url('../images/form-elements/checkmark.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		&[type="radio"]{
+			border-radius: 50%;
+			&:checked{
+				background-color: $siteBack;
+				background-image: url('../images/form-elements/radio-dot-red.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 10px 10px;
+				&:hover,&:focus{
+					background-image: url('../images/form-elements/radio-dot-hover.svg');
+				}
+			}
+		}
+	}
+}//end custom options
+
+
+/* FORM ITEM STYLING
+-------------------- */
+//wipe browser appearance from inputs
+input[type=text], input[type=search], input[type=url], input[type=number], textarea, input[type="search"] {
+	@include browserWipe;
+}
+
+input[type="submit"].button{
+	@include submitButton;
+}
+
+//validation
+.has-error {
+	border-color: $validation;
+}
+
+
+// generic form-item
+.form-item{
+	width: 100%;
+	margin-bottom: $formElementSpace;
+	label{
+		@include formLabel;
+	}
+}//end form item
+
+// required items
+.form-required,.js-form-required{
+	position: relative;
+	@include required;
+}
+
+//descriptions
+.description{
+	font-size: 1.6rem;
+}
+.webform-element-description{
+	font-size: 1.6rem;
+	padding-bottom: $spaceXs;
+}
+input + .description{
+	padding-top: $spaceXs;
+	.webform-element-description{
+		padding-bottom: 0;
+	}
+}
+
+
+//fieldsets
+fieldset{
+	border: none;
+	padding: 0;
+	margin: 0;
+	legend{
+		font-weight: $heavy;
+		font-size: 2.2rem;
+		margin-bottom: $spaceXs;
+	}
+	
+	&.webform-composite-hidden-title{
+		margin-top: 0;
+		margin-bottom: $spaceMd;
+	}
+}//end fieldset
+
+/* AUTOCOMPLETE DROPDOWN
+-------------------------- */
+.ui-autocomplete {
+	#drupal-off-canvas &{
+		background: $siteBack;
+	}
+	.ui-menu-item-wrapper{
+		display: block;
+		font-size: 1.5rem;
+		&.ui-state-active{
+			background: $link;
+			border-color: $link;
+			color: $white;
+			text-decoration: none;
+			margin: 0;
+		}
+	}
+}
+
+/* WEBFORMS
+----------- */
+.webform-submission-form{
+	max-width: $textMax;
+	@include auto;
+	padding-top: $spaceMd;
+	.webform-element-help{
+		margin: 0;
+		height: 16px;
+		width: 16px;
+		line-height: 16px;
+		top: -5px;
+		border: 0;
+		background: $link;
+		position: relative;
+		&:hover,&:focus{
+			outline: none;
+			background: $hoverLink;
+		}
+	}//end element help
+	.form-actions{
+		padding-top: $spaceMd;
+		@include safeFlex(row,wrap,justify,start);
+	}
+}//end webform submission form
+
+/* CONFIRMATION
+------------------ */
+.webform-confirmation{
+	max-width: $textMax;
+	@include auto;
+	border: $elementBorder;
+	padding: 2rem;
+	text-align: center;
+	.webform-confirmation__back{
+		a{
+			@include button;
+			margin-bottom: 0;
+		}
+	}
+}//end webform confirmation
+
+
+
+/* OBSCURE WEBFORM ELEMENTS
+------------------------- */
+//pager
+.webform-progress{
+	& ~ .form-actions{
+		border-top: $elementBorder;
+		margin-top: $spaceMd;
+	}
+	.webform-progress-tracker{
+		padding-bottom: $spaceMd;
+		.progress-step{
+			&:after{
+				background-color: $progressBar;
+			}
+			&:not(.is-active){
+				.progress-marker{
+					background-color: $progressMarker;
+					color: $progressMarkerText;
+				}
+			}
+			&.is-active{
+				.progress-marker{
+					background-color: $progressMarkerActive;
+					color: $progressMarkerActiveText;
+				}
+				&:hover{
+					.progress-marker{
+						background-color: $progressMarkerActive;
+						color: $progressMarkerActiveText;
+					}
+				}
+			}
+			.progress-marker{
+				line-height: 1;
+				padding-bottom: 0;
+				font-weight: 700;
+				font-size: 1.6rem;	
+			}
+		}//end progress step
+	}//end progress tracker
+}//end pager
+
+//number range
+.js-form-type-range{
+	$knobSize: 18px;
+	.form-range{
+		margin-bottom: $spaceSm;
+		-webkit-appearance: none;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+		max-width: 400px;
+		&:focus {
+			outline: none;
+		}
+		//WEBKIT
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			height: $knobSize;
+			width: $knobSize;
+			border-radius: 50%;
+			background: $sliderKnob;
+			margin-top: -5px;
+			box-shadow: 1px 1px 2px rgba(35,35,35,.6);
+			cursor: pointer;
+		}
+		&::-webkit-slider-runnable-track {
+			width: 100%;
+			height: 9px;
+			background: $sliderTrack;
+			border-radius: 3rem;
+			transition: all 0.5s;
+			cursor: pointer;
+		}
+		&:hover::-webkit-slider-runnable-track {
+			background: $sliderTrackHover;
+		}
+		&::-ms-track {
+			width: 100%;
+			cursor: pointer;
+			height: 9px;
+			transition: all 0.5s;
+			/* Hides the slider so custom styles can be added */
+			background: transparent;
+			border-color: transparent;
+			color: transparent;
+		}
+		&::-ms-thumb {
+			height: $knobSize;
+			width: $knobSize;
+			border-radius: 50%;
+			background: $sliderKnob;
+			margin-top: -5px;
+			box-shadow: 1px 1px 2px rgba(35,35,35,.4);
+			cursor: pointer;
+		}
+		&::-ms-fill-lower {
+			background: $sliderTrack;
+			border-radius: 3rem;
+		}
+		&:focus::-ms-fill-lower {
+			background: $sliderTrackHover;
+		}
+		&::-ms-fill-upper {
+			background: $sliderTrack;
+			border-radius: 3rem;
+		}
+		&:focus::-ms-fill-upper {
+			background: $sliderTrackHover;
+		}
+		&::-moz-range-thumb {
+			height: $knobSize;
+			width: $knobSize;
+			border-radius: 50%;
+			background: $sliderKnob;
+			margin-top: -5px;
+			box-shadow: 1px 1px 2px rgba(35,35,35,0.4);
+			cursor: pointer;
+		}
+		&::-moz-range-track {
+			width: 100%;
+			height: 9px;
+			background: $sliderTrack;
+			border-radius: 3rem;
+			transition: all 0.5s;
+			cursor: pointer;
+		}
+		&:hover::-moz-range-track {
+			background: $sliderTrackHover;
+		}
+	}//end form-range
+}//end number range
+
+//signature
+.js-form-type-webform-signature{
+	.webform-signature-pad{
+		border: $elementBorder;
+		&:hover{
+			border-color: $formElementBorderHover;
+			box-shadow: inset 0 0 0 1px $formElementBorderHover;
+		}
+		&:focus{
+			@include placeholderFocus;
+			outline: none;
+			box-shadow: inset 0 0 0 1px $formElementBorderFocus;
+			border-color: $formElementBorderFocus;
+		}
+		input[type="submit"].button{
+			top: 5px;
+			right: 5px;
+			font-size: 1.4rem;
+			min-width: 0;
+			height: 30px;
+			padding: 0 1rem;
+		}
+	}
+}//end sign this
+
+/// table select
+.webform-tableselect{
+	th{
+		@include customOptions;
+	}
+	.form-item{
+		margin-bottom: 0;
+		&.js-form-type-checkbox{
+			margin-right: 0 !important;
+		}
+	}
+}//end webform tableselect
+
+/* USER LOGIN
+--------------- */
+.user-login-form,#user-pass{
+	max-width: $desk;
+	@include auto;
+	.form-item:not([type="submit"]){
+		max-width: 400px;
+	}
+	.js-form-type-password{
+		position: relative;
+		.password-reset{
+			position: absolute;
+			top: 12px;
+			right: 0;
+			font-size: 1.5rem;
+		}
+		.show-password{
+			position: absolute;
+			top: 54px;
+			right: 12px;
+			font-size: 1.4rem;
+			color: $midGrey;
+			&:hover,&:focus{
+				color: $hoverLink;
+			}
+		}
+		input#edit-pass{
+			padding-right: 56px;
+		}
+		.description{
+			padding-top: 1rem;
+		}
+	}//end form type password
+	.description,p{
+		font-size: 1.4rem;
+	}
+	#edit-submit.button{
+		margin: 0;
+	}
+}//end user login form
+
+
+details.form-wrapper{
+	background: $detailsWrapperBack;
+	margin-bottom: $spaceMd;
+	&[open]{
+		padding-bottom: 1px;
+		summary{
+			border-color: $formElementBorderFocus;
+			box-shadow: inset 0 0 0 1px $formElementBorderFocus; 
+			margin-bottom: $spaceMd;
+		}
+		& > *:not(summary){
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+	}
+	summary{
+		border: $elementBorder;
+		padding: 1rem 2rem;
+		font-weight: $heavy;
+		position: relative;
+		font-size: 2.2rem;
+		background: $siteBack;
+		cursor: pointer;
+		&::-webkit-details-marker {
+			display: none;
+		}
+		&:hover{
+			border-color: $formElementBorderHover;
+			box-shadow: inset 0 0 0 1px $formElementBorderHover; 
+		}
+	}//end summary
+}//end details form-wrapper
+

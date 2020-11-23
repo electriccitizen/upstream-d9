@@ -1,0 +1,97 @@
+global-styling:
+  version: 1.0
+  header: true
+  css:
+    theme:
+      dist/style.css: {}
+  js:
+    components/_patterns/05-assembly/site.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once
+accordion:
+  version: 1.0
+  js:
+    components/_patterns/03-composites/02-paragraphs/01-accordion/accordion.js: {}
+dashboard:
+  version: 1.0
+  js:
+    components/_patterns/04-units/01-dashboard/dashboard.js: {}
+    https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js: { type: external, minified: true, preprocess: false }
+featherlight:
+  version: 1.7.13
+  css:
+    theme:
+      components/js/featherlight/featherlight.css: {}
+      components/js/featherlight/featherlight.gallery.css: {}
+  js:
+    components/js/featherlight/featherlight.min.js: { minified: true }
+    components/js/featherlight/featherlight.gallery.min.js: { minified: true }
+forms:
+  version: 1.0
+  js:
+    components/_patterns/01-parts/06-forms/forms.js: {}
+galleries:
+  version: 1.0
+  js:
+    components/_patterns/03-composites/02-paragraphs/04-gallery/gallery.js: {}
+layout:
+  version: 1.0
+  js:
+    components/_patterns/03-composites/04-layout/03-layout-builder/layouts.js: {}
+modal:
+  version: 1.0
+  js:
+    components/_patterns/02-chunks/05-modals/modals.js: {}
+pager:
+  version: 1.0
+  js:
+    components/_patterns/02-chunks/03-pagers/pager.js: {}
+search-block:
+  version: 1.0
+  js:
+    components/_patterns/03-composites/01-blocks/02-search/search-block.js: {}
+search-page:
+  version: 1.0
+  js:
+    components/_patterns/04-units/03-search/search.js: {}
+section-menu:
+  version: 1.0
+  js:
+    components/_patterns/02-chunks/01-navigation/02-section-menu/section-menu.js: {}
+  dependencies:
+    - core/underscore
+select:
+  version: 4.0.3
+  css:
+    theme:
+      components/js/select2/select2.min.css: { minified: true }
+  js:
+    components/js/select2/select2.min.js: { minified: true }
+    components/_patterns/01-parts/06-forms/forms.js: {}
+slick:
+  version: 1.8.1
+  css:
+    theme:
+      components/js/slick/slick.css: {}
+      components/js/slick/slick-theme.css: {}
+  js:
+    components/js/slick/slick.min.js: { minified: true }
+table:
+  version: 1.0
+  js:
+    components/js/stacktable/stacktable.min.js: { minified: true }
+    components/_patterns/01-parts/07-tables/tables.js: {}
+widgets:
+  version: 1.0
+  js:
+    components/_patterns/02-chunks/01-navigation/04-widget-anchors/widget-anchors.js: {}
+  dependencies:
+    - core/underscore
+fonts:
+  css:
+    theme:
+      https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700: { type: external, preprocess: false }
+

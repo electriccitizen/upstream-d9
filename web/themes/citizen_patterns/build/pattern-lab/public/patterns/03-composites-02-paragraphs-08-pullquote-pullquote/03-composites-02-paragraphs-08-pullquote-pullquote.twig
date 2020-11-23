@@ -1,0 +1,29 @@
+{#
+	DRUPAL: This template is embedded into the Drupal pullquote paragraph template.
+#}
+
+{{ quote_instructions }}
+{% block plwidgetopen %}
+	<div class="paragraph paragraph--type--pullquote">
+{% endblock %}
+
+	{% if widget_title %}
+		<div class="widget-title">{{widget_title}}</div>
+	{% endif %}
+
+	{% block quoteContent %}
+		{% if quote %}
+			<div class="field field-quote">
+				{{ quote }}
+			</div>
+		{% endif %}
+		{% if source %}
+			<div class="field field-source">
+				{{ source }}
+			</div>
+		{% endif %}
+	{% endblock %}
+				
+{% block plwidgetclose %}
+	</div>
+{% endblock %}

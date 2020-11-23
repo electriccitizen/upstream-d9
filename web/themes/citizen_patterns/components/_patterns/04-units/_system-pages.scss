@@ -1,0 +1,18 @@
+/* ============
+   PAGES GLOBAL
+=============== */
+html > body:not(.is-front):not(.path-node){
+	.layout-content{
+		max-width: $contentStop + 40px;
+		@include auto;
+		padding: 0 $siteMarginMobile $siteBottomSpace;
+	}
+	#block-citizen-patterns-content{
+		padding-top: $elementSpace;
+	}
+	.block-page-title-block{
+		margin-bottom: $elementSpace;
+	}
+
+}//system pages
+

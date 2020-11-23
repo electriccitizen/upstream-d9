@@ -1,0 +1,26 @@
+{#
+  STYLEGUIDE ONLY
+#}
+
+<div class="grid-two-column">
+	<div>
+		<div class="element-title">Content Buttons</div>
+		<div class="grid-left content-buttons">
+			{% for button in buttons %}
+				<div class="button-item">
+					<button class="{{ button.class }}">{{ button.text }}</button>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div>
+		<div class="element-title">Form Buttons</div>
+		<div class="grid-left">
+			{% for button in formButtons %}
+				<div class="button-item">
+					<button class="{{ button.class }}">{{ button.text }}</button>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

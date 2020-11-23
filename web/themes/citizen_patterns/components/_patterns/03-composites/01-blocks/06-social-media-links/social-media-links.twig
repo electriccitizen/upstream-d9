@@ -1,0 +1,30 @@
+{#
+ STYLEGUIDE ONLY
+#}
+
+{% embed '@composites/01-blocks/_00-block.twig' %}
+
+	{% block blockContent %}
+		{% if intro %}
+			<div class="field body">
+				{% autoescape false %}
+					{{ intro }}
+				{% endautoescape %}
+			</div>
+		{% endif %}
+		{% if platforms %}
+			<div class="field field-platforms link">
+				<ul class="platform-links">
+					{% for platform in platforms %}
+						{% include "@parts/08-fields/01-social-platforms/_field-platforms.twig" 
+							with{
+								url: platform,
+							}
+						%}
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+	{% endblock %}
+{% endembed %}
+

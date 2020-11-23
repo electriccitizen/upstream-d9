@@ -1,0 +1,36 @@
+{#
+	 DRUPAL: This template is embedded into the Drupal image paragraph template.
+#}
+
+<div class="pl-options image-options">
+  <div class="options-inner">
+    <div class="form-item">
+      <label for="image-size">Size</label>
+      <select name="image-size">
+      	<option value="default"{% if size == 'default' %} selected{% endif %}>Original</option>
+        <option value="full"{% if size == 'full' %} selected{% endif %}>Full</option>
+        <option value="large"{% if size == 'large' %} selected{% endif %}>Large</option>
+        <option value="medium"{% if size == 'medium' %} selected{% endif %}>Medium</option>
+        <option value="small"{% if size == 'small' %} selected{% endif %}>Small</option>
+      </select> 
+    </div>
+  </div>
+</div>
+
+{% embed '@parts/08-fields/02-paragraphs/_paragraphs-field-item.twig' %}
+  {% block paragraphItem %}
+    {% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+      with{
+        sectionTitle: '',
+        sectionIntro: '',
+      }
+    %}
+
+    	{% block widgetContent %}
+    		{% include "@composites/02-paragraphs/06-image/_image.twig" %}
+    	{% endblock %}
+
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+	

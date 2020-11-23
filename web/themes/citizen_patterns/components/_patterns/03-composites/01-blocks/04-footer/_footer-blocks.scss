@@ -1,0 +1,69 @@
+/* =================
+   FOOTER BLOCKS
+=================== */
+
+/* FOOTER MENU
+-------------- */
+.block-footer-menu{
+	
+	ul:not(.contextual-links){
+		@include listReset;
+		@include safeFlex(row,wrap,center,start);
+		@include tab{
+			@include safeFlex(row,wrap,start,start);
+		}
+		li{
+			position: relative;
+			a{
+				display: block;
+				color: $prefooterLink;
+				.footer-v1 &{
+					text-decoration: underline;
+				}
+				&:hover,&:focus{
+					color: $prefooterLinkHover;
+					@include transAll(.3s);
+					.footer-v1 &{
+						text-decoration: none;
+					}
+				}
+			}
+			&:not(:first-child){
+				padding-left: 6px;
+				@include tab{
+					padding-left: 0;
+				}
+			}
+			&:not(:last-child){
+				padding-right: 8px;
+				@include tab{
+					margin-right: 6px;
+				}
+				&:after{
+					@include vertRule(right,60%,$white);
+				}
+			}
+		}//end li
+	}//end ul
+}//end footer-menu
+
+/* COPYRIGHT
+-------------- */
+.block-1{
+	.copyright{
+		text-align: center;
+		font-size: 1.5rem;
+		@include tab{
+			text-align: left;
+		}
+		& > span:first-child{
+			padding-right: .25em;
+			& + *{
+				display: inline;
+			}
+		}
+		p{
+			margin: 0;
+		}
+	}
+}//end footer-copyright

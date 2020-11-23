@@ -1,0 +1,59 @@
+#use the same variables as the composites block for each element
+branding:
+  logo:
+    '../../images/custom/logo.svg'
+  path:
+    '#'
+  projectName:
+    'Citizen Patterns'
+  classes:
+    'block-system-branding-block'
+search:
+  classes:
+    'block-site-search'
+mainNav:
+  menuLinks:
+    1:
+      title:
+        'What We Offer'
+      levelTwo:
+        1:
+          title:
+            'Services'
+        2:
+          title:
+            'Support'
+    2:
+      title:
+        'Resources'
+      levelTwo:
+        1:
+          title:
+            'Journals'
+        2:
+          title:
+            'Books'
+        3:
+          title:
+            'Videos'
+    3:
+      title:
+        'About'
+      levelTwo:
+        1:
+          title:
+            'Mission'
+        2:
+          title:
+            'History'
+        3:
+          title:
+            'Meet the Team'
+    4:
+      title:
+        'Get Involved'
+      isActive:
+        true
+    5:
+      title:
+        'Contact'

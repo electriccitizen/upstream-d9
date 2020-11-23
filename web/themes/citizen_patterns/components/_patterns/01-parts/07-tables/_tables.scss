@@ -1,0 +1,219 @@
+/* ===============
+	 TABLES
+============== */
+
+%tableSort{
+	color: $white;
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: 15px;
+	background-position: center left;
+	background-image: url('../images/form-elements/sort.svg');
+	padding-left: 25px;
+	&:after{
+		content: none;
+	}
+	&:hover,&:focus{
+		opacity: .6;
+		color: $white;
+	}
+	.tablesort{
+		background: none;
+		float: none;
+		position: absolute;
+		top: 4px;
+		left: -18px;
+		margin-left: 5px;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+		width: 18px;
+		height: 18px;
+		&.tablesort--desc{	
+			background-image: url('../images/form-elements/arrow-down-white.svg');
+		}
+		&.tablesort--asc{
+			background-image: url('../images/form-elements/arrow-up-white.svg');
+		}
+	}
+}
+
+%tableSortActive{
+	background: lighten($tableHeaderBack, 6%);
+	border-top-color: lighten($tableHeaderBack, 6%);
+	border-bottom-color: lighten($link, 10%);
+	& > a{
+		color: $white;
+		background-image: none;
+	}
+}
+
+/// Default table styling
+@mixin table{
+	width: 100%;
+	border-spacing: unset;
+	border: 1px solid $rowBorder;
+	caption{
+		font-weight: $heavy;
+		margin-bottom: $spaceXs;
+	}
+
+	td{
+		padding: .75rem 1.5rem .5rem;
+		font-size: 1.6rem;
+		&:first-child{
+			padding-left: 3rem;
+		}
+		&:last-child{
+			padding-right: 3rem;
+		}
+	}
+	thead th{
+		background: $tableHeaderBack;
+		color: $tableHeaderText;
+		padding: 2rem 1.5rem;
+		text-align: left;
+		border-bottom: 3px solid $tableHeaderBack;
+		a{
+			@extend %tableSort;
+		}
+		&.is-active{
+			@extend %tableSortActive;
+		}
+		&:first-child{
+			padding-left: 3rem;
+		}
+		&:last-child{
+			padding-right: 3rem;
+		}
+	}
+
+	tbody tr{
+		//set table row colors
+		&:not(:last-child) td{
+			border-bottom: 1px solid $rowBorder;
+		}
+		&:nth-of-type(odd){
+			background: $oddRowBack;
+			td{
+				color: $oddRowText;
+			}
+		}
+		&:nth-of-type(even){
+			background: $evenRowBack;
+			td{
+				color: $evenRowText;
+			}
+		}
+		th{
+			background: $tableRowHeaderBack;
+			color: $tableRowHeaderText;
+			text-align: left;
+			padding-left: 3rem;
+			padding-right: 1.5rem;
+		}
+		&:not(:last-child){
+			th{
+				border-bottom: 1px solid $rowBorder;
+			}
+		}
+		//give a bit extra room in the row on mobile
+		@include onlyMobile{
+			td{
+				padding: 1rem $siteMarginMobile;
+			}
+			//style headers
+			& > td.st-key{
+				text-transform: uppercase;
+				font-weight: $heavy;
+			}
+		}
+	}//end tr
+}//end table mixin
+
+
+/* TABLE STYLING
+-------------------- */
+.text-with-summary,.text-long,.view-content,.webform-submission-form{
+	table{
+		@include table;
+		margin-bottom: $spaceMd;
+	} 
+}
+
+
+/* STACKTABLE
+---------------- */
+//stack table header on mobile
+table{
+	.st-key{
+		width: 50%;
+		background: $tableHeaderBack;
+		padding-left: 1rem !important;
+		padding-right: 1rem !important;
+		color: $tableHeaderText !important;
+		@include smallTab{
+			max-width: 200px;
+		}
+		a{
+			@extend %tableSort;
+			background-image: none;
+			padding-left: 0;
+			padding-right: 25px;
+			text-decoration: underline;
+			.tablesort{
+				left: auto;
+				right: 0px;
+			}
+		}
+		&.is-active{
+			@extend %tableSortActive;
+		}
+	}
+	//stack table td on mobile
+	.st-val{
+		width: 50%;
+		@include smallTab{
+			@include calc(max-width, "100% - 200px");
+			width: 100%;
+		}
+	}
+}
+
+.responsive-table{
+	& > caption{
+		display: none;
+	}
+}
+//hide small stacktable by default
+.stacktable{
+	&.large-only{
+		display: table;
+	}
+	&.small-only{
+		display: none;
+		tr{
+			@include safeFlex(row,nowrap,start,stretch);
+		}
+	}
+}
+
+//hide large stacktable at less than 760
+@include onlySmall{
+	.stacktable{
+		&.large-only{
+			display: none;
+		}
+		&.small-only{
+			display: table;
+			width: 100%;
+			margin-bottom: $spaceXs;
+			td{
+				display: inline-block;
+			}
+		}
+	}
+}

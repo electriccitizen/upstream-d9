@@ -1,0 +1,89 @@
+
+formElements:
+  1:
+    elementTitle:
+      'Text Fields'
+    type:
+      text
+    label:
+      'Your Name'
+    classes:
+      'max-small'
+  2:
+    type:
+      email
+    label:
+      'Email'
+    placeholder:
+      'email@example.com'
+    required:
+      true
+    classes:
+      'max-small'
+  3:
+    type:
+      password
+    label:
+      'Password'
+    description:
+      'Enter the password that comes with your user name'
+    classes:
+      'max-small'
+  4:
+    type:
+      number
+    label:
+      'How many fingers'
+  5:
+    type:
+      textarea
+    label:
+      'Your Message'
+  6:
+    elementTitle:
+      'Select'
+    type:
+      select
+    label:
+      'Choose one'
+    options:
+      - name: '- Any -'
+        value: All
+      - name: 'Eeny'
+        value: eeny
+      - name: 'Meeny'
+        value: meeny
+      - name: 'Miney'
+        value: miney
+      - name: 'Roger'
+        value: roger
+  7:
+    elementTitle:
+      'Checkbox'
+    label:
+      'Which month(s) do you prefer?'
+    type:
+      checkbox
+    options:
+      - name: 'January'
+        value: jan
+      - name: 'June'
+        value: jun
+      - name: 'July'
+        value: july
+  8:
+    elementTitle:
+      'Radios'
+    label:
+      'Which year is my favorite?'
+    type:
+      radio
+    options:
+      - name: '1885'
+        value: '1885'
+      - name: '1955'
+        value: '1955'
+      - name: '1985'
+        value: '1985'
+      - name: '2015'
+        value: '2015 '

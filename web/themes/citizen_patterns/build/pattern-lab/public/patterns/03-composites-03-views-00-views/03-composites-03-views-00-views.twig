@@ -1,0 +1,54 @@
+{#
+	STYLEGUIDE ONLY
+#}
+
+<div class="pl-options views-options">
+  <div class="options-inner">
+    <div class="form-item card-type-options">
+      <label for="card-type">Card Type</label>
+      <select name="card-type" id="card-type">
+        <option value="horizontal"{% if type == 'horizontal' %} selected{% endif %}>Horizontal</option>
+        <option value="grid"{% if vertical == 'vertical' %} selected{% endif %}>Vertical</option>
+      </select> 
+    </div>
+  </div>
+</div>
+
+<div class="views-element-container">
+	<div class="view">
+		<div class="view-content{% if type == 'vertical' %}grid{% endif %}">
+			{% for listItem in listItems.six %}
+				<div class="views-row {{ type }}">
+					{% if image %}
+						<div class="views-field views-field-field-banner">
+							<div class="field-content">
+								<article>
+									<div class="field field-media-image">
+										<img src="{{ listItem.img.landscape4x3.src }}" alt="{{ listItem.title }}" />
+									</div>
+								</article>
+							</div>
+						</div>
+					{% endif %}
+					<div class="views-field views-field-nothing">
+						<div class="field-content">
+							<div class="title">
+								<a href="#">{{ listItem.shortTitle }}</a>
+							</div>
+							{% if date %}
+								<div class="metatext">
+									{{- listItem.month.digitShort }}/{{ listItem.day.short }}/{{ listItem.year.short -}}
+								</div>
+							{% endif %}
+							{% if body %}
+								<div class="body">
+									{{- listItem.excerpt.medium -}}..
+								</div>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+{#
+	 DRUPAL: This template is embedded into the Drupal image paragraph template.
+#}
+
+<div class="image-wrapper {{ size }}">
+	{% if url %}
+		<a href="{{ url }}" aria-label="Go to {{ aria }}">
+	{% endif %}
+		{% block image %}
+			<article class="media media-image view-mode-{{ size }}">
+				<div class="field-media-image">
+					<img src="{{ src }}" />
+				</div>
+				{% if caption %}
+					<div class="field-caption">{{ caption }}</div>
+				{% endif %}
+			</article>
+		{% endblock %}
+	{% if url %}
+		</a>
+	{% endif %}
+</div>

@@ -1,0 +1,81 @@
+{#
+	 DRUPAL-ISH: This template is inherited into the _page.twig template which is inherited into Drupal.
+#}
+
+{% if prefooter %}
+	{% embed '@composites/04-layout/02-footer/_prefooter.twig' %}
+		{% block prefooterContent %}
+			<div>
+				{% if prefooter.about %}
+					{% embed '@composites/01-blocks/_00-block.twig' 
+						with{
+							classes: 'block-2'
+						}
+					%}
+						{% block blockContent %}
+							<div class="field body text-with-summary">
+								{% autoescape false %}
+									{{ prefooter.about }}
+								{% endautoescape %}
+							</div>
+						{% endblock	%}
+					{% endembed %}
+				{% endif %}
+				{% if prefooter.menu %}
+					{% include "@composites/01-blocks/04-footer/_footer-menu.twig" 
+						with{
+							classes: 'block--system-menu block-footer-menu',
+							label: prefooter.menu.label,
+							links: prefooter.menu.links
+						}
+					%}
+				{% endif %}
+				{% if prefooter.newsletter %}
+					{% include "@composites/01-blocks/05-newsletter/pl-newsletter.twig" 
+						with{
+							classes: 'block-newsletter',
+							label: prefooter.newsletter.label,
+							intro: prefooter.newsletter.intro,
+							embedForm: prefooter.newsletter.embedForm,
+							modal: prefooter.newsletter.modal,
+							modalHeader: prefooter.newsletter.modalHeader,
+							modalTrigger: prefooter.newsletter.modalTrigger,
+							modalIntro: prefooter.newsletter.modalIntro
+						}
+					%}
+				{% endif %}
+			</div>
+		{% endblock %}
+	{% endembed %}
+{% endif %}
+
+
+<footer role="contentinfo" class="site-footer">
+	<div class="footer-inner">	
+		{% block footerContent %}
+			<div>
+				{% if socialMedia %}
+					{% include '@composites/01-blocks/06-social-media-links/social-media-links.twig' 
+						with{
+							classes: 'block-social-media-links',
+							platforms: socialMedia.platforms 
+						}
+					%}
+				{% endif %}
+				{% if copyright %}
+					{% embed '@composites/01-blocks/_00-block.twig' 
+						with{
+							classes: 'block-1'
+						}
+					%}
+						{% block blockContent %}
+							{% include "@composites/01-blocks/04-footer/_footer-copyright.twig" %}
+						{% endblock	%}
+					{% endembed %}
+				{% endif %}
+			</div>
+		{% endblock %}
+	</div>
+</footer>
+
+

@@ -1,0 +1,139 @@
+/* =============
+   SITE FOOTER
+=============== */
+
+.prefooter{
+	background: $prefooterBack;
+	color: $prefooterText;
+	.modal-content{
+		color: $baseText;
+	}
+	.prefooter-inner{
+		min-height: 289px;
+		padding: 30px $siteMarginMobile;
+		max-width: $contentStop + 40px;
+		@include auto;
+		position: relative;
+		@include tab{
+			padding: 40px $siteMarginMobile 50px;
+			min-height: 0;
+		}
+
+		//limit footer content to max-width and set flex parenting
+		& > div{
+			@include safeFlex(row,wrap,start,start);
+			@include tab{
+				@include bleed(padding,40px);
+			}
+			& > *{
+				&:not(:last-child){
+					margin-bottom: $spaceMd;
+				}
+				h2.block-title{
+					margin-bottom: 1.5rem;
+					@include tab{
+						text-align: left;
+					}
+				}
+			}
+			//about
+			.block-2{
+				width: 100%;
+				@include tab{
+					width: 33.333%;
+				}
+			}
+			//newsletter
+			.block-newsletter{
+				width: 100%;
+				@include tab{
+					width: 33.33%;
+				}
+				.field.body{
+					a{
+						color: $prefooterLink;
+						&:hover,&:focus{
+							color: $prefooterLinkHover;
+						}
+					}
+				}
+			}
+			//menu
+			.block-footer-menu{
+				width: 100%;
+				@include tab{
+					width: 33.33%;
+				}
+			}
+		}//end prefooter-inner > div
+	}//end prefooter inner
+}//end prefooter
+
+
+.site-footer{
+	background: $footerBack;
+	color: $footerText;
+	.modal-content{
+		color: $baseText;
+	}
+	//set style for footer (need inner for fixed footer script)
+	.footer-inner{
+		min-height: 200px;
+		padding: 30px $siteMarginMobile;
+		max-width: $contentStop + 40px;
+		@include auto;
+		position: relative;
+		@include tab{
+			padding: 20px $siteMarginMobile;
+			min-height: 0;
+		}
+
+		//limit footer content to max-width and set flex parenting
+		& > div{
+			@include safeFlex(row,wrap,justify,center);
+			@include tab{
+				@include bleed(padding,40px);
+			}
+			& > *{
+				&:not(:last-child){
+					margin-bottom: $spaceMd;
+					@include tab{
+						margin-bottom: 0;
+					}
+				}
+				h2.block-title{
+					margin-bottom: 1.5rem;
+					@include tab{
+						text-align: left;
+					}
+				}
+			}
+			//social-media
+			.block-social-media-links{
+				width: 100%;
+				@include tab{
+					max-width: 320px;
+					@include safeFlexOrder(2);
+					.platform-links{
+						@include safeFlex(row,wrap,end,start);
+					}
+				}
+				a{
+					color: $footerLink;
+					&:hover,&:focus{
+						color: $footerLinkHover;
+					}
+				}
+			}
+			//copyright
+			.block-1{
+				@include onlySmall{
+					width: 100%;
+				}	
+			}
+		}//end prefooter-inner > div
+	}//end footer-inner
+}//end footer
+
+
+

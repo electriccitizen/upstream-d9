@@ -1,0 +1,44 @@
+{#
+  STYLEGUIDE ONLY
+#}
+
+<div class="text-long constrain-text pl-space">
+	<div class="element-title">Bullet List</div>
+	<ul>
+		{% for listItem in listItems.one %}
+			<li>{{ listItem.headline.short }}</li>
+		{% endfor %}
+		<li>
+			Below is a <strong>nested bullet list</strong>. Nested lists can either be either bulleted or numbered—regardless of the parent list type.
+			<ul>
+			{% for listItem in listItems.two %}
+				<li>{{ listItem.shortTitle }}</li>
+			{% endfor %}
+			</ul>
+		</li>
+		{% for listItem in listItems.two %}
+			<li>{{ listItem.headline.short }}</li>
+		{% endfor %}
+	</ul>
+</div>
+
+<div class="text-long constrain-text">
+	<div class="element-title">Numbered List</div>
+	<ol>
+		{% for listItem in listItems.one %}
+			<li>{{ listItem.headline.short }}</li>
+		{% endfor %}
+		<li>
+			Below is a <strong>nested number list</strong>.
+			<ol>
+			{% for listItem in listItems.two %}
+				<li>{{ listItem.shortTitle }}</li>
+			{% endfor %}
+			</ol>
+		</li>
+		{% for listItem in listItems.two %}
+			<li>{{ listItem.headline.short }}</li>
+		{% endfor %}
+	</ol>
+</div>
+

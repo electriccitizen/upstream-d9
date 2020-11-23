@@ -1,0 +1,28 @@
+
+{#
+	STYLEGUIDE ONLY
+#}
+
+{% extends '@composites/01-blocks/08-section-menu/_section-menu-block.twig' %}
+
+{% block sectionMenu %}
+	<ul>
+		{% for link in menuLinks %}
+			<li class="menu-item item-level-1{% if link.levelTwo %} menu-item--expanded parent{% endif %}">
+				{% if link.levelTwo %}
+					<a href="#" class="expander"></a>
+				{% endif %}
+				<a href="#"{% if link.isActive %} class="is-active"{% endif %}>{{ link.title }}</a>
+				{% if link.levelTwo %}
+					<ul>
+						{% for subLink in link.levelTwo %}
+							<li class="menu-item item-level-2">
+								<a href="#"{% if subLink.isActive %} class="is-active"{% endif %}>{{ subLink.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
