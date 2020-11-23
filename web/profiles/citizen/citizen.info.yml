@@ -97,12 +97,9 @@ dependencies:
   - views_ui
   - webform
   - webform_ui
-  - xmlsitemap_custom
-  - xmlsitemap_engines
   - extlink
   - menu_link_content
   - pathauto
-  - xmlsitemap
   - views
   - paragraphs
 

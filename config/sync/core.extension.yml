@@ -98,12 +98,9 @@ module:
   views_ui: 0
   webform: 0
   webform_ui: 0
-  xmlsitemap_custom: 0
-  xmlsitemap_engines: 0
   extlink: 1
   menu_link_content: 1
   pathauto: 1
-  xmlsitemap: 1
   views: 10
   paragraphs: 11
   citizen: 1000
