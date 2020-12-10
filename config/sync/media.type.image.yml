@@ -11,7 +11,7 @@ _core:
   default_config_hash: L_AjN7AIbs4CLrtnPlkUyx_1gDbfkgqy4TeqETVknPA
 id: image
 label: Image
-description: ''
+description: 'Add images as media entities.'
 source: image
 queue_thumbnail_downloads: false
 new_revision: true

@@ -11,7 +11,7 @@ _core:
   default_config_hash: 0EyMcZZRUQbX_MNjMFXt0zRIqf52DJKGc6Gipjn714Y
 id: document
 label: Document
-description: ''
+description: 'Add documents as media entities.'
 source: file
 queue_thumbnail_downloads: false
 new_revision: false
