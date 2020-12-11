@@ -8,13 +8,13 @@
 	.image-wrapper{
 		@include auto;
 		&.small{
-			max-width: 400px;
+			max-width: 280px;
 		}
 		&.medium{
-			max-width: 600px;
+			max-width: 480px;
 		}
 		&.large{
-			max-width: 900px;
+			max-width: 640px;
 		}
 		&.default{
 			img{

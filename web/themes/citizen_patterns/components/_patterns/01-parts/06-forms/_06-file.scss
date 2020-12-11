@@ -6,12 +6,12 @@
 	.js-form-managed-file,.form-managed-file{
 		input.js-form-submit,input.form-submit{
 			@include submitButton;
-			font-size: 13px;
+			font-size: 1.5rem;
 			padding: 1rem 4rem;
 		}
 		//allowed upload file types description
 		.description{
-			font-size: 1.4rem;
+			font-size: 2rem;
 			line-height: 1.25;
 			opacity: .7;
 			margin-bottom: $spaceXs;

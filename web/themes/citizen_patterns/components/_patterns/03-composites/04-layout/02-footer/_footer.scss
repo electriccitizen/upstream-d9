@@ -9,8 +9,8 @@
 		color: $baseText;
 	}
 	.prefooter-inner{
-		min-height: 289px;
-		padding: 30px $siteMarginMobile;
+		min-height: 293px;
+		padding: 32px $siteMarginMobile;
 		max-width: $contentStop + 40px;
 		@include auto;
 		position: relative;
@@ -78,8 +78,8 @@
 	}
 	//set style for footer (need inner for fixed footer script)
 	.footer-inner{
-		min-height: 200px;
-		padding: 30px $siteMarginMobile;
+		min-height: 204px;
+		padding: 32px $siteMarginMobile;
 		max-width: $contentStop + 40px;
 		@include auto;
 		position: relative;

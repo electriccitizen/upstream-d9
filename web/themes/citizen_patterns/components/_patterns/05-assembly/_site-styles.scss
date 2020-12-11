@@ -33,13 +33,13 @@ body {
 	@include auto;
 	h2{
 		margin-bottom: $spaceSm;
-		font-size: 2.4rem;
+		font-size: 3rem;
 	}
 	p{
-		font-size: 1.6rem;
+		font-size: 2rem;
 		margin-bottom: $spaceXs;
 		small{
-			font-size: 1.4rem;
+			font-size: 1.75rem;
 			font-style: italic;
 		}
 	}
@@ -100,10 +100,10 @@ body {
 		font-style: italic;
 	}
 	h2{
-		font-size: 1.6rem;
+		font-size: 2rem;
 	}
 	h3{
-		font-size: 1.4rem;
+		font-size: 1.75rem;
 	}
 	p:last-child{
 		margin-bottom: 0;

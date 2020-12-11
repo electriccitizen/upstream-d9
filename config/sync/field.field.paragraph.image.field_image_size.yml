@@ -12,7 +12,7 @@ field_name: field_image_size
 entity_type: paragraph
 bundle: image
 label: 'Image Size'
-description: "Choose the display size for this image. The display size is different than the optimal sizes below due to retina processing. </br>\r\n<strong>Original:</strong> No size set–caption may extend beyond smaller images </br>\r\n<strong>Small:</strong> Optimal image size is 800px </br>\r\n<strong>Medium:</strong> Optimal image size is 1200px </br>\r\n<strong>Large:</strong> Optimal image size is 1200px </br>\r\n<strong>Full:</strong> Optimal image size is 1200px"
+description: "Choose the display size for this image. The display size is different than the optimal sizes below due to retina processing. </br>\r\n<strong>Original:</strong> No size set–caption may extend beyond smaller images </br>\r\n<strong>Small:</strong> Optimal image size is 800px </br>\r\n<strong>Medium:</strong> Optimal image size is 1200px </br>\r\n<strong>Large:</strong> Optimal image size is 800px </br>\r\n<strong>Full:</strong> Optimal image size is 1200px"
 required: true
 translatable: false
 default_value:

@@ -14,26 +14,26 @@
 	//accordion header bar
 	.accordion-header{
 		a{
-			padding: 1rem 2.25rem 1rem 2rem;
+			padding: 1rem 3rem 1rem 2.5rem;
 			display: block;
 			color: $accordHeader;
 			font-weight: $heavy;
 			position: relative;
-			font-size: 2rem;
+			font-size: 2.5rem;
 			border: 2px solid $accordHeaderBorder;
 			margin-top: -2px;
 			background: $accordHeaderBack;
 			@include tab{
-				padding: 1rem 3.25rem 1rem 3rem;
-				font-size: 2.2rem;
+				padding: 1rem 4rem 1rem 3.5rem;
+				font-size: 2.75rem;
 			}
 			&:after{
 				position: absolute;
-				right: 2rem;
+				right: 2.5rem;
 				top: 1rem;
 				content: "+";
 				@include tab{
-					right: 3rem;
+					right: 3.5rem;
 				}
 			}
 			&:hover,&:focus{
@@ -48,7 +48,7 @@
 	//accordion content
 	.field-long-text{
 		display: none;
-		padding: 2rem 4rem;
+		padding: 2.5rem 4rem;
 		background: $accordContentBack;
 		border-left: 1px solid $accordContentBorder;
 		border-right: 1px solid $accordContentBorder;

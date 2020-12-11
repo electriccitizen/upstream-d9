@@ -6,31 +6,29 @@ citizen_patterns.mobile:
     - 1x
     - 1.5x
     - 2x
-citizen_patterns.smalltab:
-  label: Small Tablet
+citizen_patterns.tab:
+  label: Tablet
   mediaQuery: '(min-width:496px)'
   weight: 1
   multipliers:
     - 1x
     - 1.5x
     - 2x
-citizen_patterns.tablet:
-  label: tablet
+citizen_patterns.desk:
+  label: Desk
   mediaQuery: '(min-width:896px)'
   weight: 2
   multipliers:
     - 1x
-    - 1.5x
-    - 2x
-citizen_patterns.desk:
-  label: Desk
-  mediaQuery: '(min-width:1200px)'
+citizen_patterns.middesk:
+  label: Mid Desk
+  mediaQuery: '(min-width:1144px)'
   weight: 2
   multipliers:
     - 1x
 citizen_patterns.largedesk:
   label: Large Desk
-  mediaQuery: '(min-width:1560px)'
+  mediaQuery: '(min-width:1320px)'
   weight: 2
   multipliers:
     - 1x

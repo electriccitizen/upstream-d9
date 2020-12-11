@@ -9,12 +9,12 @@
 		width: 100%;
 		@include smallTab{
 			width: 50%;
-			max-width: 300px;
+			max-width: 320px;
 		}
 		.select2-container--default{
 			max-width: 100%;
 			.select2-selection__choice{
-				margin-top: 4px;
+				margin-top: .5rem;
 			}
 		}
 	}
@@ -22,7 +22,7 @@
 		@include auto;
 		@include safeFlex(row,wrap,start,start);
 		@include smallTab{
-			margin: 7px 0 0 -10px;
+			margin: 1rem 0 0 -10px;
 		}
 		input.form-submit.button{
 			@include submitButton;
@@ -34,7 +34,7 @@
 		}
 	}
 	& + .view-content{
-		margin-top: 4rem;
+		margin-top: 5rem;
 	}
 }//end views exposed form
 
@@ -44,9 +44,9 @@
 ---------------------- */
 .pl{
 	.form-item-combine,.form-item-field-category-target-id{
-		max-width: 300px;
+		max-width: 320px;
 	}
 	input.form-submit{
-		margin-bottom: 60px;
+		margin-bottom: 7.5rem;
 	}
 }

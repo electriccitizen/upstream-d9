@@ -7,16 +7,16 @@ dependencies:
     - image_style_quality
 _core:
   default_config_hash: MAInAJ6e22teIjbGjK0_md840o9E6FuY8x3mM22_JKM
-name: 350x350_2x
-label: '350x350 2x'
+name: 360x360_2x
+label: '360x360 2x'
 effects:
   557a79b0-fb39-4654-8c55-3a3bee57f40e:
     uuid: 557a79b0-fb39-4654-8c55-3a3bee57f40e
     id: focal_point_scale_and_crop
     weight: 1
     data:
-      width: 700
-      height: 700
+      width: 720
+      height: 720
       crop_type: focal_point
   3cf78d2e-fdc4-4a1e-8f70-81929a6fec9f:
     uuid: 3cf78d2e-fdc4-4a1e-8f70-81929a6fec9f

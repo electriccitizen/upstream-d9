@@ -18,7 +18,7 @@ id: banner
 label: Banner
 image_style_mappings:
   -
-    breakpoint_id: citizen_patterns.bigdesk
+    breakpoint_id: citizen_patterns.largedesk
     multiplier: 1x
     image_mapping_type: image_style
     image_mapping: banner_big_desk
@@ -33,17 +33,17 @@ image_style_mappings:
     image_mapping_type: image_style
     image_mapping: banner_desk
   -
-    breakpoint_id: citizen_patterns.tablet
+    breakpoint_id: citizen_patterns.tab
     multiplier: 1.5x
     image_mapping_type: image_style
     image_mapping: banner_tablet_1_5x
   -
-    breakpoint_id: citizen_patterns.tablet
+    breakpoint_id: citizen_patterns.tab
     multiplier: 1x
     image_mapping_type: image_style
     image_mapping: banner_tablet
   -
-    breakpoint_id: citizen_patterns.tablet
+    breakpoint_id: citizen_patterns.tab
     multiplier: 2x
     image_mapping_type: image_style
     image_mapping: banner_tablet_2x

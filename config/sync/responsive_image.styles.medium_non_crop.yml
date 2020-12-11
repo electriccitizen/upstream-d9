@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - image.style.medium_non_crop
+    - image.style.medium_non_crop_1_5x
     - image.style.medium_non_crop_2x
     - image.style.small_non_crop
     - image.style.small_non_crop_1_5x
@@ -14,17 +15,17 @@ id: medium_non_crop
 label: 'Medium non-crop'
 image_style_mappings:
   -
-    breakpoint_id: citizen_patterns.tablet
+    breakpoint_id: citizen_patterns.tab
     multiplier: 1.5x
     image_mapping_type: image_style
-    image_mapping: medium_non_crop_2x
+    image_mapping: medium_non_crop_1_5x
   -
-    breakpoint_id: citizen_patterns.tablet
+    breakpoint_id: citizen_patterns.tab
     multiplier: 1x
     image_mapping_type: image_style
     image_mapping: medium_non_crop
   -
-    breakpoint_id: citizen_patterns.tablet
+    breakpoint_id: citizen_patterns.tab
     multiplier: 2x
     image_mapping_type: image_style
     image_mapping: medium_non_crop_2x

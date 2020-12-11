@@ -3,15 +3,15 @@
 ============== */
 
 .drupal-message {
-	padding: $spaceMd 20px $spaceMd 45px;
+	padding: $spaceMd 2.5rem $spaceMd 5.5rem;
 	margin: $spaceMd 0;
 	background-repeat: no-repeat;
 	background-position: 12px center;
 	background-size: 20px 20px;
-	font-size: 1.8rem;
+	font-size: 2.25rem;
 	background-color: $messageBack;
 	color: $messageText;
-	border-left: 10px solid;
+	border-left: 1rem solid;
 	box-shadow: none;
 	max-width: $contentStop;
 	@include auto;

@@ -2,15 +2,15 @@
 	UNIT VARIABLES
 ======================= */
 
-$em-base: 10px;
+$em-base: 8px;
 
 /* BREAKPOINT VARIABLES
 ------------------------ */
-$smallTab: 500px;
-$tab: 760px;
-$desk: 980px;
+$smallTab: 520px;
+$tab: 800px;
+$desk: 984px;
 $contentStop: 1200px;
-$largeScreen: 1500px;
+$largeScreen: 1600px;
 $textMax: 800px;
 $onlyTab: $tab $desk - 1px;
 $onlySmall: max-width $tab - 1px;
@@ -20,19 +20,19 @@ $onlyMobile: max-width $desk - 1px;
 
 /* SPACING & LAYOUT VARIABLES
 ----------------------------- */
-$spaceXxs: .5rem;
-$spaceXs : 1rem;
-$spaceSm : 2rem;
-$spaceMd : 3rem;
-$spaceLg : 4rem;
-$spaceXl : 6rem;
+$spaceXxs: 1rem;
+$spaceXs : 2rem;
+$spaceSm : 3rem;
+$spaceMd : 4rem;
+$spaceLg : 5rem;
+$spaceXl : 7rem;
 
-$siteMarginMobile: 2rem;
+$siteMarginMobile: 3rem;
 $siteMarginDesk: 6rem;
 
 $formElementSpace: $spaceMd;
 $elementSpace: $spaceMd;
-$siteBottomSpace: 8rem;
+$siteBottomSpace: 9rem;
 
 $sideBar: 240px;
 $sectionGutter: 40px;

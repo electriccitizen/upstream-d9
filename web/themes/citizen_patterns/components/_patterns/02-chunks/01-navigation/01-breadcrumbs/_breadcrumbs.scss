@@ -13,9 +13,9 @@
 	li{
 		display: inline-block;
 		color: $breadCurrent;
-		font-size: 1.4rem;
+		font-size: 2rem;
 		a{
-			padding-right: .25rem;
+			padding-right: .5rem;
 			@include transAll(.3s);
 			color: $breadLink;
 			&:hover,&:focus{

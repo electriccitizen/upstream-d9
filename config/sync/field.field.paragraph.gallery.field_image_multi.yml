@@ -11,7 +11,7 @@ field_name: field_image_multi
 entity_type: paragraph
 bundle: gallery
 label: Images
-description: "<strong>If this will be a lightbox gallery:</strong> Optimal image width is 800px<br>\r\n<strong>If this will be a slider gallery:</strong> Optimal image width is 1200px."
+description: '<strong>Optimal image size:</strong> is 800px'
 required: true
 translatable: false
 default_value: {  }

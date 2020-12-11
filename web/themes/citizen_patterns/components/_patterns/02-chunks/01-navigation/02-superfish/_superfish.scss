@@ -52,8 +52,8 @@ ul.sf-menu.sf-horizontal{
 		}
 		& > a{
 			color: $sfTopLink;
-			padding: 20px 15px !important;
-			font-size: 2rem;
+			padding: 2.5rem 2px !important;
+			font-size: 2.5rem;
 			display: block;
 			position: relative;
 			&:hover,&:focus{
@@ -79,14 +79,14 @@ ul.sf-menu.sf-horizontal{
 
 		//dropdown wrapper
 		& > ul{
-			padding: 20px 0 0;
+			padding: 2.5rem 0 0;
 			top: 100%;
 			min-width: 280px;
 			@extend %menuDropdown;
 			& > li{ 
 				padding: 0;
 				&:last-of-type{
-					padding: 0 0 20px;
+					padding: 0 0 2.5rem;
 				}
 			}
 		}
@@ -96,7 +96,7 @@ ul.sf-menu.sf-horizontal{
 	//level 2 links
 	a.sf-depth-2{
 		line-height: 1;
-		padding: 12px 20px;
+		padding: 1.5rem 2.5rem;
 	}
 
 	// sub menu toggles
@@ -143,9 +143,9 @@ ul.sf-menu.sf-horizontal{
 		line-height: 1;
 		& > a{
 			padding-left: 40px;
-			padding: 8px 20px 8px 40px;
+			padding: 1rem 2.5rem 1rem 5rem;
 			&.menuparent{
-				padding: 8px 40px;
+				padding: 1rem 5rem;
 			}
 		}
 	}//end level 2
@@ -173,7 +173,7 @@ ul.sf-menu.sf-accordion{
 
 	// global mobile links
 	a{
-		padding: 20px 30px;
+		padding: 2.5rem 4rem;
 		line-height: 1.15;
 	}
 
@@ -219,7 +219,7 @@ ul.sf-menu.sf-accordion{
 	}//end li
 
 	li.sf-expanded > ul{
-		padding: 0 0 10px;
+		padding: 0 0 2.5rem;
 	}
 
 	// top level
@@ -240,7 +240,7 @@ ul.sf-menu.sf-accordion{
 				}
 			}
 			& > ul{
-				padding: 10px 0;
+				padding: 1.5rem 0;
 			}
 		}
 	}//end level 1
@@ -277,11 +277,11 @@ ul.sf-menu.sf-accordion{
 		}
 		a{
 			color: $sfMobileChild;
-			font-size: 15px;
+			font-size: 2rem;
 			padding: 10px 30px;
 			&.sf-accordion-button{
 				&:after{
-					font-size: 22px;
+					font-size: 2.75rem;
 				}
 			}
 			&:not(.sf-accordion-button){

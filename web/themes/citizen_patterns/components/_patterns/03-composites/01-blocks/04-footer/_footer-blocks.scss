@@ -29,7 +29,7 @@
 				}
 			}
 			&:not(:first-child){
-				padding-left: 6px;
+				padding-left: 8px;
 				@include tab{
 					padding-left: 0;
 				}
@@ -37,7 +37,7 @@
 			&:not(:last-child){
 				padding-right: 8px;
 				@include tab{
-					margin-right: 6px;
+					margin-right: 8px;
 				}
 				&:after{
 					@include vertRule(right,60%,$white);
@@ -52,7 +52,7 @@
 .block-1{
 	.copyright{
 		text-align: center;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		@include tab{
 			text-align: left;
 		}

@@ -38,7 +38,7 @@
 		@include breakpoint(500px){
 			@include safeFlex(row,wrap,start,start);
 			.views-field-field-banner{
-				width: 340px;
+				width: 320px;
 				padding-right: 40px;
 				margin-bottom: 0;
 			}

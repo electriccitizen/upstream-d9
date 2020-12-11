@@ -27,7 +27,7 @@
 	.platform-links{
 		@include listReset;
 		@include safeFlex(row,wrap,start,start);
-		@include bleed(padding,10px);
+		@include bleed(padding,12px);
 		li{
 			margin-bottom: $spaceXxs;
 		}

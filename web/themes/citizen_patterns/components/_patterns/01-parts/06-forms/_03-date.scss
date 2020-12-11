@@ -21,7 +21,7 @@ field--type-datetime{
 	}
 	.fieldset-wrapper{
 		.label{
-			font-size: 1.6rem;
+			font-size: 2rem;
 			font-weight: $heavy;
 			margin-bottom: 3px;
 		}
@@ -31,7 +31,7 @@ field--type-datetime{
 .js-form-type-date,.form-item-html-5-date{
 	input{
 		@include textInput;
-		max-width: 350px;
+		max-width: 360px;
 	}
 }
 .js-form-type-webform-time{
@@ -53,7 +53,7 @@ field--type-datetime{
 		}
 		.form-item-date-time-daypicker-date{
 			width: 70%;
-			max-width: 350px;
+			max-width: 360px;
 			input{
 				background-image: url('../images/form-elements/calendar.svg');
 				background-repeat: no-repeat;
@@ -84,7 +84,7 @@ field--type-datetime{
 	.form-item{
 		margin-bottom: $spaceSm !important;
 		width: 100%;
-		max-width: 170px;
+		max-width: 160px;
 		margin-right: 1rem;
 	}
 } //end date list

@@ -28,7 +28,7 @@
 	a{
 		img{
 			max-width: 160px;
-			margin-right: 5px;
+			margin-right: 4px;
 			@include desk{
 				max-width: 100%;
 			}
@@ -64,8 +64,8 @@
 		}
 		#superfish-main-toggle{
 			position: absolute;
-			height: 30px;
-			width: 30px;
+			height: 32px;
+			width: 32px;
 			top: 17px;
 			right: 50px;
 		}

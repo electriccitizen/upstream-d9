@@ -73,10 +73,10 @@ SECTION LAYOUTS
 		.section-wrapper{
 			@include safeFlex(row,wrap,start,stretch);
 			@include tab{
-				@include bleed(padding,20px);
+				@include bleed(padding,22px);
 			}
 			@include desk{
-				@include bleed(padding,30px);
+				@include bleed(padding,32px);
 			}
 			& > .section-item{
 				width: 100%;

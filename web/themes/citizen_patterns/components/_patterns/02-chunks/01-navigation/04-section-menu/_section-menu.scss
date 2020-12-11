@@ -25,14 +25,14 @@
 		ul:not(.contextual-links){
 			margin: .5rem 0;
 			display: none;
-			padding-left: 12px;
+			padding-left: 2.5rem;
 			&.expanded{
 				display: block;
 			}
 		}
 		//global menu items
 		li{
-			padding: 4px 3rem;
+			padding: .5rem 3.5rem;
 			list-style: none;
 			position: relative;
 			//active link
@@ -52,11 +52,11 @@
 			&.parent{
 				& > .expander{
 					position: absolute;
-					top: 4px;
+					top: .5rem;
 					left: 0;
-					font-size: 24px;
+					font-size: 3rem;
 					line-height: 1;
-					width: 3rem;
+					width: 3.75rem;
 					text-align: center;
 					&:before{
 						content: "+";
@@ -71,7 +71,7 @@
 				}//end when expanded
 			}//end parent
 			li{
-				padding: 4px 0;
+				padding: .5rem 0;
 				a{
 					color: $menuChild;
 					&:hover,&:focus{

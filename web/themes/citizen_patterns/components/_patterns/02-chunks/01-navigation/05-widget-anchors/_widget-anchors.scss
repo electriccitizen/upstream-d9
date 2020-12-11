@@ -11,8 +11,8 @@
 	z-index: 1;
 	@include auto;
 	@include onlySmall{
-		padding-top: 2rem;
-		padding-bottom: 2rem;	
+		padding-top: 2.5rem;
+		padding-bottom: 2.5rem;	
 	}
 	&:after{
 		@include fullBack($anchorsBack);
@@ -28,20 +28,20 @@
 				color: $anchorsHover;
 			}
 			i{
-				margin-right: 2rem;
+				margin-right: 2.5rem;
 			}
 		}
 	}
 	.anchors{
 		display: none;
-		padding-top: 2rem;
+		padding-top: 2.5rem;
 		@include tab{
 			display: block !important;
 			@include bleed(padding,20px);
-			padding-bottom: 2rem;
+			padding-bottom: 2.5rem;
 		}
 		a{
-			padding: 15px 10px;
+			padding: 2rem 1.5rem;
 			position: relative;
 			display: block;
 			font-family: $header;
@@ -62,7 +62,7 @@
 			}
 			@include tab{
 				display: inline-block;
-				font-size: 2.2rem;
+				font-size: 2.5rem;
 				&:not(:last-child):after{
 					height: 50%;
 					width: 1px;
@@ -72,7 +72,7 @@
 				}
 			}
 			@include contentStop{
-				font-size: 2.4rem;
+				font-size: 3rem;
 			}
 		}//end a 
 	}//end anchors

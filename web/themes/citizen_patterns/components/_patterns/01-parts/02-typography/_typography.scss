@@ -5,27 +5,27 @@
 /* HEADING MIXINS
 ------------------ */
 //h1 sizes
-$h1Sm: 32px;
-$h1Mid: 46px;
-$h1Lg: 60px;
+$h1Sm: 4rem;
+$h1Mid: 5.5rem;
+$h1Lg: 7rem;
 
 //h2 sizes
-$h2Sm: 26px;
-$h2Md: 29px;
-$h2Lg: 32px;
+$h2Sm: 3rem;
+$h2Md: 3.5rem;
+$h2Lg: 4rem;
 
 //h3 sizes
-$h3Sm: 23px;
-$h3Mid: 26px;
+$h3Sm: 3rem;
+$h3Mid: 3.5rem;
 
 //h4 sizes
-$h4Sm: 22px;
+$h4Sm: 2.75rem;
 
 //h5 sizes
-$h5Sm: 20px;
+$h5Sm: 2.5rem;
 
 //h6 sizes
-$h6Sm: 18px;
+$h6Sm: 2rem;
 
 @mixin headerGlobals{
 	line-height: 1.15;
@@ -174,7 +174,7 @@ h2+ul, h3+ul, h4+ul, h5+ul, h6+ul {
 /* BLOCK, SECTION AND WIDGET HEADINGS
 -------------------------- */
 .block-title{
-	max-width: 800px;
+	max-width: $textMax;
 	text-align: center;
 	@include auto;
 }
@@ -183,7 +183,7 @@ h2.block-title{
 }
 h2.section-title{
 	@include blockTitle;
-	font-size: 2.4rem;
+	font-size: 3rem;
 	max-width: $textMax + 40px;
 }
 .widget-title{
@@ -196,21 +196,21 @@ h2.section-title{
 ---------------- */
 
 @mixin metaText{
-	font-size: 1.6rem;
+	font-size: 2rem;
 	font-style: italic;
 	font-family: $serif;
 }
 
 @mixin quote{
 	margin: 0 0 $spaceXs;
-	max-width: 740px;
+	max-width: 736px;
 	position: relative;
 	font-family: $serif;
 	font-style: italic;
-	font-size: 2.8rem;
-	padding-bottom: 10px;
+	font-size: 3rem;
+	padding-bottom: $spaceXs;
 	@include tab{
-		font-size: 4.2rem;
+		font-size: 4.5rem;
 		padding-bottom: 0;
 	}
 	p{
@@ -257,9 +257,6 @@ p{
 	&:not(:last-child){
 		margin-bottom: $spaceMd;
 	}
-	& + article:not(:last-child){
-		margin-bottom: $spaceMd;
-	}
 }
 
 a {
@@ -283,7 +280,7 @@ strong{
 
 .field-caption {
 	text-align: center;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	font-style: italic;
 }
 
@@ -321,6 +318,9 @@ blockquote{
 	}
 	& + *{
 		clear: both;
+	}
+	article:not(:last-child){
+		margin-bottom: $spaceMd;
 	}
 }//end text-with-summary,text-long
 

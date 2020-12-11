@@ -45,9 +45,9 @@ $elementBorder: $formElementBorderWidth solid $formElementBorder;
 
 @mixin textInput{
 	border: $elementBorder;
-	font-size: 1.6rem;
+	font-size: 2rem;
 	font-family: $bodyFont;
-	padding: 8px 6px 9px;
+	padding: 1rem 1.75rem 1.1rem;
 	width: 100%;
 	line-height: 1.4;
 	min-height: 44px;
@@ -81,7 +81,7 @@ $elementBorder: $formElementBorderWidth solid $formElementBorder;
 		position: relative;
 		top: -1px;
 		right: -.5rem;
-		font-size: 1.4rem;
+		font-size: 1.5rem;
 	}
 }
 
@@ -178,10 +178,10 @@ input[type="submit"].button{
 
 //descriptions
 .description{
-	font-size: 1.6rem;
+	font-size: 2rem;
 }
 .webform-element-description{
-	font-size: 1.6rem;
+	font-size: 2rem;
 	padding-bottom: $spaceXs;
 }
 input + .description{
@@ -199,7 +199,7 @@ fieldset{
 	margin: 0;
 	legend{
 		font-weight: $heavy;
-		font-size: 2.2rem;
+		font-size: 2.5rem;
 		margin-bottom: $spaceXs;
 	}
 	
@@ -217,7 +217,7 @@ fieldset{
 	}
 	.ui-menu-item-wrapper{
 		display: block;
-		font-size: 1.5rem;
+		font-size: 2rem;
 		&.ui-state-active{
 			background: $link;
 			border-color: $link;
@@ -236,9 +236,9 @@ fieldset{
 	padding-top: $spaceMd;
 	.webform-element-help{
 		margin: 0;
-		height: 16px;
-		width: 16px;
-		line-height: 16px;
+		height: 2rem;
+		width: 2rem;
+		line-height: 2rem;
 		top: -5px;
 		border: 0;
 		background: $link;
@@ -260,7 +260,7 @@ fieldset{
 	max-width: $textMax;
 	@include auto;
 	border: $elementBorder;
-	padding: 2rem;
+	padding: 2.5rem;
 	text-align: center;
 	.webform-confirmation__back{
 		a{
@@ -308,7 +308,7 @@ fieldset{
 				line-height: 1;
 				padding-bottom: 0;
 				font-weight: 700;
-				font-size: 1.6rem;	
+				font-size: 2rem;	
 			}
 		}//end progress step
 	}//end progress tracker
@@ -316,7 +316,7 @@ fieldset{
 
 //number range
 .js-form-type-range{
-	$knobSize: 18px;
+	$knobSize: 2.25rem;
 	.form-range{
 		margin-bottom: $spaceSm;
 		-webkit-appearance: none;
@@ -457,7 +457,7 @@ fieldset{
 			position: absolute;
 			top: 12px;
 			right: 0;
-			font-size: 1.5rem;
+			font-size: 2rem;
 		}
 		.show-password{
 			position: absolute;
@@ -496,16 +496,16 @@ details.form-wrapper{
 			margin-bottom: $spaceMd;
 		}
 		& > *:not(summary){
-			padding-left: 2rem;
-			padding-right: 2rem;
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
 		}
 	}
 	summary{
 		border: $elementBorder;
-		padding: 1rem 2rem;
+		padding: 1.25rem 2.5rem;
 		font-weight: $heavy;
 		position: relative;
-		font-size: 2.2rem;
+		font-size: 2.5rem;
 		background: $siteBack;
 		cursor: pointer;
 		&::-webkit-details-marker {

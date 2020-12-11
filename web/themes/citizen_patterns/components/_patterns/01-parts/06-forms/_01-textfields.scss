@@ -20,19 +20,19 @@
 .js-form-type-number{
 	input{
 		@include textInput;
-		max-width: 150px;
+		max-width: 160px;
 	}
 }
 .js-form-type-tel{
 	input{
 		@include textInput;
-		max-width: 250px;
+		max-width: 240px;
 	}
 }
 .js-form-type-url{
 	input{
 		@include textInput;
-		max-width: 350px;
+		max-width: 360px;
 	}
 }
 .js-form-type-textarea{
@@ -44,7 +44,7 @@
 .form-item-date-time-daypicker-time{
 	input{
 		@include textInput;
-		max-width: 130px;
+		max-width: 120px;
 	}
 }
 

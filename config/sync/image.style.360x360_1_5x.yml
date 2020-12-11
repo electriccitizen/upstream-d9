@@ -5,16 +5,16 @@ dependencies:
   module:
     - focal_point
     - image_style_quality
-name: 350x350_1_5x
-label: '350x350 1.5x'
+name: 360x360_1_5x
+label: '360x360 1.5x'
 effects:
   51537abe-6b79-448d-a699-dd76de8da716:
     uuid: 51537abe-6b79-448d-a699-dd76de8da716
     id: focal_point_scale_and_crop
     weight: 1
     data:
-      width: 525
-      height: 525
+      width: 540
+      height: 540
       crop_type: focal_point
   9079ea92-81a6-4d8c-a8b8-13426365482a:
     uuid: 9079ea92-81a6-4d8c-a8b8-13426365482a

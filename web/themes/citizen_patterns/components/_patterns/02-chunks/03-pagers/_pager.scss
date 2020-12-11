@@ -6,17 +6,17 @@ PAGERS
 /* MIXINS
 ------------- */
 
-$pagerLine: 2.4rem;
+$pagerLine: 3rem;
 
 ///mixin - pagerItemStyle
 @mixin pagerItemStyle{
 	display: block;
-	min-width: 26px;
-	height: 26px;
-	padding: 0px 3px;
+	min-width: 28px;
+	height: 28px;
+	padding: 0px 4px;
 	line-height: $pagerLine;
 	text-align: center;
-	border-radius: 6px;
+	border-radius: 4px;
 	color: $pagerNumber;
 	background: $pagerNumberBack;
 	&:hover,&:focus{
@@ -100,10 +100,10 @@ $pagerLine: 2.4rem;
 		}
 		@include tab{
 			&.pager__item--previous{
-				padding-right: 2rem;
+				padding-right: 2.5rem;
 			}
 			&.pager__item--next{
-				padding-left: 2rem;
+				padding-left: 2.5rem;
 			}
 		}
 	}//end page number items
@@ -132,10 +132,10 @@ $pagerLine: 2.4rem;
 		}
 		.pager__item{
 			&.pager__item--previous{
-				padding-right: 2rem;
+				padding-right: 2.5rem;
 			}
 			&.pager__item--next{
-				padding-left: 2rem;
+				padding-left: 2.5rem;
 			}
 		}
 	}//end smart pager
@@ -144,7 +144,7 @@ $pagerLine: 2.4rem;
 	&.results-pager{
 		@include onlyPhone{
 			.pager__number{
-				margin: 0 .25rem !important;
+				margin: 0 .5rem !important;
 			}
 			.pager__item{
 				&.pager__item--previous{
@@ -185,7 +185,7 @@ ul.flippy{
 	@include listReset;
 	@include safeFlex(row,wrap,null,null);
 	li{
-		padding: 15px 0;
+		padding: 2rem 0;
 		width: 50%;
 		&.flippy-next{
 			text-align: right;

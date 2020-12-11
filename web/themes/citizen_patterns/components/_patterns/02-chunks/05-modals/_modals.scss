@@ -28,7 +28,7 @@
 	.modal-header{
 		position: relative;
 		h2{
-			padding: 1.5rem 2rem;
+			padding: 2rem 2.5rem;
 			background: $modalHeaderBack;
 			@include heading4;
 			color: $modalHeader;
@@ -54,7 +54,7 @@
 	}//end modal-header
 	.modal-content{
 		overflow-y: scroll;
-		padding: 2rem 2rem 4rem;
+		padding: 2.5rem 2.5rem 5rem;
 		overflow-x: hidden;
 		color: $modalContent;
 		.modal-intro{

@@ -4,9 +4,10 @@ html {
 	line-height: 24px;
 	font-family: Helvetica, Arial, sans-serif;
 }
-.cke_widget_drupalmedia img{
+.cke_widget_drupalmedia .image:not(.default) img{
 	display: block;
-	max-width: 100%;
+	width: 100%;
+	height: auto;
 }
 .media-library-item__edit{
 	background: #026cc5;
@@ -18,6 +19,19 @@ html {
 .media-library-item__edit:hover{
 	background: #cccccc;
 	color: #121212;
+}
+.remote-video .field-media-oembed-video{
+	position: relative;
+	padding-bottom: 56.25%;
+}
+.remote-video .field-media-oembed-video iframe{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 .align-right{
 	float: right;
@@ -43,6 +57,9 @@ html {
 	width: 100% !important;
 	text-align: left;
 }
+.align-center.document{
+	text-align: center;
+}
 .small-embed{
 	width: 300px;
 	max-width: 100%;
@@ -55,24 +72,13 @@ html {
 	max-width: 100%;
 	width: 600px;
 }
-.full,.default{
+.full{
 	width: 1200px;
 	max-width: 100%;
 }
-
-.field-media-video-embed-field .video-embed-field-responsive-video{
-	position: relative;
-	padding-bottom: 56.25%;	
-}
-.field-media-video-embed-field .video-embed-field-responsive-video iframe{
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	margin: 0;
+.default.remote-video{
+	width: 1200px;
+	max-width: 100%;
 }
 
 div.warning {
@@ -138,10 +144,12 @@ table th, table td{
 }
 
 .field-caption{
+	margin-top: 8px;
 	font-style: italic;
-	font-size: 13px;
+	font-size: 12px;
 	text-align: center;
 	color: #666;
+	line-height: 1.15;
 }
 
 h2{

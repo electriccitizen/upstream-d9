@@ -16,7 +16,7 @@ effects:
     weight: 1
     data:
       width: 1600
-      height: 900
+      height: 896
       crop_type: focal_point
   2c05bd5c-220b-4a31-a9d6-44d04e546b2b:
     uuid: 2c05bd5c-220b-4a31-a9d6-44d04e546b2b

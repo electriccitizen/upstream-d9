@@ -14,13 +14,13 @@
 		max-width: none;
 		margin-bottom: 0;
 		@include onlyMobile{
-			padding: 2rem;
+			padding: 2rem 2.5rem;
 			@include edgeToEdge;
 		}	 
 		a.section-menu-toggle{
 			color: $menuBlockTitle;
 			i{
-				margin-right: 2rem;
+				margin-right: 2.5rem;
 			}
 			&:hover,&:focus{
 				color: $menuBlockTitleHover;
