@@ -667,9 +667,9 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: oc_short_date_only
+            date_format: number_date_short
             custom_date_format: ''
-            timezone: ''
+            timezone: America/North_Dakota/Center
           group_column: value
           group_columns: {  }
           group_rows: true

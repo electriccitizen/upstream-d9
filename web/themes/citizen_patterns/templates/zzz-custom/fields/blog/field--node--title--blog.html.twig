@@ -29,7 +29,7 @@
 		}
 	%}
 	<div class="metatext">
-		<span class="date">{{- element['#object'].created.value|date("F j, Y") -}}</span>
+		<span class="date">{{- element['#object'].created.value|date("n/j/y") -}}</span>
 		{%- if element['#object'].field_author -%}
 			<span class="author"> by {{ element['#object'].field_author.entity.title.value -}}</span>
 		{%- endif -%}

@@ -6,13 +6,11 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_banner
     - field.field.node.event.field_category
-    - field.field.node.event.field_date
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_pin_info
     - field.field.node.event.field_metatags
     - node.type.event
   module:
-    - datetime
     - geolocation
     - layout_builder
     - layout_builder_restrictions
@@ -82,25 +80,6 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 2
-          8474271f-64ef-448f-83bd-e59284858f0a:
-            uuid: 8474271f-64ef-448f-83bd-e59284858f0a
-            region: content
-            configuration:
-              id: 'field_block:node:event:field_date'
-              label: Date
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: datetime_default
-                settings:
-                  timezone_override: ''
-                  format_type: oc_short_date_time
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 3
           5157183b-4d56-4741-9dde-4201fd1e702f:
             uuid: 5157183b-4d56-4741-9dde-4201fd1e702f
             region: content
@@ -214,15 +193,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_date:
-    weight: 5
-    label: above
-    settings:
-      format_type: medium
-      timezone_override: ''
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_event_location:
     weight: 3

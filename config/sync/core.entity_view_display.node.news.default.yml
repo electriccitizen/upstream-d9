@@ -89,12 +89,13 @@ third_party_settings:
                 label: hidden
                 type: timestamp
                 settings:
-                  date_format: oc_short_date_only
+                  date_format: number_date_short
                   custom_date_format: ''
-                  timezone: ''
+                  timezone: America/North_Dakota/Center
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
+                view_mode: view_mode
             additional: {  }
             weight: 2
           af8cc179-e79e-4906-b4e9-7f4bf1ee1dea:

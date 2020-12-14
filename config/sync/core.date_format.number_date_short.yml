@@ -1,0 +1,8 @@
+uuid: 3fb8256e-1c31-404a-9aef-342819ee04f3
+langcode: en
+status: true
+dependencies: {  }
+id: number_date_short
+label: 'Number Date Short'
+locked: false
+pattern: n/j/y

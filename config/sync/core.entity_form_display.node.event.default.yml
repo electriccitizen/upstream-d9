@@ -6,13 +6,11 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_banner
     - field.field.node.event.field_category
-    - field.field.node.event.field_date
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_pin_info
     - field.field.node.event.field_metatags
     - node.type.event
   module:
-    - datetime
     - field_group
     - geolocation_google_maps
     - metatag
@@ -66,12 +64,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_select
-    region: content
-  field_date:
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    type: datetime_default
     region: content
   field_event_location:
     weight: 6
