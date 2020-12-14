@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.event.body
     - field.field.node.event.field_banner
     - field.field.node.event.field_category
+    - field.field.node.event.field_date
     - field.field.node.event.field_event_location
     - field.field.node.event.field_event_pin_info
     - field.field.node.event.field_metatags
@@ -16,6 +17,7 @@ dependencies:
     - layout_builder_restrictions
     - layout_discovery
     - metatag
+    - smart_date
     - system
     - text
     - user
@@ -96,6 +98,28 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
+            weight: 5
+          c8aa080c-f383-4d57-a27e-bd5962d90cf9:
+            uuid: c8aa080c-f383-4d57-a27e-bd5962d90cf9
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_date'
+              label: Date
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: smartdate_default
+                settings:
+                  timezone_override: America/North_Dakota/Center
+                  format: number_date_short
+                  force_chronological: false
+                  add_classes: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
             weight: 4
         third_party_settings: {  }
       -
@@ -172,6 +196,9 @@ third_party_settings:
         Webform: {  }
       allowed_layouts:
         - layout_onecol
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+    allowed_block_categories: {  }
 _core:
   default_config_hash: loMHYsfHZt2ah-BioORO_TAK_v7Gf-b6gCl285D03zk
 id: node.event.default
@@ -193,6 +220,18 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_date:
+    weight: 5
+    label: above
+    settings:
+      format: default
+      force_chronological: false
+      add_classes: 0
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: smartdate_default
     region: content
   field_event_location:
     weight: 3

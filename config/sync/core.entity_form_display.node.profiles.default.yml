@@ -59,7 +59,7 @@ content:
     type: email_default
     region: content
   field_first_name:
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -67,7 +67,7 @@ content:
     type: string_textfield
     region: content
   field_last_name:
-    weight: 1
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -82,7 +82,7 @@ content:
     type: telephone_default
     region: content
   field_position:
-    weight: 2
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -90,7 +90,7 @@ content:
     type: string_textfield
     region: content
   field_profile_image:
-    weight: 3
+    weight: 0
     settings:
       media_types: {  }
     third_party_settings: {  }

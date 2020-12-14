@@ -31,13 +31,13 @@ content:
     third_party_settings: {  }
     region: content
   field_author:
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     type: options_select
     region: content
   field_banner:
-    weight: 3
+    weight: 0
     settings:
       media_types: {  }
     third_party_settings: {  }
@@ -51,7 +51,7 @@ content:
     type: metatag_firehose
     region: content
   field_tags:
-    weight: 2
+    weight: 3
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -65,7 +65,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''
