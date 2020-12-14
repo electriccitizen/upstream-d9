@@ -144,20 +144,6 @@
 	}
 }
 
-///mixin - calc
-@mixin calc($property, $expression) {
-	#{$property}: -webkit-calc(#{$expression});
-	#{$property}: -moz-calc(#{$expression});
-	#{$property}: calc(#{$expression});
-}
-
-///mixin - calcForce
-@mixin calcForce($property, $expression) {
-	#{$property}: -webkit-calc(#{$expression}) !important;
-	#{$property}: -moz-calc(#{$expression}) !important;
-	#{$property}: calc(#{$expression}) !important;
-}
-
 /// mixin - browserWipe
 @mixin browserWipe{
 	-webkit-appearance: none;
@@ -349,7 +335,7 @@
 @mixin bleed($bleedType,$bleedWidth){
 	margin-left: $bleedWidth * -0.5;
 	margin-right: $bleedWidth * -0.5;
-	@include calc(width, "100% + "$bleedWidth);
+	width: calc(100% + #{$bleedWidth});
 	& > *{
 		@if $bleedType == 'margin'{
 			margin-left: $bleedWidth * 0.5;

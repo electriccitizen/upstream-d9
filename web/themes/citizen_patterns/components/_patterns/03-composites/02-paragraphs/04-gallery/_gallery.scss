@@ -39,7 +39,7 @@
 		//slider container overrides layout padding on mobile
 		.field-image-multi {
 			@include edgeToEdge;
-			@include calc(width, "100% + 40px");
+			width: calc(100% + 40px);
 			@include contentStop {
 				@include edgeReset;
 				width: 100%;

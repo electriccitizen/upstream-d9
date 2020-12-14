@@ -595,7 +595,7 @@ $subGroupHeaderBack  : $darkGrey;
 	@include safeFlex(row,wrap,start,start);
 	.pager-instructions{
 		@include breakpoint(620px){
-			@include calc(width,"100% - 190px");
+			width: calc(100% - 190px);
 			padding-left: 60px;
 			max-width: $textMax;
 			@include safeFlexOrder(2);
@@ -689,7 +689,7 @@ $subGroupHeaderBack  : $darkGrey;
 	@include safeFlex(row,wrap,start,start);
 	.lf-instructions{
 		@include breakpoint(620px){
-			@include calc(width,"100% - 190px");
+			width: calc(100% - 190px);
 			padding-left: 60px;
 			max-width: $textMax;
 			@include safeFlexOrder(2);
@@ -794,7 +794,7 @@ $subGroupHeaderBack  : $darkGrey;
 					margin-bottom: 0;
 				}
 				.views-field-nothing{
-					@include calc(width,"100% - 340px");
+					width: calc(100% - 340px);
 				}
 			}
 		}

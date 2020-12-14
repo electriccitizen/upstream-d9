@@ -97,7 +97,7 @@
 	left: 0;
 	width: 100%;
 	@include contentStop{
-		@include calc(left, "-50vw + 620px");
+		left: calc(-50vw + 620px);
 		width: 100vw;
 	}
 }//end search-form-wrapper

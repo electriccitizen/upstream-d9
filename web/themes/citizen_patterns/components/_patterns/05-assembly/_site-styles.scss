@@ -140,7 +140,7 @@ body {
 	right: 5%;
 	width: 90%;
 	max-width: 800px;
-	@include calc(max-height, "90% - 200px");
+	max-height: calc(90% - 200px);
 	overflow: scroll;
 }
 
@@ -324,7 +324,7 @@ body {
 			content: '' !important;
 			display: block;
 			position: absolute;
-			@include calc(top, "50% - 10px");
+			top: calc(50% - 10px);
 		}
 		&.slick-prev {
 			left: 0;

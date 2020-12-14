@@ -96,24 +96,6 @@
 	}
 }
 
-
-// Calc shorthand that works cross browser
-@mixin calc($property, $expression) {
-	#{$property}: -webkit-calc(#{$expression});
-	#{$property}: -moz-calc(#{$expression});
-	#{$property}: -o-calc(#{$expression});
-	#{$property}: calc(#{$expression});
-}
-
-// Calc short hand that works cross browser with !important
-@mixin calcForce($property, $expression) {
-	#{$property}: -webkit-calc(#{$expression}) !important;
-	#{$property}: -moz-calc(#{$expression}) !important;
-	#{$property}: -o-calc(#{$expression}) !important;
-	#{$property}: calc(#{$expression}) !important;
-}
-
-
 /*  STYLE MIXINS
 ------------------- */
 
@@ -464,7 +446,7 @@
 @mixin bleed($bleedType,$bleedWidth){
 	margin-left: $bleedWidth * -0.5;
 	margin-right: $bleedWidth * -0.5;
-	@include calc(width, "100% + "$bleedWidth);
+	width: calc(100% + #{$bleedWidth});
 	& > *{
 		@if $bleedType == 'margin'{
 			margin-left: $bleedWidth * 0.5;

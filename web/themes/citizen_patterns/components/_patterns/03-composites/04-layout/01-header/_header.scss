@@ -18,7 +18,7 @@
 ------------------- */
 .block-system-branding-block{
 	//leave room for search toogle and menu hamburger on mobile
-	@include calc(width, "100% - 70px");
+	width: calc(100% - 70px);
 	position: relative;
 	z-index: 10;
 	@include desk{
@@ -44,7 +44,7 @@
 	display: inline-block;
 	text-align: right;
 	@include desk{
-		@include calc(width, "100% - 240px");
+		width: calc(100% - 240px);
 	}
 	//search toggler
 	.t-search{

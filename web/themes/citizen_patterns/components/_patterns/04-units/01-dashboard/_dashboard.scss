@@ -39,7 +39,7 @@
 					position: absolute;
 					bottom: 0;
 					left: 20px;
-					@include calc(width, "100% - 40px");
+					width: calc(100% - 40px);
 					height: 50px;
 					@include gradient(top,rgba(255,255,255,0),$lightGrey);
 				}
@@ -55,7 +55,7 @@
 				position: absolute;
 				bottom: 0;
 				left: 20px;
-				@include calc(width,"100% - 40px");
+				width: calc(100% - 40px);
 				@include safeFlex(row,wrap,justify,start);
 				border-top: 1px solid $black;
 				border-bottom: 1px solid $black;
@@ -306,7 +306,7 @@
 	
 	.views-field-title{
 		@include desk{
-			@include calc(width, "100% - 355px");
+			width: calc(100% - 255px);
 		}
 		a{
 			text-decoration: none;
@@ -323,7 +323,7 @@
 	&.all-recents{
 		.views-field-title{
 			@include desk{
-				@include calc(width, "100% - 525px");
+				width: calc(100% - 525px);
 			}
 		}
 	}
@@ -367,7 +367,7 @@
 		width: 150px;
 	}
 	.st-val{
-		@include calc(width, "100% - 150px");
+		width: calc(100% - 150px);
 		padding-right: 1rem;
 		max-width: none;
 	}

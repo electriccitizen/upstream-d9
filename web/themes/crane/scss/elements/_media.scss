@@ -133,7 +133,7 @@ span.file{
 	}
 	.view-filters{
 		@include tab{
-			@include calc(width, "100% - 200px");
+			width: calc(100% - 200px);
 		}
 		.views-exposed-form{
 			#views-filter-wrapper{

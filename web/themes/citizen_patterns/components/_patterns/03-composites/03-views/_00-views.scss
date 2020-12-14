@@ -43,7 +43,7 @@
 				margin-bottom: 0;
 			}
 			.views-field-nothing{
-				@include calc(width,"100% - 340px");
+				width: calc(100% - 340px);
 			}
 		}
 	}//end horizontal

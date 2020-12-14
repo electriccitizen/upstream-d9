@@ -177,7 +177,7 @@ table{
 	.st-val{
 		width: 50%;
 		@include smallTab{
-			@include calc(max-width, "100% - 200px");
+			max-width: calc(100% - 200px);
 			width: 100%;
 		}
 	}

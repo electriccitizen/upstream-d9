@@ -37,7 +37,7 @@
 		width: 100%;
 		@include desk{
 			&:not(:only-child){
-				@include calc(width, "100% - "$sideBar);
+				width: calc(100% - #{$sideBar});
 				&:not(.ui-sortable){
 					padding-left: $sectionGutter;
 				}
@@ -56,7 +56,7 @@
 		width: 100%;
 		@include desk{
 			&:not(:only-child){
-				@include calc(width, "100% - "$sideBar);
+				width: calc(100% - #{$sideBar});
 				&:not(.ui-sortable){
 					padding-right: $sectionGutter;
 				}
