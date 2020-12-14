@@ -216,15 +216,14 @@ h2.section-title{
 	p{
 		display: inline;
 	}
-	&:before{
+	.quote-pre{
 		color: $transBlack;
-		content: "“";
 		font-size: 14rem;
 		line-height: .1rem;
 		margin-right: 2rem;
 		vertical-align: -6.4rem;
 	}
-	&:after{
+	.quote-post{
 		color: $transBlack;
 		content: "”";
 		font-size: 8rem;

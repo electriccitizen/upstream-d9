@@ -2,7 +2,8 @@ type:
   pullquote
 widgetTitle:
   'Quotes with optional source'
-
+src:
+  'http://placeimg.com/360/360/people'
 quote: |
   <p>Quis Aristidem non mortuum diligit? Nummus in Croesi divitiis obscuratur, pars est tamen.</p>
 source:

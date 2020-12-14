@@ -50,9 +50,9 @@ ul.sf-menu.sf-horizontal{
 				color: $sfTopLinkHover;
 			}
 		}
-		& > a{
+		& > a,& > span.nolink{
 			color: $sfTopLink;
-			padding: 2.5rem 2px !important;
+			padding: 2.5rem 1.5rem !important;
 			font-size: 2.5rem;
 			display: block;
 			position: relative;

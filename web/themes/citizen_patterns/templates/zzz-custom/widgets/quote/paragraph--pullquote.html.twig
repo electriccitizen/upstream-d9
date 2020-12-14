@@ -36,16 +36,32 @@
  * @ingroup themeable
  */
 #}
-{% extends "paragraph.html.twig" %}
 
-{% block content %}
-	{{ attach_library('crane/confirmation') }}
-	<div class="field field--type-form field--label-inline">
-    <div class="field__label">Form</div>
-    <div class="field__item">
-			{{- content.field_form['#items'].0.target_id|title|replace({'_':' '}) -}}
-			| <a class="leave-live confirm-link form-confirm" href="/admin/structure/webform/manage/{{ content.field_form['#items'].0.target_id }}" target="_blank">Edit Form</a>
-		</div>
-	</div>
-{% endblock %}
+{% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+  with{
+    type: paragraph.bundle|clean_class,
+    viewMode: view_mode|clean_class,
+    id: paragraph.id.value,
+    sectionTitle: '',
+    sectionIntro: '',
+    widgetTitle: content.field_widget_title.0['#context'].value,
+  }
+%}
 
+  {% block widgetContent %}
+    {% embed "@composites/02-paragraphs/08-quote/_quote.twig"
+      with{
+        src: content.field_image.0,
+        quote: content.field_quote.0['#context'].value,
+        source: content.field_source.0['#context'].value
+      }
+    %}
+
+      {% block image %}
+        {{ content.field_image }}
+      {% endblock %}
+
+    {% endembed %}
+  {% endblock %}
+  
+{% endembed %}

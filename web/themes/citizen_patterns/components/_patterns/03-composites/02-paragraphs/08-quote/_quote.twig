@@ -2,16 +2,29 @@
 	STYLEGUIDE ONLY
 #}
 
-{% if quote %}
-	{% autoescape false %}
-		<div class="field field-quote text-long">
-			{{ quote }}
+{% if src %}
+	{% block image %}
+		<div class="field field-image">
+			<article>
+				<div class="field-media-image">
+					<img src="{{ src }}" width="360px" height="360px" alt="Quote image" />
+				</div>
+			</article>
 		</div>
-	{% endautoescape %}
+	{% endblock %}
 {% endif %}
-{% if source %}
-	<div class="field field-source string">
-		{{- source -}}
-	</div>
-{% endif %}
+<div class="quote-text-wrapper">
+	{% if quote %}
+		{% autoescape false %}
+			<div class="field field-quote text-long">
+				<span class="quote-pre">“</span>{{ quote }}<span class="quote-post">”</span>
+			</div>
+		{% endautoescape %}
+	{% endif %}
+	{% if source %}
+		<div class="field field-source string">
+			{{- source -}}
+		</div>
+	{% endif %}
+</div>
 		

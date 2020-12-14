@@ -6,6 +6,27 @@
 	.widget-title{
 		margin-bottom: $spaceMd;
 	}
+	.widget-wrapper{
+		@include smallTab{
+			@include safeFlex(row,wrap,start,start);
+		}
+	}
+	.field-image{
+		margin: 0 auto $spaceMd;
+		width: 200px;
+		border-radius: 50%;
+		overflow: hidden;
+		@include smallTab{
+			max-width: 200px;
+			margin: 0 $spaceMd 0 0;
+		}
+	}
+	.quote-text-wrapper{
+		width: 100%;
+		@include smallTab{
+			width: calc(100% - 232px);
+		}
+	}
 	//quote text
 	.field-quote{
 		@include quote;
