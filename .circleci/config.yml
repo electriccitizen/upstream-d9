@@ -4,7 +4,8 @@ workflows:
   build_and_test:
     jobs:
       - pantheon/push:
-          clone_content: false
+          parameters:
+            clone_content: false
           pre-steps:
             - checkout
             - run: composer -n install --optimize-autoloader --ignore-platform-reqs --no-dev
