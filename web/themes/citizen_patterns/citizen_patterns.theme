@@ -25,7 +25,7 @@ function citizen_patterns_preprocess_html(&$variables) {
       $variables['attributes']['class'][] = 'unpublished';
     }
     //find out if there is a banner cut chosen and add as class
-    if ((!empty($node->field_banner[0])) || (!empty($node->field_profile_image[0]))){
+    if ( (!empty($node->field_banner[0])) || (!empty($node->field_profile_image[0])) ){
       $variables['attributes']['class'][] = 'has-main-image';
     }
   }
