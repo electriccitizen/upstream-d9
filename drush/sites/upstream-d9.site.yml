@@ -1,9 +1,9 @@
 '*':
-  host: appserver.${env-name}.fa0c87bc-6677-497c-93ba-c3e7ee868c7e.drush.in
+  host: appserver.${env-name}.8be50dbc-4463-43b5-bd18-d83046623820.drush.in
   paths:
     files: files
-  uri: ${env-name}-upstream-d9.pantheonsite.io
-  user: ${env-name}.fa0c87bc-6677-497c-93ba-c3e7ee868c7e
+  uri: ${env-name}-newupstream.pantheonsite.io
+  user: ${env-name}.8be50dbc-4463-43b5-bd18-d83046623820
   ssh:
     options: '-p 2222 -o "AddressFamily inet"'
     tty: false
