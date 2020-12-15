@@ -5,7 +5,6 @@ workflows:
     jobs:
       - pantheon/push:
           clone_content: false
-          terminus_clone_env: "dev"
           pre-steps:
             - checkout
             - run: composer -n install --optimize-autoloader --ignore-platform-reqs --no-dev
