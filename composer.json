@@ -12,20 +12,19 @@
             "type": "package",
             "package": {
                 "name": "electriccitizen/docksal",
-                "version": "1.5.1",
+                "version": "1.5.3",
                 "type": "drupal-custom-module",
                 "source": {
                     "url": "https://github.com/electriccitizen/docksal.git",
                     "type": "git",
-                    "reference": "1.5.1"
+                    "reference": "1.5.3"
                 }
             }
         }
     ],
     "require": {
-        "php": ">=7.1",
-        "composer/installers": "^1.8",
-        "cweagans/composer-patches": "^1.0",
+        "composer/installers": "^1.9",
+        "cweagans/composer-patches": "^1.7",
         "doctrine/lexer": "^1.0",
         "drupal/addanother": "^1.0",
         "drupal/addtoany": "^1.4",
@@ -39,6 +38,7 @@
         "drupal/config_update": "^1.5",
         "drupal/console": "^1.9",
         "drupal/console-core": "^1.9",
+        "drupal/console-extend-plugin": "^0.9.5",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9.0.0",
         "drupal/core-recommended": "^9",
@@ -86,10 +86,8 @@
         "kint-php/kint-twig": "^2.0",
         "pantheon-systems/drupal-integrations": "^8",
         "phpunit/phpunit": "^9.4",
-        "rvtraveller/qs-composer-installer": "^1.1",
         "symfony/css-selector": "^4.0",
-        "webflo/drupal-finder": "^1.0",
-        "zaporylie/composer-drupal-optimizations": "^1.1"
+        "webflo/drupal-finder": "^1.0"
     },
     "require-dev": {
         "mikey179/vfsstream": "^1.2",
@@ -160,9 +158,6 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true,
-        "platform": {
-            "php": "7.3"
-        }
+        "sort-packages": true
     }
 }
