@@ -24,4 +24,4 @@ workflows:
                   terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
                   fi
 orbs:
-  pantheon: pantheon-systems/pantheon@0.2.0
+  pantheon: pantheon-systems/pantheon@0.5.1
