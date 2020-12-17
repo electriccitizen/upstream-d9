@@ -4,20 +4,16 @@ workflows:
   build_and_test:
     jobs:
       - pantheon/push:
-        checkout: 
           clone_content: false
-          checkout: false
           terminus_clone_env: "dev"
           pre-steps:
             - checkout
             - run: composer -n install --optimize-autoloader --ignore-platform-reqs --no-dev
             - run: composer prepare-for-pantheon
           post-steps:
-            # These commands should be called from Quicksilver.
-            # https://github.com/pantheon-systems/quicksilver-examples/
             - run: terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
             - run: terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" cr
-            - run: 
+            - run:
                 command: |
                   # If exported configuration is available, then import it.
                   if [ -f "config/system.site.yml" ] ; then
