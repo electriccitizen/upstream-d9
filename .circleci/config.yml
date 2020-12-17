@@ -8,6 +8,7 @@ workflows:
           checkout: false
           terminus_clone_env: "dev"
           pre-steps:
+            - checkout
             - run: composer -n install --optimize-autoloader --ignore-platform-reqs --no-dev
             - run: composer prepare-for-pantheon
           post-steps:
