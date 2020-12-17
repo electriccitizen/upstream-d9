@@ -5,7 +5,6 @@ workflows:
     jobs:
       - pantheon/push:
           clone_content: false
-          checkout: false
           terminus_clone_env: "dev"
           pre-steps:
             - checkout
