@@ -1,13 +1,9 @@
-uuid: 28c81c52-89f0-406b-a0c9-a7f71f284c0c
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:3fcf2449-30a2-4b46-b972-f9ddde522828'
-_core:
-  default_config_hash: 7ZsQ6T6CYFKbp93GBApZFduHHwlDQbPNui4dSe8IjWA
+dependencies: {  }
 id: accordion_item
 label: 'Accordion Item'
-icon_uuid: 3fcf2449-30a2-4b46-b972-f9ddde522828
+icon_uuid: null
+icon_default: null
 description: 'Adds long text accordion content inside accordion groups'
 behavior_plugins: {  }

@@ -2,12 +2,12 @@ name: Electric Citizen
 type: profile
 description: 'Pre-configured install for Electric Citizen site builds.'
 version: 1.0
-core: 8.x
 core_version_requirement: ^8 || ^9
 dependencies:
   - addanother
   - addtoany
   - admin_toolbar
+  - allowed_formats
   - antibot
   - auto_entitylabel
   - automated_cron
@@ -48,18 +48,21 @@ dependencies:
   - flippy
   - focal_point
   - geolocation
+  - geolocation_google_maps
   - google_analytics
   - hal
   - help
   - history
   - image
   - image_style_quality
+  - inline_form_errors
   - layout_builder
   - layout_builder_restrictions
   - layout_discovery
   - link
   - linkit
   - media
+  - media_library
   - menu_block
   - menu_ui
   - metatag
@@ -71,6 +74,7 @@ dependencies:
   - paragraphs_library
   - paragraphs_type_permissions
   - path
+  - path_alias
   - pathologic
   - quickedit
   - quicklink
@@ -78,10 +82,12 @@ dependencies:
   - redirect
   - responsive_image
   - responsive_preview
+  - role_delegation
   - search_api
   - search_api_db
   - serialization
   - shortcut
+  - smart_date
   - superfish
   - system
   - taxonomy
@@ -91,6 +97,7 @@ dependencies:
   - toolbar
   - tour
   - twig_tweak
+  - update
   - user
   - views_bulk_operations
   - views_infinite_scroll
@@ -104,6 +111,7 @@ dependencies:
   - paragraphs
 
 themes:
+  - stable
+  - seven
   - citizen_patterns
   - crane
-  - seven

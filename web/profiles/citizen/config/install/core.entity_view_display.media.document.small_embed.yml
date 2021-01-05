@@ -1,4 +1,3 @@
-uuid: e9491096-e87b-4113-8968-3927efb64789
 langcode: en
 status: true
 dependencies:
@@ -15,8 +14,6 @@ third_party_settings:
     sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: RtAgjysVJJYmI4BBbrWoB2DKgE7ueKBWjHkaMmAuiEM
 id: media.document.small_embed
 targetEntityType: media
 bundle: document
@@ -34,5 +31,6 @@ hidden:
   created: true
   field_media_categories: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

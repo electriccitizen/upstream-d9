@@ -1,4 +1,3 @@
-uuid: 9f798aa6-c375-4aef-bc3e-dd68be530c62
 langcode: en
 status: true
 dependencies:
@@ -6,9 +5,14 @@ dependencies:
     - block_content.type.basic
     - field.storage.block_content.body
   module:
+    - allowed_formats
     - text
-_core:
-  default_config_hash: R__6wc-rMfFMO8d7jcgqnqiA92j8spKhcc5MiqecrMc
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    limited_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
 id: block_content.basic.body
 field_name: body
 entity_type: block_content
@@ -21,4 +25,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   display_summary: false
+  required_summary: false
 field_type: text_with_summary

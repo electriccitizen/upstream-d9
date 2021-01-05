@@ -1,4 +1,3 @@
-uuid: b006a1cf-9613-4773-a587-c6716c9a009e
 langcode: en
 status: true
 dependencies:
@@ -13,7 +12,7 @@ effects:
     id: focal_point_scale_and_crop
     weight: 1
     data:
-      width: 500
+      width: 480
       height: 400
       crop_type: focal_point
   05a5bfd3-7542-4895-ab1f-9e27aa008f04:

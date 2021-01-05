@@ -1,11 +1,8 @@
-uuid: 2cf0b8a6-f6f4-4c63-9d1e-8afcd54fec1c
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: ut1LlUmsk3YP8sI0PbveDrKnU6Vm6dZEpXnsHHo0k0w
 id: profiles
 label: Profiles
 type: 'canonical_entities:node'

@@ -1,12 +1,9 @@
-uuid: bfd044e0-77b2-4282-bac5-28788518f2a7
 langcode: en
 status: true
 dependencies:
   module:
     - focal_point
     - image_style_quality
-_core:
-  default_config_hash: KNNoyfiiJo06M2n_1FBWjXqdJEvWpmsvruZvh9m_Wtk
 name: banner_mobile_2x
 label: 'Banner Mobile 2x'
 effects:

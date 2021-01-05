@@ -1,11 +1,9 @@
-uuid: d805af03-7a00-470c-abf5-343d2e56b61c
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:03206ce8-e9fe-440c-b769-ca239c14fc4b'
+dependencies: {  }
 id: view_placer
 label: 'View Placer'
-icon_uuid: 03206ce8-e9fe-440c-b769-ca239c14fc4b
+icon_uuid: null
+icon_default: null
 description: 'Places a view display in a section. NOTE: Must know view machine name and display machine name. <strong>Warning:</strong> Not for use with view pages.'
 behavior_plugins: {  }

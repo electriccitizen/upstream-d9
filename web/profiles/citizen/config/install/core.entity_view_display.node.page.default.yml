@@ -1,4 +1,3 @@
-uuid: 1f8779ec-31b4-4388-908b-07977be047fd
 langcode: en
 status: true
 dependencies:
@@ -25,7 +24,8 @@ third_party_settings:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           ca1122ff-a530-4198-9ab8-9bcc434bc479:
             uuid: ca1122ff-a530-4198-9ab8-9bcc434bc479
@@ -76,26 +76,27 @@ third_party_settings:
             weight: 2
         third_party_settings: {  }
       -
-        layout_id: two_column_sidebar
-        layout_settings: {  }
+        layout_id: two_column_sidebar_left
+        layout_settings:
+          label: ''
         components:
           8b5f525e-0dcc-435f-bbdf-eabc88b5e8b6:
             uuid: 8b5f525e-0dcc-435f-bbdf-eabc88b5e8b6
-            region: sidebar
+            region: first
             configuration:
               id: 'menu_block:main'
               label: 'In This Section'
               provider: menu_block
               label_display: visible
-              follow: 1
+              follow: true
               follow_parent: active
               level: 1
               depth: 3
-              expand: 1
+              expand: true
               parent: 'main:'
               label_type: root
               label_link: 1
-              suggestion: page_menu
+              suggestion: section_menu
               context_mapping: {  }
             additional: {  }
             weight: 0
@@ -116,8 +117,8 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 0
-          4220d5f8-189d-4709-a2bd-877a364e8688:
-            uuid: 4220d5f8-189d-4709-a2bd-877a364e8688
+          4af4147d-85ac-4ef5-b37d-9e1f8e2e9872:
+            uuid: 4af4147d-85ac-4ef5-b37d-9e1f8e2e9872
             region: content
             configuration:
               id: 'field_block:node:page:field_paragraphs'
@@ -144,7 +145,6 @@ third_party_settings:
         AddToAny: {  }
         'Chaos Tools': {  }
         Content: {  }
-        core: {  }
         Flippy: {  }
         Forms: {  }
         Help: {  }
@@ -157,11 +157,13 @@ third_party_settings:
           - system_breadcrumb_block
         User: {  }
         'User fields': {  }
+        Webform:
+          - webform_block
+        core: {  }
       allowed_layouts:
         - layout_onecol
-        - two_column_sidebar
-_core:
-  default_config_hash: 6cLH5reWp4HB-2AJp7PY1kXioC8KrzluoED6Q9UGPHw
+        - two_column_sidebar_left
+        - two_column_sidebar_right
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -200,3 +202,4 @@ content:
 hidden:
   field_metatags: true
   links: true
+  search_api_excerpt: true

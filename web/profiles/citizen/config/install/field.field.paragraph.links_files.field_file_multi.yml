@@ -1,4 +1,3 @@
-uuid: 7f8af6a3-af53-41a7-b489-d5df94204a0c
 langcode: en
 status: true
 dependencies:
@@ -11,7 +10,7 @@ field_name: field_file_multi
 entity_type: paragraph
 bundle: links_files
 label: Files
-description: 'Add new files or select existing files from the media library.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

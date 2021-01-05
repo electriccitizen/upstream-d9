@@ -1,10 +1,8 @@
-uuid: 1fd9aca1-6e66-4d2b-9a32-c9c71bb2628c
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.media.thumbnail_cropped
-    - field.field.media.image.field_caption
     - field.field.media.image.field_media_categories
     - field.field.media.image.field_media_image
     - media.type.image

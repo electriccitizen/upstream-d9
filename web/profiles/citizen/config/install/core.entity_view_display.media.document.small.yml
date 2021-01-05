@@ -1,4 +1,3 @@
-uuid: b3ba112c-bbe1-44e3-ab53-fb31e9a38520
 langcode: en
 status: false
 dependencies:
@@ -15,8 +14,6 @@ third_party_settings:
     sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: cxFCCnNVKFpeNMkFB4trJS1bSnsMWv-H8eegZdQvT8Q
 id: media.document.small
 targetEntityType: media
 bundle: document
@@ -34,5 +31,6 @@ hidden:
   created: true
   field_media_categories: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

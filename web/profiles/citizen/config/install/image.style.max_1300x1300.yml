@@ -1,12 +1,9 @@
-uuid: da7c0f42-da51-472f-9ffb-c4f45661ebf5
 langcode: en
 status: true
 dependencies:
   enforced:
     module:
       - responsive_image
-_core:
-  default_config_hash: oEWCuzHsESKl_K4Jyoswikfibm8NXAbaV4jpBbgVvME
 name: max_1300x1300
 label: 'Max 1300x1300'
 effects:

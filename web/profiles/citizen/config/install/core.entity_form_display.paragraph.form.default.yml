@@ -1,4 +1,3 @@
-uuid: b0aea852-4f18-422c-99cb-a3d7cd9b07d0
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - paragraphs.paragraphs_type.form
   module:
     - webform
-_core:
-  default_config_hash: 2aO7q9w8B-je1MG54aFSCQM9SOdu0qpSo6nukwmWJQo
 id: paragraph.form.default
 targetEntityType: paragraph
 bundle: form
@@ -18,7 +15,7 @@ content:
   field_form:
     weight: 2
     settings:
-      default_data: true
+      default_data: false
     third_party_settings: {  }
     type: webform_entity_reference_select
     region: content

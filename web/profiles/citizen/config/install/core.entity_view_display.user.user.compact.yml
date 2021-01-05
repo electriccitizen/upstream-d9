@@ -1,11 +1,9 @@
-uuid: 73b42e6d-7515-4730-bc61-739dfcbe342d
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_user_image
-    - field.field.user.user.field_user_quick_links
   module:
     - layout_builder
     - layout_discovery
@@ -15,12 +13,11 @@ third_party_settings:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components: {  }
         third_party_settings: {  }
     enabled: true
-_core:
-  default_config_hash: 1jV7tW1bYyDddxe_sUIDaD8ZAaGEek8nl3l4Y-Cd3-I
 id: user.user.compact
 targetEntityType: user
 bundle: user
@@ -28,6 +25,8 @@ mode: compact
 content: {  }
 hidden:
   field_authored_placeholder: true
+  field_first_name: true
+  field_last_name: true
   field_user_image: true
-  field_user_quick_links: true
   member_for: true
+  search_api_excerpt: true

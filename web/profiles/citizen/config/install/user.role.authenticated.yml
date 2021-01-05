@@ -1,9 +1,6 @@
-uuid: 050becef-cb9c-4384-b573-776dd6cd5ea4
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: Ht97Ia9VKPm6Gw6sMXrORIEzPOgp6sXbCNdqa-fEXb8
 id: authenticated
 label: 'Authenticated user'
 weight: 1
@@ -19,6 +16,7 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'use text format basic_html'
+  - 'use text format limited_html'
   - 'view disqus comments'
   - 'view media'
   - 'view paragraph content accordion_group'

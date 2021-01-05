@@ -1,10 +1,8 @@
-uuid: cb27e03f-6cf6-4769-a2d7-116a6b2637bb
 langcode: en
 status: true
 dependencies:
   config:
     - core.entity_view_mode.media.banner
-    - field.field.media.image.field_caption
     - field.field.media.image.field_media_categories
     - field.field.media.image.field_media_image
     - media.type.image
@@ -17,8 +15,6 @@ third_party_settings:
     sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: s5MJFi6aQfX_l9wyQDkoxGGenBkfMSf7chdjvuTU1uo
 id: media.image.banner
 targetEntityType: media
 bundle: image
@@ -38,5 +34,6 @@ hidden:
   field_caption: true
   field_media_categories: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

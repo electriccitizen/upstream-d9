@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter
+label: Newsletter
+revision: 0
+description: 'Used for embedded newsletter signup blocks.'

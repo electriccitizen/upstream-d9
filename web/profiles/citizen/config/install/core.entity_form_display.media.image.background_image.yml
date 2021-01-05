@@ -1,4 +1,3 @@
-uuid: e995893a-ab0b-404b-af75-4a84f64a67f2
 langcode: en
 status: true
 dependencies:
@@ -11,8 +10,6 @@ dependencies:
     - media.type.image
   module:
     - focal_point
-_core:
-  default_config_hash: RoFWXq9TE3JLpNwhIhChH60ZmaSkjxQfZmLs6sfLY-o
 id: media.image.background_image
 targetEntityType: media
 bundle: image
@@ -20,7 +17,7 @@ mode: background_image
 content:
   field_media_categories:
     type: options_select
-    weight: 2
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -34,17 +31,10 @@ content:
     third_party_settings: {  }
     type: image_focal_point
     region: content
-  name:
-    type: string_textfield
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
 hidden:
   created: true
   field_caption: true
+  name: true
   path: true
   status: true
   uid: true

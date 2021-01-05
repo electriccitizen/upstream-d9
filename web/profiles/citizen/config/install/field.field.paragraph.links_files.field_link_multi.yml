@@ -1,4 +1,3 @@
-uuid: 690fbbea-7e7b-4a38-87b8-2cb4d46718f1
 langcode: en
 status: true
 dependencies:
@@ -12,7 +11,7 @@ field_name: field_link_multi
 entity_type: paragraph
 bundle: links_files
 label: Links
-description: 'Add links to existing nodes or files as well as external urls.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

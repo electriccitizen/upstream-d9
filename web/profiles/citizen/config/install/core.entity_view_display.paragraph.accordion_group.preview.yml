@@ -1,4 +1,3 @@
-uuid: 38e57e95-a43c-4212-9e7d-fb15bc1fe134
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: dBcAEE4FictnV5HfCiQPbf5AcAnQrlm5NeQWE6N9w_Y
 id: paragraph.accordion_group.preview
 targetEntityType: paragraph
 bundle: accordion_group

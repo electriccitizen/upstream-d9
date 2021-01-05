@@ -1,4 +1,3 @@
-uuid: 72550ff7-624a-44e7-90ca-8f23017ed984
 langcode: en
 status: true
 dependencies:
@@ -6,9 +5,14 @@ dependencies:
     - field.storage.node.body
     - node.type.landing_page
   module:
+    - allowed_formats
     - text
-_core:
-  default_config_hash: LqgVWVk9FStxGvXXRybicR4fduENmHXQzLQm-DHkQtQ
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    limited_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
 id: node.landing_page.body
 field_name: body
 entity_type: node
@@ -21,4 +25,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   display_summary: true
+  required_summary: false
 field_type: text_with_summary

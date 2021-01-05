@@ -1,4 +1,3 @@
-uuid: edf7e7a3-9edc-46ba-8288-bff711078a8e
 langcode: en
 status: true
 dependencies:
@@ -7,8 +6,6 @@ dependencies:
     - node.type.blog
   module:
     - metatag
-_core:
-  default_config_hash: JcL2GQ_P9FOcDuWTVIw-yAnXW3Wa_O-XGAjuD6TrPNs
 id: node.blog.field_metatags
 field_name: field_metatags
 entity_type: node

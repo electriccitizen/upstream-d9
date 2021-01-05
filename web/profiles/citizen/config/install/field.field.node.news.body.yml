@@ -1,4 +1,3 @@
-uuid: 90e78711-4947-4996-bced-001fb67376c3
 langcode: en
 status: true
 dependencies:
@@ -6,9 +5,14 @@ dependencies:
     - field.storage.node.body
     - node.type.news
   module:
+    - allowed_formats
     - text
-_core:
-  default_config_hash: qFeCHzABeYlcb1kjIjrjsRZuOWcKUVWDksMTLXfj_8M
+third_party_settings:
+  allowed_formats:
+    basic_html: basic_html
+    limited_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
 id: node.news.body
 field_name: body
 entity_type: node
@@ -21,4 +25,5 @@ default_value: {  }
 default_value_callback: ''
 settings:
   display_summary: true
+  required_summary: false
 field_type: text_with_summary

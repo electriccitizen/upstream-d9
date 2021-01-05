@@ -1,4 +1,3 @@
-uuid: 64042b27-97fe-4ba6-9196-30155e337ed8
 langcode: en
 status: true
 dependencies:
@@ -6,14 +5,19 @@ dependencies:
     - field.storage.node.field_event_pin_info
     - node.type.event
   module:
+    - allowed_formats
     - text
-_core:
-  default_config_hash: J2pqUZwsn1eSR3LTQj8IC1H2cSVx8FxTScBMOEr6TBk
+third_party_settings:
+  allowed_formats:
+    limited_html: limited_html
+    basic_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
 id: node.event.field_event_pin_info
 field_name: field_event_pin_info
 entity_type: node
 bundle: event
-label: 'Event Pin Info'
+label: 'Map Pin Info'
 description: 'Add the information you wish to show on the map pin.'
 required: false
 translatable: false

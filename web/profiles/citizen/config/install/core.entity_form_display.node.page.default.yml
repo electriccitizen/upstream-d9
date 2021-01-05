@@ -1,22 +1,17 @@
-uuid: defe1f72-33bd-489f-ad57-0b5a1a0f5ac0
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.background_image
     - field.field.node.page.body
     - field.field.node.page.field_banner
     - field.field.node.page.field_metatags
     - field.field.node.page.field_paragraphs
     - node.type.page
   module:
-    - entity_browser_entity_form
-    - inline_entity_form
+    - media_library
     - metatag
     - paragraphs
     - text
-_core:
-  default_config_hash: Cy5cg2L6ghXtZRwpVMt1QUd7AmwVXOq5F_y4ZUJa_TI
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -29,29 +24,20 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
     region: content
   field_banner:
-    type: inline_entity_form_complex
-    weight: 1
+    type: media_library_widget
+    weight: 0
     settings:
-      form_mode: background_image
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: image_browser
+      media_types: {  }
+    third_party_settings: {  }
     region: content
   field_metatags:
     weight: 4
-    settings: {  }
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
@@ -69,9 +55,9 @@ content:
       form_display_mode: default
       default_paragraph_type: _none
       features:
+        add_above: '0'
         collapse_edit_all: collapse_edit_all
         duplicate: '0'
-        add_above: '0'
     third_party_settings: {  }
     region: content
   status:
@@ -83,7 +69,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''

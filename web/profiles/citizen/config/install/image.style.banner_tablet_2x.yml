@@ -1,12 +1,9 @@
-uuid: c72b428f-1445-4a89-8c2d-97b295092ecb
 langcode: en
 status: true
 dependencies:
   module:
     - focal_point
     - image_style_quality
-_core:
-  default_config_hash: rg1Uge61AWrcbclT84Vqu3Q_AAd2f7w510l3JWjzeTo
 name: banner_tablet_2x
 label: 'Banner Tablet 2x'
 effects:
@@ -16,7 +13,7 @@ effects:
     weight: 1
     data:
       width: 1600
-      height: 900
+      height: 896
       crop_type: focal_point
   2c05bd5c-220b-4a31-a9d6-44d04e546b2b:
     uuid: 2c05bd5c-220b-4a31-a9d6-44d04e546b2b

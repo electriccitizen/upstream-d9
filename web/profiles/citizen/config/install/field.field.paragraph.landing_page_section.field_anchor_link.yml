@@ -1,4 +1,3 @@
-uuid: 5f1e12fa-f932-4cb3-89ce-9947dd5993dd
 langcode: en
 status: true
 dependencies:
@@ -10,7 +9,7 @@ field_name: field_anchor_link
 entity_type: paragraph
 bundle: landing_page_section
 label: 'Anchor Link'
-description: 'Add an anchor link to this section. Anchor links will automatically build a table of contents above the first section.'
+description: 'Anchor links will automatically build a table of contents above the first section on the page.'
 required: false
 translatable: false
 default_value: {  }

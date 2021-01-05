@@ -1,4 +1,3 @@
-uuid: fc04f569-5ed0-4f71-a756-b4214bd3e46d
 langcode: en
 status: true
 dependencies:
@@ -14,24 +13,20 @@ dependencies:
     - responsive_image
 third_party_settings:
   layout_builder:
-    sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: Tvt5IJw5Erk1uxEBccS1MkGjLFQz7GIgVTZbLY-bD_Q
 id: media.image.large
 targetEntityType: media
 bundle: image
 mode: large
 content:
   field_caption:
-    type: string
+    type: basic_string
     weight: 1
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
     region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_media_image:
     type: responsive_image
     weight: 0
@@ -46,5 +41,6 @@ hidden:
   created: true
   field_media_categories: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

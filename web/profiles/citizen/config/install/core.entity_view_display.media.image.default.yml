@@ -1,4 +1,3 @@
-uuid: 7b68c9bd-c6fc-4da1-bc06-d068ca231363
 langcode: en
 status: true
 dependencies:
@@ -15,13 +14,12 @@ bundle: image
 mode: default
 content:
   field_caption:
-    type: string
     weight: 1
-    region: content
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
+    type: basic_string
+    region: content
   field_media_image:
     type: image
     weight: 0

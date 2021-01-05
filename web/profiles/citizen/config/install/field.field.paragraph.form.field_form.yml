@@ -1,4 +1,3 @@
-uuid: a494062a-f69e-409b-9e60-8de5dadb856a
 langcode: en
 status: true
 dependencies:
@@ -12,8 +11,8 @@ field_name: field_form
 entity_type: paragraph
 bundle: form
 label: Form
-description: 'Select the form you wish to add. <strong>NOTE:</strong> If you don''t see the form you wish to add in the list, you may create it <a href="/admin/structure/webform">here</a>.'
-required: false
+description: 'Forms can be created or edited <a href="/admin/structure/webform">here</a> Save your changes to this page first.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

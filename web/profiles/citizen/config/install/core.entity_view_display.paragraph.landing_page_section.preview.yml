@@ -1,4 +1,3 @@
-uuid: 3bb73c27-9955-47f7-b37f-ad6aaecf7e7a
 langcode: en
 status: true
 dependencies:
@@ -25,12 +24,12 @@ bundle: landing_page_section
 mode: preview
 content:
   field_layout:
+    type: list_default
     weight: 0
+    region: content
     label: inline
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-    region: content
   field_section_widgets:
     type: entity_reference_revisions_entity_view
     weight: 2

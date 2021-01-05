@@ -1,4 +1,3 @@
-uuid: f3140b76-ff37-4ef8-8695-181045b64a39
 langcode: en
 status: false
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - editor
     - entity_embed
     - pathologic
-_core:
-  default_config_hash: pgLG5Mf5QuicT2Cd60RdxCLbXDUnPpAauMdLbUgb0KA
 name: 'Full HTML'
 format: full_html
 weight: 1
@@ -54,7 +51,7 @@ filters:
     status: false
     weight: -43
     settings:
-      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre> <drupal-entity data-entity-type data-entity-uuid data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button>'
+      allowed_html: '<a href hreflang data-entity-type data-entity-uuid data-entity-substitution> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre> <drupal-entity data-entity-type data-entity-uuid data-entity-substitution data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_html_escape:
@@ -86,3 +83,10 @@ filters:
       local_settings:
         protocol_style: full
         local_paths: ''
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: -44
+    settings:
+      title: false

@@ -1,9 +1,7 @@
-uuid: cde0c201-548b-49b8-b3d5-73858e2eeb58
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.background_image
     - field.field.node.event.body
     - field.field.node.event.field_banner
     - field.field.node.event.field_category
@@ -13,14 +11,30 @@ dependencies:
     - field.field.node.event.field_metatags
     - node.type.event
   module:
-    - datetime
-    - entity_browser_entity_form
-    - geolocation
-    - inline_entity_form
+    - allowed_formats
+    - field_group
+    - geolocation_google_maps
+    - media_library
     - metatag
+    - smart_date
     - text
-_core:
-  default_config_hash: BFvVE_TAhfYDa9zIJpis4phuabuu5iPKKQtUnfJb1sE
+third_party_settings:
+  field_group:
+    group_location:
+      children:
+        - field_event_location
+        - field_event_pin_info
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: false
+        required_fields: true
+      label: Location
+      region: content
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -33,25 +47,15 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+      show_summary: false
     third_party_settings: {  }
     region: content
   field_banner:
-    weight: 1
+    weight: 0
     settings:
-      form_mode: background_image
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: image_browser
-    type: inline_entity_form_complex
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
     region: content
   field_category:
     weight: 3
@@ -61,56 +65,311 @@ content:
     region: content
   field_date:
     weight: 2
-    settings: {  }
+    settings:
+      modal: false
+      default_duration: 60
+      default_duration_increments: "30\n60|1 hour\n90\n120|2 hours\ncustom"
+      show_extra: true
     third_party_settings: {  }
-    type: datetime_default
+    type: smartdate_default
     region: content
   field_event_location:
-    weight: 5
+    weight: 6
     settings:
-      default_longitude: ''
-      default_latitude: ''
-      auto_client_location: '1'
+      centre:
+        client_location:
+          weight: 0
+          enable: false
+          map_center_id: client_location
+        fixed_boundaries:
+          settings:
+            north: ''
+            east: ''
+            south: ''
+            west: ''
+          weight: 0
+          enable: false
+          map_center_id: fixed_boundaries
+        fit_bounds:
+          enable: true
+          settings:
+            min_zoom: null
+            reset_zoom: false
+          weight: 0
+          map_center_id: fit_bounds
+        fixed_value:
+          settings:
+            latitude: null
+            longitude: null
+            location_option_id: fixed_value
+          weight: 0
+          enable: false
+          map_center_id: location_plugins
+        ipstack:
+          settings:
+            access_key: ''
+            location_option_id: ipstack
+          weight: 0
+          enable: false
+          map_center_id: location_plugins
+        freeogeoip:
+          weight: 0
+          enable: false
+          map_center_id: location_plugins
+          settings:
+            location_option_id: freeogeoip
       auto_client_location_marker: '1'
       google_map_settings:
         height: 400px
         width: 100%
         type: ROADMAP
-        zoom: '10'
-        maxZoom: 18
+        zoom: 10
+        maxZoom: 20
         minZoom: 0
-        mapTypeControl: 1
-        streetViewControl: 1
-        zoomControl: 1
-        fullscreenControl: 1
         gestureHandling: auto
-        draggable: 1
-        style: '[{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#736c68"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#e7e6e5"}]},{"featureType":"landscape.natural","elementType":"all","stylers":[{"visibility":"on"},{"color":"#d4e4d3"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#f5f5f5"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#d4e4d3"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#f5f5f5"}]},{"featureType":"road","elementType":"geometry.stroke","stylers":[{"color":"#e7e6e5"},{"gamma":"0.65"},{"lightness":"0"}]},{"featureType":"transit","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#aad5df"}]}]'
-        info_auto_display: 1
-        marker_icon_path: ''
-        disableAutoPan: 1
-        rotateControl: 0
-        scrollwheel: 0
-        preferScrollingToZooming: 0
-        disableDoubleClickZoom: 0
+        map_features:
+          control_geocoder:
+            enabled: true
+            weight: -100
+            settings:
+              position: TOP_LEFT
+              geocoder: google_geocoding_api
+              settings:
+                label: Address
+                description: 'Enter an address to be localized.'
+                autocomplete_min_length: 1
+                component_restrictions:
+                  route: ''
+                  locality: ''
+                  administrative_area: ''
+                  postal_code: ''
+                  country: ''
+                boundary_restriction:
+                  south: ''
+                  west: ''
+                  north: ''
+                  east: ''
+          marker_infobubble:
+            weight: 0
+            settings:
+              close_other: 1
+              close_button_src: ''
+              shadow_style: 0
+              padding: 10
+              border_radius: 8
+              border_width: 2
+              border_color: '#039be5'
+              background_color: '#fff'
+              min_width: null
+              max_width: 550
+              min_height: null
+              max_height: null
+              arrow_style: 2
+              arrow_position: 30
+              arrow_size: 10
+              close_button: 0
+            enabled: false
+          control_zoom:
+            enabled: true
+            weight: 0
+            settings:
+              position: RIGHT_CENTER
+              behavior: default
+              style: LARGE
+          map_restriction:
+            weight: 0
+            settings:
+              north: ''
+              south: ''
+              east: ''
+              west: ''
+              strict: true
+            enabled: false
+          map_type_style:
+            weight: 0
+            settings:
+              style: '[]'
+            enabled: false
+          marker_clusterer:
+            weight: 0
+            settings:
+              image_path: ''
+              styles: ''
+              zoom_on_click: true
+              grid_size: 60
+              minimum_cluster_size: 2
+              max_zoom: 15
+              average_center: false
+            enabled: false
+          marker_icon:
+            weight: 0
+            settings:
+              marker_icon_path: ''
+              anchor:
+                x: 0
+                'y': 0
+              origin:
+                x: 0
+                'y': 0
+              label_origin:
+                x: 0
+                'y': 0
+              size:
+                width: null
+                height: null
+              scaled_size:
+                width: null
+                height: null
+            enabled: false
+          marker_infowindow:
+            enabled: true
+            weight: 0
+            settings:
+              info_window_solitary: true
+              max_width: null
+              info_auto_display: false
+              disable_auto_pan: false
+          control_rotate:
+            weight: 0
+            settings:
+              position: TOP_LEFT
+              behavior: default
+            enabled: false
+          marker_label:
+            weight: 0
+            settings:
+              color: ''
+              font_family: ''
+              font_size: ''
+              font_weight: ''
+            enabled: false
+          marker_opacity:
+            weight: 0
+            settings:
+              opacity: !!float 1
+            enabled: false
+          geolocation_marker_scroll_to_id:
+            weight: 0
+            settings:
+              scroll_target_id: ''
+            enabled: false
+          marker_zoom_to_animate:
+            weight: 0
+            settings:
+              marker_zoom_anchor_id: ''
+            enabled: false
+          spiderfying:
+            weight: 0
+            settings:
+              spiderfiable_marker_path: /modules/contrib/geolocation/modules/geolocation_google_maps/images/marker-plus.svg
+              markersWontMove: true
+              keepSpiderfied: true
+              nearbyDistance: 20
+              circleSpiralSwitchover: 9
+              circleFootSeparation: 23
+              spiralFootSeparation: 26
+              spiralLengthStart: 11
+              spiralLengthFactor: 4
+              legWeight: 1.5
+              markersWontHide: false
+              ignoreMapClick: false
+            enabled: false
+          google_maps_layer_traffic:
+            weight: 0
+            enabled: false
+          control_streetview:
+            weight: 0
+            settings:
+              position: TOP_LEFT
+              behavior: default
+            enabled: false
+          control_maptype:
+            enabled: true
+            weight: 0
+            settings:
+              position: RIGHT_BOTTOM
+              behavior: default
+              style: DEFAULT
+          control_recenter:
+            enabled: true
+            weight: 0
+            settings:
+              position: TOP_LEFT
+          context_popup:
+            weight: 0
+            settings:
+              content:
+                value: ''
+                format: basic_html
+            enabled: false
+          google_maps_layer_bicycling:
+            weight: 0
+            enabled: false
+          client_location_indicator:
+            weight: 0
+            enabled: false
+          map_disable_tilt:
+            weight: 0
+            enabled: false
+          map_disable_poi:
+            weight: 0
+            enabled: false
+          map_disable_user_interaction:
+            weight: 0
+            enabled: false
+          drawing:
+            weight: 0
+            settings:
+              strokeColor: '#FF0000'
+              strokeOpacity: '0.8'
+              strokeWeight: '2'
+              fillColor: '#FF0000'
+              fillOpacity: '0.35'
+              polyline: false
+              geodesic: false
+              polygon: false
+            enabled: false
+          control_fullscreen:
+            weight: 0
+            settings:
+              position: TOP_LEFT
+              behavior: default
+            enabled: false
+          control_loading_indicator:
+            weight: 0
+            settings:
+              position: TOP_LEFT
+              loading_label: Loading
+            enabled: false
+          control_locate:
+            enabled: true
+            weight: 0
+            settings:
+              position: TOP_LEFT
+          google_maps_layer_transit:
+            weight: 0
+            enabled: false
       allow_override_map_settings: 0
-      populate_address_field: ''
-      target_address_field: null
-      explicite_actions_address_field: ''
+      hide_textfield_form: false
+      auto_client_location: ''
     third_party_settings: {  }
     type: geolocation_googlegeocoder
     region: content
   field_event_pin_info:
-    weight: 6
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
     type: text_textarea
     region: content
   field_metatags:
-    weight: 9
-    settings: {  }
+    weight: 8
+    settings:
+      sidebar: true
     third_party_settings: {  }
     type: metatag_firehose
     region: content
@@ -118,26 +377,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 7
+    weight: 6
     third_party_settings: {  }
     region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 9
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 8
+    weight: 7
     third_party_settings: {  }
     region: content
   title:
     type: string_textfield
-    weight: 0
+    weight: 1
     settings:
       size: 60
       placeholder: ''

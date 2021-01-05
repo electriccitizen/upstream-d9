@@ -1,4 +1,3 @@
-uuid: 05a5dbb8-7cfd-44a4-9a58-f20983297f53
 langcode: en
 status: true
 dependencies:
@@ -9,8 +8,6 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-_core:
-  default_config_hash: ChTGtbSbmXFgUEM4WxYiv_xTq2P5kqC-a2QPy5oU-6M
 name: 'Landing Page'
 type: landing_page
 description: 'Use for home page and other landing pages.'

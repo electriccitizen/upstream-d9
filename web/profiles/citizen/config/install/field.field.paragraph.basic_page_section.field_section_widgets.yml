@@ -1,4 +1,3 @@
-uuid: 99f94f10-52c6-49b0-b772-c72438b8ec69
 langcode: en
 status: true
 dependencies:
@@ -54,6 +53,12 @@ settings:
       form:
         enabled: true
         weight: -27
+      from_library:
+        weight: -18
+        enabled: false
+      gallery:
+        weight: -19
+        enabled: false
       horizontal_rule:
         enabled: true
         weight: -26
@@ -75,12 +80,6 @@ settings:
       video:
         enabled: true
         weight: -20
-      gallery:
-        weight: -19
-        enabled: false
-      from_library:
-        weight: -18
-        enabled: false
       view_placer:
         weight: -17
         enabled: false

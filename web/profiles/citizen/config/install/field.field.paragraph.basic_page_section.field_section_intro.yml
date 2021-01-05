@@ -1,4 +1,3 @@
-uuid: c2aaae73-50d2-48d2-b2a0-d29df1254b97
 langcode: en
 status: true
 dependencies:
@@ -6,13 +5,20 @@ dependencies:
     - field.storage.paragraph.field_section_intro
     - paragraphs.paragraphs_type.basic_page_section
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    limited_html: limited_html
+    basic_html: '0'
+    restricted_html: '0'
+    plain_text: '0'
 id: paragraph.basic_page_section.field_section_intro
 field_name: field_section_intro
 entity_type: paragraph
 bundle: basic_page_section
 label: 'Section Intro'
-description: 'Add some introductory text for this section.'
+description: ''
 required: false
 translatable: false
 default_value: {  }

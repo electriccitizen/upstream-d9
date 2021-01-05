@@ -1,4 +1,3 @@
-uuid: 9451ed06-4204-4c55-add4-1ec9349fed84
 langcode: en
 status: true
 dependencies:
@@ -12,9 +11,9 @@ field_name: field_layout
 entity_type: paragraph
 bundle: landing_page_section
 label: Layout
-description: 'Set the widget layout for this section. Two column will place widgets side by side in horizontal rows. Left or Right will constrain the widget to 50% of the section width and position them on the left or the right side.'
+description: ''
 required: true
-translatable: true
+translatable: false
 default_value:
   -
     value: full

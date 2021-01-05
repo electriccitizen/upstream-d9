@@ -1,12 +1,9 @@
-uuid: 8ba0b24f-ec1c-40d8-9d4b-2c90e8251a3f
 langcode: en
 status: true
 dependencies:
   module:
     - geolocation
     - node
-_core:
-  default_config_hash: si6FJxgTCZU5ZE3Q9ir5BArUDlbQpWJzruG3pFhTfbQ
 id: node.field_event_location
 field_name: field_event_location
 entity_type: node

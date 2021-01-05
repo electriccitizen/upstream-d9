@@ -1,4 +1,3 @@
-uuid: 925abd23-faae-4692-ab5c-37b3a0d08a49
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - help
   theme:
     - crane
-_core:
-  default_config_hash: 8PUPaExj33TzDw8YtjstWZ--M6tVgzsLctnXL91zo6E
 id: crane_help
 theme: crane
 region: help

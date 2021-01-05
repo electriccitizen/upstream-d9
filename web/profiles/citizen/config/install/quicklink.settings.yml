@@ -11,5 +11,3 @@ url_patterns_to_ignore: ''
 prefetch_only_paths: ''
 allowed_domains: ''
 enable_debug_mode: false
-_core:
-  default_config_hash: P-Tl0WcQCXKJey6r3MO_gbsRi-tGXdnjdW_G3NYITKE

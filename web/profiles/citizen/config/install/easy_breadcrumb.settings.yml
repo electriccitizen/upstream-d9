@@ -4,13 +4,11 @@ include_title_segment: true
 language_path_prefix_as_segment: false
 use_menu_title_as_fallback: true
 remove_repeated_segments: true
-include_invalid_paths: false
+include_invalid_paths: true
 excluded_paths: node
 segments_separator: null
 title_segment_as_link: false
 title_from_page_when_available: false
-_core:
-  default_config_hash: IbDOjXnq3NK7lYZmb9EGQK2ukELYeoeJ6DmcBDo14UE
 replaced_titles: ''
 home_segment_keep: false
 absolute_paths: false

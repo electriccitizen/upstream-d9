@@ -1,4 +1,3 @@
-uuid: 06a921ba-e991-4fbe-a82f-91ce84464fe7
 langcode: en
 status: true
 dependencies:
@@ -6,14 +5,12 @@ dependencies:
     - field.storage.node.field_category
     - node.type.news
     - taxonomy.vocabulary.categories
-_core:
-  default_config_hash: NqCEagOkQRCTakjAXuNs06Xo71Cs_GGBs1dpoWg_gdY
 id: node.news.field_category
 field_name: field_category
 entity_type: node
 bundle: news
 label: Category
-description: ''
+description: 'Categories may be added or edited <a href="/admin/structure/taxonomy/manage/categories/overview">here</a>. Save your changes to this page first.'
 required: false
 translatable: true
 default_value: {  }

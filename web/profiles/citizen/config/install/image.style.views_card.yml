@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: views_card
+label: 'Views Card'
+effects:
+  fd52bf20-054b-4f50-ac4d-c8f571a1c675:
+    uuid: fd52bf20-054b-4f50-ac4d-c8f571a1c675
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 300
+      crop_type: focal_point

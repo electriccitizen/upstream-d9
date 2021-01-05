@@ -1,4 +1,3 @@
-uuid: 1ea70932-0fd0-4198-91c3-38b5bc48bc95
 langcode: en
 status: true
 dependencies:
@@ -6,14 +5,12 @@ dependencies:
     - field.storage.node.field_tags
     - node.type.blog
     - taxonomy.vocabulary.tags
-_core:
-  default_config_hash: DcIoHIWQkSlMwOR8FwzeidR55RboDtwEgkw7k15QzFc
 id: node.blog.field_tags
 field_name: field_tags
 entity_type: node
 bundle: blog
 label: Tags
-description: 'Select tags from the list. If the tag you wish to add does not exist, you can create it <a href="/admin/structure/taxonomy/manage/tags/add" target="_blank">here</a>. <strong>NOTE:</strong> You will need to save this page and refresh for your newly created tag to appear in the list.'
+description: 'Tags may be added or edited <a href="/admin/structure/taxonomy/manage/tags/overview">here</a>. Save your changes to this page first.'
 required: false
 translatable: false
 default_value: {  }

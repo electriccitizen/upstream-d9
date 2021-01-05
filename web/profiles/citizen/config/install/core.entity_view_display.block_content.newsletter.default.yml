@@ -1,0 +1,67 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.newsletter
+    - field.field.block_content.newsletter.body
+    - field.field.block_content.newsletter.field_form_embed
+    - field.field.block_content.newsletter.field_form_modal
+    - field.field.block_content.newsletter.field_modal_header
+    - field.field.block_content.newsletter.field_modal_intro
+    - field.field.block_content.newsletter.field_modal_trigger
+  module:
+    - text
+id: block_content.newsletter.default
+targetEntityType: block_content
+bundle: newsletter
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_form_embed:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_form_modal:
+    weight: 2
+    label: hidden
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_modal_header:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_modal_intro:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_modal_trigger:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  search_api_excerpt: true

@@ -1,4 +1,3 @@
-uuid: d82aa8ed-9e4e-4ce2-a436-15d5863a8bc5
 langcode: en
 status: true
 dependencies:
@@ -14,7 +13,6 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    sections: {  }
     allow_custom: false
     enabled: false
 id: media.image.medium_embed
@@ -23,12 +21,11 @@ bundle: image
 mode: medium_embed
 content:
   field_caption:
-    type: string
+    type: basic_string
     weight: 1
     region: content
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
   field_media_image:
     type: image
@@ -43,5 +40,6 @@ hidden:
   created: true
   field_media_categories: true
   name: true
+  search_api_excerpt: true
   thumbnail: true
   uid: true

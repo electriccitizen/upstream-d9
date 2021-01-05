@@ -43,8 +43,6 @@ reduce_ascii: false
 case: true
 ignore_words: 'a, an, as, at, before, but, by, for, from, is, in, into, like, of, off, on, onto, per, since, than, the, this, that, to, up, via, with'
 update_action: 2
-_core:
-  default_config_hash: gAGAl399f7ahPUFVYKzuZIjik16jZJPCKe7ZgYYR_w4
 safe_tokens:
   - alias
   - alias

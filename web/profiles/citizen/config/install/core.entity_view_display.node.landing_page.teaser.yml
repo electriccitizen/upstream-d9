@@ -1,4 +1,3 @@
-uuid: d89c6196-9c3d-4857-b404-bc2e0c4f3fb0
 langcode: en
 status: false
 dependencies:
@@ -20,7 +19,8 @@ third_party_settings:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           0a3880a5-3160-496b-b084-6b9bc48796ed:
             uuid: 0a3880a5-3160-496b-b084-6b9bc48796ed
@@ -51,8 +51,6 @@ third_party_settings:
         third_party_settings: {  }
     enabled: true
     allow_custom: false
-_core:
-  default_config_hash: H5NYP2wiQsA3PZwlgbAXrF5Wc2q9rO9dCqXx-6bJ06g
 id: node.landing_page.teaser
 targetEntityType: node
 bundle: landing_page
@@ -77,3 +75,4 @@ hidden:
   field_metatags: true
   field_paragraphs: true
   layout_builder__layout: true
+  search_api_excerpt: true

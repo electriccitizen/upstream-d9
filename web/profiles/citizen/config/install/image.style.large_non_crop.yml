@@ -1,4 +1,3 @@
-uuid: 93734c37-6b02-4e05-a690-59275a7bd828
 langcode: en
 status: true
 dependencies: {  }
@@ -10,6 +9,6 @@ effects:
     id: image_scale
     weight: 1
     data:
-      width: 900
+      width: 800
       height: null
       upscale: true

@@ -1,4 +1,3 @@
-uuid: b3c2ab3f-4d52-4b2c-b35f-4dc6d9673b00
 langcode: en
 status: true
 dependencies:
@@ -10,8 +9,6 @@ dependencies:
     - taxonomy
     - node
     - search_api
-_core:
-  default_config_hash: 4xFhn8nKQAWjrpZDlNwBbMHvO2ixm6zAt2HjtJDCaKw
 id: nodes
 name: Content
 description: 'Search settings for nodes, paragraphs, terms.'

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: number_date_short
+label: 'Number Date Short'
+locked: false
+pattern: n/j/y

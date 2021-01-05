@@ -1,12 +1,9 @@
-uuid: 2d54c6f8-9ba3-40b8-a859-b32676487e26
 langcode: en
 status: true
 dependencies:
   module:
     - options
     - paragraphs
-_core:
-  default_config_hash: BH2QTXDdnXH5W33ThZOlfbXlsErNYifJhe2cKiCxZWA
 id: paragraph.field_layout
 field_name: field_layout
 entity_type: paragraph
@@ -15,16 +12,13 @@ settings:
   allowed_values:
     -
       value: full
-      label: 'Full Width Widgets'
+      label: 'Full Width'
     -
-      value: columned
-      label: 'Two columns'
+      value: two-column
+      label: 'Two Column'
     -
-      value: left
-      label: '50% Left'
-    -
-      value: right
-      label: '50% Right'
+      value: three-column
+      label: 'Three Column'
   allowed_values_function: ''
 module: options
 locked: false

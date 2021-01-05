@@ -1,4 +1,3 @@
-uuid: 31d6abd4-a207-4f65-b348-b6e49653a99f
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,7 @@ dependencies:
     - field.field.paragraph.gallery.field_widget_title
     - paragraphs.paragraphs_type.gallery
   module:
-    - entity_browser_entity_form
-    - inline_entity_form
+    - media_library
 id: paragraph.gallery.default
 targetEntityType: paragraph
 bundle: gallery
@@ -24,20 +22,9 @@ content:
   field_image_multi:
     weight: 2
     settings:
-      form_mode: default
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: image_browser
-    type: inline_entity_form_complex
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
     region: content
   field_widget_title:
     weight: 0

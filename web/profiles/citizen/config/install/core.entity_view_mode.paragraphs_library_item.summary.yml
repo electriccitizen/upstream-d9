@@ -1,11 +1,8 @@
-uuid: 592e4167-13f5-45a6-86a9-e29468830c26
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs_library
-_core:
-  default_config_hash: TbSUZ9vGBsuD2hgOqJPA3QGW49GEeekrpP9TywTYrUo
 id: paragraphs_library_item.summary
 label: Summary
 targetEntityType: paragraphs_library_item

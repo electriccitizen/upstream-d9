@@ -1,11 +1,8 @@
-uuid: 09113f4c-d811-4fe9-b451-881142536b62
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: PXwUlRHes3UKkUdCB8ppCsg7iMjbZet9AcNAhafjNZU
 id: support
 label: Support
 type: 'canonical_entities:node'

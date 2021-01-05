@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - focal_point
+name: views_card_1_5x
+label: 'Views Card 1.5x'
+effects:
+  9627bec2-1845-47d5-9852-ea3f18f0492c:
+    uuid: 9627bec2-1845-47d5-9852-ea3f18f0492c
+    id: focal_point_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 450
+      crop_type: focal_point

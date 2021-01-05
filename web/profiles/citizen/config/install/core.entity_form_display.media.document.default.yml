@@ -1,4 +1,3 @@
-uuid: 2ff14e98-42e7-4009-ac9c-e21e5ce76e7c
 langcode: en
 status: true
 dependencies:
@@ -8,15 +7,13 @@ dependencies:
     - media.type.document
   module:
     - file
-_core:
-  default_config_hash: t3ud7HjgOULIc71VOr-tCIDqvu1iMQKuVpGelU0hs84
 id: media.document.default
 targetEntityType: media
 bundle: document
 mode: default
 content:
   field_media_categories:
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
     type: options_select
@@ -28,16 +25,9 @@ content:
     third_party_settings: {  }
     type: file_generic
     region: content
-  name:
-    type: string_textfield
-    weight: 1
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    region: content
 hidden:
   created: true
+  name: true
   path: true
   status: true
   uid: true

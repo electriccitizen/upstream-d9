@@ -1,4 +1,3 @@
-uuid: e11c28c4-d704-43c2-a6f7-f9fb6eb4b1e3
 langcode: en
 status: true
 dependencies:
@@ -12,12 +11,12 @@ dependencies:
     - field.field.node.event.field_metatags
     - node.type.event
   module:
-    - datetime
     - geolocation
     - layout_builder
     - layout_builder_restrictions
     - layout_discovery
     - metatag
+    - smart_date
     - system
     - text
     - user
@@ -26,7 +25,8 @@ third_party_settings:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           4f63138d-9667-4838-9eb0-4c192b5807eb:
             uuid: 4f63138d-9667-4838-9eb0-4c192b5807eb
@@ -39,9 +39,11 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+        third_party_settings: {  }
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           d22ea93e-d8cc-45a7-8af2-2662554a5b21:
             uuid: d22ea93e-d8cc-45a7-8af2-2662554a5b21
@@ -79,25 +81,6 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 2
-          8474271f-64ef-448f-83bd-e59284858f0a:
-            uuid: 8474271f-64ef-448f-83bd-e59284858f0a
-            region: content
-            configuration:
-              id: 'field_block:node:event:field_date'
-              label: Date
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: datetime_default
-                settings:
-                  timezone_override: ''
-                  format_type: oc_short_date_time
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 3
           5157183b-4d56-4741-9dde-4201fd1e702f:
             uuid: 5157183b-4d56-4741-9dde-4201fd1e702f
             region: content
@@ -114,10 +97,34 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
+            weight: 5
+          c8aa080c-f383-4d57-a27e-bd5962d90cf9:
+            uuid: c8aa080c-f383-4d57-a27e-bd5962d90cf9
+            region: content
+            configuration:
+              id: 'field_block:node:event:field_date'
+              label: Date
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: smartdate_default
+                settings:
+                  timezone_override: America/North_Dakota/Center
+                  format: number_date_short
+                  force_chronological: false
+                  add_classes: 0
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
             weight: 4
+        third_party_settings: {  }
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           b7759f63-8c59-4aaf-ac98-dd1de48175e4:
             uuid: b7759f63-8c59-4aaf-ac98-dd1de48175e4
@@ -131,7 +138,7 @@ third_party_settings:
                 label: hidden
                 type: geolocation_map
                 settings:
-                  set_marker: '1'
+                  set_marker: true
                   title: ''
                   info_text: '[node:field_event_pin_info]'
                   replacement_patterns:
@@ -158,12 +165,13 @@ third_party_settings:
                     info_auto_display: 0
                     marker_icon_path: ''
                     disableAutoPan: 0
-                  use_overridden_map_settings: 1
+                  use_overridden_map_settings: true
                 third_party_settings: {  }
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
+        third_party_settings: {  }
     allow_custom: false
     is_enabled: true
     enabled: true
@@ -187,8 +195,9 @@ third_party_settings:
         Webform: {  }
       allowed_layouts:
         - layout_onecol
-_core:
-  default_config_hash: loMHYsfHZt2ah-BioORO_TAK_v7Gf-b6gCl285D03zk
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+    allowed_block_categories: {  }
 id: node.event.default
 targetEntityType: node
 bundle: event
@@ -213,23 +222,29 @@ content:
     weight: 5
     label: above
     settings:
+      format: default
+      force_chronological: false
+      add_classes: 0
       format_type: medium
       timezone_override: ''
     third_party_settings: {  }
-    type: datetime_default
+    type: smartdate_default
     region: content
   field_event_location:
     weight: 3
     label: hidden
     settings:
-      set_marker: '1'
+      set_marker: true
       title: ' '
       info_text: '[node:field_event_pin_info]'
-      google_map_settings:
+      use_overridden_map_settings: false
+      common_map: false
+      map_provider_id: google_maps
+      map_provider_settings:
         height: 400px
         width: 100%
         type: ROADMAP
-        zoom: '10'
+        zoom: 10
         maxZoom: 18
         minZoom: 0
         mapTypeControl: 1
@@ -241,13 +256,11 @@ content:
         style: '[{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"visibility":"off"},{"color":"#767676"}]},{"featureType":"administrative.locality","elementType":"labels.text","stylers":[{"visibility":"simplified"},{"color":"#767676"},{"lightness":"-23"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#acd5cb"},{"visibility":"on"},{"lightness":"49"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#acd5cb"},{"lightness":"49"}]}]'
         marker_icon_path: ''
         disableAutoPan: 1
-        rotateControl: 0
+        rotateControl: false
         scrollwheel: 0
         preferScrollingToZooming: 0
         disableDoubleClickZoom: 0
         info_auto_display: 0
-      use_overridden_map_settings: 0
-      common_map: ''
     third_party_settings: {  }
     type: geolocation_map
     region: content
@@ -263,3 +276,4 @@ hidden:
   field_category: true
   field_event_pin_info: true
   links: true
+  search_api_excerpt: true

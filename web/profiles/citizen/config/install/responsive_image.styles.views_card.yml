@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.views_card
+    - image.style.views_card_1_5x
+    - image.style.views_card_2x
+  theme:
+    - citizen_patterns
+id: views_card
+label: 'Views Card'
+image_style_mappings:
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 1.5x
+    image_mapping_type: image_style
+    image_mapping: views_card_1_5x
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: views_card
+  -
+    breakpoint_id: citizen_patterns.mobile
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: views_card_2x
+breakpoint_group: citizen_patterns
+fallback_image_style: views_card

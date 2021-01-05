@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+id: dev
+label: Dev
+description: ''
+folder: ''
+module: {  }
+theme: {  }
+blacklist: {  }
+graylist:
+  - system.performance
+graylist_dependents: true
+graylist_skip_equal: true
+weight: 0

@@ -1,12 +1,9 @@
-uuid: e668d58c-397d-420e-b8ea-93148ca3938e
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
     - paragraphs_library
-_core:
-  default_config_hash: aTe9MqUtfCXSC7zp5SoWgKgXe925AlxMsk7Y890c1G0
 id: paragraph.field_reusable_paragraph
 field_name: field_reusable_paragraph
 entity_type: paragraph

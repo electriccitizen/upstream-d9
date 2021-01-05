@@ -1,4 +1,3 @@
-uuid: eb46d2a1-3f90-48b0-a3bc-c5f612c6dcc4
 langcode: en
 status: true
 dependencies:
@@ -23,7 +22,8 @@ third_party_settings:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           176805da-bf9e-449d-bffe-958a00a7ba3f:
             uuid: 176805da-bf9e-449d-bffe-958a00a7ba3f
@@ -54,10 +54,32 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
+        third_party_settings: {  }
       -
-        layout_id: two_column_sidebar
-        layout_settings: {  }
+        layout_id: two_column_sidebar_left
+        layout_settings:
+          label: ''
         components:
+          1a1fb60d-635c-4fb6-8459-2db1a58899a2:
+            uuid: 1a1fb60d-635c-4fb6-8459-2db1a58899a2
+            region: first
+            configuration:
+              id: 'menu_block:support-book'
+              label: 'Web Editor Guide'
+              provider: menu_block
+              label_display: visible
+              follow: false
+              follow_parent: child
+              level: 1
+              depth: 3
+              expand: true
+              parent: 'support-book:'
+              label_type: block
+              label_link: 0
+              suggestion: section_menu
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
           58d10ca4-4bf0-4749-8356-d869e88388e4:
             uuid: 58d10ca4-4bf0-4749-8356-d869e88388e4
             region: content
@@ -93,26 +115,7 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
-          1a1fb60d-635c-4fb6-8459-2db1a58899a2:
-            uuid: 1a1fb60d-635c-4fb6-8459-2db1a58899a2
-            region: sidebar
-            configuration:
-              id: 'menu_block:support-book'
-              label: 'Web Editor Guide'
-              provider: menu_block
-              label_display: visible
-              follow: 0
-              follow_parent: child
-              level: 1
-              depth: 3
-              expand: 1
-              parent: 'support-book:'
-              label_type: block
-              label_link: 0
-              suggestion: page_menu
-              context_mapping: {  }
-            additional: {  }
-            weight: 0
+        third_party_settings: {  }
     allow_custom: false
     is_enabled: true
     enabled: true
@@ -122,7 +125,6 @@ third_party_settings:
         AddToAny: {  }
         'Chaos Tools': {  }
         Content: {  }
-        core: {  }
         Flippy: {  }
         Forms: {  }
         Help: {  }
@@ -135,11 +137,11 @@ third_party_settings:
           - system_breadcrumb_block
         User: {  }
         'User fields': {  }
+        core: {  }
       allowed_layouts:
         - layout_onecol
-        - two_column_sidebar
-_core:
-  default_config_hash: zs7lQwC-x3RO8F51uxAs-b0WMoO79Uls3sPCfC8Ggks
+        - two_column_sidebar_left
+        - two_column_sidebar_right
 id: node.support_book.default
 targetEntityType: node
 bundle: support_book
@@ -168,3 +170,4 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  search_api_excerpt: true

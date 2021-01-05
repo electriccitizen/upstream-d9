@@ -1,11 +1,8 @@
-uuid: 4a4a9075-b189-4f84-bdd0-8c02698d076b
 langcode: en
 status: true
 dependencies:
   module:
     - focal_point
-_core:
-  default_config_hash: K1OyspHRV2z_se_cUARG2CLTqU-vPNN67TQtQJNEZjA
 name: banner_big_desk
 label: 'Banner Big Desk'
 effects:
@@ -15,4 +12,5 @@ effects:
     weight: 1
     data:
       width: 1600
-      height: 550
+      height: 544
+      crop_type: focal_point

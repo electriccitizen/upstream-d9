@@ -1,4 +1,3 @@
-uuid: 5da651d3-96c4-4c04-a258-288a806a9e42
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: 3LILobBZ-eyHffflFgFi7Gon7Jd8n_OIVzKolRcFqc4
 id: paragraph.text.preview
 targetEntityType: paragraph
 bundle: text

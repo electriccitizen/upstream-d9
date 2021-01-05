@@ -1,4 +1,3 @@
-uuid: 6cdf827b-2cd6-42b8-8494-9b4a46fd5cc0
 langcode: en
 status: true
 dependencies:
@@ -11,7 +10,7 @@ field_name: field_block
 entity_type: paragraph
 bundle: block_placer
 label: Block
-description: 'Use this field to place custom blocks. Allowed block types are Basic Block and Widgets Block. <strong>NOTE:<strong> Blocks can be created or edited <a href="/admin/structure/block/block-content">here.</a>'
+description: 'Blocks can be created or edited <a href="/admin/structure/block/block-content">here.</a> Save your changes to this page first.'
 required: true
 translatable: false
 default_value: {  }

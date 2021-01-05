@@ -1,4 +1,3 @@
-uuid: e9ff22ba-9f41-4640-89b9-57e2ba6ad816
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - filter.format.basic_html
   module:
     - ckeditor
-_core:
-  default_config_hash: f6HCKP3oGNeC9xSuBIkxRAE5kyDVVkfWOEBZfZpbCNM
 format: basic_html
 editor: ckeditor
 settings:
@@ -26,7 +23,6 @@ settings:
             - JustifyLeft
             - JustifyCenter
             - JustifyRight
-            - Blockquote
         -
           name: Lists
           items:
@@ -37,13 +33,13 @@ settings:
         -
           name: Media
           items:
-            - media
+            - DrupalMediaLibrary
         -
           name: Miscellaneous
           items:
             - Table
             - HorizontalRule
-            - Linkit
+            - DrupalLink
             - DrupalUnlink
             - Maximize
         -
@@ -71,11 +67,12 @@ settings:
             - Styles
   plugins:
     stylescombo:
-      styles: "span.highlight|Highlight\r\ndiv.warning|Warning\r\nsmall|Small\r\ndiv.button|Button"
+      styles: "mark|Highlight\r\ndiv.warning|Warning\r\nsmall|Small\r\ndiv.button|Button"
+    drupallink:
+      linkit_enabled: true
+      linkit_profile: wysiwyg
     language:
       language_list: un
-    linkit:
-      linkit_profile: wysiwyg
 image_upload:
   status: true
   scheme: public

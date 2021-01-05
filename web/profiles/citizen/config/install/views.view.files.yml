@@ -1,12 +1,9 @@
-uuid: 0fc9feda-f577-4b79-a2f7-a3269074f1fd
 langcode: en
 status: true
 dependencies:
   module:
     - file
     - user
-_core:
-  default_config_hash: rRWxAX-IQkJ5viACQRovRkC784EyCl9493GU_G23n2Q
 id: files
 label: Files
 module: file
@@ -14,7 +11,6 @@ description: 'Find and manage files.'
 tag: default
 base_table: file_managed
 base_field: fid
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -599,6 +595,8 @@ display:
               anonymous: '0'
               administrator: '0'
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -640,6 +638,8 @@ display:
               anonymous: '0'
               administrator: '0'
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -681,6 +681,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

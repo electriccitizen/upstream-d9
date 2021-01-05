@@ -1,11 +1,8 @@
-uuid: 80362806-b6c9-446d-91bb-f9916929a394
 langcode: en
 status: true
 dependencies:
   module:
     - focal_point
-_core:
-  default_config_hash: WyP87xr3TIjs0miucIOJAvoPxh425EQGx_LIrKIXNrk
 name: banner_tablet
 label: 'Banner Tablet'
 effects:
@@ -15,4 +12,5 @@ effects:
     weight: 1
     data:
       width: 800
-      height: 450
+      height: 448
+      crop_type: focal_point

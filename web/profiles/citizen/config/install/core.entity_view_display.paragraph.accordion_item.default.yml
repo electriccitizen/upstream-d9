@@ -1,4 +1,3 @@
-uuid: 27a5d08c-dcbf-431b-b22c-89f0ee45df13
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ third_party_settings:
     sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: lZcQ_i9lEdttnUBTtxd5yyD2vPt0Mc-NZCtCQY6C3OE
 id: paragraph.accordion_item.default
 targetEntityType: paragraph
 bundle: accordion_item
@@ -36,4 +33,5 @@ content:
     third_party_settings: {  }
     type: text_default
     region: content
-hidden: {  }
+hidden:
+  search_api_excerpt: true

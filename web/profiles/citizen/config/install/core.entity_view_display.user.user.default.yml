@@ -1,22 +1,25 @@
-uuid: 85aa8dfc-cea0-4e20-9d93-ca60edfb8ffc
 langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.field_user_image
-    - field.field.user.user.field_user_quick_links
     - views.view.user_dashboard
   module:
     - layout_builder
     - layout_discovery
     - user
     - views
+  theme:
+    - citizen_patterns
 third_party_settings:
   layout_builder:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           fa2f7cf5-5e65-4e87-8007-6c149d4b747d:
             uuid: fa2f7cf5-5e65-4e87-8007-6c149d4b747d
@@ -36,72 +39,17 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 2
-          15bb0817-5a8c-4d8b-ab0c-f68dffd9a15d:
-            uuid: 15bb0817-5a8c-4d8b-ab0c-f68dffd9a15d
-            region: content
-            configuration:
-              id: 'field_block:user:user:created'
-              label: Created
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: timestamp
-                settings:
-                  date_format: oc_text_date_only
-                  custom_date_format: ''
-                  timezone: UTC
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 3
-          d8b20550-97cf-4509-864c-e07f5f48048d:
-            uuid: d8b20550-97cf-4509-864c-e07f5f48048d
-            region: content
-            configuration:
-              id: 'field_block:user:user:uid'
-              label: 'User ID'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: number_integer
-                settings:
-                  thousand_separator: ''
-                  prefix_suffix: true
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 1
+        third_party_settings: {  }
       -
-        layout_id: layout_onecol
-        layout_settings: {  }
+        layout_id: tabs
+        layout_settings:
+          label: ''
         components:
-          8f4a3d1d-7609-459c-b2cf-b17d701b7443:
-            uuid: 8f4a3d1d-7609-459c-b2cf-b17d701b7443
-            region: content
+          c6e0f15d-b1b7-400d-9dfd-285731b27dd7:
+            uuid: c6e0f15d-b1b7-400d-9dfd-285731b27dd7
+            region: tabs
             configuration:
-              id: 'field_block:user:user:field_user_quick_links'
-              label: 'Quick Links'
-              provider: layout_builder
-              label_display: '0'
-              formatter:
-                label: hidden
-                type: string
-                settings:
-                  link_to_entity: false
-                third_party_settings: {  }
-              context_mapping:
-                entity: layout_builder.entity
-            additional: {  }
-            weight: 0
-          0f963135-4282-4c8d-b058-26a5bc59f354:
-            uuid: 0f963135-4282-4c8d-b058-26a5bc59f354
-            region: content
-            configuration:
-              id: 'views_block:user_dashboard-authored'
+              id: 'views_block:user_dashboard-my_content'
               label: ''
               provider: views
               label_display: visible
@@ -109,17 +57,45 @@ third_party_settings:
               items_per_page: none
               context_mapping: {  }
             additional: {  }
-            weight: 2
+            weight: 0
+          df4d5ea9-4ccf-49c3-b834-c19a3ccd7803:
+            uuid: df4d5ea9-4ccf-49c3-b834-c19a3ccd7803
+            region: tabs
+            configuration:
+              id: 'views_block:user_dashboard-all_recent_content'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
     allow_custom: false
     is_enabled: true
     enabled: true
-_core:
-  default_config_hash: 0sOXnIcH_JtE2G5afKzcPVW7VTs6WbUK7DfESmhJJ0s
 id: user.user.default
 targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_first_name:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_last_name:
+    weight: 8
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
   field_user_image:
     weight: 6
     label: above
@@ -128,17 +104,10 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_user_quick_links:
-    weight: 7
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
   member_for:
     weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  search_api_excerpt: true

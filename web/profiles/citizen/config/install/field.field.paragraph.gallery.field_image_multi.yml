@@ -1,4 +1,3 @@
-uuid: 1d933405-b91f-49c8-b852-a3b83a134100
 langcode: en
 status: true
 dependencies:
@@ -11,7 +10,7 @@ field_name: field_image_multi
 entity_type: paragraph
 bundle: gallery
 label: Images
-description: "Upload a new image or add an existing image from the media library. \r\n<br>\r\n<strong>If this will be a lightbox gallery:</strong> The image will be cropped into a thumbnail until it is opened in the lightbox. Use the focal point tool (crosshairs) to ensure that most important part of the image will be preserved in the crop area. Optimal image width is 800px<br>\r\n<strong>If this will be a slider gallery:</strong> Optimal image width should be 1200px."
+description: '<strong>Optimal image size:</strong> is 800px'
 required: true
 translatable: false
 default_value: {  }

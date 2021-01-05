@@ -1,4 +1,3 @@
-uuid: bbb15f0e-efea-44b9-9f12-7232d61c6389
 langcode: en
 status: true
 dependencies:
@@ -14,8 +13,6 @@ third_party_settings:
   layout_builder:
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: RvbKJrdbeXbNPfaZiJOs4EumMNVWVi-D-u6qJLv0aP0
 id: paragraph.form.preview
 targetEntityType: paragraph
 bundle: form

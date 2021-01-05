@@ -1,4 +1,3 @@
-uuid: 4e8092a4-d69e-4ac8-9aea-005060fb599d
 langcode: en
 status: true
 dependencies:
@@ -11,7 +10,7 @@ dependencies:
 id: citizen_patterns_copyright
 theme: citizen_patterns
 region: footer
-weight: -2
+weight: -5
 provider: null
 plugin: 'block_content:27de869c-2ba8-4187-b40e-31c99519f508'
 settings:

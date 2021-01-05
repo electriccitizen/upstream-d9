@@ -1,4 +1,3 @@
-uuid: 05cba92d-65f1-458f-b89e-d5fd96aa2b5a
 langcode: en
 status: true
 dependencies:
@@ -24,7 +23,8 @@ third_party_settings:
     sections:
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           f4d2b75e-a332-4c00-b169-75faee697c60:
             uuid: f4d2b75e-a332-4c00-b169-75faee697c60
@@ -37,9 +37,11 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+        third_party_settings: {  }
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           22c27178-e58b-4cf0-b1c7-4a72feb31293:
             uuid: 22c27178-e58b-4cf0-b1c7-4a72feb31293
@@ -88,9 +90,11 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 1
+        third_party_settings: {  }
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           ba0bca5f-7ea0-4235-a1c7-eb5554f8c1f4:
             uuid: ba0bca5f-7ea0-4235-a1c7-eb5554f8c1f4
@@ -127,9 +131,11 @@ third_party_settings:
                 entity: layout_builder.entity
             additional: {  }
             weight: 1
+        third_party_settings: {  }
       -
         layout_id: layout_onecol
-        layout_settings: {  }
+        layout_settings:
+          label: ''
         components:
           d94df72a-42f8-461f-a52a-d75c8c166a73:
             uuid: d94df72a-42f8-461f-a52a-d75c8c166a73
@@ -142,6 +148,7 @@ third_party_settings:
               context_mapping: {  }
             additional: {  }
             weight: 0
+        third_party_settings: {  }
     allow_custom: false
     is_enabled: true
     enabled: true
@@ -164,8 +171,6 @@ third_party_settings:
         Webform: {  }
       allowed_layouts:
         - layout_onecol
-_core:
-  default_config_hash: Xu1s1fWGlIX5L7AeMiRTydm1tunLJGrAodp6YJMZ5Sw
 id: node.blog.default
 targetEntityType: node
 bundle: blog
@@ -221,3 +226,4 @@ content:
     third_party_settings: {  }
 hidden:
   addtoany: true
+  search_api_excerpt: true

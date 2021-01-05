@@ -1,12 +1,9 @@
-uuid: 00f090ee-89f8-4205-8431-4bee7893d7c0
 langcode: en
 status: true
 dependencies:
   module:
     - block_content
     - user
-_core:
-  default_config_hash: msYnighLW1IbiBfyQbwbQwb2cU-5LECiFryt60k0Nfk
 id: block_content
 label: 'Custom block library'
 module: views
@@ -14,7 +11,6 @@ description: 'Find and manage custom blocks.'
 tag: default
 base_table: block_content_field_data
 base_field: id
-core: 8.x
 display:
   default:
     display_plugin: default
@@ -308,7 +304,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Operations
+          label: Actions
           exclude: false
           alter:
             alter_text: false
@@ -379,6 +375,8 @@ display:
               anonymous: '0'
               administrator: '0'
             placeholder: ''
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -420,6 +418,8 @@ display:
               anonymous: '0'
               administrator: '0'
             reduce: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''
@@ -456,6 +456,8 @@ display:
             required: false
             remember: false
             multiple: false
+            operator_limit_selection: false
+            operator_list: {  }
           is_grouped: false
           group_info:
             label: ''

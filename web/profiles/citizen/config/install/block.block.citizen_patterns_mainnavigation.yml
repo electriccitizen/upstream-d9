@@ -1,4 +1,3 @@
-uuid: 38ca11ed-fc9e-4757-a82e-edba17e76a2a
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - superfish
   theme:
     - citizen_patterns
-_core:
-  default_config_hash: dmbdaj9fA3pjeDrX4K4M29aElVNYPhCYd0PwtE8NASQ
 id: citizen_patterns_mainnavigation
 theme: citizen_patterns
 region: header
@@ -22,7 +19,8 @@ settings:
   provider: superfish
   label_display: '0'
   level: '1'
-  depth: '0'
+  depth: '3'
+  expand_all_items: false
   menu_type: horizontal
   style: none
   arrow: 0
@@ -39,7 +37,7 @@ settings:
   touchual: ''
   touchuam: '0'
   small: '2'
-  smallbp: '980'
+  smallbp: '984'
   smallua: '0'
   smallual: ''
   smalluam: '0'

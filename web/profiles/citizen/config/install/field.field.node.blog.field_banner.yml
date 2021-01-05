@@ -1,4 +1,3 @@
-uuid: 894216df-5b67-4d06-99e3-5b7b35dbfb9a
 langcode: en
 status: true
 dependencies:
@@ -6,14 +5,12 @@ dependencies:
     - field.storage.node.field_banner
     - media.type.image
     - node.type.blog
-_core:
-  default_config_hash: PymV3iBceCF6iWGroCOyKYbE_JItAP3PDdDARvVTFAI
 id: node.blog.field_banner
 field_name: field_banner
 entity_type: node
 bundle: blog
 label: Banner
-description: 'Banner images should be a minimum of 1600x900px. <strong>NOTE: </strong>Banners will be cropped into different aspect ratios depending on device and screen size. Use the focal point tool (crosshairs) to ensure that they most important part of the image is preserved in all ratios.'
+description: '<strong>Optimal image size:</strong> 1600x900px'
 required: true
 translatable: true
 default_value: {  }

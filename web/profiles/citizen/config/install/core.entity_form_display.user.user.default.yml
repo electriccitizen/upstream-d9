@@ -1,17 +1,32 @@
-uuid: a7a567b8-5ad9-4d63-bcb9-ec9e2adc8729
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_form_mode.media.background_image
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.field_user_image
-    - field.field.user.user.field_user_quick_links
   module:
-    - entity_browser_entity_form
-    - inline_entity_form
+    - field_group
+    - media_library
     - user
-_core:
-  default_config_hash: cAoTuTfmGrGB_89qPV_cTRlA7NXOWtLCLePKVX4SO3A
+third_party_settings:
+  field_group:
+    group_user_personalization:
+      children:
+        - field_first_name
+        - field_last_name
+        - field_user_image
+      parent_name: ''
+      weight: 5
+      format_type: details
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        open: true
+        required_fields: true
+      label: 'User Personalization'
+      region: content
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -25,26 +40,35 @@ content:
   contact:
     weight: 5
     region: content
-  field_user_image:
-    weight: 1
+  field_first_name:
+    weight: 3
     settings:
-      form_mode: background_image
-      label_singular: ''
-      label_plural: ''
-      allow_new: true
-      allow_existing: true
-      match_operator: CONTAINS
-      override_labels: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings:
-      entity_browser_entity_form:
-        entity_browser_id: image_browser
-    type: inline_entity_form_complex
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
+  field_last_name:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_user_image:
+    weight: 5
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    type: media_library_widget
+    region: content
+  google_analytics:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_user_quick_links: true
   language: true
   path: true
   timezone: true

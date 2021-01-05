@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: social_media_links
+label: 'Social Media Links'
+revision: 0
+description: 'Add links to social media platforms.'

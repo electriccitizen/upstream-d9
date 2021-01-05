@@ -1,1 +1,16 @@
-entity_type_groups: {  }
+entity_type_groups:
+  node:
+    blog:
+      basic: basic
+    event:
+      basic: basic
+    landing_page:
+      basic: basic
+    news:
+      basic: basic
+    page:
+      basic: basic
+    profiles:
+      basic: basic
+    support_book:
+      basic: basic

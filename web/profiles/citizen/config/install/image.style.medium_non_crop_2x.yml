@@ -1,4 +1,3 @@
-uuid: 882701f4-57c8-4aaa-bc4d-16fbe7ea5eb0
 langcode: en
 status: true
 dependencies:
@@ -12,7 +11,7 @@ effects:
     id: image_scale
     weight: 1
     data:
-      width: 1200
+      width: 960
       height: null
       upscale: true
   8f825a30-9d28-40e2-886c-f0d243f89c5e:

@@ -1,11 +1,9 @@
-uuid: 4526a62d-2fa4-4819-842f-a0e217e92bac
 langcode: en
 status: true
-dependencies:
-  content:
-    - 'file:file:451aadc6-6b36-49de-a6e1-ca7c318dd277'
+dependencies: {  }
 id: landing_page_section
 label: 'Landing Page Section'
-icon_uuid: 451aadc6-6b36-49de-a6e1-ca7c318dd277
+icon_uuid: null
+icon_default: null
 description: 'Section widgets holder for landing pages'
 behavior_plugins: {  }

@@ -1,4 +1,3 @@
-uuid: 1367f17f-6074-4d5f-955c-bca09fa7846c
 langcode: en
 status: true
 dependencies:
@@ -16,6 +15,13 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 100
+    region: content
     third_party_settings: {  }
 hidden:
   description: true

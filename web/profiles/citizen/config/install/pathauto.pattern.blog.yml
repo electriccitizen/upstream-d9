@@ -1,11 +1,8 @@
-uuid: a9150940-ed23-43c7-a667-9b85ec26020d
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: b3H3O2fkp3n26-XK17qxr4eoflT-ZTZ-zDwMAo0sG2U
 id: blog
 label: Blog
 type: 'canonical_entities:node'

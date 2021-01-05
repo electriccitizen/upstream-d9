@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.social_media_links
+    - field.field.block_content.social_media_links.body
+    - field.field.block_content.social_media_links.field_platforms
+  module:
+    - link
+    - text
+id: block_content.social_media_links.default
+targetEntityType: block_content
+bundle: social_media_links
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 26
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+    region: content
+  field_platforms:
+    weight: 27
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  info:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

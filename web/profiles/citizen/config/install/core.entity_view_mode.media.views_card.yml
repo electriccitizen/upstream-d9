@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+id: media.views_card
+label: 'Views Card'
+targetEntityType: media
+cache: true

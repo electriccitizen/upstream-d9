@@ -1,4 +1,3 @@
-uuid: f858e5b2-75a0-4a21-bd04-e71034dd786e
 langcode: en
 status: true
 dependencies:
@@ -13,8 +12,6 @@ third_party_settings:
     sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: S2KLvWGDvZO3llTIpCCfkrbrRme3bBhvJcbtCDMyg9M
 id: paragraph.video.default
 targetEntityType: paragraph
 bundle: video

@@ -1,4 +1,3 @@
-uuid: c4d922de-7909-46fe-8897-2ef641300abb
 langcode: en
 status: true
 dependencies:
@@ -11,7 +10,7 @@ field_name: field_image
 entity_type: paragraph
 bundle: image
 label: Image
-description: 'Upload a new image or add an existing image from the media library.  <strong>NOTE:</strong> You will have the option to set your image style (size) in the next field. Make sure your image is large enough to accommodate the size you set.'
+description: '<strong>NOTE:</strong> Make sure your image is large enough for the selected image size.'
 required: true
 translatable: false
 default_value: {  }

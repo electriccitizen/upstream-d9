@@ -1,4 +1,3 @@
-uuid: 60c61d15-d319-408c-8cbd-7f62c7ce9a88
 langcode: en
 status: false
 dependencies:
@@ -19,8 +18,6 @@ third_party_settings:
     sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: lIY-NGSfPl4W3_jTzC90vPH0Bf4iBEw9Zd1Pw226NWk
 id: node.blog.teaser
 targetEntityType: node
 bundle: blog
@@ -49,3 +46,4 @@ hidden:
   field_tags: true
   flippy_pager: true
   links: true
+  search_api_excerpt: true

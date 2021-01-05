@@ -1,4 +1,3 @@
-uuid: 54d64493-18c2-4182-8e4a-2731ad0a6633
 langcode: en
 status: true
 dependencies:
@@ -6,8 +5,6 @@ dependencies:
     - system
   theme:
     - citizen_patterns
-_core:
-  default_config_hash: 7GmkZFxF8OfPIs2aNkve5uhX_A2PA_bM4fOQE6NhJwE
 id: citizen_patterns_branding
 theme: citizen_patterns
 region: header

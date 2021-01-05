@@ -1,4 +1,3 @@
-uuid: 4a840c6e-0b16-4f6d-919a-3ae8c9794002
 langcode: en
 status: true
 dependencies:
@@ -15,8 +14,6 @@ third_party_settings:
     sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: t4myUCrdEfadnhW1DNLEqW6a3lImNGYmmK0e-LnQNdE
 id: paragraph.links_files.default
 targetEntityType: paragraph
 bundle: links_files

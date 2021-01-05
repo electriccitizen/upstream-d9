@@ -1,4 +1,3 @@
-uuid: 88e5de1f-284a-4ee4-9dca-a7602c215664
 langcode: en
 status: true
 dependencies:
@@ -7,14 +6,12 @@ dependencies:
     - node.type.profiles
   module:
     - telephone
-_core:
-  default_config_hash: nPVNORbUhcJoJrJlqLy_Amu2hNMiw8TvmKqyKTpjNwQ
 id: node.profiles.field_phone
 field_name: field_phone
 entity_type: node
 bundle: profiles
 label: Phone
-description: 'Example: 555-555-5555'
+description: ''
 required: false
 translatable: false
 default_value: {  }

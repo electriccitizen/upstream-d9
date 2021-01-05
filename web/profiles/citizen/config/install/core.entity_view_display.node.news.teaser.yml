@@ -1,4 +1,3 @@
-uuid: da1b6deb-b2a3-48ba-beb7-84cb0a3d977b
 langcode: en
 status: false
 dependencies:
@@ -18,8 +17,6 @@ third_party_settings:
     sections: {  }
     enabled: false
     allow_custom: false
-_core:
-  default_config_hash: e0kH4Flgqj1A2pNhZvbdMZwE5mW65HRDE6liMMYou2o
 id: node.news.teaser
 targetEntityType: node
 bundle: news
@@ -43,3 +40,4 @@ hidden:
   field_banner: true
   field_category: true
   field_metatags: true
+  search_api_excerpt: true
