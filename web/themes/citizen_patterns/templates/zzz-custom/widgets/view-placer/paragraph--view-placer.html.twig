@@ -48,10 +48,19 @@
 	}
 %}
 	{% block widgetContent %}
-		{% set viewName = content.field_view_machine_name.0['#context'].value|clean_class %}
-		{% set displayName = content.field_display_machine_name.0['#context'].value|clean_class %}
+		
+		{% set viewName = content.field_view.0['#markup'] %}
+		{% if viewName == 'events' %}
+			{% set displayName = content.field_events_displays.0['#markup'] %}
+		{% elseif viewName == 'news' %}
+			{% set displayName = content.field_news_displays.0['#markup'] %}
+		{% elseif viewName == 'blog' %}
+			{% set displayName = content.field_blog_displays.0['#markup'] %}
+		{% elseif viewName == 'profiles' %}
+			{% set displayName = content.field_profiles_displays.0['#markup'] %}
+		{% endif %}
 		<div class="view-widget widget-{{ viewName }} {{ displayName }}">
-		    {{- content.field_display_machine_name -}}
+		  {{ drupal_view(viewName,displayName) }}
 		</div>			
 	{% endblock %}	
 {% endembed %}

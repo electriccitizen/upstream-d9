@@ -1,0 +1,24 @@
+uuid: f090ac66-9263-4156-84d9-b0f7ab7ff620
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_events_displays
+field_name: field_events_displays
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: all_upcoming_events
+      label: 'All Upcoming Events'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

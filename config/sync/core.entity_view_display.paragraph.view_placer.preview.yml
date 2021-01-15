@@ -4,12 +4,16 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.view_placer.field_display_machine_name
-    - field.field.paragraph.view_placer.field_view_machine_name
+    - field.field.paragraph.view_placer.field_blog_displays
+    - field.field.paragraph.view_placer.field_events_displays
+    - field.field.paragraph.view_placer.field_news_displays
+    - field.field.paragraph.view_placer.field_profiles_displays
+    - field.field.paragraph.view_placer.field_view
     - field.field.paragraph.view_placer.field_widget_title
     - paragraphs.paragraphs_type.view_placer
   module:
     - layout_builder
+    - options
 third_party_settings:
   layout_builder:
     allow_custom: false
@@ -19,15 +23,17 @@ targetEntityType: paragraph
 bundle: view_placer
 mode: preview
 content:
-  field_view_machine_name:
+  field_view:
+    type: list_default
     weight: 0
-    label: inline
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
 hidden:
-  field_display_machine_name: true
+  field_blog_displays: true
+  field_events_displays: true
+  field_news_displays: true
+  field_profiles_displays: true
   field_widget_title: true
   search_api_excerpt: true

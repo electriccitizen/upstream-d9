@@ -159,7 +159,13 @@ function crane_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_sta
       $form['name']['#prefix'] = '<div class="form-item-prefix">Add a new <span>'.$human.'</span> term or return to the <a href="/admin/structure/taxonomy/manage/'.$vocab.'/overview">terms list</a>.</div>';
     }
   }
-  
+}
+
+/*
+ * node form alter
+ */
+function crane_form_node_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['#attached']['library'][] = 'crane/paragraphs';
 }
 
 /**

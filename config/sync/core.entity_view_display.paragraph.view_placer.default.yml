@@ -3,30 +3,54 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.view_placer.field_display_machine_name
-    - field.field.paragraph.view_placer.field_view_machine_name
+    - field.field.paragraph.view_placer.field_blog_displays
+    - field.field.paragraph.view_placer.field_events_displays
+    - field.field.paragraph.view_placer.field_news_displays
+    - field.field.paragraph.view_placer.field_profiles_displays
+    - field.field.paragraph.view_placer.field_view
     - field.field.paragraph.view_placer.field_widget_title
     - paragraphs.paragraphs_type.view_placer
+  module:
+    - options
 id: paragraph.view_placer.default
 targetEntityType: paragraph
 bundle: view_placer
 mode: default
 content:
-  field_display_machine_name:
-    type: string
+  field_blog_displays:
     weight: 2
-    region: content
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-  field_view_machine_name:
+    type: list_key
+    region: content
+  field_events_displays:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_news_displays:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_profiles_displays:
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: list_key
+    region: content
+  field_view:
     weight: 1
     label: hidden
-    settings:
-      link_to_entity: false
+    settings: {  }
     third_party_settings: {  }
-    type: string
+    type: list_key
     region: content
   field_widget_title:
     type: string

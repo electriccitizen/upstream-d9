@@ -1,0 +1,24 @@
+uuid: 48d2efaa-cba2-41a5-b48f-6f0b0a4be46c
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_profiles_displays
+field_name: field_profiles_displays
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: all_staff
+      label: 'All Staff'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

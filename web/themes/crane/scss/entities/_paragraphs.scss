@@ -432,4 +432,11 @@
 	}
 }//end video
 
-
+/* View Placer
+----------------- */
+//hide help text for view select initially
+.field--name-field-view.field--widget-options-select{
+	.description{
+		display: none;
+	}
+}

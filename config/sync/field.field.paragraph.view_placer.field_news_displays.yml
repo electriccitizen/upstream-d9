@@ -1,0 +1,21 @@
+uuid: 2972e75c-5ddb-4586-8103-045d43fb7eee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_news_displays
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - options
+id: paragraph.view_placer.field_news_displays
+field_name: field_news_displays
+entity_type: paragraph
+bundle: view_placer
+label: 'News Displays'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

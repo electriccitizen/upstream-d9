@@ -1,0 +1,33 @@
+uuid: 2f9950d7-34ac-41a8-a1f2-4141928edd4a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_view
+field_name: field_view
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: blog
+      label: Blog
+    -
+      value: events
+      label: Events
+    -
+      value: news
+      label: News
+    -
+      value: profiles
+      label: Profiles
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

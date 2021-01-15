@@ -33,3 +33,13 @@ body{
 		z-index: 500 !important;
 	}
 }//end body
+
+
+/* CUSTOM ADMIN WARNINGS/HELP TEXT
+------------------------------- */
+.admin-warning{
+	margin-top: 2rem;
+	max-width: 800px;
+	border: 1px solid $red;
+	padding: 2rem;
+}

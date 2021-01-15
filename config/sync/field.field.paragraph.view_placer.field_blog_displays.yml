@@ -1,0 +1,21 @@
+uuid: 5826e324-2dbc-49e7-9a1f-972a90bb4aa0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_blog_displays
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - options
+id: paragraph.view_placer.field_blog_displays
+field_name: field_blog_displays
+entity_type: paragraph
+bundle: view_placer
+label: 'Blog Displays'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

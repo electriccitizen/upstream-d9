@@ -1,0 +1,21 @@
+uuid: 2a6a33cf-10a2-4abe-a94a-3ea490b8fdc4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_view
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - options
+id: paragraph.view_placer.field_view
+field_name: field_view
+entity_type: paragraph
+bundle: view_placer
+label: View
+description: 'The display select cannot be made required for technical reasons, but in order for this widget to work you must select a display.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

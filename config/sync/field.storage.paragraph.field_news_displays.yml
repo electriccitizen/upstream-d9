@@ -1,0 +1,24 @@
+uuid: 9b6f9284-30e9-4fdd-ab53-80d8c9801d54
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_news_displays
+field_name: field_news_displays
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: all_news
+      label: 'All News'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,21 @@
+uuid: 8341580d-2409-474d-b591-b40e372287bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_events_displays
+    - paragraphs.paragraphs_type.view_placer
+  module:
+    - options
+id: paragraph.view_placer.field_events_displays
+field_name: field_events_displays
+entity_type: paragraph
+bundle: view_placer
+label: 'Events Displays'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

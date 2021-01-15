@@ -3,8 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.view_placer.field_display_machine_name
-    - field.field.paragraph.view_placer.field_view_machine_name
+    - field.field.paragraph.view_placer.field_blog_displays
+    - field.field.paragraph.view_placer.field_events_displays
+    - field.field.paragraph.view_placer.field_news_displays
+    - field.field.paragraph.view_placer.field_profiles_displays
+    - field.field.paragraph.view_placer.field_view
     - field.field.paragraph.view_placer.field_widget_title
     - paragraphs.paragraphs_type.view_placer
 id: paragraph.view_placer.default
@@ -12,21 +15,35 @@ targetEntityType: paragraph
 bundle: view_placer
 mode: default
 content:
-  field_display_machine_name:
-    weight: 3
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_view_machine_name:
+  field_blog_displays:
     weight: 2
-    settings:
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: string_textfield
+    type: options_select
+    region: content
+  field_events_displays:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_news_displays:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_profiles_displays:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_view:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
   field_widget_title:
     weight: 0
