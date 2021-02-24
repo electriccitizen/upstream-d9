@@ -1,0 +1,33 @@
+/* ===============
+   TAXONOMY TERM PAGES
+================= */
+.path-taxonomy{
+	.term-title{
+		margin-bottom: $elementSpace;
+	}
+	.taxonomy-term{
+		max-width: $textMax;
+		@include auto;
+		.view-header{
+			.block-title{
+				padding-top: $spaceMd;
+			}
+		}
+		.view-content{
+			@include tab{
+				@include safeFlex(row,wrap,start,start);
+				@include bleed(padding,40px);
+				width: 100%;
+			}
+			.views-row{
+				margin-bottom: $spaceMd;	
+				@include tab{
+					width: 50%;
+				}
+			}
+		}//end view content
+	}//end taxonomy term
+	.feed-icon{
+		display: none;
+	}
+}

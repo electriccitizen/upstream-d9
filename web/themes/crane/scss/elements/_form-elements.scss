@@ -502,9 +502,9 @@ select:hover,select:focus{
 .text-format-wrapper{
 	.filter-wrapper{
 		display: none;
-	}
-	.field-config-form &{
-		display: block;
+		.field-config-form &{
+			display: block;
+		}
 	}
 }
 
