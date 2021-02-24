@@ -15,11 +15,6 @@ accordion:
   version: 1.0
   js:
     components/_patterns/03-composites/02-paragraphs/01-accordion/accordion.js: {}
-dashboard:
-  version: 1.0
-  js:
-    components/_patterns/04-units/01-dashboard/dashboard.js: {}
-    https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js: { type: external, minified: true, preprocess: false }
 featherlight:
   version: 1.7.13
   css:
@@ -81,9 +76,12 @@ slick:
     components/js/slick/slick.min.js: { minified: true }
 table:
   version: 1.0
+  css:
+    theme:
+      components/js/basictable/basictable.css: {}
   js:
-    components/js/stacktable/stacktable.min.js: { minified: true }
     components/_patterns/01-parts/07-tables/tables.js: {}
+    components/js/basictable/jquery.basictable.min.js: { minified: true }
 widgets:
   version: 1.0
   js:

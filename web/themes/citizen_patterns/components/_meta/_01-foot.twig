@@ -10,7 +10,7 @@
   <script src="../../js/jquery.min.js"></script>
   <script src="../../js/jquery.once.min.js"></script>
   <script src="../../js/select2/select2.min.js"></script>
-  <script src="../../js/stacktable/stacktable.min.js"></script>
+  <script src="../../js/basictable/jquery.basictable.min.js"></script>
   <script src="../../js/slick/slick.min.js"></script>
   <script src="../../js/featherlight/featherlight.min.js"></script>
   <script src="../../js/featherlight/featherlight.gallery.min.js"></script>
@@ -26,9 +26,9 @@
 
   <script>
     $(".text-long table").once('stack').each(function(){  
-        $(this).cardtable({myClass:'responsive-table'});
+        $(this).basictable({breakpoint: 800,});
         $(document).ajaxComplete(function() {
-            $('.layout-container table').cardtable({myClass:'responsive-table'});
+            $('.layout-container table').basictable({breakpoint: 800,});
         });
     });
   </script>

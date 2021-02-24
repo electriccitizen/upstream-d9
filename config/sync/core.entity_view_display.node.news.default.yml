@@ -16,6 +16,8 @@ dependencies:
     - system
     - text
     - user
+  theme:
+    - citizen_patterns
 third_party_settings:
   layout_builder:
     sections:
@@ -37,13 +39,13 @@ third_party_settings:
             weight: 0
         third_party_settings: {  }
       -
-        layout_id: layout_onecol
+        layout_id: two_column_sidebar_left
         layout_settings:
           label: ''
         components:
           c10b7f9d-d1b9-4f0e-9310-8d676132d128:
             uuid: c10b7f9d-d1b9-4f0e-9310-8d676132d128
-            region: content
+            region: first
             configuration:
               id: 'field_block:node:news:field_banner'
               label: Banner
@@ -76,7 +78,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 1
+            weight: 0
           7d06fdf5-716d-47d1-acfa-3af5c276eea9:
             uuid: 7d06fdf5-716d-47d1-acfa-3af5c276eea9
             region: content
@@ -97,7 +99,7 @@ third_party_settings:
                 entity: layout_builder.entity
                 view_mode: view_mode
             additional: {  }
-            weight: 2
+            weight: 1
           af8cc179-e79e-4906-b4e9-7f4bf1ee1dea:
             uuid: af8cc179-e79e-4906-b4e9-7f4bf1ee1dea
             region: content
@@ -114,7 +116,7 @@ third_party_settings:
               context_mapping:
                 entity: layout_builder.entity
             additional: {  }
-            weight: 3
+            weight: 2
         third_party_settings: {  }
     allow_custom: false
     is_enabled: true
@@ -139,6 +141,10 @@ third_party_settings:
         Webform: {  }
       allowed_layouts:
         - layout_onecol
+        - two_column_sidebar_left
+      whitelisted_blocks: {  }
+      blacklisted_blocks: {  }
+    allowed_block_categories: {  }
 _core:
   default_config_hash: IzGVDPFbjzJk7jOlCGQethnQwH5go6PqUDOtPSpXuRM
 id: node.news.default

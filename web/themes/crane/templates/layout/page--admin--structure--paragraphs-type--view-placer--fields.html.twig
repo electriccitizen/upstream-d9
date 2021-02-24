@@ -64,7 +64,7 @@
     {% endblock %}
     {% block pageContent %}
       <div class="admin-warning">
-        <div><strong>NOTE:</strong> When adding additional views and displays for editors to select, always add the view to the list in the View field using its machine name as the value. Next, add a new list field for the displays you want the editor to be able to select for that view. <strong>WARNING:</strong> You must set the machine name of the new display field in this format 'view_machine_name_displays' in order for the JS that runs the editorial view placer functionality to work correctly. You must also update the logic in Twig template for the paragraph in the Citizen Patterns theme.</div>
+        <div><strong>NOTE:</strong> When adding additional views and displays for editors to select, always add the view to the list in the View field using its machine name as the value. Next, add a new list field for the displays you want the editor to be able to select for that view. <strong>WARNING:</strong> You must set the machine name of the new display field in this format 'field_[view_machine_name]_displays' in order for the JS that runs the editorial view placer functionality to work correctly. You must also update the logic in Twig template for the paragraph in the Citizen Patterns theme.</div>
       </div>
       {{ page.content }}
     {% endblock %}

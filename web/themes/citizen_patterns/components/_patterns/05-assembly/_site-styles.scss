@@ -429,18 +429,33 @@ body {
 .ui-dialog .ui-dialog-title{
 	white-space: normal;
 }
-.ui-dialog-off-canvas + .select2-container--open .select2-dropdown{
-	font-size: 1.4rem;
+.ui-dialog-off-canvas + .select2-container--open{
+	height: 40px;
+	.select2-dropdown{
+		font-size: 1.75rem;
+		width: 100% !important;
+		&.select2-dropdown--below{
+			position: absolute;
+			top: 100%;
+			left: 0;
+		}
+	}
 }
 
 /* OFF CANVAS */
 .ui-dialog-off-canvas #drupal-off-canvas{
+	*{
+		font-family: $bodyFont;
+	}
+	form{
+		color: $white;
+	}
 	.js-form-type-checkbox{
 		@include customOptions;
 	}
 	.ui-autocomplete li a{
 		background: $siteBack;
-		font-size: 1.4rem;
+		font-size: 1.75rem;
 		&.ui-state-active{
 			background: $link;
 			border-color: $link;
@@ -452,6 +467,17 @@ body {
 
 	.form-item{
 		margin-bottom: $spaceSm;
+		display: block;
+		&.form-item-settings-admin-label{
+			color: $white;
+			font-weight: $heavy;
+		}
+		label{
+			display: block;
+			margin-bottom: 10px;
+			font-size: 1.75rem;
+			color: $white;
+		}
 	}
 
 	.form-text{
@@ -469,6 +495,9 @@ body {
 	}//end form-text
 
 	.js-form-type-checkbox{
+		input{
+			display: inline-block;
+		}
 		label{
 			display: inline-block;
 		}
@@ -479,9 +508,18 @@ body {
 		max-width: 100%;
 		.select2-selection--single,.select2-selection--multiple{
 			border-color: $link;
-			font-size: 1.4rem;
+			font-size: 1.75rem;
+			display: block;
+			height: 40px;
+			position: relative;
+			span{
+				display: block;
+			}
 			.select2-selection__arrow,.select2-search--inline:after{
+				position: absolute;
 				background-color: transparent;
+				width: 16px;
+				height: 16px;
 			}
 		}//end select 2 selection single
 	}//end select2 container default
@@ -494,6 +532,66 @@ body {
 		margin-top: -$spaceXs;
 		@include cautionButton;
 	}
+	
+	.layout-selection{
+		*{
+			display: block;
+			a{
+				div{
+					color: $white;
+					font-weight: $heavy;
+				}
+				&:hover{
+					opacity: .6;
+				}
+			}
+		}//end *
+		.layout-icon{
+			.layout-icon__region{
+				stroke: $black;
+				fill: $offWhite;
+			}
+		}
+		//redo layout icons by hand (needed after update to Drupal 9)
+		.layout-icon--layout-onecol{
+			.layout-icon__region--content{
+				width: 59px;
+				height: 79px;
+				x: 0.5px;
+				y: 0.5px;
+			}
+		}
+		.layout-icon--tabs{
+			.layout-icon__region--tabs{
+				width: 59px;
+				height: 79px;
+				x: 0.5px;
+				y: 0.5px;
+			}
+		}
+		.layout-icon--two-column-sidebar-left{
+			.layout-icon__region--first{
+				width: 11.75px;
+				height: 79px;
+			}
+			.layout-icon__region--content{
+				width: 43.25px;
+				height: 79px;
+				@include translateX(14.25px);
+			}
+		}
+		.layout-icon--two-column-sidebar-right{
+			.layout-icon__region--content{
+				width: 43.25px;
+				height: 79px;
+			}
+			.layout-icon__region--second{
+				width: 11.75px;
+				height: 79px;
+				@include translateX(46.25px);
+			}
+		}
+	}//end layout selection
 }//end off canvas
 
 /* TOOLTIPS

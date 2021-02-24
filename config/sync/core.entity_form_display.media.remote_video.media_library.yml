@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.media.media_library
-    - field.field.media.remote_video.field_media_categories
     - field.field.media.remote_video.field_media_oembed_video
     - media.type.remote_video
   module:
@@ -14,12 +13,6 @@ targetEntityType: media
 bundle: remote_video
 mode: media_library
 content:
-  field_media_categories:
-    type: options_select
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_media_oembed_video:
     type: oembed_textfield
     weight: 0

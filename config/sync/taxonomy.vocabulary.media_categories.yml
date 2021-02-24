@@ -1,8 +1,0 @@
-uuid: 129fb04f-f0d6-4891-a840-56be9c29b81e
-langcode: en
-status: true
-dependencies: {  }
-name: 'Media Categories'
-vid: media_categories
-description: 'Add categories to be used when filtering the media library.'
-weight: 0

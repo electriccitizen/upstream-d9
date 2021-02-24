@@ -1,14 +1,15 @@
 (function($, Drupal) {
 
-/* RESPONSIVE TABLES WITH STACKTABLE
+/* RESPONSIVE TABLES WITH BASIC TABLE
 ------------------------------------ */
-Drupal.behaviors.stackTable = {
+Drupal.behaviors.basicTable = {
 	attach: function (context, settings) {
 		$('.layout-container table:not(.ui-datepicker-calendar)', context).once('responsive_table').each(function(){
-			$(this).cardtable({myClass:'responsive-table'});
-			$(document).ajaxComplete(function() {
-				$('.layout-container table:not(.ui-datepicker-calendar)').cardtable({myClass:'responsive-table'});
-			});
+			$(this).basictable({breakpoint: 760,});
+			//check for no table headers
+			if(!$('thead',this).length){
+				$(this).addClass('no-header');
+			}
 		});
 	}
 };

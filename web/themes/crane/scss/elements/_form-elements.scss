@@ -503,6 +503,9 @@ select:hover,select:focus{
 	.filter-wrapper{
 		display: none;
 	}
+	.field-config-form &{
+		display: block;
+	}
 }
 
 fieldset:not(.form-composite){

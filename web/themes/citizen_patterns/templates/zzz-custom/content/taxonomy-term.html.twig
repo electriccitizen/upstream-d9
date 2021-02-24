@@ -25,7 +25,7 @@
 #}
 {% set classes = [
 	'term-page',
-	bundle
+	'vocab-' ~ term.vid.0.target_id|clean_class
 ] %}
 
 <div{{ attributes.addClass(classes) }}>

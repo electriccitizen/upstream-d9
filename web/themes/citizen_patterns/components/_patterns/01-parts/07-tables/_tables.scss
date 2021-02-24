@@ -132,6 +132,37 @@
 			}
 		}
 	}//end tr
+
+	//mobile tables
+	&.bt{
+		&.no-header{
+			tbody{
+				tr:first-child{
+					display: none;
+				}
+			}
+		}
+		tbody{
+			tr:last-child{
+				td:not(:last-child){
+					border-bottom: 1px solid $borderRule;
+				}
+			}
+			td{
+				padding: 0 !important;
+				&:before{
+					content: attr(data-th);
+					border-right: 1px solid $borderRule;
+					background: $tableRowHeaderBack;
+					color: $tableRowHeaderText;
+					padding: 1rem 3rem;
+				}
+				span.bt-content{
+					padding: 1rem 3rem;
+				}
+			}//end td
+		}//end tbody
+	}//end bt
 }//end table mixin
 
 
@@ -141,79 +172,9 @@
 	table{
 		@include table;
 		margin-bottom: $spaceMd;
-	} 
-}
+	}//end table
+}//end tables
 
 
-/* STACKTABLE
----------------- */
-//stack table header on mobile
-table{
-	.st-key{
-		width: 50%;
-		background: $tableHeaderBack;
-		padding-left: 1.5rem !important;
-		padding-right: 1.5rem !important;
-		color: $tableHeaderText !important;
-		@include smallTab{
-			max-width: 200px;
-		}
-		a{
-			@extend %tableSort;
-			background-image: none;
-			padding-left: 0;
-			padding-right: 3rem;
-			text-decoration: underline;
-			.tablesort{
-				left: auto;
-				right: 0px;
-			}
-		}
-		&.is-active{
-			@extend %tableSortActive;
-		}
-	}
-	//stack table td on mobile
-	.st-val{
-		width: 50%;
-		@include smallTab{
-			max-width: calc(100% - 200px);
-			width: 100%;
-		}
-	}
-}
 
-.responsive-table{
-	& > caption{
-		display: none;
-	}
-}
-//hide small stacktable by default
-.stacktable{
-	&.large-only{
-		display: table;
-	}
-	&.small-only{
-		display: none;
-		tr{
-			@include safeFlex(row,nowrap,start,stretch);
-		}
-	}
-}
 
-//hide large stacktable at less than 760
-@include onlySmall{
-	.stacktable{
-		&.large-only{
-			display: none;
-		}
-		&.small-only{
-			display: table;
-			width: 100%;
-			margin-bottom: $spaceXs;
-			td{
-				display: inline-block;
-			}
-		}
-	}
-}

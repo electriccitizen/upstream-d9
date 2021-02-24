@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.media.image.field_caption
-    - field.field.media.image.field_media_categories
     - field.field.media.image.field_media_image
     - image.style.thumbnail
     - media.type.image
@@ -22,12 +21,6 @@ content:
     settings:
       rows: 5
       placeholder: ''
-    third_party_settings: {  }
-  field_media_categories:
-    type: options_select
-    weight: 2
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_media_image:
     type: image_focal_point

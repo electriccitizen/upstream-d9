@@ -44,6 +44,17 @@
 ------------------------- */
 .webform-ui-element-form{
 	.webform-tabs{
+		.item-list{
+			.webform-tabs-item-list{
+				li{
+					margin: 0;
+					padding-left: 0;
+					&:before{
+						content: none;
+					}
+				}
+			}
+		}
 		.ui-tabs-nav{
 			padding: 5px 0 0;
 			li{

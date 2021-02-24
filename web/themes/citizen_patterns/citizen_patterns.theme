@@ -76,9 +76,10 @@ function citizen_patterns_theme_suggestions_page_alter(array &$suggestions, arra
     }
     $suggestions[] = 'page__' . $node->getTYpe();
   }
+  // we're on a term get vocabulary
   if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.canonical' && $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term')) {
-    $term = Term::load($tid);
-    $suggestions[] = 'page__taxonomy__' . $term->getVocabularyId();
+    $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($tid);
+    $suggestions[] = 'page__taxonomy__' . $term->bundle();
   }
 }
 

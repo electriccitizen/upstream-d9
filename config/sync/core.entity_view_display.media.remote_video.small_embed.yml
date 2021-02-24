@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.media.small_embed
-    - field.field.media.remote_video.field_media_categories
     - field.field.media.remote_video.field_media_oembed_video
     - media.type.remote_video
   module:
@@ -30,7 +29,6 @@ content:
     region: content
 hidden:
   created: true
-  field_media_categories: true
   name: true
   search_api_excerpt: true
   thumbnail: true

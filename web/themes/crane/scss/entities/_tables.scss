@@ -187,4 +187,49 @@
 	}
 }//end system-modules
 
-
+/* REMOVE DIALOG TABLE STYLING
+---------------------------- */
+table.cke_dialog{
+	tbody tr td{
+		table{
+			td{
+				border-bottom: 0;
+			}
+		}
+	}
+	.cke_dialog_ui_hbox{
+		.cke_dialog_ui_hbox_first{
+			padding-left: 0;
+		}
+		a.cke_dialog_ui_button_ok{
+			@include submitButton;
+			margin-bottom: 0;
+			&:hover,&:focus{
+				padding: 1.15rem 1.5rem 1rem;
+			}
+			span{
+				font-family: $bodyFont;
+				font-size: 1.5rem;
+			}
+		}
+		a.cke_dialog_ui_button_cancel{
+			@include resetButton;
+			margin-bottom: 0;
+			&:hover,&:focus{
+				padding: 1.15rem 1.5rem 1rem;
+			}
+			span{
+				font-family: $bodyFont;
+				font-size: 1.5rem;
+			}
+		}
+	}//end ui hbox
+	.cke_dialog_ui_text{
+		max-width: 600px;
+	}
+	select.cke_dialog_ui_input_select{
+		option[value="col"],option[value="both"]{
+			display: none;
+		}
+	}
+}//end cke dialog
