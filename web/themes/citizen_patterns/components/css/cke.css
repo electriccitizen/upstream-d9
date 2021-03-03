@@ -154,22 +154,27 @@ table th, table td{
 
 h2{
 	font-size: 32px;
+	line-height: 1.2;
 }
 
 h3{
 	font-size: 26px;
+	line-height: 1.25;
 }
 
 h4{
 	font-size: 22px;
+	line-height: 1.3;
 }
 
 h5{
 	font-size: 20px;
+	line-height: 1.35;
 }
 
 h6{
 	font-size: 18px;
+	line-height: 1.5;
 }
 
 blockquote{

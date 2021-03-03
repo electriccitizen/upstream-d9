@@ -503,26 +503,14 @@ body {
 		}
 	}
 
-	.select2-container--default{
-		margin-top: $spaceXxs;
-		max-width: 100%;
-		.select2-selection--single,.select2-selection--multiple{
-			border-color: $link;
-			font-size: 1.75rem;
-			display: block;
-			height: 40px;
-			position: relative;
-			span{
-				display: block;
-			}
-			.select2-selection__arrow,.select2-search--inline:after{
-				position: absolute;
-				background-color: transparent;
-				width: 16px;
-				height: 16px;
-			}
-		}//end select 2 selection single
-	}//end select2 container default
+	select.form-select{
+		border: $formElementBorderWidth solid $formElementBorderFocus;
+		min-width: 180px;
+		&:hover,&:focus{
+			background: $white;
+			color: $black;
+		}
+	}
 
 	input[type="submit"].button--primary{
 		@include submitButton;

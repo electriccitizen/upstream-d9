@@ -200,7 +200,7 @@ button{
 .button-submit{
 	@include submitButton;
 }
-.button-caution{
+.button-caution,.button-warning{
 	@include cautionButton;
 }
 .button-danger-robinson{

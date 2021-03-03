@@ -38,14 +38,12 @@
 		}
 	}
 
-	//menu link instructions
-	.menu-instruction{
-		background: $lightGrey;
-		padding: $spaceMd $spaceSm $spaceSm;
-		h2{
-			font-size: 20px;
+	//sidebar menu link form
+	.menu-link-form{
+		.form-item-menu-description,.form-item-menu-weight{
+			display: none;
 		}
-	}//end menu instruction
+	}//end menu link form
 
 	// footer checkboxes and buttons
 	.layout-region-node-footer{
