@@ -83,24 +83,6 @@ function crane_preprocess_block(&$variables) {
 }
 
 /**
- * Implements hook_preprocess_PARAGRAPH_variables().
- */
-function crane_preprocess_paragraph(&$variables) {
-  $paragraph = $variables['paragraph'];
-  $parent = $paragraph->getParentEntity();
-  if ($parent->getEntityTypeId() == 'node') {
-    $nodeId = $parent->id();
-  }
-  elseif ($parent->getParentEntity()->getEntityTypeId() == 'node') {
-    $nodeId = $parent->getParentEntity()->id();
-  }
-  else {
-    $nodeId = '';
-  }
-  $variables['nodeId'] = $nodeId;
-}
-
-/**
  * Implements hook_form_FORM_ID_alter().
  */
 function crane_form_system_theme_settings_alter(array &$form, FormStateInterface $form_state, $form_id = NULL) {

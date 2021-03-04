@@ -11,10 +11,8 @@
  */
 #}
 
+{% extends 'form.html.twig' %}
 {% block form %}
-	<form{{ attributes }}>
-		{% block children %}
-	  	{{ children }}
-		{% endblock %}
-	</form>
+	<div class="back-link"><a href="/admin/structure/block/block-content">« Back to Custom Block Library</a></div>
+	{{ parent() }}
 {% endblock %}

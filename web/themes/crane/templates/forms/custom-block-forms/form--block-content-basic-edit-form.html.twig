@@ -11,10 +11,4 @@
  */
 #}
 
-{% block form %}
-	<form{{ attributes }}>
-		{% block children %}
-	  	{{ children }}
-		{% endblock %}
-	</form>
-{% endblock %}
+{% extends 'form--block-content-basic-form.html.twig' %}

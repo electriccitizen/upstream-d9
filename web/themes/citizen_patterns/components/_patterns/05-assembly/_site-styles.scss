@@ -685,3 +685,23 @@ body {
 	}//end calendar
 }//end ui-datepicker
 
+/* TEXT CONSTRAIN
+---------------- */
+.text-constrain{
+	max-width: $textMax;
+	@include auto;
+}
+
+/* 4XX pages
+------------------ */
+.non-node-page{
+	&.error-content{
+		#block-citizen-patterns-content{
+			margin: 100px auto;
+			@include safeFlex(column,nowrap,center,center);
+			max-width: $textMax + 40px;
+			border: 1px solid $borderRule;
+			padding: 40px 30px;
+		}
+	}
+}//end non-node page

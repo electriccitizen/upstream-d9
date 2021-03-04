@@ -40,11 +40,10 @@
 
 {% block content %}
 	{{ attach_library('crane/confirmation') }}
-	{% set nodeDestination = '?destination=/node/' ~ nodeId ~ '/edit' %}
 	<div class="field field--name-field-block field--label-inline">
 		<div class="field__label">Block</div>
     <div class="field__item">
-			{{- content.field_block.0['#plain_text'] }} | <a class="leave-live confirm-link block-confirm" href="/block/{{ content.field_block['#items'].0.target_id ~ nodeDestination }}">Edit block</a>
+			{{- content.field_block.0['#plain_text'] }} | <a class="leave-live confirm-link block-confirm" href="/block/{{ content.field_block['#items'].0.target_id }}">Edit block</a>
 		</div>
 	</div>
 {% endblock %}
