@@ -520,7 +520,7 @@ body {
 		margin-top: -$spaceXs;
 		@include cautionButton;
 	}
-	
+	//layout builder layout selections
 	.layout-selection{
 		*{
 			display: block;
@@ -580,6 +580,10 @@ body {
 			}
 		}
 	}//end layout selection
+	// hide user fields from layout builder cause can't in restrictions
+	.js-layout-builder-category.user-fields{
+		display: none;
+	}
 }//end off canvas
 
 /* TOOLTIPS

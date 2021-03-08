@@ -105,6 +105,9 @@
 	}//end layout builder block
 }//end layout builder form
 
+#layout-builder{
+	margin-bottom: $spaceLg;
+}
 
 .layout-builder-discard-changes{
 	max-width: $contentStop;

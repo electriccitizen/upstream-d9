@@ -36,11 +36,12 @@
 		}//end gallery-wrapper
 	}//end lightbox
 	.slider {
+		@include textConstrain;
 		//slider container overrides layout padding on mobile
 		.field-image-multi {
 			@include edgeToEdge;
 			width: calc(100% + 40px);
-			@include contentStop {
+			@include tab {
 				@include edgeReset;
 				width: 100%;
 			}

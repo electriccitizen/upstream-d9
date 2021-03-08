@@ -230,6 +230,13 @@ fieldset{
 
 /* WEBFORMS
 ----------- */
+.webform-wrapper{
+	max-width: $textMax;
+	@include auto;
+	.webform-title{
+		@include heading1;
+	}
+}
 .webform-submission-form{
 	max-width: $textMax;
 	@include auto;

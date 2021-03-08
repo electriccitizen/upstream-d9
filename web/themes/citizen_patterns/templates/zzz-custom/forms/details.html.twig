@@ -14,7 +14,12 @@
  * @see template_preprocess_details()
  */
 #}
-<details{{ attributes }}>
+{% if title['#markup']|clean_class %}
+  {% set titleClass = title['#markup']|clean_class %}
+{% else %}
+  {% set titleClass = 'generic-details' %}
+{% endif %}
+<details{{ attributes.addClass(title['#markup']|clean_class) }}>
   {%
     set summary_classes = [
       required ? 'js-form-required',

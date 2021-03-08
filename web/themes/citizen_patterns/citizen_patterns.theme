@@ -114,3 +114,12 @@ function citizen_patterns_form_alter(&$form, FormStateInterface $form_state) {
     $form['actions']['submit']['#suffix'] = '<i class="fas fa-search"></i>';
   }
 }
+
+/**
+ * Implements hook_preprocess webform to add form titles as twig variables.
+ */
+function citizen_patterns_preprocess_webform(&$vars){
+  $wfid = $vars["element"]["#webform_id"];
+  $wf = \Drupal\webform\Entity\Webform::load($wfid);
+  $vars["title"] = $wf->label();
+}

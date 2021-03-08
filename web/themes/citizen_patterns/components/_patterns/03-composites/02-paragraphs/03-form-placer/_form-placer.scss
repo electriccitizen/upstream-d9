@@ -2,6 +2,11 @@
    FORM PLACER WIDGET
 ================ */
 .paragraph--type--form{
+	.webform-wrapper{
+		.webform-title{
+			@include blockTitle;
+		}
+	}
 	.webform-submission-form{
 		padding-top: 0;
 	}

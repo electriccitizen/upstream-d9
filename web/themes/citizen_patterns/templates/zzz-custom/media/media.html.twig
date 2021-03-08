@@ -18,7 +18,7 @@
 	view_mode|clean_class
 ] %}
 
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes|without('data-quickedit-entity-id').addClass(classes) }} data-quickedit-entity-id="media/{{ media.mid.0.value }}">
   {{ title_suffix.contextual_links }}
   {% if content %}
     {{ content }}
