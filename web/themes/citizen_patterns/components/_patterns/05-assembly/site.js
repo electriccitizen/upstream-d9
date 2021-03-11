@@ -4,7 +4,7 @@
 ------------------ */
 Drupal.behaviors.removeEmptyRegions = {
   attach: function (context, settings) {
-    $(".layout > .layout__region:not(.ui-sortable)", context).once('removeEmpty').each(function(){  
+    $(".layout > .layout__region:not(.layout-builder__region)", context).once('removeEmpty').each(function(){  
       if(!$(this).children().length){
         $(this).remove();
       }

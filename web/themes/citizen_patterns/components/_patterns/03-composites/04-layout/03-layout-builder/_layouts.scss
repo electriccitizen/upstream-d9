@@ -38,7 +38,7 @@
 		@include desk{
 			&:not(:only-child){
 				width: calc(100% - #{$sideBar});
-				&:not(.ui-sortable){
+				&:not(.layout-builder__region){
 					padding-left: $sectionGutter;
 				}
 			}
@@ -57,7 +57,7 @@
 		@include desk{
 			&:not(:only-child){
 				width: calc(100% - #{$sideBar});
-				&:not(.ui-sortable){
+				&:not(.layout-builder__region){
 					padding-right: $sectionGutter;
 				}
 			}

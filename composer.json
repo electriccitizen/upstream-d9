@@ -127,6 +127,9 @@
             "drupal/menu_block": {
                 "Enable using active menus as menu block titles": "https://www.drupal.org/files/issues/menu_block-label_configuration-2809699-51.patch",
                 "Enable link functionality on menu block titles": "https://www.drupal.org/files/issues/menu_block-title_as_link-1-d8.patch"
+            },
+            "drupal/focal_point": {
+                "Preview modal closes media library": "https://www.drupal.org/files/issues/2020-10-06/3162210-17.patch"
             }
         },
         "composer-exit-on-patch-failure": true,
