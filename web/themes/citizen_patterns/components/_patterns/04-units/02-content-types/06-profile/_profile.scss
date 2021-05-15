@@ -4,7 +4,7 @@
 
 .node-profiles.node-content{
 
-	#section-1,#section-2{
+	#node-section-1,#node-section-2{
 		max-width: $contentStop;
 		@include auto;
 		@include clearFix;

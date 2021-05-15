@@ -54,6 +54,46 @@ function citizen_custom_preprocess_html(&$variables){
   }
 }
 
+/* 
+ * add env toolbar indicator with hook_toolbar
+ */
+function citizen_custom_toolbar() {
+  if (strpos(\Drupal::request()->getHost(),'docksal')) {
+    $toolbar = 'Local';
+  }else if (strpos(\Drupal::request()->getHost(),'dev')) {
+    $toolbar = 'Dev';
+  }else if (strpos(\Drupal::request()->getHost(),'test')) {
+    $toolbar = 'Test';
+  }else if ((strpos(\Drupal::request()->getHost(),'live')) || (strpos(\Drupal::request()->getHost(),'bloomington'))) {
+    $toolbar = 'Live';
+  }
+  if($toolbar){
+    $items['env'] = array(
+      '#type' => 'toolbar_item',
+      '#weight' => -1,
+      'tab' => array(
+        '#type' => 'link',
+        '#title' => $toolbar,
+        '#url' => \Drupal\Core\Url::fromRoute('<front>'),
+        '#options' => array(
+          'attributes' => array(
+            'title' => t('Home page'),
+            'class' => array(
+              'toolbar-icon',
+              'toolbar-item',
+            ),
+          ),
+        ),
+      ),
+      '#wrapper_attributes' => [
+        'id' => 'env-tab',
+        'class' => strtolower($toolbar),
+      ],
+    );
+  }
+  return $items;
+}
+
 /*
  * set promotion text on node forms
  */

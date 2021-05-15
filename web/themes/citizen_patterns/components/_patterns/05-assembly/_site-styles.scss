@@ -54,7 +54,41 @@ body {
 	.toolbar-vertical &{
 		max-height: 39px;
 	}
-}
+	#env-tab{
+		float: right;
+		a{
+			padding-right: 2em;
+			padding-left: 2em;
+			&:before{
+				content: none;
+			}
+		}
+		&.local{
+			a{
+				background: $adminPurple;
+				color: $white;
+			}
+		}
+		&.dev{
+			a{
+				background: $adminGold;
+				color: $black;
+			}
+		}
+		&.test{
+			a{
+				background: $adminGreen;
+				color: $white;
+			}
+		}
+		&.live{
+			a{
+				background: $adminFuchsia;
+				color: $white;
+			}
+		}
+	}//end env tab
+}//end toolbar bar
 .toolbar-tray-horizontal{
 	.menu-item--expanded{
 		background: none;

@@ -152,7 +152,7 @@
 			  color: $darkGrey;
 			  border-radius: 0;
 			  float: left;
-			  background-position: 7px 4px;
+			  background-position: 7px 6px;
 			  background-size: 22px 22px;
 			  background-repeat: no-repeat;
 			  background-color: $siteBack;
@@ -199,17 +199,17 @@
 			}
 			&[value="Add Quote"]{
 			  @extend %quote;
-			  background-position: 7px 6px;
+			  background-position: 7px 8px;
 			  background-size: 20px 20px;
 			}
 			&[value="Add Text"]{
 			  @extend %text;
-			  background-position: 7px 6px;
+			  background-position: 7px 8px;
 			  background-size: 20px 20px;
 			}
 			&[value="Add Video"]{
 			  @extend %video;
-			  background-position: 7px 6px;
+			  background-position: 7px 8px;
 			  background-size: 20px 20px;
 			}
 			&[value="Add View Placer"]{

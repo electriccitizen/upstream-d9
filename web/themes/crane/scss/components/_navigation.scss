@@ -12,57 +12,45 @@
 
 /* ADMIN TOOLBAR
 ------------------ */
-.toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded
 #toolbar-bar{
+	#env-tab{
+		float: right;
+		a{
+			padding-right: 2em;
+			padding-left: 2em;
+			&:before{
+				content: none;
+			}
+		}
+		&.local{
+			a{
+				background: $purple;
+				color: $white;
+			}
+		}
+		&.dev{
+			a{
+				background: $gold;
+				color: $black;
+			}
+		}
+		&.test{
+			a{
+				background: $green;
+				color: $white;
+			}
+		}
+		&.live{
+			a{
+				background: $fuchsia;
+				color: $white;
+			}
+		}
+	}//end env tab
+}//end toolbar bar
+.toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded #toolbar-bar{
 	position: fixed !important;
 	width: 100%;
-	.toolbar-tab{
-		&.env{
-			span.toolbar-item{
-				padding: 1em 1.333em;
-			  font-weight: $heavy;
-			  display: block;
-			  background: $transWhite;
-			  color: $black !important;
-			  cursor: default;
-			  &:hover,&:focus{
-			  	text-decoration: none;
-			  }
-			}
-		}
-	}//end toolbar tab
-	&.local{
-		background-color: $black;
-		.toolbar-tab{
-			.toolbar-item{
-				color: $grey !important;
-			}
-		}
-	}//end local
-	&.dev{
-		background: $green;
-		.toolbar-tab{
-			.toolbar-item{
-				color: $white !important;
-			}
-		}
-	}//end dev
-	&.test{
-		background: $gold;
-		.toolbar-tab{
-			.toolbar-item{
-				color: $black !important;
-			}
-		}
-	}//end test
-	&.live{
-		background: darken($red, 8%);
-		&.toolbar-tab{
-			.toolbar-item{
-				color: $white !important;
-			}
-		}
-	}
 }//end #toolbar
 .toolbar-tray-horizontal{
 	.menu-item--expanded{

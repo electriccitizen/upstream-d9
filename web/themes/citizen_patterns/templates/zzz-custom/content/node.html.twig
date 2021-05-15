@@ -112,7 +112,7 @@
     {% if content._layout_builder.0 %}
       {%- for key, layoutSection in content._layout_builder if key|first != '#' -%}
         {% block layoutSectionContent %}
-          <section id="section-{{ loop.index }}" class="node-section">
+          <section id="node-section-{{ loop.index }}" class="node-section">
             {{- layoutSection -}}
           </section>
         {% endblock %}

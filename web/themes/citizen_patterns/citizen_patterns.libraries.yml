@@ -85,7 +85,7 @@ table:
 widgets:
   version: 1.0
   js:
-    components/_patterns/02-chunks/01-navigation/04-widget-anchors/widget-anchors.js: {}
+    components/_patterns/02-chunks/01-navigation/05-widget-anchors/widget-anchors.js: {}
   dependencies:
     - core/underscore
 fonts:

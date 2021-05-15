@@ -233,3 +233,12 @@ table.cke_dialog{
 		}
 	}
 }//end cke dialog
+
+/* SEARCH API FIELDS
+---------------------- */
+.search-api-index-fields{
+	td.priority-low{
+		max-width: 300px;
+		word-break: break-all;
+	}
+}

@@ -30,4 +30,17 @@
 	.feed-icon{
 		display: none;
 	}
-}
+	//restricted access message
+	&:not(.logged-in){
+		.restricted-node{
+			min-height: 400px;
+			@include safeFlex(column,nowrap,center,center);
+			& > div{
+				max-width: $textMax + 40px;
+				border: 1px solid $borderRule;
+				padding: 40px 30px;
+			}
+		}
+	}//end restricted access
+}//end path taxonomy
+

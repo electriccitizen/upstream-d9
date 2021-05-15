@@ -45,3 +45,114 @@
 		display: none;
 	}
 }
+
+/* SMART DATES
+---------------------------- */
+.field--type-smartdate{
+	.smartdate--widget{
+		.allday-label{
+			margin: 0.5em 2.2em 0.75em 0;
+			.allday{
+				@include browserWipe;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				outline: none;
+				border: 2px solid $checkbox;
+				width: 18px;
+				height: 18px;
+				background-color: $siteBack;
+				position: relative;
+				top: 3px;
+				cursor: pointer;
+				margin-right: $spaceXxs;
+				&:hover{
+					border-color: $checkboxHover;
+					background-color: $checkboxBackHover;
+					box-shadow: 0 0 0 1px $checkboxHover;
+				}
+				&:focus{
+					border-color: $checkboxHover;
+					background-color: $checkboxBackHover;
+				}
+				&:checked{
+					border-color: $checkboxChecked;
+					background-color: $checkboxCheckedBack;
+					&:hover{
+						border-color: $checkboxCheckedHover;
+						background-color: $checkboxCheckedBackHover;
+						box-shadow: 0 0 0 1px $checkboxCheckedHover;
+					}
+					&:focus{
+						border-color: $checkboxCheckedHover;
+						background-color: $checkboxCheckedBackHover;
+					}
+				}
+				&[type="checkbox"]:checked{
+					background-image: url('../images/icons/admin-icons/checkmark.svg');
+				}
+			}//end allday
+		}//end allday-label
+		//hide duration
+		.duration-wrapper{
+			display: none !important;
+		}
+		//shrink number inputs to match select heights
+		.form-type-number input{
+			min-height: 30px;
+			padding: 3px 6px;
+			border-radius: 0;
+		}
+		.js-form-type-select{
+			label{
+				min-width: 0;
+			}
+		}
+		.select2-container--default{
+			position: relative;
+			top: -1px;
+			min-width: 100px;
+		}
+		.byday-checkboxes{
+			legend{
+				margin: 0 1rem 0 0;
+				position: relative;
+				top: .5rem;
+			}
+			.js-form-type-checkbox{
+				margin: 0 .5rem 0 0;
+			} 
+			input{
+				&:checked{
+					& ~ label.option{
+						border-color: $checkboxChecked;
+						background-color: $checkboxCheckedBack;
+						&:hover,&:focus{
+							border-color: $checkboxCheckedHover;
+							background-color: $checkboxCheckedBackHover;
+							outline: 0;
+						}
+					}
+				}
+				& ~ label.option{
+					vertical-align: -7px;
+					width: 21px;
+					padding: 6px 0 0 1px;
+					&:hover,&:focus{
+						border-color: $checkboxHover;
+						background-color: $checkboxBackHover;
+						outline: 0;
+					}
+					&:first-letter{
+						font-size: 16px;
+					}
+				}//end input
+			}//end day labels
+		}//end by day checkboxes
+	}//end smartdate widget
+	//submit button to add more multi dates
+	.field-add-more-submit{
+		margin-bottom: $spaceMd;
+	}
+}//end field type smartdate
