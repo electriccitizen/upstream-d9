@@ -3,5 +3,7 @@ web_docroot: true
 enforce_https: transitional
 php_version: 7.4
 drush_version: 10
+database:
+  version: 10.4
 protected_web_paths:
   - /private
