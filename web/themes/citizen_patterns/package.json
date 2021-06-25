@@ -13,7 +13,8 @@
     "start": "gulp compile && gulp theme",
     "postinstall": "rm -rf pattern-lab && composer create-project -n pattern-lab/edition-twig-standard pattern-lab && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source",
     "deploy": "gulp scriptRefresh && gulp ghpages-deploy",
-    "jsRefresh": "gulp scriptRefresh"
+    "jsRefresh": "gulp scriptRefresh",
+    "preinstall": "npx npm-force-resolutions"
   },
   "dependencies": {
     "gulp-rename": "^1.4.0",
@@ -21,5 +22,8 @@
     "pa11y": "^5.1.0",
     "postcss": "^7.0.7",
     "postcss-scss": "^2.0.0"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }

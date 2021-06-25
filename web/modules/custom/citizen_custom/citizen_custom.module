@@ -64,7 +64,7 @@ function citizen_custom_toolbar() {
     $toolbar = 'Dev';
   }else if (strpos(\Drupal::request()->getHost(),'test')) {
     $toolbar = 'Test';
-  }else if ((strpos(\Drupal::request()->getHost(),'live')) || (strpos(\Drupal::request()->getHost(),'bloomington'))) {
+  }else if (strpos(\Drupal::request()->getHost(),'live')) {
     $toolbar = 'Live';
   }
   if($toolbar){

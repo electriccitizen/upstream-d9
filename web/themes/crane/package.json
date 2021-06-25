@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "Gulp Helpers",
   "main": "gulpfile.js",
+  "author": "Adam Fuchs",
+  "license": "ISC",
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete",
-    "start": "gulp watch"
+    "start": "gulp watch",
+    "preinstall": "npx npm-force-resolutions"
   },
   "keywords": [
     "gulp",
     "sass"
   ],
-  "author": "Adam Fuchs",
-  "license": "ISC",
   "devDependencies": {
     "breakpoint-sass": "^2.6.1",
     "gulp": "^3.9.1",
@@ -27,5 +28,8 @@
   },
   "dependencies": {
     "natives": "^1.1.6"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }
