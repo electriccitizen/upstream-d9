@@ -25,11 +25,11 @@ https://docs.google.com/document/d/10KZ4-cIcvQLLxON1-G-K0Ilw55OZdpSIKT7UeM16KL0
 # Local Development Setup
 
 ## Clone repo locally
-Clone the repository from Pantheon in your Projects folder:
+Clone the repository from Github in your Projects folder:
 
 ```
 cd ~/Projects
-git clone ssh://codeserver.dev.fa0c87bc-6677-497c-93ba-c3e7ee868c7e@codeserver.dev.fa0c87bc-6677-497c-93ba-c3e7ee868c7e.drush.in:2222/~/repository.git upstream-d9
+git clone git clone git@github.com:electriccitizen/upstream-d9.git
 ```
 
 ## install modules
@@ -84,4 +84,6 @@ fin drush uli
 ## More information
 The front-end theme can be found at /web/themes/citizen_patterns.  There is a theme-install.md doc there.
 The admin theme can be found at /web/themes/crane.  There is also theme-install.md doc there.
+
+For dev workflow or ticket assistance, ask Adam.
 
