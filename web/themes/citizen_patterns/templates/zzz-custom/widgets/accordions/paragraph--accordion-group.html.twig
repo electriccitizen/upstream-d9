@@ -36,7 +36,7 @@
  * @ingroup themeable
  */
 #}
-{% embed "@composites/02-paragraphs/00-base/_paragraph.twig" 
+{% embed "@composites/02-paragraphs/00-base/_paragraph.twig"
 	with{
 		type: paragraph.bundle|clean_class,
 		viewMode: view_mode|clean_class,
@@ -60,6 +60,7 @@
 				{% include "@composites/02-paragraphs/01-accordion/_accordion.twig"
 					with{
 						accordionHeader: accordion['#paragraph'].field_accordion_header.value,
+						accordionAnchor: accordion['#paragraph'].field_anchor_link.value,
 						accordionContent: text,
 						accordionControl: control
 					}
