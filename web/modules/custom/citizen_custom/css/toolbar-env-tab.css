@@ -1,0 +1,26 @@
+#toolbar-bar #env-tab {
+  float: right;
+}
+#toolbar-bar #env-tab a {
+  padding-right: 2em;
+  padding-left: 2em;
+}
+#toolbar-bar #env-tab a:before {
+  content: none;
+}
+#toolbar-bar #env-tab.local a {
+  background: #8b01e2;
+  color: #fff;
+}
+#toolbar-bar #env-tab.dev a {
+  background: #fcd105;
+  color: #000;
+}
+#toolbar-bar #env-tab.test a {
+  background: #018901;
+  color: #fff;
+}
+#toolbar-bar #env-tab.live a {
+  background: #c028bb;
+  color: #fff;
+}
