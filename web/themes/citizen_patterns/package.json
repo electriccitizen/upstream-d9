@@ -3,11 +3,12 @@
   "description": "Project template for Drupal 8 themes based on Emulsify theme",
   "version": "1.0.0",
   "devDependencies": {
-    "emulsify-gulp": "fourkitchens/emulsify-gulp",
+    "emulsify-gulp": "github:fourkitchens/emulsify-gulp",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
     "gulp-gzip": "^1.4.2",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "node-normalize-scss": "8.0.1"
   },
   "scripts": {
     "start": "gulp compile && gulp theme",
