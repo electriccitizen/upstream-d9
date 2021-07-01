@@ -67,6 +67,10 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
     include $docksal_settings;
   }
 
+  if (file_exists($app_root . '/' . $site_path . '/settings.lando.php')) {
+    include $app_root . '/' . $site_path . '/settings.lando.php';
+  }
+
   /**
    * If there is a local settings file, then include it
    */
