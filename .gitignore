@@ -94,6 +94,7 @@ upstream/web/
 /web/sites/default/default.settings.php
 /web/sites/development.services.yml
 /web/sites/example.settings.local.php
+/web/sites/default/settings.lando.php
 /web/sites/default/settings.pantheon.php
 /web/sites/example.sites.php
 /web/themes/README.txt

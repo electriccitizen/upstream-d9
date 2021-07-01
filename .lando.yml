@@ -1,0 +1,35 @@
+name: upstream-d9
+recipe: drupal9
+config:
+  php: '7.3'
+  composer_version: '2.0.7'
+  via: apache:2.4
+  webroot: web
+  database: mysql:5.7
+  xdebug: false
+# Excludes are listed for performance and modifications to these directories
+#   must be done using `lando [command]`. You may comment out the excludes if
+#   desired but you will take a hit on performance. See
+#   https://docs.lando.dev/config/performance.html for more information.
+#   Example: Use `lando composer require drupal/metatag` instead of
+#   `composer require drupal/metatag`
+excludes:
+  - vendor
+  - web/core
+  - web/modules/contrib
+services:
+  appserver:
+    build:
+      - composer install
+      - cp settings.lando.php web/sites/default/settings.lando.php
+  node:
+    type: node:14
+    globals:
+      gulp-cli: latest
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node
