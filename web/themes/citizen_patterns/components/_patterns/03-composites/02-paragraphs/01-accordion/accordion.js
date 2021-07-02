@@ -28,16 +28,16 @@ Drupal.behaviors.accordion = {
 
         var controlId = $(this).find('.accordion-header a').attr('id');
         if (controlId) {
-          $("a[href='#" + controlId + "']", context).click(function(e) {
+          $("a[href='#" + controlId + "']").click(function(e) {
             e.preventDefault();
-            anchorOpen($($(this).attr('href'), context));
+            anchorOpen($($(this).attr('href')));
           });
         }
       });
 
       var urlHash = window.location.hash.substr(0);
       if (urlHash) {
-        $(urlHash, context).once('accordionscroll').each(function() {
+        $(urlHash).once('accordionscroll').each(function() {
           $activeHeader = $(this).parent('.accordion-header');
           if ($activeHeader) {
             accordionOpen($activeHeader);

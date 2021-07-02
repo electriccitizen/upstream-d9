@@ -60,7 +60,7 @@
 				{% include "@composites/02-paragraphs/01-accordion/_accordion.twig"
 					with{
 						accordionHeader: accordion['#paragraph'].field_accordion_header.value,
-						accordionAnchor: accordion['#paragraph'].field_anchor_link.value,
+						accordionAnchor: accordion['#paragraph'].field_anchor_link.0.value|clean_id,
 						accordionContent: text,
 						accordionControl: control
 					}

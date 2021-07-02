@@ -4,7 +4,7 @@
 
 {% embed '@parts/08-fields/02-paragraphs/_paragraphs-field-item.twig' %}
 	{% block paragraphItem %}
-		{% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+		{% embed '@composites/02-paragraphs/00-base/_paragraph.twig'
 			with{
 				sectionTitle:'',
 				sectionIntro:'',
@@ -13,10 +13,11 @@
 			{% block widgetContent %}
 				<div class="field field-accordion-item">
 					{% for accordion in accordionGroup %}
-						{% 
+						{%
 							include "@composites/02-paragraphs/01-accordion/_accordion.twig"
-							with{
+							with {
 								accordionHeader: accordion.accordionHeader,
+								accordionAnchor: accordion.accordionAnchor,
 								accordionContent: accordion.accordionContent,
 							}
 						%}

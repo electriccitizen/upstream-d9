@@ -2,7 +2,7 @@
 
 /* HIDE DEFAULT PATTERN LAB NAV & HEADER
 ---------------------------- */
-$(".sg-colors").once('pl-script').each(function(){  
+$(".sg-colors").once('pl-script').each(function(){
  	$('#sg-vp-wrap', window.parent.document).css({'top':'0','z-index':'5'});
  	$('#sg-gen-container,#sg-viewport', window.parent.document).css({'width':'100%'});
  	$('header.sg-header', window.parent.document).css({'opacity':'0'});
@@ -129,7 +129,7 @@ $('input[type="submit"]').click(function(e){
 
 /* PAGER
 ------------------- */
-$('#chunks-pager .count-shim').each(function(){  
+$('#chunks-pager .count-shim').each(function(){
 	//add pager counter to results
 	var count = $('#chunks-pager .count-shim').html();
 	$('#chunks-pager .pager__current').append('<span>' + count + '</span>');
@@ -187,16 +187,59 @@ $('.block-newsletter .modal-close').click(function(){
 /* PARAGRAPHS
 ------------------ */
 //accordions
-$('.accordion-header a').click(function(){
-  var activeHeader = $(this).parent('.accordion-header');
-  if(activeHeader.closest('.accordion-item.accord-active').length){
-    $('.accord-active').removeClass('accord-active');
-    activeHeader.next().slideUp(300);
-  }else{
-    $('.accord-active').find('.field-long-text').slideUp(300).end().removeClass('accord-active');
-    activeHeader.parent('.accordion-item').addClass('accord-active').end().next().slideDown(300);
-  }
+$('.accordion-header a', this).click(function(e){
+	e.preventDefault();
+	var activeHeader = $(this).parent('.accordion-header');
+	if (activeHeader.closest('.accordion-item.accord-active').length) {
+		$('.accord-active').removeClass('accord-active');
+		activeHeader.next().slideUp(300).attr('aria-hidden', 'true').end().find('a').attr('aria-expanded', "false");
+	}
+	else {
+		accordionOpen(activeHeader);
+		//detect if accordion top is offscreen and scroll to it if it is
+		setTimeout(function() {
+			var windowTop = $(window).scrollTop();
+			var currentAccordion = $('.accord-active').offset().top;
+			if(windowTop > currentAccordion){
+				$('html, body').animate({
+								scrollTop: $('.accord-active').offset().top - 100
+						});
+			}
+		}, 510);
+	}
 });
+
+var controlId = $(this).find('.accordion-header a').attr('id');
+if (controlId) {
+	$("a[href='#" + controlId + "']").click(function(e) {
+		e.preventDefault();
+		anchorOpen($($(this).attr('href')));
+	});
+}
+
+var urlHash = window.location.hash.substr(0);
+if (urlHash) {
+	$(urlHash).once('accordionscroll').each(function() {
+		$activeHeader = $(this).parent('.accordion-header');
+		if ($activeHeader) {
+			accordionOpen($activeHeader);
+		}
+	});
+}
+
+function anchorOpen($anchor) {
+	setTimeout(function(){
+		$('html, body').animate({
+			scrollTop: $anchor.offset().top - 100
+		});
+	}, 20);
+	accordionOpen($anchor.parent('.accordion-header'));
+}
+
+function accordionOpen($activeHeader) {
+	$('.accord-active').find('.field-long-text').slideUp(300).attr('aria-hidden', 'true').end().removeClass('accord-active').find('.accordion-header a').attr('aria-expanded', 'false');
+	$activeHeader.parent('.accordion-item').addClass('accord-active').end().next().slideDown(300).attr('aria-hidden', 'false').end().find('a').attr('aria-expanded', "true");
+}
 
 //toggle image sizes
 $(".image-options select").change(function(){
@@ -244,7 +287,7 @@ $(".gallery-type.slider").each(function(){
 });
 
 // Links & Files
-$(document).ready(function(){  
+$(document).ready(function(){
 	//hide any items past the default number displayed
 	var count = $('#lf-numbers').val();
 	var lastShown = $('#composites-pl-links-files .lf-item[data-item="' + count + '"]');
@@ -294,7 +337,7 @@ $('#section-layout').change(function(){
 
 /* CARDS
 ------------------- */
-//views 
+//views
 $('#card-type').change(function(){
 	var chosen = $(this).find('option:selected').val();
 	$('#composites-views .view-content').fadeTo(200,0, function() {
@@ -370,7 +413,7 @@ $('.map-close').click(function(){
 //find searched value if not null and highlight each word
 if($('.search-page-block .js-form-item-site-search-api-fulltext input').val()){
   var searchString = $('.search-page-block .js-form-item-site-search-api-fulltext input').val().split(' ');
-  
+
   $.fn.wrapInTag = function(opts) {
 
     var tag = opts.tag
@@ -390,7 +433,7 @@ if($('.search-page-block .js-form-item-site-search-api-fulltext input').val()){
 }
 
 //copy pager setup from chunks pager
-$('#units-site-search .count-shim').each(function(){  
+$('#units-site-search .count-shim').each(function(){
 	//add pager counter to results
 	var count = $('#units-site-search .count-shim').html();
 	$('#units-site-search .pager__current').append('<span>' + count + '</span>');
