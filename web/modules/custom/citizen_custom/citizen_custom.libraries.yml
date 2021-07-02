@@ -3,3 +3,13 @@ toolbar-env-tab:
   css:
     theme:
       css/toolbar-env-tab.css: {}
+
+anchor_ajax_event:
+  version: VERSION
+  js:
+    js/anchor-field-ajax-event.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings

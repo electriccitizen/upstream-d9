@@ -8,6 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Site\Settings;
+use Drupal\Component\Utility\Html;
 
 /**
  * Implements hook_help().
@@ -240,5 +241,54 @@ function citizen_custom_field_widget_form_alter(&$element, \Drupal\Core\Form\For
       }
     }
   }
+  if ($field_definition->getName() == 'field_anchor_link') {
+    // Guarantees unique wrapper id for pages with multiple anchor fields.
+    $id = implode('-', $element['#field_parents']);
+    $initial_anchor_id = _citizen_custom_get_anchor_tag($element['value']);
+    $initial_anchor_text = t("Anchor tag: $initial_anchor_id");
+    $element['anchor'] = [
+      '#type' => 'item',
+      '#prefix' => "<div id='$id'>",
+      '#suffix' => "<span class='description'>$initial_anchor_text</span></div>",
+    ];
+    $element['#attached']['library'][] = 'citizen_custom/anchor_ajax_event';
+    $element['value']['#attributes']['class'][] = 'anchorfield-ajax-trigger';
+    $element['value']['#ajax'] = [
+      'callback' => '_citizen_custom_anchor_link_callback',
+      'disable-refocus' => FALSE,
+      'event' => 'finishedinput',
+      'wrapper' => $id,
+    ];
+  }
+}
+
+/**
+ * Custom AJAX callback function for displaying a rendered anchor id.
+ */
+function _citizen_custom_anchor_link_callback(&$form, FormStateInterface $form_state) {
+  $anchor_element = $form_state->getTriggeringElement();
+  $id = implode('-', $anchor_element['#field_parents']);
+  $anchor_id = _citizen_custom_get_anchor_tag($anchor_element);
+  $output = t("<div id=\"$id\"><span class=\"description\">Anchor tag: $anchor_id</span></div>");
+
+  return ['#markup' => $output];
+}
+
+/**
+ * Finds and renders the anchor id for field_anchor_link form items.
+ *
+ * @param array $anchor_element
+ *   The form render array for an anchor element.
+ *
+ * @return string
+ *   The rendered anchor id.
+ */
+function _citizen_custom_get_anchor_tag($anchor_element) {
+  $id = implode('-', $anchor_element['#field_parents']);
+  $anchor_id = "";
+
+  // Equivalent to twig 'clean_id' filter.
+  $anchor_id = Html::getId(trim($anchor_element['#default_value']));
+  return $anchor_id ? "#$anchor_id" : "";
 }
 

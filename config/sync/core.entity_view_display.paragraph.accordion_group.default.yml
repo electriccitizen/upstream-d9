@@ -11,7 +11,6 @@ dependencies:
     - layout_builder
 third_party_settings:
   layout_builder:
-    sections: {  }
     enabled: false
     allow_custom: false
 _core:
@@ -23,7 +22,7 @@ mode: default
 content:
   field_accordion_item:
     type: entity_reference_revisions_entity_view
-    weight: 3
+    weight: 1
     label: hidden
     settings:
       view_mode: default
