@@ -250,10 +250,12 @@ function citizen_custom_field_widget_form_alter(&$element, \Drupal\Core\Form\For
       '#prefix' => "<div id='$id'>",
       '#suffix' => "<span class='description'>$initial_anchor_text</span></div>",
     ];
+    $element['#attached']['library'][] = 'citizen_custom/anchor_ajax_event';
+    $element['value']['#attributes']['class'][] = 'anchorfield-ajax-trigger';
     $element['value']['#ajax'] = [
       'callback' => '_citizen_custom_anchor_link_callback',
       'disable-refocus' => FALSE,
-      'event' => 'keyup',
+      'event' => 'finishedinput',
       'wrapper' => $id,
     ];
   }

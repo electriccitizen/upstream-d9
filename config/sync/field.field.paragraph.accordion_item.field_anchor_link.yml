@@ -10,7 +10,7 @@ field_name: field_anchor_link
 entity_type: paragraph
 bundle: accordion_item
 label: 'Anchor Link'
-description: ''
+description: 'Used to create an anchor that will automatically open this accordion when visited. <strong>NOTE:</strong> When creating the anchor its best to use machine friendly format: my-great-anchor and when linking to it use a hashtag: /my-page#my-great-anchor'
 required: false
 translatable: true
 default_value: {  }
