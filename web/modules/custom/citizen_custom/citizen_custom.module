@@ -289,9 +289,6 @@ function _citizen_custom_get_anchor_tag($anchor_element) {
 
   // Equivalent to twig 'clean_id' filter.
   $anchor_id = Html::getId(trim($anchor_element['#default_value']));
-  if (strpos($id, 'field_accordion_item') !== false) {
-    $anchor_prefix = 'accordionAnchor-';
-  }
   return $anchor_id ? "#$anchor_prefix$anchor_id" : "";
 }
 
