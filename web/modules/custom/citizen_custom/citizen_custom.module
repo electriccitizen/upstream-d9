@@ -285,10 +285,9 @@ function _citizen_custom_anchor_link_callback(&$form, FormStateInterface $form_s
 function _citizen_custom_get_anchor_tag($anchor_element) {
   $id = implode('-', $anchor_element['#field_parents']);
   $anchor_id = "";
-  $anchor_prefix = "anchor-";
 
   // Equivalent to twig 'clean_id' filter.
   $anchor_id = Html::getId(trim($anchor_element['#default_value']));
-  return $anchor_id ? "#$anchor_prefix$anchor_id" : "";
+  return $anchor_id ? "#$anchor_id" : "";
 }
 
