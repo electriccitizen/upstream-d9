@@ -45,6 +45,7 @@ function citizen_custom_theme() {
 /* ADD USER ROLE CLASSES
 ------------------------*/
 function citizen_custom_preprocess_html(&$variables){
+  // print \Drupal::request()->getHost();
   /* Find the current user */
   $user = \Drupal::currentUser();
   $userRole = $user->getRoles();
@@ -59,38 +60,50 @@ function citizen_custom_preprocess_html(&$variables){
  * add env toolbar indicator with hook_toolbar
  */
 function citizen_custom_toolbar() {
-  if (strpos(\Drupal::request()->getHost(),'docksal')) {
-    $toolbar = 'Local';
-  }else if (strpos(\Drupal::request()->getHost(),'dev')) {
-    $toolbar = 'Dev';
-  }else if (strpos(\Drupal::request()->getHost(),'test')) {
-    $toolbar = 'Test';
-  }else if (strpos(\Drupal::request()->getHost(),'live')) {
-    $toolbar = 'Live';
+  $host = \Drupal::request()->getHost();
+  $toolbar = '';
+  if (strpos($host, 'docksal') || strpos($host, 'lndo')) {
+    $toolbar = t('Local');
   }
-  if($toolbar){
-    $items['env'] = array(
+  elseif (strpos($host,'dev')) {
+    $toolbar = t('Dev');
+  }
+  elseif (strpos($host,'test')) {
+    $toolbar = t('Test');
+  }
+  elseif (strpos($host,'live')) {
+    $toolbar = t('Live');
+  }
+
+  $items = [];
+  if ($toolbar){
+    $items['env'] = [
       '#type' => 'toolbar_item',
       '#weight' => -1,
-      'tab' => array(
+      'tab' => [
         '#type' => 'link',
         '#title' => $toolbar,
         '#url' => \Drupal\Core\Url::fromRoute('<front>'),
-        '#options' => array(
-          'attributes' => array(
+        '#options' => [
+          'attributes' => [
             'title' => t('Home page'),
-            'class' => array(
+            'class' => [
               'toolbar-icon',
               'toolbar-item',
-            ),
-          ),
-        ),
-      ),
+            ],
+          ],
+        ],
+        '#attached' => [
+          'library' => [
+            'citizen_custom/toolbar-env-tab'
+          ]
+        ],
+      ],
       '#wrapper_attributes' => [
         'id' => 'env-tab',
         'class' => strtolower($toolbar),
       ],
-    );
+    ];
   }
   return $items;
 }

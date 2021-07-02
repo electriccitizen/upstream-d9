@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b0475804aced6e446c065ea15de01ef",
+    "content-hash": "eb11c8d6e55aa8756b3d845f99dce90b",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -2546,6 +2546,106 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/auto_entitylabel",
                 "issues": "https://www.drupal.org/project/issues/auto_entitylabel"
+            }
+        },
+        {
+            "name": "drupal/cacheflush",
+            "version": "1.0.0-beta4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/cacheflush.git",
+                "reference": "8.x-1.0-beta4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/cacheflush-8.x-1.0-beta4.zip",
+                "reference": "8.x-1.0-beta4",
+                "shasum": "fcb0441e2db14c97281270d572d6f1a0a2129468"
+            },
+            "require": {
+                "drupal/cacheflush_entity": "*",
+                "drupal/core": "^8 || ^9"
+            },
+            "require-dev": {
+                "drupal/cacheflush_ui": "*",
+                "drupal/ultimate_cron": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1623265163",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "balintcsaba",
+                    "homepage": "https://www.drupal.org/user/1800496"
+                },
+                {
+                    "name": "reszli",
+                    "homepage": "https://www.drupal.org/user/710368"
+                },
+                {
+                    "name": "vuil",
+                    "homepage": "https://www.drupal.org/user/3568458"
+                }
+            ],
+            "description": "Allows you to create configurable cache flusher presets.",
+            "homepage": "http://drupal.org/project/cacheflush",
+            "support": {
+                "source": "http://cgit.drupalcode.org/cacheflush",
+                "issues": "https://www.drupal.org/project/issues/cacheflush"
+            }
+        },
+        {
+            "name": "drupal/cacheflush_entity",
+            "version": "1.0.0-beta4",
+            "require": {
+                "drupal/cacheflush": "^1",
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "metapackage",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.0-beta4",
+                    "datestamp": "1623265163",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Beta releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "balintcsaba",
+                    "homepage": "https://www.drupal.org/user/1800496"
+                },
+                {
+                    "name": "reszli",
+                    "homepage": "https://www.drupal.org/user/710368"
+                },
+                {
+                    "name": "vuil",
+                    "homepage": "https://www.drupal.org/user/3568458"
+                }
+            ],
+            "description": "Cacheflush entity.",
+            "homepage": "https://www.drupal.org/project/cacheflush",
+            "support": {
+                "source": "https://git.drupalcode.org/project/cacheflush"
             }
         },
         {
@@ -13977,6 +14077,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "drupal/auto_entitylabel": 10,
+        "drupal/cacheflush": 10,
         "drupal/entity_usage": 10,
         "drupal/linkit": 10,
         "drupal/webform": 15
