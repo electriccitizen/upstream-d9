@@ -29,6 +29,7 @@ permissions:
   - 'administer webform submission'
   - 'assign editor role'
   - 'assign site_manager role'
+  - 'cacheflush clear cache'
   - 'cancel account'
   - 'change own username'
   - 'configure editable landing_page node layout overrides'
