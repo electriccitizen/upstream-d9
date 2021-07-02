@@ -12,42 +12,6 @@
 
 /* ADMIN TOOLBAR
 ------------------ */
-#toolbar-bar{
-	#env-tab{
-		float: right;
-		a{
-			padding-right: 2em;
-			padding-left: 2em;
-			&:before{
-				content: none;
-			}
-		}
-		&.local{
-			a{
-				background: $purple;
-				color: $white;
-			}
-		}
-		&.dev{
-			a{
-				background: $gold;
-				color: $black;
-			}
-		}
-		&.test{
-			a{
-				background: $green;
-				color: $white;
-			}
-		}
-		&.live{
-			a{
-				background: $fuchsia;
-				color: $white;
-			}
-		}
-	}//end env tab
-}//end toolbar bar
 .toolbar-tray-horizontal ul li.menu-item--expanded ul li.menu-item--expanded #toolbar-bar{
 	position: fixed !important;
 	width: 100%;
@@ -254,7 +218,7 @@
 	}//end nav tabs
 }//end secondary tabs
 
-/* BREADCRUMBS 
+/* BREADCRUMBS
 ----------------- */
 #block-seven-breadcrumbs{
 	.breadcrumb{
