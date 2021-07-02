@@ -30,6 +30,7 @@ include __DIR__ . "/settings.pantheon.php";
  */
 $settings['config_sync_directory'] = "../config/sync";
 
+$settings['environment'] = 'local';
 /**
  * Set up config splits
  */
@@ -42,16 +43,20 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
     case 'live':
       // $config['config_split.config_split.live']['status'] = TRUE;
       // $config['config_split.config_split.excluded']['status'] = TRUE;
+      $settings['environment'] = 'live';
       break;
     case 'test':
       // $config['config_split.config_split.test']['status'] = TRUE;
       // $config['config_split.config_split.excluded']['status'] = TRUE;
+      $settings['environment'] = 'test';
       break;
     case 'dev':
       $config['config_split.config_split.dev']['status'] = TRUE;
+      $settings['environment'] = 'dev';
       break;
     default:
       $config['config_split.config_split.local']['status'] = TRUE;
+      $settings['environment'] = 'local';
       break;
   }
 } else { // LOCAL

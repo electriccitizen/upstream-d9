@@ -7,6 +7,7 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Site\Settings;
 
 /**
  * Implements hook_help().
@@ -59,18 +60,18 @@ function citizen_custom_preprocess_html(&$variables){
  * add env toolbar indicator with hook_toolbar
  */
 function citizen_custom_toolbar() {
-  $host = \Drupal::request()->getHost();
+  $env = Settings::get('environment');
   $toolbar = '';
-  if (strpos($host, 'docksal') || strpos($host, 'lndo')) {
+  if ($env == 'local') {
     $toolbar = t('Local');
   }
-  elseif (strpos($host,'dev')) {
+  elseif ($env == 'dev') {
     $toolbar = t('Dev');
   }
-  elseif (strpos($host,'test')) {
+  elseif ($env == 'test') {
     $toolbar = t('Test');
   }
-  elseif (strpos($host,'live')) {
+  elseif ($env == 'live') {
     $toolbar = t('Live');
   }
 
