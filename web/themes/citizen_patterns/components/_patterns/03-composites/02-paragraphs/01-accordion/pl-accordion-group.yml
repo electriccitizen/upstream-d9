@@ -12,6 +12,8 @@ accordionGroup:
     accordionContent:
       'Bush tomato gumbo potato garbanzo ricebean burdock daikon coriander kale quandong. Bok choy celery leek avocado shallot horseradish aubergine parsley. Bok choy bell pepper kale celery desert raisin kakadu plum bok choy bunya nuts.'
   2:
+    accordionAnchor:
+      sample-accordion-anchor
     accordionHeader:
       'Bacon ipsum dolor sit'
     accordionContent:
@@ -21,4 +23,3 @@ accordionGroup:
       'Multoque hoc melius nos veriusque'
     accordionContent:
       'Demosthenes et Aeschines inter se decertare soliti sunt? Ad corpus diceres pertinere-, sed ea, quae dixi, ad corpusne refers?'
-    

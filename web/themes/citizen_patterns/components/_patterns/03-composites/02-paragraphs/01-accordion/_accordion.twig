@@ -1,10 +1,11 @@
 {#
  	DRUPAL: This template is extended into the Drupal paragraph--accordion-group.html.twig.
 #}
+{% set controlId = accordionAnchor ? accordionAnchor : "" %}
 
 <div class="accordion-item" aria-label="Accordion">
 	<div class="accordion-header">
-		<a href="#" role="button" aria-controls="{{ accordionControl }}" aria-expanded="false">{{ accordionHeader }}</a>
+		<a href="#" role="button" id="{{ controlId }}" aria-controls="{{ accordionControl }}" aria-expanded="false">{{ accordionHeader }}</a>
 	</div>
 	<div class="field field-long-text" id="{{ accordionControl }}" aria-hidden="true">
 		{{ accordionContent }}

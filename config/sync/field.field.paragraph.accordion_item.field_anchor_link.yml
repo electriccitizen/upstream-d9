@@ -1,0 +1,19 @@
+uuid: 6996e417-1c92-449a-b5cb-15b79c37f657
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_anchor_link
+    - paragraphs.paragraphs_type.accordion_item
+id: paragraph.accordion_item.field_anchor_link
+field_name: field_anchor_link
+entity_type: paragraph
+bundle: accordion_item
+label: 'Anchor Link'
+description: 'Used to create an anchor that will automatically open this accordion when visited. <strong>NOTE:</strong> When creating the anchor its best to use machine friendly format: my-great-anchor and when linking to it use a hashtag: /my-page#my-great-anchor'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
