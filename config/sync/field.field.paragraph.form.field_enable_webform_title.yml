@@ -1,0 +1,23 @@
+uuid: cbcb818f-f164-4f70-9a89-c385f5b3b577
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_enable_webform_title
+    - paragraphs.paragraphs_type.form
+id: paragraph.form.field_enable_webform_title
+field_name: field_enable_webform_title
+entity_type: paragraph
+bundle: form
+label: 'Display webform title'
+description: 'Enables or disables the display of the referenced webform''s title in this paragraph.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

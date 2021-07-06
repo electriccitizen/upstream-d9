@@ -3,8 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.form.field_enable_webform_title
     - field.field.paragraph.form.field_form
-    - field.field.paragraph.form.field_widget_title
     - paragraphs.paragraphs_type.form
   module:
     - layout_builder
@@ -21,6 +21,16 @@ targetEntityType: paragraph
 bundle: form
 mode: default
 content:
+  field_enable_webform_title:
+    weight: 2
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_form:
     weight: 1
     label: hidden
@@ -28,14 +38,6 @@ content:
       source_entity: true
     third_party_settings: {  }
     type: webform_entity_reference_entity_view
-    region: content
-  field_widget_title:
-    weight: 0
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
     region: content
 hidden:
   search_api_excerpt: true

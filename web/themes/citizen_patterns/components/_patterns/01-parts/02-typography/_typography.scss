@@ -192,6 +192,11 @@ h2.section-title{
 	text-transform: none;
 }
 
+.webform-placer-title {
+	@include heading1();
+	text-align: center;
+}
+
 /* TEXT MIXINS
 ---------------- */
 
