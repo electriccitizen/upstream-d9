@@ -122,18 +122,21 @@ function citizen_patterns_form_alter(&$form, FormStateInterface $form_state) {
 function citizen_patterns_preprocess_webform(&$variables){
   $webform_id = $variables["element"]["#webform_id"];
   $webform = \Drupal\webform\Entity\Webform::load($webform_id);
-  if ($webform->get('hide_title')) {
-    $variables['title'] = '';
+  if ($webform->get('webform_placer')) {
+    $variables['webform_placer'] = TRUE;
   }
-  else {
-    $variables['title'] = $webform->label();
+  if ($webform->get('show_placer_title')) {
+    $variables['show_placer_title'] = TRUE;
   }
+  $variables['title'] = $webform->label();
 }
 
 function citizen_patterns_preprocess_paragraph__form(&$variables) {
   $paragraph = isset($variables['paragraph']) ? $variables['paragraph'] : '';
   if (isset($paragraph->field_enable_webform_title->value)) {
     $enable_webform_title = $paragraph->field_enable_webform_title->value;
-    $variables['elements']['field_form'][0]['#webform']->set('hide_title', !$enable_webform_title);
+    $webform = $variables['elements']['field_form'][0]['#webform'];
+    $webform->set('webform_placer', TRUE);
+    $webform->set('show_placer_title', $enable_webform_title);
   }
 }
