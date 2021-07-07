@@ -415,18 +415,6 @@ $subGroupHeaderBack  : $darkGrey;
 	}//end li
 }//end sg-colors
 
-/* ICONS LIST */
-.icons-demo{
-	margin-bottom: -$spaceSm;
-	.sprite-icon{
-		display: inline-block;
-		width: $plIcon;
-		height: $plIcon;
-		@include plIconSize;
-		margin-bottom: $spaceSm;
-	}
-}
-
 /* TYPOGRAPHY */
 .typography-element{
 	margin-bottom: $spaceMd;
