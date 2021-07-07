@@ -82,6 +82,28 @@ function crane_preprocess_block(&$variables) {
   }
 }
 
+
+/**
+ * Implements hook_preprocess_HOOK() for page_title.
+ */
+function crane_preprocess_page_title(&$variables) {
+  $route_match = \Drupal::routeMatch();
+  $route_name = $route_match->getRouteName();
+
+  if ($route_name == 'entity.taxonomy_term.add_form') {
+    $vocab_label = $route_match->getParameter('taxonomy_vocabulary')->label();
+    $variables['title'] = t('Add ' . $vocab_label . ' term');
+  }
+  if ($route_name == 'entity.taxonomy_term.edit_form') {
+    $vocab_id = $route_match->getParameter('taxonomy_term')->bundle();
+    $vocab_label = \Drupal::entityTypeManager()
+      ->getStorage('taxonomy_vocabulary')
+      ->load($vocab_id)
+      ->label();
+    $variables['title'] = t('Edit ' . $vocab_label . ' term');
+  }
+}
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -167,6 +189,6 @@ function crane_theme_suggestions_page_alter(array &$suggestions, array $variable
   if (\Drupal::routeMatch()->getRouteName() == 'entity.taxonomy_term.edit_form') {
     $tid = \Drupal::routeMatch()->getRawParameter('taxonomy_term');
     $term = Term::load($tid);
-    $suggestions[] = 'page__taxonomy__' . $term->getVocabularyId();
+    $suggestions[] = 'page__taxonomy__' . $term->bundle();
   }
 }
