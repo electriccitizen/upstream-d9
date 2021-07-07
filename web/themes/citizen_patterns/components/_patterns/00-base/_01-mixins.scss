@@ -347,6 +347,13 @@
 	}
 }//end darkBack
 
+@mixin svgBack($name, $width, $height){
+	background-image: url(../images/svg/#{$name}.svg);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: #{$width} #{$height};
+}
+
 /* LAYOUT MIXINS
 -------------------- */
 

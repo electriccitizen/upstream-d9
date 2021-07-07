@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "gulp compile && gulp theme",
-    "postinstall": "rm -rf pattern-lab && composer create-project -n pattern-lab/edition-twig-standard pattern-lab && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source",
+    "postinstall": "rm -rf pattern-lab && composer create-project pattern-lab/edition-twig-standard pattern-lab && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source",
     "deploy": "gulp scriptRefresh && gulp ghpages-deploy",
     "jsRefresh": "gulp scriptRefresh",
     "preinstall": "npx npm-force-resolutions"

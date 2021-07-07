@@ -6,9 +6,8 @@
     js: `${themeDir}/components/_patterns/**/*.js`,
     dist_js: `${themeDir}/dist`,
     sass: themeDir,
-    icons: `${themeDir}/images/icons/src`,
     img: [
-      `${themeDir}/images/**/*`,
+      `${themeDir}/images/**/*.{jpg, gif, png, svg}`,
       `${themeDir}/components/_patterns/**/*.{jpg, gif, png, svg}`,
     ],
     dist_css: `${themeDir}/dist/css`,
@@ -52,30 +51,6 @@
       outputStyle: 'expanded',
       autoPrefixerBrowsers: ['last 2 versions', 'IE >= 11'],
       includePaths: ['./node_modules'],
-    },
-    iconConfig: {
-      shape: {
-        dimension: {
-          maxWidth: 80,
-          maxHeight: 80
-        },
-        spacing: {         // Add padding
-          padding: 0
-        }
-      },
-      mode: {
-        css: {
-          bust: false,
-          dest: themeDir + '/dist',
-          prefix: '@mixin sprite-%s',
-          render: {
-            scss: {
-              dest: '../components/_patterns/01-parts/01-icons/_icon_sprite.scss',
-              template: 'node_modules/emulsify-gulp/gulp-tasks/svg-icons/sprite.scss.handlebars'
-            }
-          }
-        }
-      }
     },
     patternLab: {
       enabled: true,

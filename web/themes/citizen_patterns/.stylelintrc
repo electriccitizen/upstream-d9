@@ -1,7 +1,4 @@
 {
-  "ignoreFiles": [
-    "components/_patterns/01-parts/01-icons/_icon_sprite.scss"
-  ],
   "defaultSeverity": "warning",
   "rules": {
     "at-rule-no-unknown": [ true, {

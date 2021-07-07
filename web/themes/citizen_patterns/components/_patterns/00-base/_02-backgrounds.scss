@@ -1,45 +1,23 @@
 /* =====================
 BACKGROUND SIZE MIXINS
 ====================== */
-@import '../01-parts/01-icons/_icon_sprite.scss';
-
-//This file holds all background size mixins so they can be easily changed if the sprite is changed.
-//background size is the icons row and column position in the sprite multipled by the intended size.
-$columns: 3;
-$rows: 2;
-
-
-/// used in ICONS.SCSS
-$plIcon: 70px;
-@mixin plIconSize{
-	@include backgroundSize($columns * $plIcon,$rows * $plIcon);
-}
-
-
 ///used in MEDIA.SCSS
 $docIcon: 18px;
 @mixin docGeneric{
-	@include sprite-generic;
-	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+	@include svgBack('generic', $docIcon, $docIcon);
 }
 @mixin docPDF{
-	@include sprite-pdf;
-	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+	@include svgBack('pdf', $docIcon, $docIcon);
 }
 @mixin docWord{
-	@include sprite-word;
-	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+	@include svgBack('word', $docIcon, $docIcon);
 }
 @mixin docExcel{
-	@include sprite-excel;
-	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+	@include svgBack('excel', $docIcon, $docIcon);
 }
 @mixin docPowerpoint{
-	@include sprite-powerpoint;
-	@include backgroundSize($columns * $docIcon,$rows * $docIcon);
+	@include svgBack('powerpoint', $docIcon, $docIcon);
 }
-
-
 
 /* PATTERN LAB ONLY
 ---------------- */
