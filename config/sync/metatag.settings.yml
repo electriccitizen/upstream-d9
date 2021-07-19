@@ -1,7 +1,5 @@
 entity_type_groups:
   node:
-    blog:
-      basic: basic
     event:
       basic: basic
     landing_page:

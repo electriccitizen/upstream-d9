@@ -8,14 +8,14 @@
 		<h2 class="block-title">{{ item.blockTitle }}</h2>
 	{% endif %}
 	{% if item.machineName == 'breadcrumbs' %}
-		{% include '@chunks/01-navigation/01-breadcrumbs/breadcrumbs.twig' 
+		{% include '@chunks/01-navigation/01-breadcrumbs/breadcrumbs.twig'
 			with{
 				breadcrumb: item.breadcrumb
 			}
 		%}
 	{% elseif item.machineName == 'title' %}
 		<div class="field title">
-			{% include '@parts/08-fields/_field-title.twig' 
+			{% include '@parts/08-fields/_field-title.twig'
 				with{
 					title: item.content
 				}
@@ -32,7 +32,7 @@
 			{% endif %}
 		</div>
 	{% elseif item.machineName == 'section-menu' %}
-		{% include '@chunks/01-navigation/04-section-menu/section-menu.twig' 
+		{% include '@chunks/01-navigation/04-section-menu/section-menu.twig'
 			with{
 				blockTitle: item.title,
 				showTitle: item.showTitle,
@@ -87,7 +87,7 @@
 		{% for pSection in item.paragraphSections %}
 			<div class="section{% if pSection.background %} background {{ pSection.background }}{% else %} backless{% endif %}{% if pSection.layout %} {{ pSection.layout }}{% endif %}">
 				{%- if pSection.anchor -%}<a name="anchor-{{  pSection.anchor|replace({' ':'-'})|lower }}" id="anchor-{{  pSection.anchor|replace({' ':'-'})|lower }}"></a>{%- endif -%}
-		    {% include '@composites/02-paragraphs/11-section/_section.twig' 
+		    {% include '@composites/02-paragraphs/11-section/_section.twig'
 		    	with{
 		    		type: pSection.type,
 		    		sectionTitle: pSection.sectionTitle,
@@ -135,16 +135,6 @@
 					{% else %}
 						<span>{% if item.date == 'auto' %}{{ "now "|date("F j, Y") }}{% else %}{{ item.date }}{% endif %}</span>
 					{% endif %}
-				{% elseif item.tags %}
-				{# tags #}
-					
-					<div class="field-multi-item">
-						{% include '@parts/08-fields/03-blog/_field-tags.twig' 
-							with{
-								tags: item.tags
-							}
-						%}
-					</div>
 				{% elseif item.map %}
 					<div class="map-fake">
 						<a href="#" class="map-open">

@@ -66,6 +66,10 @@
                 "tar",
                 "zip"
             ],
+            "support": {
+                "issues": "https://github.com/alchemy-fr/Zippy/issues",
+                "source": "https://github.com/alchemy-fr/Zippy/tree/master"
+            },
             "time": "2016-02-15T22:46:40+00:00"
         },
         {
@@ -133,6 +137,10 @@
                 "collections",
                 "iterator"
             ],
+            "support": {
+                "issues": "https://github.com/doctrine/collections/issues",
+                "source": "https://github.com/doctrine/collections/tree/master"
+            },
             "time": "2017-01-03T10:49:41+00:00"
         },
         {
@@ -184,6 +192,10 @@
                 "console",
                 "shell"
             ],
+            "support": {
+                "issues": "https://github.com/kevinlebrun/colors.php/issues",
+                "source": "https://github.com/kevinlebrun/colors.php/tree/master"
+            },
             "time": "2018-05-30T08:34:23+00:00"
         },
         {
@@ -233,6 +245,10 @@
             "keywords": [
                 "markdown"
             ],
+            "support": {
+                "issues": "https://github.com/michelf/php-markdown/issues",
+                "source": "https://github.com/michelf/php-markdown/tree/1.9.0"
+            },
             "time": "2019-12-02T02:32:27+00:00"
         },
         {
@@ -305,6 +321,11 @@
                 "style guide",
                 "styleguide"
             ],
+            "support": {
+                "issues": "https://github.com/pattern-lab/patternlab-php-core/issues",
+                "source": "https://github.com/pattern-lab/patternlab-php-core/releases",
+                "wiki": "http://patternlab.io/docs/"
+            },
             "time": "2018-02-27T22:12:27+00:00"
         },
         {
@@ -368,6 +389,11 @@
                 "pattern lab",
                 "twig"
             ],
+            "support": {
+                "issues": "https://github.com/pattern-lab/patternengine-php-twig/issues",
+                "source": "https://github.com/pattern-lab/patternengine-php-twig/releases",
+                "wiki": "http://patternlab.io/docs/"
+            },
             "time": "2018-02-08T00:11:23+00:00"
         },
         {
@@ -427,6 +453,11 @@
                 "pattern lab",
                 "styleguide"
             ],
+            "support": {
+                "issues": "https://github.com/pattern-lab/styleguidekit-assets-default/issues",
+                "source": "https://github.com/pattern-lab/styleguidekit-assets-default/releases",
+                "wiki": "http://patternlab.io/docs/"
+            },
             "time": "2017-10-31T12:19:46+00:00"
         },
         {
@@ -471,6 +502,11 @@
                 "styleguide",
                 "twig"
             ],
+            "support": {
+                "issues": "https://github.com/pattern-lab/styleguidekit-twig-default/issues",
+                "source": "https://github.com/pattern-lab/styleguidekit-twig-default/releases",
+                "wiki": "http://patternlab.io/docs/"
+            },
             "time": "2016-07-04T01:24:27+00:00"
         },
         {
@@ -520,6 +556,10 @@
                 "parser",
                 "validator"
             ],
+            "support": {
+                "issues": "https://github.com/Seldaek/jsonlint/issues",
+                "source": "https://github.com/Seldaek/jsonlint/tree/1.8.3"
+            },
             "funding": [
                 {
                     "url": "https://github.com/Seldaek",
@@ -570,6 +610,10 @@
             ],
             "description": "ArrayFinder component",
             "homepage": "https://github.com/Shudrum/ArrayFinder",
+            "support": {
+                "issues": "https://github.com/Shudrum/ArrayFinder/issues",
+                "source": "https://github.com/Shudrum/ArrayFinder/tree/master"
+            },
             "time": "2016-02-01T12:23:32+00:00"
         },
         {
@@ -629,6 +673,9 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/event-dispatcher/tree/v3.4.47"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -688,6 +735,9 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/filesystem/tree/v3.4.47"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -746,6 +796,9 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/finder/tree/v3.4.47"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -822,6 +875,9 @@
                 "polyfill",
                 "portable"
             ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.23.0"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -880,6 +936,9 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/process/tree/v3.4.47"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -948,6 +1007,9 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v3.4.47"
+            },
             "funding": [
                 {
                     "url": "https://symfony.com/sponsor",
@@ -1026,6 +1088,10 @@
             "keywords": [
                 "templating"
             ],
+            "support": {
+                "issues": "https://github.com/twigphp/Twig/issues",
+                "source": "https://github.com/twigphp/Twig/tree/v1.44.4"
+            },
             "funding": [
                 {
                     "url": "https://github.com/fabpot",
@@ -1049,5 +1115,5 @@
         "php": ">=5.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.1.0"
 }
