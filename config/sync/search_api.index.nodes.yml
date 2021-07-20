@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - field.storage.node.body
-    - field.storage.node.field_tags
     - search_api.server.local
   module:
-    - taxonomy
     - node
     - search_api
 _core:
@@ -26,17 +24,6 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.body
-  tags:
-    label: Tags
-    datasource_id: 'entity:node'
-    property_path: 'field_tags:entity:name'
-    type: text
-    dependencies:
-      config:
-        - field.storage.node.field_tags
-      module:
-        - taxonomy
-        - taxonomy
   title:
     label: Title
     datasource_id: 'entity:node'
@@ -81,7 +68,6 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - tags
       - title
     ignorable: '[''¿¡!?,.:;]'
     ignorable_classes:
@@ -99,17 +85,16 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - tags
       - title
     weights:
       preprocess_index: -48
       preprocess_query: -48
+  language_with_fallback: {  }
   rendered_item: {  }
   stemmer:
     all_fields: true
     fields:
       - body
-      - tags
       - title
     exceptions:
       mexican: mexic
@@ -121,7 +106,6 @@ processor_settings:
     all_fields: true
     fields:
       - body
-      - tags
       - title
     spaces: ''
     overlap_cjk: 1
@@ -129,11 +113,11 @@ processor_settings:
     weights:
       preprocess_index: -49
       preprocess_query: -49
+    ignored: ._-
   transliteration:
     all_fields: true
     fields:
       - body
-      - tags
       - title
     weights:
       preprocess_index: -20
@@ -143,7 +127,6 @@ processor_settings:
       'entity:node':
         datasource_boost: !!float 1
         bundle_boosts:
-          blog: !!float 2
           event: !!float 0
           landing_page: !!float 5
           news: !!float 0

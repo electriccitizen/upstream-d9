@@ -37,7 +37,7 @@
  */
 #}
 
-{% embed '@composites/02-paragraphs/00-base/_paragraph.twig' 
+{% embed '@composites/02-paragraphs/00-base/_paragraph.twig'
 	with{
 		type: paragraph.bundle|clean_class,
 		viewMode: view_mode|clean_class,
@@ -48,19 +48,17 @@
 	}
 %}
 	{% block widgetContent %}
-		
+
 		{% set viewName = content.field_view.0['#markup'] %}
 		{% if viewName == 'events' %}
 			{% set displayName = content.field_events_displays.0['#markup'] %}
 		{% elseif viewName == 'news' %}
 			{% set displayName = content.field_news_displays.0['#markup'] %}
-		{% elseif viewName == 'blog' %}
-			{% set displayName = content.field_blog_displays.0['#markup'] %}
 		{% elseif viewName == 'profiles' %}
 			{% set displayName = content.field_profiles_displays.0['#markup'] %}
 		{% endif %}
 		<div class="view-widget widget-{{ viewName }} {{ displayName }}">
 		  {{ drupal_view(viewName,displayName) }}
-		</div>			
-	{% endblock %}	
+		</div>
+	{% endblock %}
 {% endembed %}

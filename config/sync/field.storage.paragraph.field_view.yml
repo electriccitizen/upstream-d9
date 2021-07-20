@@ -12,9 +12,6 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: blog
-      label: Blog
-    -
       value: events
       label: Events
     -

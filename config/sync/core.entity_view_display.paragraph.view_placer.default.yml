@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.view_placer.field_blog_displays
     - field.field.paragraph.view_placer.field_events_displays
     - field.field.paragraph.view_placer.field_news_displays
     - field.field.paragraph.view_placer.field_profiles_displays
@@ -17,13 +16,6 @@ targetEntityType: paragraph
 bundle: view_placer
 mode: default
 content:
-  field_blog_displays:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: list_key
-    region: content
   field_events_displays:
     weight: 3
     label: hidden

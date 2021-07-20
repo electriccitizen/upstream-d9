@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.preview
-    - field.field.paragraph.view_placer.field_blog_displays
     - field.field.paragraph.view_placer.field_events_displays
     - field.field.paragraph.view_placer.field_news_displays
     - field.field.paragraph.view_placer.field_profiles_displays
@@ -31,7 +30,6 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
-  field_blog_displays: true
   field_events_displays: true
   field_news_displays: true
   field_profiles_displays: true

@@ -2,7 +2,7 @@
 	 STYLEGUIDE
 ==================== */
 /* For performance reasons, this stylesheet is not imported into the the main style.scss so it is added to the css styles used by Drupal. Its is for the style guide only. For that reason, we need to manually import any variables and mixins directly into this file before its compiled into the guide.css */
-@import 
+@import
 	'breakpoint-sass/stylesheets/breakpoint',
 	'../../00-base/colors/color-vars',
 	'../../00-base/colors/component-color-vars',
@@ -111,7 +111,7 @@ $subGroupHeaderBack  : $darkGrey;
 			color: $navLinks;
 			background: $navBack;
 		}
-		ul{	
+		ul{
 			position: absolute;
 			padding: $spaceSm 0;
 			top: -$spaceXxs;
@@ -261,7 +261,7 @@ $subGroupHeaderBack  : $darkGrey;
 					padding: $spaceSm 0;
 					&:after{
 						@include fullBack($subGroupHeaderBack);
-					}	
+					}
 				}
 			}//end sg-pattern-body
 		}//end top level types (all main _patterns folders)
@@ -290,7 +290,7 @@ $subGroupHeaderBack  : $darkGrey;
 			@include auto;
 			padding: $spaceLg $siteMarginMobile $spaceSm;
 			display: block;
-			font-family: $adminText;	
+			font-family: $adminText;
 			@include desk{
 				padding-left: $siteMarginDesk;
 				padding-right: $siteMarginDesk;
@@ -360,7 +360,7 @@ $subGroupHeaderBack  : $darkGrey;
 	max-width: $textMax;
 }
 
-/* PL GRIDS 
+/* PL GRIDS
 -------------- */
 .grid-center-spaced{
 	@include safeFlex(row,wrap,center,start);
@@ -453,7 +453,7 @@ $subGroupHeaderBack  : $darkGrey;
 	button{
 		min-width: 200px;
 	}
-}	
+}
 
 /* TABLES */
 .pl table{
@@ -883,12 +883,6 @@ $subGroupHeaderBack  : $darkGrey;
 	}
 }
 
-/* BLOG POST */
-.node-blog{
-	.field-banner{
-		@extend %bannerRatiosFake;
-	}
-}
 .addtoany_list{
 	display: inline;
 	a{
@@ -979,6 +973,6 @@ $subGroupHeaderBack  : $darkGrey;
 			max-width: $textMax;
 			text-align: center;
 			@include translate(-50%,-50%);
-		}	
+		}
 	}
 }//end map-fake
